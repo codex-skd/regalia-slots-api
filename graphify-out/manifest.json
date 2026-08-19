@@ -120,7 +120,7 @@
     "semantic_hash": "1f22bdf79c064f32376e2a6ec0c1d824"
   },
   "src/main/java/com/skd/regaliaslotsapi/api/common/inventory/RegaliaSlotsApiResourceHandler.java": {
-    "mtime": 1787136726.368062,
+    "mtime": 1787144663.9360285,
     "ast_hash": "36f4e32113cef7e9c5c34635f3bcabf9",
     "semantic_hash": "36f4e32113cef7e9c5c34635f3bcabf9"
   },
@@ -245,7 +245,7 @@
     "semantic_hash": "a50f77b4aa464a190c536de001654481"
   },
   "src/main/java/com/skd/regaliaslotsapi/api/type/capability/IRegaliaSlotsApiItemHandler.java": {
-    "mtime": 1787136726.9088252,
+    "mtime": 1787144663.9360285,
     "ast_hash": "9130649aca3107dac0f0a869647d632c",
     "semantic_hash": "9130649aca3107dac0f0a869647d632c"
   },
@@ -265,7 +265,7 @@
     "semantic_hash": "d2cfe2d56355d1629b9c7c406c6bdf11"
   },
   "src/main/java/com/skd/regaliaslotsapi/api/type/inventory/IDynamicStackHandler.java": {
-    "mtime": 1787136726.9986477,
+    "mtime": 1787144663.937392,
     "ast_hash": "e2820145c2516b4222662ce64186d9c9",
     "semantic_hash": "e2820145c2516b4222662ce64186d9c9"
   },
@@ -340,7 +340,7 @@
     "semantic_hash": "be0b8c9ccfe3fdfd64fe59f0f102dae0"
   },
   "src/main/java/com/skd/regaliaslotsapi/common/capability/CurioInventoryCapability.java": {
-    "mtime": 1787136727.1937463,
+    "mtime": 1787144663.9385467,
     "ast_hash": "e92279fc399374e205d0d142ea7cfdcc",
     "semantic_hash": "e92279fc399374e205d0d142ea7cfdcc"
   },
@@ -400,7 +400,7 @@
     "semantic_hash": "395c1539dc22f13258db7aaed889c97e"
   },
   "src/main/java/com/skd/regaliaslotsapi/common/inventory/DynamicStackHandler.java": {
-    "mtime": 1787136727.4747305,
+    "mtime": 1787144663.9385467,
     "ast_hash": "e1860da1d33433515b0d201b04b17b3f",
     "semantic_hash": "e1860da1d33433515b0d201b04b17b3f"
   },
@@ -565,7 +565,7 @@
     "semantic_hash": "e9254fb1e70a99acd6e499c9b2db5bf4"
   },
   "src/main/java/com/skd/regaliaslotsapi/mixin/RegaliaSlotsApiCommonMixinHooks.java": {
-    "mtime": 1787136728.2353823,
+    "mtime": 1787144663.9400527,
     "ast_hash": "08bd6e3929a8c8db59f8d8966cf6c643",
     "semantic_hash": "08bd6e3929a8c8db59f8d8966cf6c643"
   },
@@ -735,59 +735,59 @@
     "semantic_hash": "9b9b5dd9bf263b17fcb708a920c3ee46"
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/back.json": {
-    "mtime": 1787132008.32018,
-    "ast_hash": "be0b3edb7b6510df8214299e438ad998",
-    "semantic_hash": "be0b3edb7b6510df8214299e438ad998"
+    "mtime": 1787151066.156327,
+    "ast_hash": "09326d10c16fc2eff664c74d2a4375aa",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/belt.json": {
-    "mtime": 1787132008.32018,
-    "ast_hash": "012f50d28187f220fa296ba5add7398c",
-    "semantic_hash": "012f50d28187f220fa296ba5add7398c"
+    "mtime": 1787151066.1646466,
+    "ast_hash": "8e0d11f5588efc31e6d53d788de8e32f",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/body.json": {
-    "mtime": 1787132008.32226,
-    "ast_hash": "a95ccf604f611f0c95e93d6bb69f8172",
-    "semantic_hash": "a95ccf604f611f0c95e93d6bb69f8172"
+    "mtime": 1787151066.1747572,
+    "ast_hash": "13733cbc7d61970963aa953ce34fc8c1",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/bracelet.json": {
-    "mtime": 1787132008.32226,
-    "ast_hash": "2e1b09005bb51d6135dc03d8926bb9f5",
-    "semantic_hash": "2e1b09005bb51d6135dc03d8926bb9f5"
+    "mtime": 1787151066.1860042,
+    "ast_hash": "239c5dfe7bb87acf1871572ff6857507",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/charm.json": {
-    "mtime": 1787132008.3233144,
-    "ast_hash": "edd7e3ee84ae996b02b87696c0660859",
-    "semantic_hash": "edd7e3ee84ae996b02b87696c0660859"
+    "mtime": 1787151066.1942337,
+    "ast_hash": "4efb3a21324a2efcffde7ceac3346e90",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/curio.json": {
-    "mtime": 1787132008.3243153,
-    "ast_hash": "94ce4fd39da01457e80ef003d867016a",
-    "semantic_hash": "94ce4fd39da01457e80ef003d867016a"
+    "mtime": 1787151066.2027602,
+    "ast_hash": "0a5570de30cd7bb4b7356d773a0fce4f",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/feet.json": {
-    "mtime": 1787132008.3258226,
-    "ast_hash": "3596c757e07d8ce4ac20e50e3b1ef6eb",
-    "semantic_hash": "3596c757e07d8ce4ac20e50e3b1ef6eb"
+    "mtime": 1787151066.21121,
+    "ast_hash": "210e26a0696a899243117d1c7ba1d883",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/hands.json": {
-    "mtime": 1787132008.3290803,
-    "ast_hash": "81e0d818e8e4a8a6a13f99cee722651d",
-    "semantic_hash": "81e0d818e8e4a8a6a13f99cee722651d"
+    "mtime": 1787151066.2197342,
+    "ast_hash": "f0f1d21429070fe37ecf2a1061da6517",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/head.json": {
-    "mtime": 1787132008.3268416,
-    "ast_hash": "07011b10c9ab7f7a4b06c801ed7f41ba",
-    "semantic_hash": "07011b10c9ab7f7a4b06c801ed7f41ba"
+    "mtime": 1787151066.2273915,
+    "ast_hash": "d3b53157b82fdb9c66ba41fc9b4da1e4",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/necklace.json": {
-    "mtime": 1787132008.3278437,
-    "ast_hash": "e02ca82f7d2328a35d353fb5f13c2ba0",
-    "semantic_hash": "e02ca82f7d2328a35d353fb5f13c2ba0"
+    "mtime": 1787151066.2353642,
+    "ast_hash": "4de243bdc4ed5953013642b0671ec55c",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/curios/slots/ring.json": {
-    "mtime": 1787132008.3278437,
-    "ast_hash": "1c04f971359afe56ebec8442052a22f6",
-    "semantic_hash": "1c04f971359afe56ebec8442052a22f6"
+    "mtime": 1787151066.243631,
+    "ast_hash": "f5014ad0b5e075799c95a03deb824038",
+    "semantic_hash": ""
   },
   "src/main/resources/data/regalia_slots_api/tags/entity_type/player_like.json": {
     "mtime": 1787132008.3301177,
@@ -928,5 +928,275 @@
     "mtime": 1787137031.1499937,
     "ast_hash": "44c25ad5ec3d91b33879dd79f8eae687",
     "semantic_hash": "44c25ad5ec3d91b33879dd79f8eae687"
+  },
+  ".claude/CLAUDE.md": {
+    "mtime": 1787132701.9836543,
+    "ast_hash": "3e601485b0e1f07ed78d255c5d2eb825",
+    "semantic_hash": ""
+  },
+  ".gitlab-ci.yml": {
+    "mtime": 1787132696.224542,
+    "ast_hash": "402e112fb0a27fd876291ce11aac8792",
+    "semantic_hash": ""
+  },
+  "CHANGELOG.md": {
+    "mtime": 1787151253.2425241,
+    "ast_hash": "3bcab690649de321fec4a221d4d7012d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787132744.1468117,
+    "ast_hash": "8521bb062599d858d6bfc85bda0968d1",
+    "semantic_hash": ""
+  },
+  "docs/ICON_PROMPTS.md": {
+    "mtime": 1787139321.1474361,
+    "ast_hash": "43c8d48bf19bf0e22619ef1b835846ba",
+    "semantic_hash": ""
+  },
+  "docs/WORKFLOW_REGALIA_SLOTS_API_26-2.md": {
+    "mtime": 1787132730.679595,
+    "ast_hash": "673b1a4909383d6a698df79d77b5f062",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/project_description.md": {
+    "mtime": 1787132772.649158,
+    "ast_hash": "554a5165c0411a68256801d0f58c91d1",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/project_vars.md": {
+    "mtime": 1787139848.3507986,
+    "ast_hash": "622d31b37925a44989833163c6aa2484",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.1.md": {
+    "mtime": 1787139795.2174876,
+    "ast_hash": "ee1b046ba046fc00d4653b04652b8ead",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.2.md": {
+    "mtime": 1787151259.5598295,
+    "ast_hash": "d6941e5b3c7e2d9a77c5319aa0025d3c",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/logo.png": {
+    "mtime": 1787139659.1178634,
+    "ast_hash": "8f688862b68f079660e55b5c37c619de",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/entity/amulet.png": {
+    "mtime": 1787132008.3502543,
+    "ast_hash": "b766c26ab2766e7cd22631abd1ab31c7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/entity/crown.png": {
+    "mtime": 1787132008.3531227,
+    "ast_hash": "952bf9eb11f5036ccc661bffa9f584f1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/entity/knuckles.png": {
+    "mtime": 1787132008.3542376,
+    "ast_hash": "d1174f7ba16f4c0aef517b81b899878e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_back_slot.png": {
+    "mtime": 1787132008.3638144,
+    "ast_hash": "7e0aaa1ff46743ba996cbf53a3581333",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_belt_slot.png": {
+    "mtime": 1787132008.3695085,
+    "ast_hash": "46981f696d7df8f8e96b12cfbd8e10df",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_body_slot.png": {
+    "mtime": 1787132008.3780994,
+    "ast_hash": "f217ca02382c72a6b0890a0a9e244d8f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_bracelet_slot.png": {
+    "mtime": 1787132008.3836293,
+    "ast_hash": "8607ecc4017e1ef91a2a81140ae20c52",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_charm_slot.png": {
+    "mtime": 1787132008.392872,
+    "ast_hash": "6ffc9809844af37c325ec8fcbdbece6b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_cosmetic_slot.png": {
+    "mtime": 1787132008.3994043,
+    "ast_hash": "91dd3f96f7b76e78742fcdf325dcbbbd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_curio_slot.png": {
+    "mtime": 1787132008.4064424,
+    "ast_hash": "b5ab4f869c2939d23c4d6eee7632fd4c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_hands_slot.png": {
+    "mtime": 1787132008.4154544,
+    "ast_hash": "9c0ee27d1c03b085f8977483de064e4d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_head_slot.png": {
+    "mtime": 1787132008.4225564,
+    "ast_hash": "fac77a6af2c07745b240b4e1dffce2d9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_necklace_slot.png": {
+    "mtime": 1787132008.4283876,
+    "ast_hash": "2da5604f7deb9f35d8156c6326727590",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/container/sprites/empty_ring_slot.png": {
+    "mtime": 1787132008.437851,
+    "ast_hash": "ee87c472a2e35545e68f53052804e404",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/button.png": {
+    "mtime": 1787132008.445909,
+    "ast_hash": "92658892ebab6643d985752c46e5b21f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/button_highlighted.png": {
+    "mtime": 1787132008.5014706,
+    "ast_hash": "3499af60cb09a18cf7db2508b8af244f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/button_small.png": {
+    "mtime": 1787132008.4514213,
+    "ast_hash": "1cf54beb58c2819f2bf1ec13360ca1df",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/button_small_highlighted.png": {
+    "mtime": 1787132008.4590366,
+    "ast_hash": "b2554a62d7437551580e6f566185458b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/cosmetic_off.png": {
+    "mtime": 1787132008.4643567,
+    "ast_hash": "17c7ef25b18805fbb48f49e3426f897f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/cosmetic_off_highlighted.png": {
+    "mtime": 1787132008.470082,
+    "ast_hash": "0910e70da95cd25963af7f0b2382a804",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/cosmetic_on.png": {
+    "mtime": 1787132008.480813,
+    "ast_hash": "e089182f0c2b989456168e65bd2320b2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/cosmetic_on_highlighted.png": {
+    "mtime": 1787132008.4872355,
+    "ast_hash": "c67484a87f1eeda97398532997e03132",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/gui/curios/inventory.png": {
+    "mtime": 1787132008.4956858,
+    "ast_hash": "af15a3fdbced2c588eb89c1a4e1c3c3a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_back_slot.png": {
+    "mtime": 1787132008.5037203,
+    "ast_hash": "7e0aaa1ff46743ba996cbf53a3581333",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_belt_slot.png": {
+    "mtime": 1787132008.504731,
+    "ast_hash": "46981f696d7df8f8e96b12cfbd8e10df",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_body_slot.png": {
+    "mtime": 1787132008.505731,
+    "ast_hash": "f217ca02382c72a6b0890a0a9e244d8f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_bracelet_slot.png": {
+    "mtime": 1787132008.506808,
+    "ast_hash": "8607ecc4017e1ef91a2a81140ae20c52",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_charm_slot.png": {
+    "mtime": 1787132008.5078351,
+    "ast_hash": "6ffc9809844af37c325ec8fcbdbece6b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_cosmetic_slot.png": {
+    "mtime": 1787132008.5089142,
+    "ast_hash": "91dd3f96f7b76e78742fcdf325dcbbbd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_curio_slot.png": {
+    "mtime": 1787132008.5099185,
+    "ast_hash": "b5ab4f869c2939d23c4d6eee7632fd4c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_feet_slot.png": {
+    "mtime": 1787132008.5155094,
+    "ast_hash": "c15d0fc60cc289692eba768fbd515d93",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_hands_slot.png": {
+    "mtime": 1787132008.5181744,
+    "ast_hash": "9c0ee27d1c03b085f8977483de064e4d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_head_slot.png": {
+    "mtime": 1787132008.5191998,
+    "ast_hash": "fac77a6af2c07745b240b4e1dffce2d9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_necklace_slot.png": {
+    "mtime": 1787132008.5204632,
+    "ast_hash": "2da5604f7deb9f35d8156c6326727590",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/regalia_slots_api/textures/slot/empty_ring_slot.png": {
+    "mtime": 1787132008.5219686,
+    "ast_hash": "ee87c472a2e35545e68f53052804e404",
+    "semantic_hash": ""
+  },
+  "src/main/resources/regalia_slots_api_icon.png": {
+    "mtime": 1787139659.011332,
+    "ast_hash": "8f688862b68f079660e55b5c37c619de",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/entity/amulet.png": {
+    "mtime": 1787132008.2721138,
+    "ast_hash": "b766c26ab2766e7cd22631abd1ab31c7",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/entity/crown.png": {
+    "mtime": 1787132008.2787385,
+    "ast_hash": "952bf9eb11f5036ccc661bffa9f584f1",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/entity/knuckles.png": {
+    "mtime": 1787132008.2866552,
+    "ast_hash": "d1174f7ba16f4c0aef517b81b899878e",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/item/amulet.png": {
+    "mtime": 1787132008.292722,
+    "ast_hash": "d712689ddb9e724eae4d64982ddc75ff",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/item/crown.png": {
+    "mtime": 1787132008.2997515,
+    "ast_hash": "611a48412a83b366f066335753b1e0f4",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/item/knuckles.png": {
+    "mtime": 1787132008.3087363,
+    "ast_hash": "8d2a9924745cc522625904efd26489cb",
+    "semantic_hash": ""
+  },
+  "src/test/resources/assets/regalia_slots_api_test/textures/item/ring.png": {
+    "mtime": 1787132008.3147602,
+    "ast_hash": "3a3b835dd2866166e7af070cf044f827",
+    "semantic_hash": ""
   }
 }
