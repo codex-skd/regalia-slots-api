@@ -30,7 +30,7 @@ repositories {
 }
 
 base {
-    archivesName = "${mod_id}-neoforge"
+    archivesName = "${mod_id}-${minecraft_version}-neoforge-${neoforge_version}"
 }
 
 java {
