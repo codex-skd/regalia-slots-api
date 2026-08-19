@@ -1,6 +1,6 @@
 # Flujo de trabajo — Regalia Slots API (NeoForge)
 
-> **Versión del workflow**: 1.17.0 (codex-docs)
+> **Versión del workflow**: 1.18.0 (codex-docs)
 > Este archivo pertenece al proyecto **Regalia Slots API**. Cambios aquí solo afectan a este proyecto.
 > **Trabaja directamente con este archivo**: es el workflow operativo del mod, autocontenido. No leas `codex-docs/WORKFLOW_AGENT.md` ni `WORKFLOW_GENERIC.md` de forma rutinaria.
 > On-demand (solo si la tarea lo necesita): `codex-docs/reference/CURSEFORGE.md` (formato HTML al publicar), `codex-docs/reference/GRAPHIFY.md` (backend LLM de Graphify), `codex-docs/reference/REPO_SETUP.md` (setup único de repo).
@@ -32,7 +32,18 @@ Este mod es un **fork de [Curios API](https://www.curseforge.com/minecraft/mc-mo
 - `base.archivesName` sí se ajustó a la convención del workspace (`<mod_id>-<mc>-neoforge-<neo_version>`) para que `curseforge-upload.ps1` encuentre el JAR — es el único punto donde se tocó el build propio.
 - Los plugins Gradle originales `com.modrinth.minotaur` y `net.darkhax.curseforgegradle` (y las tasks `publishCurseForge`/`modrinth`/`publishMod`) se **eliminaron** de `build.gradle`: exigían JVM 25 para el propio proceso de Gradle (no solo el toolchain del proyecto) y bloqueaban cualquier build en esta máquina (JDK 21). No los usamos igualmente — la publicación va por `codex-docs/scripts/curseforge-upload.ps1`, como el resto de mods.
 
-**Warnings de deprecación pendientes (NO tocar sin más contexto)**: `./gradlew.bat build` compila con ~46 warnings `[removal]` heredados de Curios (migración de `net.neoforged.neoforge.items.*` a la nueva `net.neoforged.neoforge.transfer.*`, más varios métodos propios de `RegaliaSlotsApi`/`ICurio`/etc.). Se investigó a fondo (2026-08-19): la propia Curios upstream tiene esa migración sin terminar en su propio código — uno de los métodos deprecados (`withSlotModifier`) ni siquiera funciona ya (`return ItemAttributeModifiers.EMPTY;`), y el reemplazo de `IItemHandler` por `ResourceHandler` requiere reimplementar la validación por slot (el `isValid` por defecto de `StacksResourceHandler` es `return true`, o sea que un wrapper genérico rompería el filtrado de items por tipo de slot). Un intento de "limpieza automática" (delegado a OpenCode) efectivamente rompió la validación de slots y cambió la firma pública de `getEquippedRegaliaSlotsApi()` — se revirtió. No reintentar hasta que Curios publique su propia migración completa (entonces portar su fix real, no inventar uno).
+## Capa de compatibilidad Curios API (desde v0.0.0-beta.4)
+
+Este mod es funcionalmente un fork 1:1 de Curios, pero los mods de terceros que integran con Curios (ej. Sophisticated Backpacks) comprueban específicamente el `modId` `curios` y usan las clases del paquete `top.theillusivec4.curios.api.*` — no reconocen `regalia_slots_api` como equivalente. Para que esos mods funcionen sin que el usuario instale el Curios real, se añadió una capa de compatibilidad en `com.skd.regaliaslotsapi.compat.curios`:
+
+- **Excepción explícita a "sin residuos del mod original"** (ver Buenas prácticas): el árbol `src/main/java/top/theillusivec4/curios/` (solo el paquete `api`, copiado verbatim desde `lib_ext/Curios-26.x`) y las clases `Curios*` bajo `compat/curios/` son **intencionales**, no residuos — necesarias para compatibilidad binaria con mods compilados contra el Curios real. No eliminarlas pensando que son restos del rebrand.
+- Segundo `modId` lógico `curios` declarado en el mismo JAR (`neoforge.mods.toml`), con su propio entrypoint `@Mod("curios")` (`CuriosCompatMod`) que registra las capabilities `curios:inventory`/`curios:item` con los mismos IDs que el Curios real, respaldadas en vivo por los datos de Regalia (`RegaliaSlotsApiCapability.INVENTORY`) — sin duplicar estado.
+- Los 5 servicios `ServiceLoader` de Curios (`ICuriosRegistry`/`ICuriosSlots`/`ICuriosExtensions`/`ICuriosCodecs`/`ICuriosNetwork`) tienen adaptador propio en `compat/curios/`, registrado vía `META-INF/services/top.theillusivec4.curios.api.internal.services.*`.
+- **Incompatible con el Curios real instalado a la vez** (mismo `modId` → NeoForge falla al cargar por duplicado): documentado y aceptado, no se intenta evitar en silencio.
+- **Huecos conocidos** (no bloquean reconocimiento de ranura ni lectura/escritura del inventario): comportamiento *custom* por item (`ICurioItem`/`ICurio`, ~20 métodos: sonidos, glow, tooltips) no puenteado — items registrados como curio reciben comportamiento por defecto; renderizado de modelos en la entidad (`api/client/*`) no conectado; codecs de datapack nativo de Curios (`ISlotType`/`ISlotData`/`IEntitiesData`) son stubs (Regalia sigue siendo la única fuente de verdad para tipos de ranura).
+- Referencia usada como fuente de verdad: `lib_ext/Curios-26.x` (fuente real de Curios, no decompilar el jar de referencia si el source está disponible ahí).
+
+## Warnings de deprecación pendientes (NO tocar sin más contexto) `./gradlew.bat build` compila con ~46 warnings `[removal]` heredados de Curios (migración de `net.neoforged.neoforge.items.*` a la nueva `net.neoforged.neoforge.transfer.*`, más varios métodos propios de `RegaliaSlotsApi`/`ICurio`/etc.). Se investigó a fondo (2026-08-19): la propia Curios upstream tiene esa migración sin terminar en su propio código — uno de los métodos deprecados (`withSlotModifier`) ni siquiera funciona ya (`return ItemAttributeModifiers.EMPTY;`), y el reemplazo de `IItemHandler` por `ResourceHandler` requiere reimplementar la validación por slot (el `isValid` por defecto de `StacksResourceHandler` es `return true`, o sea que un wrapper genérico rompería el filtrado de items por tipo de slot). Un intento de "limpieza automática" (delegado a OpenCode) efectivamente rompió la validación de slots y cambió la firma pública de `getEquippedRegaliaSlotsApi()` — se revirtió. No reintentar hasta que Curios publique su propia migración completa (entonces portar su fix real, no inventar uno).
 
 ## Convenciones de nomenclatura
 
@@ -107,7 +118,7 @@ Leer siempre `GRAPH_REPORT.md`, nunca `graph.json`/`graph.html`. Sin copias fech
 - Un commit por cambio lógico · commit+push tras cada cambio funcional y de docs
 - `clean build` siempre antes del JAR final · versionar antes de CurseForge · CHANGELOG al día
 - Graphify actualizado tras cada release · nomenclatura consistente · sin basura en repo
-- README en inglés siempre actualizado · **sin residuos del mod original** (paquetes `top/theillusivec4/`, clases `Curios*`, assets `curios/`) · **atribución de fork explícita** (README, project_description, `credits` en mods.toml) — no justifica código muerto ni assets huérfanos
+- README en inglés siempre actualizado · **sin residuos del mod original** (paquetes `top/theillusivec4/`, clases `Curios*`, assets `curios/`) — excepto la capa de compatibilidad Curios API intencional, ver sección dedicada · **atribución de fork explícita** (README, project_description, `credits` en mods.toml) — no justifica código muerto ni assets huérfanos
 
 ## Idioma
 
