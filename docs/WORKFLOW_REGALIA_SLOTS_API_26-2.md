@@ -13,7 +13,7 @@
 | Clase principal | `RegaliaSlotsApiCommonMod` (cliente: `RegaliaSlotsApiClientMod`) |
 | Display name | `Regalia Slots API` |
 | Versiones de Minecraft | `26.2` |
-| Rama | `minecraft/26.2/neoforge-26.2.0.45-beta/production` |
+| Rama | `minecraft/26.2/neoforge-26.2.0.57/production` (histórico: `minecraft/26.2/neoforge-26.2.0.45-beta/production`) |
 | Framework | NeoForge (build propio `net.neoforged.moddev`, no genérico) |
 
 ## Nota de fork
