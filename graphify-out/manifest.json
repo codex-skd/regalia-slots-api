@@ -1,8 +1,8 @@
 {
   "build.gradle": {
-    "mtime": 1787139822.3735275,
-    "ast_hash": "9d3991603dd9bc2c217953a30952391a",
-    "semantic_hash": "9d3991603dd9bc2c217953a30952391a"
+    "mtime": 1787152362.5803983,
+    "ast_hash": "35782dbfeaef8a90b94b8f0435aca3a8",
+    "semantic_hash": ""
   },
   "gradlew": {
     "mtime": 1787132008.759182,
@@ -940,12 +940,12 @@
     "semantic_hash": ""
   },
   "CHANGELOG.md": {
-    "mtime": 1787151253.2425241,
-    "ast_hash": "3bcab690649de321fec4a221d4d7012d",
+    "mtime": 1787152770.050542,
+    "ast_hash": "175c6556f108ea639516e4aaebcfca15",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1787132744.1468117,
+    "mtime": 1787152367.1370685,
     "ast_hash": "8521bb062599d858d6bfc85bda0968d1",
     "semantic_hash": ""
   },
@@ -955,8 +955,8 @@
     "semantic_hash": ""
   },
   "docs/WORKFLOW_REGALIA_SLOTS_API_26-2.md": {
-    "mtime": 1787132730.679595,
-    "ast_hash": "673b1a4909383d6a698df79d77b5f062",
+    "mtime": 1787152375.759845,
+    "ast_hash": "4c368f47da74473de191c71fdc591263",
     "semantic_hash": ""
   },
   "docs/curseforge/project_description.md": {
@@ -1197,6 +1197,11 @@
   "src/test/resources/assets/regalia_slots_api_test/textures/item/ring.png": {
     "mtime": 1787132008.3147602,
     "ast_hash": "3a3b835dd2866166e7af070cf044f827",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.3.md": {
+    "mtime": 1787152775.2799776,
+    "ast_hash": "ac41aa80dde7f3ee32df9eb4c7000dc2",
     "semantic_hash": ""
   }
 }
