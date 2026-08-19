@@ -25,7 +25,7 @@ Este mod es un **fork de [Curios API](https://www.curseforge.com/minecraft/mc-mo
 - Clases: prefijo `Curios*` → `RegaliaSlotsApi*`
 - Assets/data: `assets/curios/`, `data/curios/` → `assets/regalia_slots_api/`, `data/regalia_slots_api/`
 
-**Atribución obligatoria** (requisito LGPL, no eliminar): créditos a TheIllusiveC4 en `README.md`, `docs/curseforge/project_description.md` y `neoforge.mods.toml` (campo `credits`). Los ficheros `COPYING`/`COPYING.LESSER`/`LICENSE` (texto LGPL) se conservan intactos.
+**Atribución obligatoria** (requisito LGPL, no eliminar): créditos a TheIllusiveC4 en `README.md`, `docs/curseforge/project_description.md` y `neoforge.mods.toml` (campo `credits`, `license`). `COPYING` (texto GPL) y `LICENSE` (resumen corto) se eliminaron a petición del usuario (2026-08-19) por no ser propios — se conserva únicamente `COPYING.LESSER` (texto de la LGPL en sí, el mínimo que exige la licencia), enlazado desde `README.md` y empaquetado en el JAR (`sourcesJar`/`jar` en `build.gradle`).
 
 **Build propio**: a diferencia del resto de mods del grupo (que usan la plantilla estándar de `net.neoforged.moddev` con claves `mod_version`/`mod_group_id`/`neo_version` en `gradle.properties`), este fork **conserva el sistema de build original de Curios** (claves `version`/`group`/`mod_id`/`neoforge_version`, generación de `neoforge.mods.toml` vía `generateModMetadata` con plantilla en `src/main/templates/`). No forzar la plantilla genérica sobre este build — respeta la arquitectura original para minimizar riesgo de romper la compilación.
 

@@ -102,16 +102,12 @@ test {
 }
 
 sourcesJar {
-    from(rootProject.file("LICENSE"))
-    from(rootProject.file("COPYING"))
     from(rootProject.file("COPYING.LESSER"))
     from(rootProject.file("README.md"))
     from(rootProject.file("CHANGELOG.md"))
 }
 
 jar {
-    from(rootProject.file("LICENSE"))
-    from(rootProject.file("COPYING"))
     from(rootProject.file("COPYING.LESSER"))
     from(rootProject.file("README.md"))
     from(rootProject.file("CHANGELOG.md"))
