@@ -1,0 +1,38 @@
+# Regalia Slots API
+
+## Overview
+
+Regalia Slots API is a flexible and expandable accessory/equipment API for users and developers. It provides functionality for developers to add extra accessory/equipment slots in a convenient and compatible manner, as well as giving users the ability to configure these slots to their preferences. By default, Regalia Slots API does not add any content except for an inventory GUI. There are no slots and only a couple of items, available through the Creative menu and primarily serving as examples for developers to use when coding their own integration.
+
+## Features
+
+* **Expandable equipment slots through a central library.** New equipment slots can be made and managed easily through an identifier registry. Identical identifiers will be merged together to avoid functional redundancies and provide maximum compatibility to potential items, while unique identifiers can still be used to mark special types when appropriate.
+* **Slots are only made on-demand.** There are no slots included by default, all slots are created only as needed. This reduces instances where one or more superfluous slots are present without any suitable items to go into the slot.
+* **Slots are completely customizable and manipulable.** Slots can have custom backgrounds, different sizes, and can even be disabled or hidden by default. Developers can access functions to enable/disable a player's slots or add/remove a certain number of slots of a given type.
+* **Flexible item-to-slot relations using the vanilla tag system.** Potential curios are selected through the vanilla tag system — categorizing items into slot types is as easy as creating a `.json` file in `data/regalia_slots_api/tags`. Items can be categorized into as many slot types as needed, and these settings can be overridden entirely.
+* **Complete integration with other inventory mechanics.** Mending and Curses work with all applicable items equipped in the accessory slots.
+* **Accessible from a single GUI.** Regalia Slots API comes with its own GUI accessible from the inventory that shows all of the available slots to a player. Developers can still provide their own GUIs for their mod-specific slots if they want.
+
+## Adding to Your Project
+
+```gradle
+repositories {
+    maven {
+        name = "RegaliaSlotsApi"
+        url = uri("https://gitlab.com/api/v4/projects/<project-id>/packages/maven")
+    }
+}
+
+dependencies {
+    runtimeOnly "com.skd.regaliaslotsapi:regalia_slots_api-neoforge:${version}"
+    compileOnly "com.skd.regaliaslotsapi:regalia_slots_api-neoforge:${version}:api"
+}
+```
+
+Replace `${version}` with the version of Regalia Slots API that you want to use.
+
+## Credits & License
+
+Regalia Slots API is a fork of [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios) by [TheIllusiveC4](https://github.com/TheIllusiveC4), ported and rebranded for NeoForge 26.2 / Minecraft 26.2. All credit for the original design and implementation goes to the original author.
+
+Licensed under [LGPL-3.0-or-later](COPYING.LESSER), same as the upstream project.

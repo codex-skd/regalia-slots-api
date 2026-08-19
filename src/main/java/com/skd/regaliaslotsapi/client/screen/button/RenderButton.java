@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2018-2024 C4
+ *
+ * This file is part of RegaliaSlotsApi, a mod made for Minecraft.
+ *
+ * RegaliaSlotsApi is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RegaliaSlotsApi is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with RegaliaSlotsApi.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+
+package com.skd.regaliaslotsapi.client.screen.button;
+
+import javax.annotation.Nonnull;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.ImageButton;
+import net.minecraft.client.gui.components.WidgetSprites;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.resources.Identifier;
+import com.skd.regaliaslotsapi.common.inventory.CurioSlot;
+
+public class RenderButton extends ImageButton implements IRegaliaSlotsApiWidget {
+
+  public static final WidgetSprites BUTTON_SPRITES = new WidgetSprites(
+      Identifier.withDefaultNamespace("recipe_book/filter_enabled"),
+      Identifier.withDefaultNamespace("recipe_book/filter_enabled_highlighted")
+  );
+  private final Identifier resourceLocation;
+  private final int yTexStart;
+  private final int xTexStart;
+  private final CurioSlot slot;
+
+  public RenderButton(CurioSlot slot, int xIn, int yIn, int widthIn, int heightIn, int xTexStartIn,
+                      int yTexStartIn, Identifier resourceLocationIn,
+                      OnPress onPressIn) {
+    super(xIn, yIn, widthIn, heightIn, BUTTON_SPRITES, onPressIn);
+    this.resourceLocation = resourceLocationIn;
+    this.yTexStart = yTexStartIn;
+    this.xTexStart = xTexStartIn;
+    this.slot = slot;
+  }
+
+  @Override
+  public void extractContents(@Nonnull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY,
+                           float partialTicks) {
+    // NO-OP
+  }
+
+  public void renderButtonOverlay(@Nonnull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY,
+                                  float partialTicks) {
+    int j = this.xTexStart;
+
+    if (!slot.getRenderStatus()) {
+      j += 8;
+    }
+    guiGraphics.blit(RenderPipelines.GUI_TEXTURED, this.resourceLocation, this.getX(), this.getY(),
+                     (float) j, (float) this.yTexStart, this.width, this.height, 256, 256);
+  }
+}

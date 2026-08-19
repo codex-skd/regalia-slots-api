@@ -1,0 +1,54 @@
+image: alpine:latest
+
+variables:
+  GIT_DEPTH: 0
+
+stages:
+  - publish
+
+publish-public:
+  stage: publish
+  only:
+    - /^minecraft\/.*\/.*\/production$/
+  except:
+    - main
+  script:
+    - apk add --no-cache git
+    - git config user.email "ci@mods-minecraft.dev"
+    - git config user.name "Mods Minecraft CI"
+
+    # Derive main branch: minecraft/X/N/production → minecraft/X/N/main
+    - MAIN_BRANCH=$(echo "$CI_COMMIT_BRANCH" | sed 's|/production$|/main|')
+    - echo "Publishing to $MAIN_BRANCH"
+
+    # Fetch main branch. Fail if it doesn't exist — the agent must create it manually.
+    - |
+      if ! git fetch origin "$MAIN_BRANCH" 2>/dev/null; then
+        echo "ERROR: $MAIN_BRANCH does not exist. Create it from production first."
+        exit 1
+      fi
+    - git checkout "$MAIN_BRANCH"
+
+    # Clean and copy only public files from production
+    - git rm -rf --ignore-unmatch --quiet . 2>/dev/null || true
+
+    # Required files (must exist in all mods)
+    - git checkout "$CI_COMMIT_SHA" -- src/ build.gradle settings.gradle gradle.properties gradlew gradlew.bat .gitignore README.md CHANGELOG.md
+
+    # Optional files (may not exist in some mods)
+    - git checkout "$CI_COMMIT_SHA" -- libs/ 2>/dev/null || true
+
+    # Sanitize secrets in gradle.properties
+    - sed -i 's/^mod_version=.*/mod_version=0.0.0/' gradle.properties
+    - sed -i 's/^mod_group_id=.*/mod_group_id=com\.skd\.placeholder/' gradle.properties
+    - sed -i 's/^mod_curseforge_project_id=.*/mod_curseforge_project_id=/' gradle.properties
+
+    # Commit and force push to the main branch
+    - git add -A
+    - |
+      if ! git diff --cached --quiet; then
+        git commit -m "chore: sync public code from ${CI_COMMIT_SHORT_SHA}"
+        git push --force "https://oauth2:${GITLAB_PUSH_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" HEAD:"$MAIN_BRANCH"
+      else
+        echo "No changes to publish"
+      fi

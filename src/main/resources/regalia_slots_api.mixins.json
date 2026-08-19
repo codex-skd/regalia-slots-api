@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.skd.regaliaslotsapi.mixin.core",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AccessorEntity",
+    "MixinApplyBonusCount",
+    "MixinRegaliaSlotsApiTriggersEquip",
+    "MixinEnchantedCountIncreaseFunction",
+    "MixinEntitySelectorOptions",
+    "MixinInventory",
+    "MixinLivingEntity",
+    "MixinNbtPredicate",
+    "MixinPiglinAi",
+    "MixinPowderSnowBlock",
+    "MixinV1460"
+  ],
+  "minVersion": "0.8"
+}

@@ -1,0 +1,114 @@
+/*
+ * Copyright (c) 2018-2024 C4
+ *
+ * This file is part of RegaliaSlotsApi, a mod made for Minecraft.
+ *
+ * RegaliaSlotsApi is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RegaliaSlotsApi is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with RegaliaSlotsApi.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+
+package com.skd.regaliaslotsapi.common.util;
+
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import java.util.Optional;
+import javax.annotation.Nonnull;
+import net.minecraft.advancements.predicates.ContextAwarePredicate;
+import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.advancements.predicates.LocationPredicate;
+import net.minecraft.advancements.predicates.entity.EntityPredicate;
+import net.minecraft.advancements.triggers.SimpleCriterionTrigger;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
+import com.skd.regaliaslotsapi.api.SlotContext;
+import com.skd.regaliaslotsapi.api.SlotPredicate;
+
+/**
+ * This should be triggered whenever player successfully equips any item in their curios slot. In
+ * theory, the item may not necessarily be valid for slot or have ICurio capability attached to it
+ * at all, but that is mostly unimportant under normal circumstances.
+ * <p>
+ * Current implementation allows to perform item and location tests in criteria.
+ */
+
+public class EquipCurioTrigger extends SimpleCriterionTrigger<EquipCurioTrigger.TriggerInstance> {
+
+  public static final EquipCurioTrigger INSTANCE = new EquipCurioTrigger();
+
+  @Nonnull
+  @Override
+  public Codec<TriggerInstance> codec() {
+    return TriggerInstance.CODEC;
+  }
+
+  public LootContext getLootContext(ServerPlayer serverPlayer, ItemStack stack) {
+    LootParams lootparams = new LootParams.Builder(serverPlayer.level())
+        .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(serverPlayer.blockPosition()))
+        .withParameter(LootContextParams.THIS_ENTITY, serverPlayer)
+        .withParameter(LootContextParams.BLOCK_STATE, serverPlayer.getBlockStateOn())
+        .withParameter(LootContextParams.TOOL, stack)
+        .create(LootContextParamSets.ADVANCEMENT_LOCATION);
+    return new LootContext.Builder(lootparams).create(Optional.empty());
+  }
+
+  public void trigger(ServerPlayer serverPlayer, ItemStack stack) {
+    LootContext lootcontext = this.getLootContext(serverPlayer, stack);
+    this.trigger(serverPlayer, instance -> instance.matches(null, stack, lootcontext));
+  }
+
+  public void trigger(SlotContext slotContext, ServerPlayer serverPlayer, ItemStack stack) {
+    LootContext lootcontext = this.getLootContext(serverPlayer, stack);
+    this.trigger(serverPlayer, instance -> instance.matches(slotContext, stack, lootcontext));
+  }
+
+  public record TriggerInstance(Optional<ContextAwarePredicate> player,
+                                Optional<ItemPredicate> item,
+                                Optional<LocationPredicate> location,
+                                Optional<SlotPredicate> slot)
+      implements SimpleInstance {
+    public static final Codec<TriggerInstance> CODEC = RecordCodecBuilder.create(
+        instance -> instance.group(
+                EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player")
+                    .forGetter(TriggerInstance::player),
+                ItemPredicate.CODEC.optionalFieldOf("item")
+                    .forGetter(TriggerInstance::item),
+                LocationPredicate.CODEC.optionalFieldOf("location").forGetter(
+                    TriggerInstance::location),
+                SlotPredicate.CODEC.optionalFieldOf("curios:slot")
+                    .forGetter(TriggerInstance::slot)
+            )
+            .apply(instance, TriggerInstance::new)
+    );
+
+    public boolean matches(SlotContext slotContext, ItemStack stack, LootContext lootContext) {
+      Vec3 vec3 = lootContext.getParameter(LootContextParams.ORIGIN);
+
+      if (slotContext != null
+          && this.slot().map(slotPredicate -> !slotPredicate.matches(slotContext)).orElse(false)) {
+        return false;
+      }
+
+      if (this.location.isEmpty()
+          || this.location.get().matches(lootContext.getLevel(), vec3.x, vec3.y, vec3.z)) {
+        return this.item.isEmpty() || this.item.get().test(stack);
+      }
+      return false;
+    }
+  }
+}
