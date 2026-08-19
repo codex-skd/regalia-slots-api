@@ -28,3 +28,37 @@ logoBlur=false
     side="BOTH"
 [modproperties.${mod_id}]
     catalogueImageIcon="${mod_id}_icon.png"
+
+# Second logical mod declared in this same jar, under the real Curios mod id, so that
+# third-party mods hard-coded against Curios (ModList.isLoaded("curios") + the
+# top.theillusivec4.curios.api.* package) recognize and interoperate with this mod's slots
+# without the user installing the real Curios mod. See com.skd.regaliaslotsapi.compat.curios
+# (CuriosCompatMod and friends) for the runtime bridge backing this entry.
+#
+# KNOWN LIMITATION: if the real Curios mod is ever added to this instance alongside
+# regalia_slots_api, NeoForge will refuse to load due to the duplicate mod id "curios" - this is
+# intentional and not silently worked around. Curios and this compatibility layer are mutually
+# exclusive; remove one before adding the other.
+#
+# Version below mirrors the vendored Curios source this compat layer was built against
+# (lib_ext/Curios-26.x, version 16.0.0+26.2) - update it if that reference source is updated.
+[[mods]]
+    modId="curios"
+    version="16.0.0+26.2"
+    displayName="${mod_name} (Curios compatibility)"
+    displayURL="${sources_url}"
+    authors="${mod_author}"
+    description='''Curios API compatibility layer provided by ${mod_name}, a fork of Curios API by TheIllusiveC4. Not the real Curios mod.'''
+    credits="Fork of Curios API by TheIllusiveC4 (https://www.curseforge.com/minecraft/mc-mods/curios), licensed LGPL-3.0-or-later."
+[[dependencies.curios]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neoforge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.curios]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
