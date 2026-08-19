@@ -545,7 +545,7 @@
     "semantic_hash": "054053569cbb2cb4d6f2201dce3431cb"
   },
   "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiExtensions.java": {
-    "mtime": 1787136728.0145333,
+    "mtime": 1787163939.7890985,
     "ast_hash": "cb39976bd7872773d3af90d677aef0a4",
     "semantic_hash": "cb39976bd7872773d3af90d677aef0a4"
   },
@@ -555,12 +555,12 @@
     "semantic_hash": "b9b5c4efaa691be6928a195fe2fea102"
   },
   "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiRegistry.java": {
-    "mtime": 1787136728.0356085,
+    "mtime": 1787163804.8883526,
     "ast_hash": "2142141668428411c6f615e7b722362e",
     "semantic_hash": "2142141668428411c6f615e7b722362e"
   },
   "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiSlots.java": {
-    "mtime": 1787136728.0504909,
+    "mtime": 1787163883.4328747,
     "ast_hash": "e9254fb1e70a99acd6e499c9b2db5bf4",
     "semantic_hash": "e9254fb1e70a99acd6e499c9b2db5bf4"
   },
@@ -940,8 +940,8 @@
     "semantic_hash": ""
   },
   "CHANGELOG.md": {
-    "mtime": 1787152770.050542,
-    "ast_hash": "175c6556f108ea639516e4aaebcfca15",
+    "mtime": 1787165347.6351886,
+    "ast_hash": "b97b0c4e118c38b30ba93f32b5d7795d",
     "semantic_hash": ""
   },
   "README.md": {
@@ -955,8 +955,8 @@
     "semantic_hash": ""
   },
   "docs/WORKFLOW_REGALIA_SLOTS_API_26-2.md": {
-    "mtime": 1787152375.759845,
-    "ast_hash": "4c368f47da74473de191c71fdc591263",
+    "mtime": 1787165340.7685733,
+    "ast_hash": "32498b69700179618b324a815d65ea42",
     "semantic_hash": ""
   },
   "docs/curseforge/project_description.md": {
@@ -1202,6 +1202,311 @@
   "docs/curseforge/versions/0.0.0-beta.3.md": {
     "mtime": 1787152775.2799776,
     "ast_hash": "ac41aa80dde7f3ee32df9eb4c7000dc2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosCodecsAdapter.java": {
+    "mtime": 1787164650.71648,
+    "ast_hash": "694f16e6ae38ba698842904f1e038be9",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosCompatMod.java": {
+    "mtime": 1787164572.324788,
+    "ast_hash": "411613bbeabaede00b5d767ba70bff4c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosExtensionsAdapter.java": {
+    "mtime": 1787164496.7337964,
+    "ast_hash": "fec918b9d264b4d34ceaa9460b1d4dc3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosItemHandlerAdapter.java": {
+    "mtime": 1787164348.0813823,
+    "ast_hash": "77f3373c79a2a31cd0d28bab183e23d2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosNetworkAdapter.java": {
+    "mtime": 1787164530.7979732,
+    "ast_hash": "acbae5779bd38c87eb9a12d704a82c44",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosRegistryAdapter.java": {
+    "mtime": 1787164553.7271154,
+    "ast_hash": "3087e0106f5d698ddac3916eeeb7d3f8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosSlotsAdapter.java": {
+    "mtime": 1787164480.015269,
+    "ast_hash": "8dd6e75dc19fa1bebbee3606b5f004a7",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosTypeBridge.java": {
+    "mtime": 1787164267.4544532,
+    "ast_hash": "3cfed5ef66ae5912281c45f2ba462f8a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/DynamicStackHandlerAdapter.java": {
+    "mtime": 1787164302.9075174,
+    "ast_hash": "c8ea0e36590d510a845b796d9093bc8d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/SlotTypeAdapter.java": {
+    "mtime": 1787164277.5437326,
+    "ast_hash": "d2590ac957a810e8036fec91c9f984d9",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/StacksHandlerAdapter.java": {
+    "mtime": 1787164316.7375786,
+    "ast_hash": "a94c2aaa6d59eafb028e504cc0cc0925",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CurioAttributeModifiers.java": {
+    "mtime": 1787163705.0707152,
+    "ast_hash": "89a394751bfeae23e7385cfdebf22005",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosApi.java": {
+    "mtime": 1787163705.0383625,
+    "ast_hash": "5020771096a0dc3921cb7edd8a71387d",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosCapability.java": {
+    "mtime": 1787163705.0722556,
+    "ast_hash": "840b867506c36e4b04b9d1912d1e3228",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosDataComponents.java": {
+    "mtime": 1787163705.0739312,
+    "ast_hash": "2fc81f19803ff44fc2dfc833f0b01363",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosDataProvider.java": {
+    "mtime": 1787163705.0739312,
+    "ast_hash": "c568b5f15d0fa2d6cef01331ec338787",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosResources.java": {
+    "mtime": 1787163705.075474,
+    "ast_hash": "2bcd05e8f9fcb4a49ca0153dd9987a3d",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosSlotTypes.java": {
+    "mtime": 1787163705.0764773,
+    "ast_hash": "eac2a29c6647a03b62c92197678a412b",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosTags.java": {
+    "mtime": 1787163705.0769832,
+    "ast_hash": "1a2c2e37d711e77a4b135701ae2de076",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosTooltip.java": {
+    "mtime": 1787163705.0779865,
+    "ast_hash": "9974617361ccf71039d6914dd4a698f2",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/CuriosTriggers.java": {
+    "mtime": 1787163705.078492,
+    "ast_hash": "ad040c9098eed7d4dcd3e2b4c536127d",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/SlotAttribute.java": {
+    "mtime": 1787163705.0547822,
+    "ast_hash": "58405571fab48556a9eb42d8577a509e",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/SlotContext.java": {
+    "mtime": 1787163705.0563316,
+    "ast_hash": "e3fc878324653388abb46ab0e84c8708",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/SlotPredicate.java": {
+    "mtime": 1787163705.0563316,
+    "ast_hash": "4fe74d1f81c72d05138284aad74de633",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/SlotResult.java": {
+    "mtime": 1787163705.0579572,
+    "ast_hash": "ad4150b3ec92c36032c671afddb03081",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/client/CuriosRendererRegistry.java": {
+    "mtime": 1787163705.0378568,
+    "ast_hash": "ba58d97a724041b0a5cf447e5defdbc4",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/client/ICurioRenderer.java": {
+    "mtime": 1787163705.0368524,
+    "ast_hash": "7802e0f4dad9c342e3d719cd081ac368",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/client/ICuriosScreen.java": {
+    "mtime": 1787163705.0368524,
+    "ast_hash": "04a3ce36db8a06109a9a15ddf600b07c",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/common/CuriosCommonHooks.java": {
+    "mtime": 1787163705.0620017,
+    "ast_hash": "d7483a93b35bfaa96454ef8d230e74e3",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/common/DropRule.java": {
+    "mtime": 1787163705.0594666,
+    "ast_hash": "14a74a53fdc980113237079633360e10",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/common/inventory/CuriosResourceHandler.java": {
+    "mtime": 1787163705.063538,
+    "ast_hash": "18f2e9d38a9a369769bdf2d0697727c3",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/common/loot/SetCurioAttributesFunction.java": {
+    "mtime": 1787163705.0604773,
+    "ast_hash": "4c430bfb8031e4258f0fcd0165d35596",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/common/slot/SlotTypePredicate.java": {
+    "mtime": 1787163705.0707152,
+    "ast_hash": "3d47317209249496bc594a88d2474e76",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/CurioAttributeModifierEvent.java": {
+    "mtime": 1787163705.088273,
+    "ast_hash": "3b4777752623c2a38e0d6c38d777b6be",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/CurioCanEquipEvent.java": {
+    "mtime": 1787163705.0913017,
+    "ast_hash": "835e24e9af45613ce6c6957d6b7543b8",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/CurioCanUnequipEvent.java": {
+    "mtime": 1787163705.0800033,
+    "ast_hash": "902f6debb71904050577886000f01bd6",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/CurioChangeEvent.java": {
+    "mtime": 1787163705.0861535,
+    "ast_hash": "6463ac5f54236535e535d0949452fa2c",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/CurioDropsEvent.java": {
+    "mtime": 1787163705.091809,
+    "ast_hash": "ac0cc781cfeed09b52456568c2e4a182",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/DropRulesEvent.java": {
+    "mtime": 1787163705.0948834,
+    "ast_hash": "1a4534852a3d75c0f1dd7a30f9f69ae0",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/event/SlotModifiersUpdatedEvent.java": {
+    "mtime": 1787163705.1078808,
+    "ast_hash": "f9d7f12eb88bc3e4c18121b264cd2019",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/extensions/ICurioSlotExtension.java": {
+    "mtime": 1787163705.109943,
+    "ast_hash": "d5c9271d3266c0a98d02da43652d2a09",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/extensions/RegisterCuriosExtensionsEvent.java": {
+    "mtime": 1787163705.109943,
+    "ast_hash": "a53cd10804b8adf5c3df174ecd788ec4",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/CuriosClientServices.java": {
+    "mtime": 1787163705.0547822,
+    "ast_hash": "be00a644d37b303bc24ac241ed467749",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/CuriosServices.java": {
+    "mtime": 1787163705.0398765,
+    "ast_hash": "7cc5c0d1c089a27923cc3171abd31327",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/services/ICuriosCodecs.java": {
+    "mtime": 1787163705.0414124,
+    "ast_hash": "7d8ed881ea3a45502d877527cd8a0ab2",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/services/ICuriosExtensions.java": {
+    "mtime": 1787163705.043975,
+    "ast_hash": "bed9f3d0de96966d886391c41f817cd2",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/services/ICuriosNetwork.java": {
+    "mtime": 1787163705.0455475,
+    "ast_hash": "994ba32b948ff82566bf14c9c4fef45b",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/services/ICuriosRegistry.java": {
+    "mtime": 1787163705.0486078,
+    "ast_hash": "f536972d3c486badf262b36e786c4af0",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/services/ICuriosSlots.java": {
+    "mtime": 1787163705.042418,
+    "ast_hash": "10a64da2c8ff269eabf0eddcf4ca01f4",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/internal/services/client/ICuriosClientExtensions.java": {
+    "mtime": 1787163705.043975,
+    "ast_hash": "05d6d69ce3603848e272d6d7e80aabc5",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/ICurioSlot.java": {
+    "mtime": 1787163705.120251,
+    "ast_hash": "e9297c2c58d9e6d39bcae8657c56389e",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/ICuriosMenu.java": {
+    "mtime": 1787163705.1135175,
+    "ast_hash": "74e6e385b019ad442a77b16e9262c741",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/ISlotType.java": {
+    "mtime": 1787163705.1217685,
+    "ast_hash": "b804579c08499ce310d4c452d5a728fe",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/capability/ICurio.java": {
+    "mtime": 1787163705.1150622,
+    "ast_hash": "7f94fb80df7291fde6fe042476fa105f",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/capability/ICurioItem.java": {
+    "mtime": 1787163705.1166034,
+    "ast_hash": "65326f68d417377673d721bf9c2f722d",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/capability/ICuriosItemHandler.java": {
+    "mtime": 1787163705.1181297,
+    "ast_hash": "3d75047bd6d03e7c843d804747c8da2c",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/data/IEntitiesData.java": {
+    "mtime": 1787163705.111981,
+    "ast_hash": "e01bd01b1f1baaaea7cdf27c38bf8c3e",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/data/ISlotData.java": {
+    "mtime": 1787163705.111981,
+    "ast_hash": "65363079001ec23aa4d6e6a4e7172d4a",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/inventory/ICurioStacksHandler.java": {
+    "mtime": 1787163705.122771,
+    "ast_hash": "f8546c7b77785196eb12f386000aeac0",
+    "semantic_hash": ""
+  },
+  "src/main/java/top/theillusivec4/curios/api/type/inventory/IDynamicStackHandler.java": {
+    "mtime": 1787163705.1232762,
+    "ast_hash": "e32923b8438e8ba8c69b693bd04b0e8b",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.4.md": {
+    "mtime": 1787165355.5530622,
+    "ast_hash": "b14e27ebe9c4e594d790a33387bce9ea",
     "semantic_hash": ""
   }
 }
