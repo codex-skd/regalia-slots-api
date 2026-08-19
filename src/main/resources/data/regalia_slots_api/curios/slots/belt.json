@@ -1,5 +1,5 @@
 {
   "order": 180,
-  "icon": "curios:slot/empty_belt_slot",
-  "validators": ["curios:tag"]
+  "icon": "regalia_slots_api:slot/empty_belt_slot",
+  "validators": ["regalia_slots_api:tag"]
 }
