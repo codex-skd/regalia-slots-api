@@ -2,7 +2,7 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
-## [0.0.0-beta.1] - Sin publicar
+## [0.0.0-beta.1] - 2026-08-19
 
 ### Añadido
 
