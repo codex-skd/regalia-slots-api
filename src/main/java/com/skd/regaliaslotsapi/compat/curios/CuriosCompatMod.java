@@ -10,9 +10,13 @@ import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiCapability;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApiResources;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApiTags;
 import com.skd.regaliaslotsapi.api.internal.RegaliaSlotsApiServices;
 import com.skd.regaliaslotsapi.api.type.capability.IRegaliaSlotsApiItemHandler;
 
@@ -48,7 +52,37 @@ public class CuriosCompatMod {
   public CuriosCompatMod(IEventBus eventBus, ModContainer modContainer) {
     DATA_COMPONENTS.register(eventBus);
     eventBus.addListener(this::registerCaps);
+    overrideTagPredicate();
     top.theillusivec4.curios.api.CuriosResources.LOG.info("Curios API compatibility layer active");
+  }
+
+  /**
+   * All of Regalia's own slot definitions (back.json, belt.json, ...) use the
+   * "regalia_slots_api:tag" validator, which by default only accepts items in the
+   * regalia_slots_api:&lt;slotId&gt; or regalia_slots_api:curio tags. Third-party mods that ship
+   * Curios integration (e.g. Sophisticated Backpacks' data/curios/tags/item/back.json) tag their
+   * items under the curios: namespace instead, so without this override those items are never
+   * recognized as valid for any slot even though the slot itself and the entity assignment
+   * (data/&lt;namespace&gt;/curios/entities/*.json) are read correctly by Regalia's own existing
+   * data loader (RegaliaSlotsApiSlotResources kept folder="curios", unrenamed, so it already picks
+   * up third-party curios/ datapack files).
+   * <p>
+   * This re-registers the same "regalia_slots_api:tag" predicate id, so it runs after Regalia's
+   * own default registration (accessing RegaliaSlotsApiServices.SLOTS triggers class init of
+   * RegaliaSlotsApiSlots first) and simply widens it - no core file is modified.
+   */
+  private static void overrideTagPredicate() {
+    RegaliaSlotsApiServices.SLOTS.registerPredicate(
+        RegaliaSlotsApiResources.resource("tag"),
+        (slotContext, stack) -> {
+          String id = slotContext.identifier();
+          TagKey<net.minecraft.world.item.Item> regaliaTag =
+              ItemTags.create(RegaliaSlotsApiResources.resource(id));
+          TagKey<net.minecraft.world.item.Item> curiosTag =
+              ItemTags.create(top.theillusivec4.curios.api.CuriosResources.resource(id));
+          return stack.is(regaliaTag) || stack.is(RegaliaSlotsApiTags.CURIO)
+              || stack.is(curiosTag) || stack.is(top.theillusivec4.curios.api.CuriosTags.CURIO);
+        });
   }
 
   private void registerCaps(RegisterCapabilitiesEvent evt) {
