@@ -1,0 +1,932 @@
+{
+  "build.gradle": {
+    "mtime": 1787139822.3735275,
+    "ast_hash": "9d3991603dd9bc2c217953a30952391a",
+    "semantic_hash": "9d3991603dd9bc2c217953a30952391a"
+  },
+  "gradlew": {
+    "mtime": 1787132008.759182,
+    "ast_hash": "6fb879f157b4ed904c6849aa34bb4c24",
+    "semantic_hash": "6fb879f157b4ed904c6849aa34bb4c24"
+  },
+  "settings.gradle": {
+    "mtime": 1787132008.742901,
+    "ast_hash": "821e006dfe47b2b874e6dc70cc0398ba",
+    "semantic_hash": "821e006dfe47b2b874e6dc70cc0398ba"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/RegaliaSlotsApiCommonMod.java": {
+    "mtime": 1787136728.2630222,
+    "ast_hash": "82649339de33abdbf5d9fc466d5bca6f",
+    "semantic_hash": "82649339de33abdbf5d9fc466d5bca6f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/RegaliaSlotsApiConstants.java": {
+    "mtime": 1787136728.2813234,
+    "ast_hash": "2a18e282501d2ae5a9e4078073bd81e8",
+    "semantic_hash": "2a18e282501d2ae5a9e4078073bd81e8"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/CurioAttributeModifiers.java": {
+    "mtime": 1787136726.4266632,
+    "ast_hash": "45486193ffb2943e6b5f307c20ffde71",
+    "semantic_hash": "45486193ffb2943e6b5f307c20ffde71"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApi.java": {
+    "mtime": 1787136762.8472788,
+    "ast_hash": "d86da8bc9eb16397d42a9fb7e8813ff9",
+    "semantic_hash": "d86da8bc9eb16397d42a9fb7e8813ff9"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiCapability.java": {
+    "mtime": 1787136726.662853,
+    "ast_hash": "49cc3704005ba106fc233857fd586223",
+    "semantic_hash": "49cc3704005ba106fc233857fd586223"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiDataComponents.java": {
+    "mtime": 1787136726.677161,
+    "ast_hash": "20ebb808b73fb45a4ad43cc92becfb2b",
+    "semantic_hash": "20ebb808b73fb45a4ad43cc92becfb2b"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiDataProvider.java": {
+    "mtime": 1787136726.6939175,
+    "ast_hash": "52b0530a74954ea15a0abebe1aa1138d",
+    "semantic_hash": "52b0530a74954ea15a0abebe1aa1138d"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiResources.java": {
+    "mtime": 1787136762.9486785,
+    "ast_hash": "1c26485ea3bffacac3e7085640f523d8",
+    "semantic_hash": "1c26485ea3bffacac3e7085640f523d8"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiSlotTypes.java": {
+    "mtime": 1787136726.7291558,
+    "ast_hash": "e18be05f12671298d0966c6e6abc72f0",
+    "semantic_hash": "e18be05f12671298d0966c6e6abc72f0"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiTags.java": {
+    "mtime": 1787136726.7482278,
+    "ast_hash": "6a51655587fa987bde814df33f7f1dec",
+    "semantic_hash": "6a51655587fa987bde814df33f7f1dec"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiTooltip.java": {
+    "mtime": 1787136726.7641027,
+    "ast_hash": "c9d5798d7113a40aeebbfa65db7890cf",
+    "semantic_hash": "c9d5798d7113a40aeebbfa65db7890cf"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/RegaliaSlotsApiTriggers.java": {
+    "mtime": 1787136726.7822566,
+    "ast_hash": "20a921ea435bae47a3070a654be69fce",
+    "semantic_hash": "20a921ea435bae47a3070a654be69fce"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/SlotAttribute.java": {
+    "mtime": 1787136726.7990408,
+    "ast_hash": "d64cdd7493d7feedb3c66e7f14fe7887",
+    "semantic_hash": "d64cdd7493d7feedb3c66e7f14fe7887"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/SlotContext.java": {
+    "mtime": 1787136726.8198552,
+    "ast_hash": "9d491a0d4132f15a2f9893c1f411672c",
+    "semantic_hash": "9d491a0d4132f15a2f9893c1f411672c"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/SlotPredicate.java": {
+    "mtime": 1787136726.8384156,
+    "ast_hash": "ef2be951fac02b4cc61024565fb33b30",
+    "semantic_hash": "ef2be951fac02b4cc61024565fb33b30"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/SlotResult.java": {
+    "mtime": 1787136726.8558128,
+    "ast_hash": "25666e2cdb02dd2e43174cf221f40067",
+    "semantic_hash": "25666e2cdb02dd2e43174cf221f40067"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/client/ICurioRenderer.java": {
+    "mtime": 1787136726.322047,
+    "ast_hash": "e4d473e842817af0d0c89b509fbdfeab",
+    "semantic_hash": "e4d473e842817af0d0c89b509fbdfeab"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/client/IRegaliaSlotsApiScreen.java": {
+    "mtime": 1787136726.3421514,
+    "ast_hash": "baae43e98d31c6775d54df2fec356ce0",
+    "semantic_hash": "baae43e98d31c6775d54df2fec356ce0"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/client/RegaliaSlotsApiRendererRegistry.java": {
+    "mtime": 1787136726.3527312,
+    "ast_hash": "b442bc015cb5e904c81c1ca9fbbc939e",
+    "semantic_hash": "b442bc015cb5e904c81c1ca9fbbc939e"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/common/DropRule.java": {
+    "mtime": 1787136726.3649304,
+    "ast_hash": "48178f2d114dec3eebed0b2e210507a1",
+    "semantic_hash": "48178f2d114dec3eebed0b2e210507a1"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/common/RegaliaSlotsApiCommonHooks.java": {
+    "mtime": 1787136726.4008558,
+    "ast_hash": "1f22bdf79c064f32376e2a6ec0c1d824",
+    "semantic_hash": "1f22bdf79c064f32376e2a6ec0c1d824"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/common/inventory/RegaliaSlotsApiResourceHandler.java": {
+    "mtime": 1787136726.368062,
+    "ast_hash": "36f4e32113cef7e9c5c34635f3bcabf9",
+    "semantic_hash": "36f4e32113cef7e9c5c34635f3bcabf9"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/common/loot/SetCurioAttributesFunction.java": {
+    "mtime": 1787136726.382677,
+    "ast_hash": "d2eade63a3c54170438e2202e19f4ec6",
+    "semantic_hash": "d2eade63a3c54170438e2202e19f4ec6"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/common/slot/SlotTypePredicate.java": {
+    "mtime": 1787136726.4127872,
+    "ast_hash": "3e9e5a9075bf48b03bbf4c8a1cecdfb1",
+    "semantic_hash": "3e9e5a9075bf48b03bbf4c8a1cecdfb1"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/CurioAttributeModifierEvent.java": {
+    "mtime": 1787136726.4422376,
+    "ast_hash": "facb1b9bcbc02c8c54bde072502f903e",
+    "semantic_hash": "facb1b9bcbc02c8c54bde072502f903e"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/CurioCanEquipEvent.java": {
+    "mtime": 1787136726.4570937,
+    "ast_hash": "d05f388ce4477b2a96aa8377823a6ff3",
+    "semantic_hash": "d05f388ce4477b2a96aa8377823a6ff3"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/CurioCanUnequipEvent.java": {
+    "mtime": 1787136726.47197,
+    "ast_hash": "e20cb5de774d3c42bf12db5718c80aa2",
+    "semantic_hash": "e20cb5de774d3c42bf12db5718c80aa2"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/CurioChangeEvent.java": {
+    "mtime": 1787136726.4843004,
+    "ast_hash": "10e736f4f46e42b9bfc8a2fdfb6f55d9",
+    "semantic_hash": "10e736f4f46e42b9bfc8a2fdfb6f55d9"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/CurioDropsEvent.java": {
+    "mtime": 1787136726.4994946,
+    "ast_hash": "58e4e4b674ec860ed9580408ea641012",
+    "semantic_hash": "58e4e4b674ec860ed9580408ea641012"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/DropRulesEvent.java": {
+    "mtime": 1787136726.5146546,
+    "ast_hash": "8e2a26b74bc5634c1c31d56e91958b62",
+    "semantic_hash": "8e2a26b74bc5634c1c31d56e91958b62"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/event/SlotModifiersUpdatedEvent.java": {
+    "mtime": 1787136726.5248067,
+    "ast_hash": "39018828ea43be0c1ae7bbaf5e27970f",
+    "semantic_hash": "39018828ea43be0c1ae7bbaf5e27970f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/extensions/ICurioSlotExtension.java": {
+    "mtime": 1787136726.5374238,
+    "ast_hash": "29ba6ab2967ede26ab530494441288be",
+    "semantic_hash": "29ba6ab2967ede26ab530494441288be"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/extensions/RegisterRegaliaSlotsApiExtensionsEvent.java": {
+    "mtime": 1787136726.5511045,
+    "ast_hash": "f42517fb326d7613442d04770cf0c367",
+    "semantic_hash": "f42517fb326d7613442d04770cf0c367"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/RegaliaSlotsApiClientServices.java": {
+    "mtime": 1787136726.562054,
+    "ast_hash": "8ddc25dcdc5f95e58e2e76a5dce58f43",
+    "semantic_hash": "8ddc25dcdc5f95e58e2e76a5dce58f43"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/RegaliaSlotsApiServices.java": {
+    "mtime": 1787136726.5716794,
+    "ast_hash": "6ec2da79eb75b30611c26940c61268b4",
+    "semantic_hash": "6ec2da79eb75b30611c26940c61268b4"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/services/IRegaliaSlotsApiCodecs.java": {
+    "mtime": 1787136726.5912323,
+    "ast_hash": "850dfe8b1abc90b7158780f11266173b",
+    "semantic_hash": "850dfe8b1abc90b7158780f11266173b"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/services/IRegaliaSlotsApiExtensions.java": {
+    "mtime": 1787136726.5984035,
+    "ast_hash": "5e91f4cf263e85d79c610a3664c47d73",
+    "semantic_hash": "5e91f4cf263e85d79c610a3664c47d73"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/services/IRegaliaSlotsApiNetwork.java": {
+    "mtime": 1787136726.610471,
+    "ast_hash": "64f7e39c2840000c398d4f9b79f59c12",
+    "semantic_hash": "64f7e39c2840000c398d4f9b79f59c12"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/services/IRegaliaSlotsApiRegistry.java": {
+    "mtime": 1787136726.6219862,
+    "ast_hash": "fe483001d3a94dc9888964ccb572ce6e",
+    "semantic_hash": "fe483001d3a94dc9888964ccb572ce6e"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/services/IRegaliaSlotsApiSlots.java": {
+    "mtime": 1787136726.6330585,
+    "ast_hash": "ec494a418dcf4ae0c40ae53574aee9d1",
+    "semantic_hash": "ec494a418dcf4ae0c40ae53574aee9d1"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/internal/services/client/IRegaliaSlotsApiClientExtensions.java": {
+    "mtime": 1787136726.580685,
+    "ast_hash": "4dae35984c91a9517f35e933b6ee74e5",
+    "semantic_hash": "4dae35984c91a9517f35e933b6ee74e5"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/ICurioSlot.java": {
+    "mtime": 1787136726.9533212,
+    "ast_hash": "74c5761ddd68f8117606de827c858843",
+    "semantic_hash": "74c5761ddd68f8117606de827c858843"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/IRegaliaSlotsApiMenu.java": {
+    "mtime": 1787136726.9692514,
+    "ast_hash": "150457c2c9c81c750bd303cfb209f82d",
+    "semantic_hash": "150457c2c9c81c750bd303cfb209f82d"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/ISlotType.java": {
+    "mtime": 1787136727.0106964,
+    "ast_hash": "97b3ef5d2bcec93d7e50d59fe3c0adae",
+    "semantic_hash": "97b3ef5d2bcec93d7e50d59fe3c0adae"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/capability/ICurio.java": {
+    "mtime": 1787136726.873441,
+    "ast_hash": "740543796f824ea99b62584364065279",
+    "semantic_hash": "740543796f824ea99b62584364065279"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/capability/ICurioItem.java": {
+    "mtime": 1787136726.8897896,
+    "ast_hash": "a50f77b4aa464a190c536de001654481",
+    "semantic_hash": "a50f77b4aa464a190c536de001654481"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/capability/IRegaliaSlotsApiItemHandler.java": {
+    "mtime": 1787136726.9088252,
+    "ast_hash": "9130649aca3107dac0f0a869647d632c",
+    "semantic_hash": "9130649aca3107dac0f0a869647d632c"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/data/IEntitiesData.java": {
+    "mtime": 1787136726.9226453,
+    "ast_hash": "705088b154e66bed9dfd862047e3648c",
+    "semantic_hash": "705088b154e66bed9dfd862047e3648c"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/data/ISlotData.java": {
+    "mtime": 1787136726.9395165,
+    "ast_hash": "4a7bdc92bd078f2325f95373c287a75a",
+    "semantic_hash": "4a7bdc92bd078f2325f95373c287a75a"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/inventory/ICurioStacksHandler.java": {
+    "mtime": 1787136726.9843063,
+    "ast_hash": "d2cfe2d56355d1629b9c7c406c6bdf11",
+    "semantic_hash": "d2cfe2d56355d1629b9c7c406c6bdf11"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/api/type/inventory/IDynamicStackHandler.java": {
+    "mtime": 1787136726.9986477,
+    "ast_hash": "e2820145c2516b4222662ce64186d9c9",
+    "semantic_hash": "e2820145c2516b4222662ce64186d9c9"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/RegaliaSlotsApiClientEvents.java": {
+    "mtime": 1787136727.0264533,
+    "ast_hash": "c46e587b284f09f697f200d50a75094f",
+    "semantic_hash": "c46e587b284f09f697f200d50a75094f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/RegaliaSlotsApiClientMod.java": {
+    "mtime": 1787136727.0460925,
+    "ast_hash": "8b1f92055e560384deb431b2eb136f58",
+    "semantic_hash": "8b1f92055e560384deb431b2eb136f58"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/RegaliaSlotsApiKeyMappings.java": {
+    "mtime": 1787136727.0645282,
+    "ast_hash": "ea591ebb925744b9056d5d8811d19241",
+    "semantic_hash": "ea591ebb925744b9056d5d8811d19241"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/RegaliaSlotsApiLayer.java": {
+    "mtime": 1787136727.0758808,
+    "ast_hash": "249be0fe5050ae29c8b7c756b1c4556f",
+    "semantic_hash": "249be0fe5050ae29c8b7c756b1c4556f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/RegaliaSlotsApiScreen.java": {
+    "mtime": 1787136727.146158,
+    "ast_hash": "d104d87b611b97ec49ff306b74f7b600",
+    "semantic_hash": "d104d87b611b97ec49ff306b74f7b600"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/RegaliaSlotsApiScreenEvents.java": {
+    "mtime": 1787136727.1595013,
+    "ast_hash": "f046fb86a7d80d84a9cc30093fe0e2cd",
+    "semantic_hash": "f046fb86a7d80d84a9cc30093fe0e2cd"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/button/CosmeticButton.java": {
+    "mtime": 1787136727.0883732,
+    "ast_hash": "19188d6b2882fb535a396a1b51d2c386",
+    "semantic_hash": "19188d6b2882fb535a396a1b51d2c386"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/button/IRegaliaSlotsApiWidget.java": {
+    "mtime": 1787136727.1009002,
+    "ast_hash": "ac72546a7b3f5f0163ff661c535d04f2",
+    "semantic_hash": "ac72546a7b3f5f0163ff661c535d04f2"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/button/PageButton.java": {
+    "mtime": 1787136727.1116426,
+    "ast_hash": "cae94c886e4394755f949d19ca9e1919",
+    "semantic_hash": "cae94c886e4394755f949d19ca9e1919"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/button/RegaliaSlotsApiButton.java": {
+    "mtime": 1787136727.1242843,
+    "ast_hash": "254195ac91a3b2bd169c46c56e2cccc9",
+    "semantic_hash": "254195ac91a3b2bd169c46c56e2cccc9"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/client/screen/button/RenderButton.java": {
+    "mtime": 1787136727.1359074,
+    "ast_hash": "ff3443c540371de2abfe67c05864eaa3",
+    "semantic_hash": "ff3443c540371de2abfe67c05864eaa3"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/RegaliaSlotsApiCommonEvents.java": {
+    "mtime": 1787136727.899245,
+    "ast_hash": "04fd6cb274836d8b6c2be4c105a9cfb0",
+    "semantic_hash": "04fd6cb274836d8b6c2be4c105a9cfb0"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/capability/CombinedRegaliaSlotsApiResourceHandler.java": {
+    "mtime": 1787136727.1706777,
+    "ast_hash": "fbef54dee467d4e5ce21d1b569402ced",
+    "semantic_hash": "fbef54dee467d4e5ce21d1b569402ced"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/capability/CurioInventory.java": {
+    "mtime": 1787136727.1818182,
+    "ast_hash": "be0b8c9ccfe3fdfd64fe59f0f102dae0",
+    "semantic_hash": "be0b8c9ccfe3fdfd64fe59f0f102dae0"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/capability/CurioInventoryCapability.java": {
+    "mtime": 1787136727.1937463,
+    "ast_hash": "e92279fc399374e205d0d142ea7cfdcc",
+    "semantic_hash": "e92279fc399374e205d0d142ea7cfdcc"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/capability/ItemizedRegaliaSlotsApiCapability.java": {
+    "mtime": 1787136727.2121341,
+    "ast_hash": "279da7272efc86dbaa0574eb3098aced",
+    "semantic_hash": "279da7272efc86dbaa0574eb3098aced"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/data/EntitiesData.java": {
+    "mtime": 1787136727.2282238,
+    "ast_hash": "2564116999cda0adafb54b6463f9818f",
+    "semantic_hash": "2564116999cda0adafb54b6463f9818f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/data/RegaliaSlotsApiSlotResources.java": {
+    "mtime": 1787136727.2503147,
+    "ast_hash": "887ea24851059cddf919ecd516044ad4",
+    "semantic_hash": "887ea24851059cddf919ecd516044ad4"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/data/SlotData.java": {
+    "mtime": 1787136727.2818284,
+    "ast_hash": "6df38df3ca43bcfd888c3963e0c88218",
+    "semantic_hash": "6df38df3ca43bcfd888c3963e0c88218"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/integration/RegaliaSlotsApiExclusionAreas.java": {
+    "mtime": 1787136727.3528757,
+    "ast_hash": "4258537e62c91ee68839074846b0398d",
+    "semantic_hash": "4258537e62c91ee68839074846b0398d"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/integration/RegaliaSlotsApiIntegrations.java": {
+    "mtime": 1787136727.363099,
+    "ast_hash": "6413d2ad78b979f4e72d02360d8edb61",
+    "semantic_hash": "6413d2ad78b979f4e72d02360d8edb61"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/integration/jei/RegaliaSlotsApiContainerHandler.java": {
+    "mtime": 1787136727.3123121,
+    "ast_hash": "f05b0324e3fdbad1643c2bb2842ea4ba",
+    "semantic_hash": "f05b0324e3fdbad1643c2bb2842ea4ba"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/integration/jei/RegaliaSlotsApiJeiPlugin.java": {
+    "mtime": 1787136727.3346794,
+    "ast_hash": "f97591ba689dfe27d606f627571ce2ab",
+    "semantic_hash": "f97591ba689dfe27d606f627571ce2ab"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/integration/rei/RegaliaSlotsApiReiPlugin.java": {
+    "mtime": 1787136727.378773,
+    "ast_hash": "fb95cb10dc5dbe221ae7b80bfa63172c",
+    "semantic_hash": "fb95cb10dc5dbe221ae7b80bfa63172c"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/inventory/CurioSlot.java": {
+    "mtime": 1787136727.4208622,
+    "ast_hash": "fe036956007b80f9cc53d56123ce8dc6",
+    "semantic_hash": "fe036956007b80f9cc53d56123ce8dc6"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/inventory/CurioStacksHandler.java": {
+    "mtime": 1787136727.4429803,
+    "ast_hash": "395c1539dc22f13258db7aaed889c97e",
+    "semantic_hash": "395c1539dc22f13258db7aaed889c97e"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/inventory/DynamicStackHandler.java": {
+    "mtime": 1787136727.4747305,
+    "ast_hash": "e1860da1d33433515b0d201b04b17b3f",
+    "semantic_hash": "e1860da1d33433515b0d201b04b17b3f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/inventory/container/RegaliaSlotsApiMenu.java": {
+    "mtime": 1787136727.3931994,
+    "ast_hash": "1ed84e759ef4944c45a076c7db7f2618",
+    "semantic_hash": "1ed84e759ef4944c45a076c7db7f2618"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/inventory/container/RegaliaSlotsApiMenuProvider.java": {
+    "mtime": 1787136727.405224,
+    "ast_hash": "64cd627267aa5b11dc002fa0f3f1c8fd",
+    "semantic_hash": "64cd627267aa5b11dc002fa0f3f1c8fd"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/NetworkHandler.java": {
+    "mtime": 1787136727.6294515,
+    "ast_hash": "c7b74e39e56764c61cab2dc759d3123e",
+    "semantic_hash": "c7b74e39e56764c61cab2dc759d3123e"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/CPacketDestroy.java": {
+    "mtime": 1787136727.488305,
+    "ast_hash": "4fb5a3f87bd4aec740dfe960d97e23d8",
+    "semantic_hash": "4fb5a3f87bd4aec740dfe960d97e23d8"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/CPacketOpenRegaliaSlotsApi.java": {
+    "mtime": 1787136727.5038276,
+    "ast_hash": "b7dc3c1520dc92369f63c1ccf0038937",
+    "semantic_hash": "b7dc3c1520dc92369f63c1ccf0038937"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/CPacketOpenVanilla.java": {
+    "mtime": 1787136727.5322614,
+    "ast_hash": "88fb8b9c6b8503d354180cfbfab64f90",
+    "semantic_hash": "88fb8b9c6b8503d354180cfbfab64f90"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/CPacketPage.java": {
+    "mtime": 1787136727.5476494,
+    "ast_hash": "bf026b80778bb8f41bff087585aeb33a",
+    "semantic_hash": "bf026b80778bb8f41bff087585aeb33a"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/CPacketToggleCosmetics.java": {
+    "mtime": 1787136727.5630963,
+    "ast_hash": "f3bff3855b4a89941841f6b3a61520ed",
+    "semantic_hash": "f3bff3855b4a89941841f6b3a61520ed"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/CPacketToggleRender.java": {
+    "mtime": 1787136727.5804768,
+    "ast_hash": "bc1f0420003c117dfff437ca601658f0",
+    "semantic_hash": "bc1f0420003c117dfff437ca601658f0"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/RegaliaSlotsApiClientPackets.java": {
+    "mtime": 1787136727.597024,
+    "ast_hash": "34b868b4fdce14197712038811899d61",
+    "semantic_hash": "34b868b4fdce14197712038811899d61"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/client/RegaliaSlotsApiClientPayloadHandler.java": {
+    "mtime": 1787136727.612469,
+    "ast_hash": "5c3d17aa9b7986128d3f8b9737a1f9f2",
+    "semantic_hash": "5c3d17aa9b7986128d3f8b9737a1f9f2"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/RegaliaSlotsApiServerPayloadHandler.java": {
+    "mtime": 1787136727.6510787,
+    "ast_hash": "ffc8d7613aca139301611360bdc5c125",
+    "semantic_hash": "ffc8d7613aca139301611360bdc5c125"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/SPacketBreak.java": {
+    "mtime": 1787136727.692937,
+    "ast_hash": "e4211c53809811467f5d5ec79b191894",
+    "semantic_hash": "e4211c53809811467f5d5ec79b191894"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/SPacketGrabbedItem.java": {
+    "mtime": 1787136727.7180204,
+    "ast_hash": "71e57f9583cc354a3b6ecea5457ab5f8",
+    "semantic_hash": "71e57f9583cc354a3b6ecea5457ab5f8"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/SPacketPage.java": {
+    "mtime": 1787136727.7507138,
+    "ast_hash": "d845cc590f30548287a4b4dfd377768a",
+    "semantic_hash": "d845cc590f30548287a4b4dfd377768a"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/SPacketQuickMove.java": {
+    "mtime": 1787136727.7742193,
+    "ast_hash": "158fdcd4d9a12d0453b0aee12152880b",
+    "semantic_hash": "158fdcd4d9a12d0453b0aee12152880b"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/sync/SPacketSyncActiveState.java": {
+    "mtime": 1787136727.7977195,
+    "ast_hash": "2dd5453ce598300f08738c48f4a6df54",
+    "semantic_hash": "2dd5453ce598300f08738c48f4a6df54"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/sync/SPacketSyncData.java": {
+    "mtime": 1787136727.8258488,
+    "ast_hash": "14f10a2dbeb007e6a03950f350a7dbba",
+    "semantic_hash": "14f10a2dbeb007e6a03950f350a7dbba"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/sync/SPacketSyncModifiers.java": {
+    "mtime": 1787136727.8430834,
+    "ast_hash": "8fb07aab8bee19b23cb335a6121726ae",
+    "semantic_hash": "8fb07aab8bee19b23cb335a6121726ae"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/sync/SPacketSyncRegaliaSlotsApi.java": {
+    "mtime": 1787136727.8116968,
+    "ast_hash": "708c5bf1355e80529d807f739c8612af",
+    "semantic_hash": "708c5bf1355e80529d807f739c8612af"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/sync/SPacketSyncRender.java": {
+    "mtime": 1787136727.8607683,
+    "ast_hash": "8ff3074f40e92fca058a9a74885a4b49",
+    "semantic_hash": "8ff3074f40e92fca058a9a74885a4b49"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/network/server/sync/SPacketSyncStack.java": {
+    "mtime": 1787136727.8835738,
+    "ast_hash": "36541930710fc06687a9fb4c22b5ea77",
+    "semantic_hash": "36541930710fc06687a9fb4c22b5ea77"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/slot/SlotType.java": {
+    "mtime": 1787136727.9146936,
+    "ast_hash": "39d5efb20962de443f26a6b3ec717fc6",
+    "semantic_hash": "39d5efb20962de443f26a6b3ec717fc6"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/common/util/EquipCurioTrigger.java": {
+    "mtime": 1787136727.9317248,
+    "ast_hash": "16a16198e2e8909d1eb6b5d3c3cc9c56",
+    "semantic_hash": "16a16198e2e8909d1eb6b5d3c3cc9c56"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/config/RegaliaSlotsApiClientConfig.java": {
+    "mtime": 1787136727.9520595,
+    "ast_hash": "83cfe2e650f34d36b9d29494ed78712f",
+    "semantic_hash": "83cfe2e650f34d36b9d29494ed78712f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/config/RegaliaSlotsApiConfig.java": {
+    "mtime": 1787136727.9734077,
+    "ast_hash": "4e2f163a72aed27b06a7629eac06485f",
+    "semantic_hash": "4e2f163a72aed27b06a7629eac06485f"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiClientExtensions.java": {
+    "mtime": 1787136727.9866307,
+    "ast_hash": "a84c65efd01dddb986cc861f96aa0c26",
+    "semantic_hash": "a84c65efd01dddb986cc861f96aa0c26"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiCodecs.java": {
+    "mtime": 1787136728.001808,
+    "ast_hash": "054053569cbb2cb4d6f2201dce3431cb",
+    "semantic_hash": "054053569cbb2cb4d6f2201dce3431cb"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiExtensions.java": {
+    "mtime": 1787136728.0145333,
+    "ast_hash": "cb39976bd7872773d3af90d677aef0a4",
+    "semantic_hash": "cb39976bd7872773d3af90d677aef0a4"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiNetwork.java": {
+    "mtime": 1787136728.0284061,
+    "ast_hash": "b9b5c4efaa691be6928a195fe2fea102",
+    "semantic_hash": "b9b5c4efaa691be6928a195fe2fea102"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiRegistry.java": {
+    "mtime": 1787136728.0356085,
+    "ast_hash": "2142141668428411c6f615e7b722362e",
+    "semantic_hash": "2142141668428411c6f615e7b722362e"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiSlots.java": {
+    "mtime": 1787136728.0504909,
+    "ast_hash": "e9254fb1e70a99acd6e499c9b2db5bf4",
+    "semantic_hash": "e9254fb1e70a99acd6e499c9b2db5bf4"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/RegaliaSlotsApiCommonMixinHooks.java": {
+    "mtime": 1787136728.2353823,
+    "ast_hash": "08bd6e3929a8c8db59f8d8966cf6c643",
+    "semantic_hash": "08bd6e3929a8c8db59f8d8966cf6c643"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/AccessorEntity.java": {
+    "mtime": 1787136728.0655072,
+    "ast_hash": "a126573b551655c90bdb8718cef0aeee",
+    "semantic_hash": "a126573b551655c90bdb8718cef0aeee"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinApplyBonusCount.java": {
+    "mtime": 1787136728.076939,
+    "ast_hash": "4e7be274965e120467f63a5deb3d623c",
+    "semantic_hash": "4e7be274965e120467f63a5deb3d623c"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinEnchantedCountIncreaseFunction.java": {
+    "mtime": 1787136728.1066988,
+    "ast_hash": "af48fb4e6920b7a5757930a1d62a62af",
+    "semantic_hash": "af48fb4e6920b7a5757930a1d62a62af"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinEntitySelectorOptions.java": {
+    "mtime": 1787136728.1212687,
+    "ast_hash": "2c720af1e9a6e957779e4b304d57a395",
+    "semantic_hash": "2c720af1e9a6e957779e4b304d57a395"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinInventory.java": {
+    "mtime": 1787136728.1322157,
+    "ast_hash": "269e07131541789e9db57746bf60c4c7",
+    "semantic_hash": "269e07131541789e9db57746bf60c4c7"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinLivingEntity.java": {
+    "mtime": 1787136728.1518962,
+    "ast_hash": "58fefcc8a2aa6a99448e9da4251cdd6b",
+    "semantic_hash": "58fefcc8a2aa6a99448e9da4251cdd6b"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinNbtPredicate.java": {
+    "mtime": 1787136728.1671066,
+    "ast_hash": "23989f76b3c9dda2f7f3bdccff4d54ef",
+    "semantic_hash": "23989f76b3c9dda2f7f3bdccff4d54ef"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinPiglinAi.java": {
+    "mtime": 1787136728.1829963,
+    "ast_hash": "840825ce15bc1be494b541d016c6ccd6",
+    "semantic_hash": "840825ce15bc1be494b541d016c6ccd6"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinPowderSnowBlock.java": {
+    "mtime": 1787136728.2008967,
+    "ast_hash": "dc80f9d8c940afa229606073db526288",
+    "semantic_hash": "dc80f9d8c940afa229606073db526288"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinRegaliaSlotsApiTriggersEquip.java": {
+    "mtime": 1787136728.0894034,
+    "ast_hash": "16d2d9f3db22c6b9aef793c1c410aa2b",
+    "semantic_hash": "16d2d9f3db22c6b9aef793c1c410aa2b"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinV1460.java": {
+    "mtime": 1787136728.2171197,
+    "ast_hash": "f58832f21800f330c9594b7ff70830ba",
+    "semantic_hash": "f58832f21800f330c9594b7ff70830ba"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/server/command/CurioArgumentType.java": {
+    "mtime": 1787136728.2933016,
+    "ast_hash": "9c199d1fb2f5c1869a468d601b24ee63",
+    "semantic_hash": "9c199d1fb2f5c1869a468d601b24ee63"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/server/command/RegaliaSlotsApiCommand.java": {
+    "mtime": 1787136763.0108953,
+    "ast_hash": "78523b42a324581dfe02cb84f3303447",
+    "semantic_hash": "78523b42a324581dfe02cb84f3303447"
+  },
+  "src/main/java/com/skd/regaliaslotsapi/server/command/RegaliaSlotsApiSelectorOptions.java": {
+    "mtime": 1787136763.0904474,
+    "ast_hash": "c0f357f803aa04b5b068c57b0039527e",
+    "semantic_hash": "c0f357f803aa04b5b068c57b0039527e"
+  },
+  "src/main/resources/assets/minecraft/atlases/gui.json": {
+    "mtime": 1787132008.3481843,
+    "ast_hash": "eb0315e472d02e05be3b7f7afce48c52",
+    "semantic_hash": "eb0315e472d02e05be3b7f7afce48c52"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/de_de.json": {
+    "mtime": 1787137068.8465898,
+    "ast_hash": "e1a7ff3907e3605cbf9c3ac32e1204b8",
+    "semantic_hash": "e1a7ff3907e3605cbf9c3ac32e1204b8"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/en_us.json": {
+    "mtime": 1787137068.897626,
+    "ast_hash": "7fb2035da602c0a6a7d372f5811f0ac3",
+    "semantic_hash": "7fb2035da602c0a6a7d372f5811f0ac3"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/es_es.json": {
+    "mtime": 1787137068.9350872,
+    "ast_hash": "ec15889323c32a2382d5e2d7bd3ef29b",
+    "semantic_hash": "ec15889323c32a2382d5e2d7bd3ef29b"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/fr_fr.json": {
+    "mtime": 1787137068.9909606,
+    "ast_hash": "e5e319749f4d73cab4f65ff0a2045f79",
+    "semantic_hash": "e5e319749f4d73cab4f65ff0a2045f79"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/hu_hu.json": {
+    "mtime": 1787137069.0520523,
+    "ast_hash": "349e438163e9b19700b28398013b65e3",
+    "semantic_hash": "349e438163e9b19700b28398013b65e3"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/it_it.json": {
+    "mtime": 1787137069.0971673,
+    "ast_hash": "8b75d3a97a104c9dacfca57bf2372c49",
+    "semantic_hash": "8b75d3a97a104c9dacfca57bf2372c49"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/ja_jp.json": {
+    "mtime": 1787137069.1508794,
+    "ast_hash": "673f370b67f6fe6d407b3b1de6f5ed24",
+    "semantic_hash": "673f370b67f6fe6d407b3b1de6f5ed24"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/ko_kr.json": {
+    "mtime": 1787137069.2061865,
+    "ast_hash": "bdf75deeb8da02a60151d69736b49313",
+    "semantic_hash": "bdf75deeb8da02a60151d69736b49313"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/lzh.json": {
+    "mtime": 1787137069.3159885,
+    "ast_hash": "9198e1f2f79ddfed79b188a41ed794d2",
+    "semantic_hash": "9198e1f2f79ddfed79b188a41ed794d2"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/pl_pl.json": {
+    "mtime": 1787137069.367329,
+    "ast_hash": "08593b2d14919c1fa6366e354f993309",
+    "semantic_hash": "08593b2d14919c1fa6366e354f993309"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/pt_br.json": {
+    "mtime": 1787137069.4277847,
+    "ast_hash": "01c8081f0e9a179d4bef7b37b49873cd",
+    "semantic_hash": "01c8081f0e9a179d4bef7b37b49873cd"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/ru_ru.json": {
+    "mtime": 1787137069.4719732,
+    "ast_hash": "a4524882ff4d734817c91ab179d67ac2",
+    "semantic_hash": "a4524882ff4d734817c91ab179d67ac2"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/tok.json": {
+    "mtime": 1787137069.5322251,
+    "ast_hash": "637fa74c82636ddd5d0cfba068c0143e",
+    "semantic_hash": "637fa74c82636ddd5d0cfba068c0143e"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/tr_tr.json": {
+    "mtime": 1787137069.5801396,
+    "ast_hash": "3d5ff1718045555df8144a536b857255",
+    "semantic_hash": "3d5ff1718045555df8144a536b857255"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/uk_ua.json": {
+    "mtime": 1787137069.632388,
+    "ast_hash": "a4fb65f74cb3c0f47d7ab5bb1d254365",
+    "semantic_hash": "a4fb65f74cb3c0f47d7ab5bb1d254365"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/vi_vn.json": {
+    "mtime": 1787137069.684792,
+    "ast_hash": "c072c538e35fdcee9b82b7e1d3ea1c43",
+    "semantic_hash": "c072c538e35fdcee9b82b7e1d3ea1c43"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/zh_cn.json": {
+    "mtime": 1787137069.7329953,
+    "ast_hash": "2aef56a31f1f6a068dbaae2b302129d9",
+    "semantic_hash": "2aef56a31f1f6a068dbaae2b302129d9"
+  },
+  "src/main/resources/assets/regalia_slots_api/lang/zh_tw.json": {
+    "mtime": 1787137069.7809737,
+    "ast_hash": "9b9b5dd9bf263b17fcb708a920c3ee46",
+    "semantic_hash": "9b9b5dd9bf263b17fcb708a920c3ee46"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/back.json": {
+    "mtime": 1787132008.32018,
+    "ast_hash": "be0b3edb7b6510df8214299e438ad998",
+    "semantic_hash": "be0b3edb7b6510df8214299e438ad998"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/belt.json": {
+    "mtime": 1787132008.32018,
+    "ast_hash": "012f50d28187f220fa296ba5add7398c",
+    "semantic_hash": "012f50d28187f220fa296ba5add7398c"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/body.json": {
+    "mtime": 1787132008.32226,
+    "ast_hash": "a95ccf604f611f0c95e93d6bb69f8172",
+    "semantic_hash": "a95ccf604f611f0c95e93d6bb69f8172"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/bracelet.json": {
+    "mtime": 1787132008.32226,
+    "ast_hash": "2e1b09005bb51d6135dc03d8926bb9f5",
+    "semantic_hash": "2e1b09005bb51d6135dc03d8926bb9f5"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/charm.json": {
+    "mtime": 1787132008.3233144,
+    "ast_hash": "edd7e3ee84ae996b02b87696c0660859",
+    "semantic_hash": "edd7e3ee84ae996b02b87696c0660859"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/curio.json": {
+    "mtime": 1787132008.3243153,
+    "ast_hash": "94ce4fd39da01457e80ef003d867016a",
+    "semantic_hash": "94ce4fd39da01457e80ef003d867016a"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/feet.json": {
+    "mtime": 1787132008.3258226,
+    "ast_hash": "3596c757e07d8ce4ac20e50e3b1ef6eb",
+    "semantic_hash": "3596c757e07d8ce4ac20e50e3b1ef6eb"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/hands.json": {
+    "mtime": 1787132008.3290803,
+    "ast_hash": "81e0d818e8e4a8a6a13f99cee722651d",
+    "semantic_hash": "81e0d818e8e4a8a6a13f99cee722651d"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/head.json": {
+    "mtime": 1787132008.3268416,
+    "ast_hash": "07011b10c9ab7f7a4b06c801ed7f41ba",
+    "semantic_hash": "07011b10c9ab7f7a4b06c801ed7f41ba"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/necklace.json": {
+    "mtime": 1787132008.3278437,
+    "ast_hash": "e02ca82f7d2328a35d353fb5f13c2ba0",
+    "semantic_hash": "e02ca82f7d2328a35d353fb5f13c2ba0"
+  },
+  "src/main/resources/data/regalia_slots_api/curios/slots/ring.json": {
+    "mtime": 1787132008.3278437,
+    "ast_hash": "1c04f971359afe56ebec8442052a22f6",
+    "semantic_hash": "1c04f971359afe56ebec8442052a22f6"
+  },
+  "src/main/resources/data/regalia_slots_api/tags/entity_type/player_like.json": {
+    "mtime": 1787132008.3301177,
+    "ast_hash": "b970fc7fd4261af6049388efc480da6d",
+    "semantic_hash": "b970fc7fd4261af6049388efc480da6d"
+  },
+  "src/main/resources/regalia_slots_api.mixins.json": {
+    "mtime": 1787136017.0667555,
+    "ast_hash": "f1c62613f88ebf07012eae628c824f1d",
+    "semantic_hash": "f1c62613f88ebf07012eae628c824f1d"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/RegaliaSlotsApiTest.java": {
+    "mtime": 1787137002.9752758,
+    "ast_hash": "157ea0eed69e6dad78d6cfebd4c37012",
+    "semantic_hash": "157ea0eed69e6dad78d6cfebd4c37012"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/client/RegaliaSlotsApiLayerDefinitions.java": {
+    "mtime": 1787137002.1206481,
+    "ast_hash": "b82a3bfc0e145439bd2db1b6799f7294",
+    "semantic_hash": "b82a3bfc0e145439bd2db1b6799f7294"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/client/model/AmuletModel.java": {
+    "mtime": 1787137001.9007192,
+    "ast_hash": "5f2ca988c931ab0870b07d96126200cf",
+    "semantic_hash": "5f2ca988c931ab0870b07d96126200cf"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/client/model/CrownModel.java": {
+    "mtime": 1787137001.9653828,
+    "ast_hash": "6b9b61dfd36752d9ef6bc14554ff896f",
+    "semantic_hash": "6b9b61dfd36752d9ef6bc14554ff896f"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/client/model/KnucklesModel.java": {
+    "mtime": 1787137002.060686,
+    "ast_hash": "bf0468fafeb2e00189f3d533bfbc8b63",
+    "semantic_hash": "bf0468fafeb2e00189f3d533bfbc8b63"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/client/renderer/CrownRenderer.java": {
+    "mtime": 1787137002.163928,
+    "ast_hash": "71fb5ea3f11ca64fbce1b8b06fc07a88",
+    "semantic_hash": "71fb5ea3f11ca64fbce1b8b06fc07a88"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/client/renderer/KnucklesRenderer.java": {
+    "mtime": 1787137002.2220051,
+    "ast_hash": "db77137cceeb85bd38db2eb80a1097ca",
+    "semantic_hash": "db77137cceeb85bd38db2eb80a1097ca"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/RegaliaSlotsApiTestIds.java": {
+    "mtime": 1787137002.664793,
+    "ast_hash": "7f58c1f5204b2a5c8f4290f46934f3ab",
+    "semantic_hash": "7f58c1f5204b2a5c8f4290f46934f3ab"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/RegaliaSlotsApiTestRegistry.java": {
+    "mtime": 1787137002.7394915,
+    "ast_hash": "c462b1a3f0fb17f3bc0a7a8356d3cc36",
+    "semantic_hash": "c462b1a3f0fb17f3bc0a7a8356d3cc36"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/item/AmuletItem.java": {
+    "mtime": 1787137002.2804472,
+    "ast_hash": "a156d8332d41c16aff013fcb761f8163",
+    "semantic_hash": "a156d8332d41c16aff013fcb761f8163"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/item/CrownItem.java": {
+    "mtime": 1787137002.3377504,
+    "ast_hash": "42b382e2f1944e150ca5db68b0064e4f",
+    "semantic_hash": "42b382e2f1944e150ca5db68b0064e4f"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/item/KnucklesItem.java": {
+    "mtime": 1787137002.415265,
+    "ast_hash": "e402f775730a5188d64989d1b2154c28",
+    "semantic_hash": "e402f775730a5188d64989d1b2154c28"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/item/RingItem.java": {
+    "mtime": 1787137002.5188737,
+    "ast_hash": "d57a913a102fd1011c0a564dfcd10f96",
+    "semantic_hash": "d57a913a102fd1011c0a564dfcd10f96"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/common/item/TestArmor.java": {
+    "mtime": 1787137002.6084776,
+    "ast_hash": "c4a19970db0fe6ad8e2a2c228ca67feb",
+    "semantic_hash": "c4a19970db0fe6ad8e2a2c228ca67feb"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/data/RegaliaSlotsApiGenerator.java": {
+    "mtime": 1787137002.8375454,
+    "ast_hash": "5dcf7e09ff4beb30963f7b47d2a2e32c",
+    "semantic_hash": "5dcf7e09ff4beb30963f7b47d2a2e32c"
+  },
+  "src/test/java/com/skd/regaliaslotsapi/test/data/RegaliaSlotsApiTestProvider.java": {
+    "mtime": 1787137002.8973143,
+    "ast_hash": "5b73dbdaa11a004baf65a745f8802c95",
+    "semantic_hash": "5b73dbdaa11a004baf65a745f8802c95"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/items/amulet.json": {
+    "mtime": 1787137030.6773334,
+    "ast_hash": "75ab34e6e194d7fcb2bca06439756402",
+    "semantic_hash": "75ab34e6e194d7fcb2bca06439756402"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/items/crown.json": {
+    "mtime": 1787137030.7357156,
+    "ast_hash": "c48988822b9ab00b075c2c74c6cd45aa",
+    "semantic_hash": "c48988822b9ab00b075c2c74c6cd45aa"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/items/knuckles.json": {
+    "mtime": 1787137030.7819467,
+    "ast_hash": "50ebc05aba5b3338c868810596945e79",
+    "semantic_hash": "50ebc05aba5b3338c868810596945e79"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/items/ring.json": {
+    "mtime": 1787137030.8359606,
+    "ast_hash": "49d6ca4efb27f046bb3a85b15aa2baae",
+    "semantic_hash": "49d6ca4efb27f046bb3a85b15aa2baae"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/items/test_armor.json": {
+    "mtime": 1787137030.8928251,
+    "ast_hash": "7e288cc0283e92108137d55795f4aa37",
+    "semantic_hash": "7e288cc0283e92108137d55795f4aa37"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/lang/en_us.json": {
+    "mtime": 1787137030.9360218,
+    "ast_hash": "c71ef8ebabbc44dae942fe64101bbe5b",
+    "semantic_hash": "c71ef8ebabbc44dae942fe64101bbe5b"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/models/item/amulet.json": {
+    "mtime": 1787137030.9935248,
+    "ast_hash": "d6d8a2f05348a2e7629ee69fe3d36009",
+    "semantic_hash": "d6d8a2f05348a2e7629ee69fe3d36009"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/models/item/crown.json": {
+    "mtime": 1787137031.0537834,
+    "ast_hash": "548edfbe0c6d10ebe899714ee9ea2eb5",
+    "semantic_hash": "548edfbe0c6d10ebe899714ee9ea2eb5"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/models/item/knuckles.json": {
+    "mtime": 1787137031.1011503,
+    "ast_hash": "ede4b8e32ab3f3cd0a17ed964130780e",
+    "semantic_hash": "ede4b8e32ab3f3cd0a17ed964130780e"
+  },
+  "src/test/resources/assets/regalia_slots_api_test/models/item/ring.json": {
+    "mtime": 1787137031.1499937,
+    "ast_hash": "44c25ad5ec3d91b33879dd79f8eae687",
+    "semantic_hash": "44c25ad5ec3d91b33879dd79f8eae687"
+  }
+}
