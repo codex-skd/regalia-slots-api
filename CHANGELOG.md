@@ -2,6 +2,12 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
+## [0.0.0-beta.3] - 2026-08-19
+
+### Cambiado
+
+- Eliminados `COPYING` (texto GPL) y `LICENSE` (resumen corto) del repositorio y del JAR — se conserva únicamente `COPYING.LESSER` (texto de la LGPL, el mínimo que exige la licencia), enlazado desde `README.md`.
+
 ## [0.0.0-beta.2] - 2026-08-19
 
 ### Corregido
