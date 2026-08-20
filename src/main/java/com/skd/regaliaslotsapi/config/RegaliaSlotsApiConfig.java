@@ -53,9 +53,15 @@ public class RegaliaSlotsApiConfig {
       slots = builder.comment("""
               List of slots to create or modify.
               See documentation for syntax: https://docs.illusivesoulworks.com/curios/configuration#slot-configuration
+              Defaults to granting all built-in preset slots (back, belt, body, bracelet, charm,
+              curio, feet, hands, head, necklace, ring) to player-like entities, so third-party
+              items that only ship a curios: item tag (no entities.json of their own) have
+              somewhere to go out of the box.
               """)
           .translation(CONFIG_PREFIX + "slots")
-          .defineList("slots", List.of(), s -> s instanceof String);
+          .defineList("slots", List.of("id=back", "id=belt", "id=body", "id=bracelet", "id=charm",
+              "id=curio", "id=feet", "id=hands", "id=head", "id=necklace", "id=ring"),
+              s -> s instanceof String);
 
       builder.build();
     }

@@ -4,25 +4,21 @@ import java.util.function.Supplier;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiCapability;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiResources;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiTags;
 import com.skd.regaliaslotsapi.api.internal.RegaliaSlotsApiServices;
 import com.skd.regaliaslotsapi.api.type.capability.IRegaliaSlotsApiItemHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Second logical mod declared in this same jar under modId "curios" (see
@@ -42,12 +38,6 @@ import org.slf4j.LoggerFactory;
 @Mod("curios")
 public class CuriosCompatMod {
 
-  private static final Logger DIAG_LOG = LoggerFactory.getLogger("RegaliaSlotsApi/CuriosCompatDiag");
-
-  static {
-    DIAG_LOG.info("CuriosCompatMod class loaded");
-  }
-
   private static final DeferredRegister<DataComponentType<?>> DATA_COMPONENTS =
       DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, "curios");
 
@@ -60,21 +50,10 @@ public class CuriosCompatMod {
           .build());
 
   public CuriosCompatMod(IEventBus eventBus, ModContainer modContainer) {
-    DIAG_LOG.info("CuriosCompatMod constructor entered, modId={}", modContainer.getModId());
-
-    try {
-      DATA_COMPONENTS.register(eventBus);
-      DIAG_LOG.info("CuriosCompatMod: data components registered");
-      eventBus.addListener(this::registerCaps);
-      DIAG_LOG.info("CuriosCompatMod: capability listener registered");
-      overrideTagPredicate();
-      DIAG_LOG.info("CuriosCompatMod: tag predicate overridden");
-      NeoForge.EVENT_BUS.addListener(CuriosCompatMod::onPlayerLogin);
-      top.theillusivec4.curios.api.CuriosResources.LOG.info("Curios API compatibility layer active");
-    } catch (Throwable t) {
-      DIAG_LOG.error("CuriosCompatMod constructor FAILED", t);
-      throw t;
-    }
+    DATA_COMPONENTS.register(eventBus);
+    eventBus.addListener(this::registerCaps);
+    overrideTagPredicate();
+    top.theillusivec4.curios.api.CuriosResources.LOG.info("Curios API compatibility layer active");
   }
 
   /**
@@ -97,25 +76,11 @@ public class CuriosCompatMod {
         RegaliaSlotsApiResources.resource("tag"),
         (slotContext, stack) -> {
           String id = slotContext.identifier();
-          TagKey<net.minecraft.world.item.Item> regaliaTag =
-              ItemTags.create(RegaliaSlotsApiResources.resource(id));
-          TagKey<net.minecraft.world.item.Item> curiosTag =
-              ItemTags.create(top.theillusivec4.curios.api.CuriosResources.resource(id));
+          TagKey<Item> regaliaTag = ItemTags.create(RegaliaSlotsApiResources.resource(id));
+          TagKey<Item> curiosTag = ItemTags.create(top.theillusivec4.curios.api.CuriosResources.resource(id));
           return stack.is(regaliaTag) || stack.is(RegaliaSlotsApiTags.CURIO)
               || stack.is(curiosTag) || stack.is(top.theillusivec4.curios.api.CuriosTags.CURIO);
         });
-  }
-
-  /**
-   * Temporary diagnostic: logs exactly which slot ids Regalia thinks the player has, and which
-   * ones came from third-party curios/ entities data, to isolate why some third-party mods'
-   * slots (e.g. Reliquary's body/charm/necklace) don't show up as placeable even though the
-   * mechanism is identical to slots that do work (back/belt).
-   */
-  private static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent evt) {
-    var slots = RegaliaSlotsApiServices.SLOTS.getSlotTypes(evt.getEntity());
-    DIAG_LOG.info("Player {} has {} curio slot(s) assigned: {}",
-        evt.getEntity().getName().getString(), slots.size(), slots.keySet());
   }
 
   private void registerCaps(RegisterCapabilitiesEvent evt) {

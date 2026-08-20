@@ -2,7 +2,9 @@
 
 ## Overview
 
-Regalia Slots API is a flexible and expandable accessory/equipment API for users and developers. It provides functionality for developers to add extra accessory/equipment slots in a convenient and compatible manner, as well as giving users the ability to configure these slots to their preferences. By default, Regalia Slots API does not add any content except for an inventory GUI. There are no slots and only a couple of items, available through the Creative menu and primarily serving as examples for developers to use when coding their own integration.
+Regalia Slots API is a flexible and expandable accessory/equipment API for users and developers. It provides functionality for developers to add extra accessory/equipment slots in a convenient and compatible manner, as well as giving users the ability to configure these slots to their preferences. Regalia Slots API does not add any content except for an inventory GUI and a couple of example items available through the Creative menu. Out of the box it grants the 11 built-in preset slots (back, belt, body, bracelet, charm, curio, feet, hands, head, necklace, ring) to player-like entities — configurable via the `slots` option, including down to none if you want fully on-demand slots instead.
+
+Regalia Slots API also ships a built-in **Curios API compatibility layer**: third-party mods built against the real [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios) (mod id `curios`, package `top.theillusivec4.curios.api`) are recognized and interoperate transparently, without requiring Curios itself to be installed. See `docs/WORKFLOW_REGALIA_SLOTS_API_26-2.md` for the compatibility layer's architecture and known limitations.
 
 ## Features
 
