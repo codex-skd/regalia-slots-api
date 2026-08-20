@@ -2,6 +2,23 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
+## [1.0.0] - 2026-08-20
+
+Primera versión estable. Consolida la capa de compatibilidad con Curios API introducida en 0.0.0-beta.4 tras pruebas en modpack real con Sophisticated Backpacks, Toms Storage, Reliquary, EvilCraft y Ascendant Attributes.
+
+### Añadido
+
+- Capa de compatibilidad con la API de Curios lista para producción: mods de terceros que dependen del `modId` `curios` reconocen e interactúan con las ranuras de Regalia Slots API sin instalar Curios.
+- `RegaliaSlotsApiConfig.Common.slots` ahora trae por defecto las 11 ranuras preset (back, belt, body, bracelet, charm, curio, feet, hands, head, necklace, ring) asignadas a entidades tipo jugador, en vez de una lista vacía — evita que items de terceros con solo un tag `curios:<slot>` (sin `entities.json` propio) se queden sin ranura donde ir.
+
+### Corregido
+
+- El validador `regalia_slots_api:tag` de las ranuras base ahora también reconoce tags bajo el namespace `curios:` (además de `regalia_slots_api:`), para que items etiquetados por mods de terceros contra el Curios real se reconozcan igualmente.
+
+### Cambiado
+
+- NeoForge bump a `26.2.0.57` (coincide con la versión real del servidor de destino). Nueva rama `minecraft/26.2/neoforge-26.2.0.57/production` (con su `main` correspondiente); la rama `.../26.2.0.45-beta/production` queda como histórico.
+
 ## [0.0.0-beta.4] - 2026-08-19
 
 ### Añadido
