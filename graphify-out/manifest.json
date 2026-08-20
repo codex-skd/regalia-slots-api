@@ -530,9 +530,9 @@
     "semantic_hash": "83cfe2e650f34d36b9d29494ed78712f"
   },
   "src/main/java/com/skd/regaliaslotsapi/config/RegaliaSlotsApiConfig.java": {
-    "mtime": 1787136727.9734077,
-    "ast_hash": "4e2f163a72aed27b06a7629eac06485f",
-    "semantic_hash": "4e2f163a72aed27b06a7629eac06485f"
+    "mtime": 1787221078.2418487,
+    "ast_hash": "bcb89968eb16ac759ca7c5a9ba0468a9",
+    "semantic_hash": ""
   },
   "src/main/java/com/skd/regaliaslotsapi/impl/RegaliaSlotsApiClientExtensions.java": {
     "mtime": 1787136727.9866307,
@@ -930,57 +930,57 @@
     "semantic_hash": "44c25ad5ec3d91b33879dd79f8eae687"
   },
   ".claude/CLAUDE.md": {
-    "mtime": 1787132701.9836543,
+    "mtime": 1787221119.5396671,
     "ast_hash": "3e601485b0e1f07ed78d255c5d2eb825",
     "semantic_hash": ""
   },
   ".gitlab-ci.yml": {
-    "mtime": 1787132696.224542,
+    "mtime": 1787221119.5417187,
     "ast_hash": "402e112fb0a27fd876291ce11aac8792",
     "semantic_hash": ""
   },
   "CHANGELOG.md": {
-    "mtime": 1787165347.6351886,
-    "ast_hash": "b97b0c4e118c38b30ba93f32b5d7795d",
+    "mtime": 1787221078.2322216,
+    "ast_hash": "115cc0e93328b2279dbf8876913208ca",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1787152367.1370685,
-    "ast_hash": "8521bb062599d858d6bfc85bda0968d1",
+    "mtime": 1787221078.2327223,
+    "ast_hash": "31e16525fc6498d89eea52d263f62008",
     "semantic_hash": ""
   },
   "docs/ICON_PROMPTS.md": {
-    "mtime": 1787139321.1474361,
+    "mtime": 1787221119.5432246,
     "ast_hash": "43c8d48bf19bf0e22619ef1b835846ba",
     "semantic_hash": ""
   },
   "docs/WORKFLOW_REGALIA_SLOTS_API_26-2.md": {
-    "mtime": 1787165340.7685733,
-    "ast_hash": "32498b69700179618b324a815d65ea42",
+    "mtime": 1787221119.5440028,
+    "ast_hash": "c1d27bc8b26a53f5463f973dd75a1287",
     "semantic_hash": ""
   },
   "docs/curseforge/project_description.md": {
-    "mtime": 1787132772.649158,
+    "mtime": 1787221119.557721,
     "ast_hash": "554a5165c0411a68256801d0f58c91d1",
     "semantic_hash": ""
   },
   "docs/curseforge/project_vars.md": {
-    "mtime": 1787139848.3507986,
+    "mtime": 1787221119.559225,
     "ast_hash": "622d31b37925a44989833163c6aa2484",
     "semantic_hash": ""
   },
   "docs/curseforge/versions/0.0.0-beta.1.md": {
-    "mtime": 1787139795.2174876,
+    "mtime": 1787221119.5600357,
     "ast_hash": "ee1b046ba046fc00d4653b04652b8ead",
     "semantic_hash": ""
   },
   "docs/curseforge/versions/0.0.0-beta.2.md": {
-    "mtime": 1787151259.5598295,
+    "mtime": 1787221119.5605352,
     "ast_hash": "d6941e5b3c7e2d9a77c5319aa0025d3c",
     "semantic_hash": ""
   },
   "docs/curseforge/logo.png": {
-    "mtime": 1787139659.1178634,
+    "mtime": 1787221119.5557141,
     "ast_hash": "8f688862b68f079660e55b5c37c619de",
     "semantic_hash": ""
   },
@@ -1200,7 +1200,7 @@
     "semantic_hash": ""
   },
   "docs/curseforge/versions/0.0.0-beta.3.md": {
-    "mtime": 1787152775.2799776,
+    "mtime": 1787221119.5610356,
     "ast_hash": "ac41aa80dde7f3ee32df9eb4c7000dc2",
     "semantic_hash": ""
   },
@@ -1210,8 +1210,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosCompatMod.java": {
-    "mtime": 1787164572.324788,
-    "ast_hash": "411613bbeabaede00b5d767ba70bff4c",
+    "mtime": 1787221078.2418487,
+    "ast_hash": "10262caaabce2a143566f9313711e66e",
     "semantic_hash": ""
   },
   "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosExtensionsAdapter.java": {
@@ -1505,8 +1505,13 @@
     "semantic_hash": ""
   },
   "docs/curseforge/versions/0.0.0-beta.4.md": {
-    "mtime": 1787165355.5530622,
+    "mtime": 1787221119.5610356,
     "ast_hash": "b14e27ebe9c4e594d790a33387bce9ea",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/1.0.0.md": {
+    "mtime": 1787221119.5620427,
+    "ast_hash": "efb640fcc0d14fa1985dab837346aea8",
     "semantic_hash": ""
   }
 }
