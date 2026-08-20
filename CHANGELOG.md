@@ -2,6 +2,12 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
+## [1.1.0] - 2026-08-20
+
+### Añadido
+
+- Migración automática de datos al sustituir el Curios real por este mod: los items que un jugador tenía equipados con el Curios real ya no se pierden. Al primer login tras el cambio, se copian a la ranura equivalente de Regalia Slots API; lo que no encaja se devuelve al inventario normal en vez de perderse. Requiere quitar el jar del Curios real de `mods/` (no pueden coexistir, mismo `modId`). Verificado en partida real con datos reales de un jugador (mochila de Sophisticated Backpacks, talismán de Equivalent Legacy, pluma angelical de Reliquary).
+
 ## [1.0.0] - 2026-08-20
 
 Primera versión estable. Consolida la capa de compatibilidad con Curios API introducida en 0.0.0-beta.4 tras pruebas en modpack real con Sophisticated Backpacks, Toms Storage, Reliquary, EvilCraft y Ascendant Attributes.

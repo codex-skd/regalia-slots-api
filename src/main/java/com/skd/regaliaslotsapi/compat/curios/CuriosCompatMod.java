@@ -12,7 +12,10 @@ import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiCapability;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiResources;
@@ -53,7 +56,20 @@ public class CuriosCompatMod {
     DATA_COMPONENTS.register(eventBus);
     eventBus.addListener(this::registerCaps);
     overrideTagPredicate();
+    LegacyCurioMigration.register(eventBus);
+    NeoForge.EVENT_BUS.addListener(CuriosCompatMod::onPlayerLogin);
     top.theillusivec4.curios.api.CuriosResources.LOG.info("Curios API compatibility layer active");
+  }
+
+  /**
+   * Migrates equipped items from a world previously played with the real Curios mod, the first
+   * time each player logs in after switching to this mod. See {@link LegacyCurioMigration}.
+   */
+  private static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent evt) {
+
+    if (evt.getEntity() instanceof ServerPlayer serverPlayer) {
+      LegacyCurioMigration.migrate(serverPlayer);
+    }
   }
 
   /**
