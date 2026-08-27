@@ -22,6 +22,7 @@ import com.skd.regaliaslotsapi.api.RegaliaSlotsApiResources;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApiTags;
 import com.skd.regaliaslotsapi.api.internal.RegaliaSlotsApiServices;
 import com.skd.regaliaslotsapi.api.type.capability.IRegaliaSlotsApiItemHandler;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 /**
  * Second logical mod declared in this same jar under modId "curios" (see
@@ -32,14 +33,14 @@ import com.skd.regaliaslotsapi.api.type.capability.IRegaliaSlotsApiItemHandler;
  * This class owns the runtime wiring the copied {@code top.theillusivec4.curios.api} classes
  * need: the {@code curios:attribute_modifiers} data component and the {@code curios:inventory} /
  * {@code curios:item} capabilities, both backed live by Regalia's own data via
- * {@link CuriosItemHandlerAdapter} - nothing is duplicated or resynced between the two mod ids.
+ * {@link RegaliaItemHandlerAdapter} - nothing is duplicated or resynced between the two mod ids.
  * <p>
  * Known limitation: if the real Curios mod is ever installed alongside this one, NeoForge will
  * fail to load with a duplicate mod id "curios" error. This is intentional and not silently
  * worked around - Curios and this compatibility layer are mutually exclusive.
  */
 @Mod("curios")
-public class CuriosCompatMod {
+public class RegaliaCompatMod {
 
   private static final DeferredRegister<DataComponentType<?>> DATA_COMPONENTS =
       DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, "curios");
@@ -52,12 +53,12 @@ public class CuriosCompatMod {
           .cacheEncoding()
           .build());
 
-  public CuriosCompatMod(IEventBus eventBus, ModContainer modContainer) {
+  public RegaliaCompatMod(IEventBus eventBus, ModContainer modContainer) {
     DATA_COMPONENTS.register(eventBus);
     eventBus.addListener(this::registerCaps);
     overrideTagPredicate();
     LegacyCurioMigration.register(eventBus);
-    NeoForge.EVENT_BUS.addListener(CuriosCompatMod::onPlayerLogin);
+    NeoForge.EVENT_BUS.addListener(RegaliaCompatMod::onPlayerLogin);
     top.theillusivec4.curios.api.CuriosResources.LOG.info("Curios API compatibility layer active");
   }
 
@@ -110,7 +111,7 @@ public class CuriosCompatMod {
                   livingEntity.getCapability(RegaliaSlotsApiCapability.INVENTORY);
 
               if (handler != null) {
-                return new CuriosItemHandlerAdapter(handler);
+                return new RegaliaItemHandlerAdapter(handler);
               }
             }
             return null;
@@ -120,9 +121,12 @@ public class CuriosCompatMod {
     for (Item item : BuiltInRegistries.ITEM) {
       evt.registerItem(top.theillusivec4.curios.api.CuriosCapability.ITEM, (stack, ctx) -> {
 
-        if (RegaliaSlotsApiServices.EXTENSIONS.getCurioItem(item) != null
-            || CuriosExtensionsAdapter.REGISTERED_ITEMS.containsKey(item)) {
+        if (RegaliaSlotsApiServices.EXTENSIONS.getCurioItem(item) != null) {
           return (top.theillusivec4.curios.api.type.capability.ICurio) () -> stack;
+        }
+        ICurioItem curiosItem = RegaliaExtensionsAdapter.REGISTERED_ITEMS.get(item);
+        if (curiosItem != null) {
+          return (top.theillusivec4.curios.api.type.capability.ICurio) new RegaliaCurioAdapter(curiosItem, stack);
         }
         return null;
       }, item);

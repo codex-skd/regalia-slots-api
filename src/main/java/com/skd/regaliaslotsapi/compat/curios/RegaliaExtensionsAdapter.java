@@ -16,11 +16,11 @@ import net.minecraft.world.item.Item;
  * distinct {@code ICurioItem}/{@code ICurioSlotExtension} interfaces.
  * <p>
  * Known gap: registrations made here are not yet consulted when Regalia hands out the
- * {@code curios:item} capability (see {@link CuriosCompatMod}) - items registered this way get
+ * {@code curios:item} capability (see {@link RegaliaCompatMod}) - items registered this way get
  * default curio behaviour rather than their custom logic. Bridging per-item custom behaviour
  * across the two parallel {@code ICurioItem} interfaces is deferred.
  */
-public final class CuriosExtensionsAdapter
+public final class RegaliaExtensionsAdapter
     implements top.theillusivec4.curios.api.internal.services.ICuriosExtensions {
 
   static final Map<Item, top.theillusivec4.curios.api.type.capability.ICurioItem> REGISTERED_ITEMS =

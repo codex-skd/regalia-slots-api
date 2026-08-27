@@ -32,12 +32,12 @@ public class StacksHandlerAdapter
 
   @Override
   public top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler getStacks() {
-    return CuriosTypeBridge.wrap(this.delegate.getStacks());
+    return RegaliaTypeBridge.wrap(this.delegate.getStacks());
   }
 
   @Override
   public top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler getCosmeticStacks() {
-    return CuriosTypeBridge.wrap(this.delegate.getCosmeticStacks());
+    return RegaliaTypeBridge.wrap(this.delegate.getCosmeticStacks());
   }
 
   @Override
@@ -62,7 +62,7 @@ public class StacksHandlerAdapter
 
   @Override
   public top.theillusivec4.curios.api.common.DropRule getDropRule() {
-    return CuriosTypeBridge.toCurios(this.delegate.getDropRule());
+    return RegaliaTypeBridge.toCurios(this.delegate.getDropRule());
   }
 
   @Override

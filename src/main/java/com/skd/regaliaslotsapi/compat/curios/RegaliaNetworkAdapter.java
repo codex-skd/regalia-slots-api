@@ -2,11 +2,11 @@ package com.skd.regaliaslotsapi.compat.curios;
 
 import com.skd.regaliaslotsapi.api.internal.RegaliaSlotsApiServices;
 
-public class CuriosNetworkAdapter
+public class RegaliaNetworkAdapter
     implements top.theillusivec4.curios.api.internal.services.ICuriosNetwork {
 
   @Override
   public void breakCurioInSlot(top.theillusivec4.curios.api.SlotContext slotContext) {
-    RegaliaSlotsApiServices.NETWORK.breakCurioInSlot(CuriosTypeBridge.toRegalia(slotContext));
+    RegaliaSlotsApiServices.NETWORK.breakCurioInSlot(RegaliaTypeBridge.toRegalia(slotContext));
   }
 }

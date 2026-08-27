@@ -2,6 +2,7 @@ package com.skd.regaliaslotsapi.compat.curios;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import net.minecraft.resources.Identifier;
 import com.skd.regaliaslotsapi.api.type.ISlotType;
 import com.skd.regaliaslotsapi.api.type.inventory.ICurioStacksHandler;
 import com.skd.regaliaslotsapi.api.type.inventory.IDynamicStackHandler;
@@ -12,9 +13,9 @@ import com.skd.regaliaslotsapi.api.type.inventory.IDynamicStackHandler;
  * real Curios API can interoperate with Regalia's data without either side duplicating
  * storage - every conversion here wraps the original Regalia instance rather than copying it.
  */
-public final class CuriosTypeBridge {
+public final class RegaliaTypeBridge {
 
-  private CuriosTypeBridge() {
+  private RegaliaTypeBridge() {
   }
 
   public static com.skd.regaliaslotsapi.api.SlotContext toRegalia(
@@ -90,5 +91,36 @@ public final class CuriosTypeBridge {
         new LinkedHashMap<>();
     handlers.forEach((id, handler) -> result.put(id, wrap(handler)));
     return result;
+  }
+
+  public static Identifier toCuriosIdentifier(Identifier id) {
+    if (id == null) {
+      return null;
+    }
+    return top.theillusivec4.curios.api.CuriosResources.resource(id.getPath());
+  }
+
+  public static com.skd.regaliaslotsapi.api.CurioAttributeModifiers toRegalia(
+      top.theillusivec4.curios.api.CurioAttributeModifiers modifiers) {
+    if (modifiers == null) {
+      return com.skd.regaliaslotsapi.api.CurioAttributeModifiers.EMPTY;
+    }
+    com.skd.regaliaslotsapi.api.CurioAttributeModifiers.Builder builder =
+        com.skd.regaliaslotsapi.api.CurioAttributeModifiers.builder();
+    for (top.theillusivec4.curios.api.CurioAttributeModifiers.Entry entry : modifiers.modifiers()) {
+      builder.addModifier(entry.attributeHolder(), entry.modifier(),
+          com.skd.regaliaslotsapi.api.common.slot.SlotTypePredicate.builder()
+              .withId(entry.slotType().id().isEmpty() ? "curio" : entry.slotType().id().getFirst())
+              .build());
+    }
+    return builder.build();
+  }
+
+  public static com.skd.regaliaslotsapi.api.common.DropRule toRegaliaDropRule(
+      top.theillusivec4.curios.api.common.DropRule rule) {
+    if (rule == null) {
+      return com.skd.regaliaslotsapi.api.common.DropRule.DEFAULT;
+    }
+    return com.skd.regaliaslotsapi.api.common.DropRule.values()[rule.ordinal()];
   }
 }
