@@ -31,27 +31,27 @@ import com.skd.regaliaslotsapi.api.type.inventory.ICurioStacksHandler;
  * third-party mods reading/writing through the real Curios capability id see the exact same
  * equipped items Regalia itself uses - nothing is duplicated or resynced.
  */
-public class CuriosItemHandlerAdapter
+public class RegaliaItemHandlerAdapter
     implements top.theillusivec4.curios.api.type.capability.ICuriosItemHandler {
 
   private final IRegaliaSlotsApiItemHandler delegate;
 
-  public CuriosItemHandlerAdapter(IRegaliaSlotsApiItemHandler delegate) {
+  public RegaliaItemHandlerAdapter(IRegaliaSlotsApiItemHandler delegate) {
     this.delegate = delegate;
   }
 
   private static List<top.theillusivec4.curios.api.SlotResult> wrapList(List<SlotResult> results) {
-    return results.stream().map(CuriosTypeBridge::toCurios).toList();
+    return results.stream().map(RegaliaTypeBridge::toCurios).toList();
   }
 
   private static Optional<top.theillusivec4.curios.api.SlotResult> wrapOptional(
       Optional<SlotResult> result) {
-    return result.map(CuriosTypeBridge::toCurios);
+    return result.map(RegaliaTypeBridge::toCurios);
   }
 
   @Override
   public Map<String, top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler> getCurios() {
-    return CuriosTypeBridge.wrapStacksHandlers(this.delegate.getRegaliaSlotsApi());
+    return RegaliaTypeBridge.wrapStacksHandlers(this.delegate.getRegaliaSlotsApi());
   }
 
   @Override
@@ -83,7 +83,7 @@ public class CuriosItemHandlerAdapter
   @Override
   public Optional<top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler> getStacksHandler(
       String identifier) {
-    return this.delegate.getStacksHandler(identifier).map(CuriosTypeBridge::wrap);
+    return this.delegate.getStacksHandler(identifier).map(RegaliaTypeBridge::wrap);
   }
 
   @Override
@@ -136,7 +136,7 @@ public class CuriosItemHandlerAdapter
 
   @Override
   public List<top.theillusivec4.curios.api.SlotResult> findCurios(boolean includeInactive,
-                                                                   String... identifiers) {
+                                                                    String... identifiers) {
     return wrapList(this.delegate.findRegaliaSlotsApi(includeInactive, identifiers));
   }
 
@@ -147,7 +147,7 @@ public class CuriosItemHandlerAdapter
 
   @Override
   public Optional<top.theillusivec4.curios.api.SlotResult> findCurio(String identifier, int index,
-                                                                      boolean includeInactive) {
+                                                                       boolean includeInactive) {
     return wrapOptional(this.delegate.findCurio(identifier, index, includeInactive));
   }
 
@@ -191,7 +191,7 @@ public class CuriosItemHandlerAdapter
   public Set<top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler> getUpdatingInventories() {
     Set<top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler> result =
         new LinkedHashSet<>();
-    this.delegate.getUpdatingInventories().forEach(handler -> result.add(CuriosTypeBridge.wrap(handler)));
+    this.delegate.getUpdatingInventories().forEach(handler -> result.add(RegaliaTypeBridge.wrap(handler)));
     return result;
   }
 

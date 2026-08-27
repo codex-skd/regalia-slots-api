@@ -54,7 +54,7 @@ public class SlotTypeAdapter implements top.theillusivec4.curios.api.type.ISlotT
 
   @Override
   public top.theillusivec4.curios.api.common.DropRule getDropRule() {
-    return CuriosTypeBridge.toCurios(this.delegate.getDropRule());
+    return RegaliaTypeBridge.toCurios(this.delegate.getDropRule());
   }
 
   @Override

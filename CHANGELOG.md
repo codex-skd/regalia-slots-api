@@ -2,6 +2,12 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
+## [1.1.1] - 2026-08-27
+
+### Corregido
+
+- Efecto de Supersalto II (Jump Boost II) del ítem `angelic_faher` de Reliquary no se aplicaba consistentemente cuando el ítem estaba en la ranura de Amuleto (necklace). La capa de compatibilidad Curios ahora delega correctamente `curioTick`, `onEquip`, `onUnequip`, `onStateChange`, `canEquip`, `canUnequip` y demás métodos de `ICurioItem` a través de `RegaliaCurioAdapter`, permitiendo que efectos activos por tick funcionen igual que en el Curios real.
+
 ## [1.1.0] - 2026-08-20
 
 ### Añadido

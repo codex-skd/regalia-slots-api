@@ -17,57 +17,57 @@ import com.skd.regaliaslotsapi.api.internal.RegaliaSlotsApiServices;
  * in upstream Curios (not queried at runtime by other mods) and are intentionally not ported -
  * calling them throws {@link UnsupportedOperationException}.
  */
-public class CuriosSlotsAdapter
+public class RegaliaSlotsAdapter
     implements top.theillusivec4.curios.api.internal.services.ICuriosSlots {
 
   @Override
   public Map<String, top.theillusivec4.curios.api.type.ISlotType> getSlotTypes(boolean isClient) {
-    return CuriosTypeBridge.wrapSlotTypes(RegaliaSlotsApiServices.SLOTS.getSlotTypes(isClient));
+    return RegaliaTypeBridge.wrapSlotTypes(RegaliaSlotsApiServices.SLOTS.getSlotTypes(isClient));
   }
 
   @Override
   public Map<String, top.theillusivec4.curios.api.type.ISlotType> getSlotTypes(
       LivingEntity livingEntity) {
-    return CuriosTypeBridge.wrapSlotTypes(RegaliaSlotsApiServices.SLOTS.getSlotTypes(livingEntity));
+    return RegaliaTypeBridge.wrapSlotTypes(RegaliaSlotsApiServices.SLOTS.getSlotTypes(livingEntity));
   }
 
   @Override
   public Map<String, top.theillusivec4.curios.api.type.ISlotType> getSlotTypes(
       EntityType<?> entityType, boolean isClient) {
-    return CuriosTypeBridge.wrapSlotTypes(
+    return RegaliaTypeBridge.wrapSlotTypes(
         RegaliaSlotsApiServices.SLOTS.getSlotTypes(entityType, isClient));
   }
 
   @Override
   public Map<String, top.theillusivec4.curios.api.type.ISlotType> getSlotTypes(ItemStack stack,
-                                                                                boolean isClient) {
-    return CuriosTypeBridge.wrapSlotTypes(RegaliaSlotsApiServices.SLOTS.getSlotTypes(stack, isClient));
+                                                                                 boolean isClient) {
+    return RegaliaTypeBridge.wrapSlotTypes(RegaliaSlotsApiServices.SLOTS.getSlotTypes(stack, isClient));
   }
 
   @Override
   public Map<String, top.theillusivec4.curios.api.type.ISlotType> getSlotTypes(ItemStack stack,
-                                                                                LivingEntity livingEntity) {
-    return CuriosTypeBridge.wrapSlotTypes(
+                                                                                 LivingEntity livingEntity) {
+    return RegaliaTypeBridge.wrapSlotTypes(
         RegaliaSlotsApiServices.SLOTS.getSlotTypes(stack, livingEntity));
   }
 
   @Override
   public top.theillusivec4.curios.api.type.data.ISlotData getSlotData(String id) {
     throw new UnsupportedOperationException(
-        "Curios compat: datagen-only ISlotData builder is not ported by regalia_slots_api");
+        "Regalia compat: datagen-only ISlotData builder is not ported by regalia_slots_api");
   }
 
   @Override
   public top.theillusivec4.curios.api.type.data.IEntitiesData getEntitiesData() {
     throw new UnsupportedOperationException(
-        "Curios compat: datagen-only IEntitiesData builder is not ported by regalia_slots_api");
+        "Regalia compat: datagen-only IEntitiesData builder is not ported by regalia_slots_api");
   }
 
   @Override
   public void registerPredicate(Identifier resourceLocation,
                                 BiPredicate<top.theillusivec4.curios.api.SlotContext, ItemStack> predicate) {
     RegaliaSlotsApiServices.SLOTS.registerPredicate(resourceLocation,
-        (ctx, stack) -> predicate.test(CuriosTypeBridge.toCurios(ctx), stack));
+        (ctx, stack) -> predicate.test(RegaliaTypeBridge.toCurios(ctx), stack));
   }
 
   @Override
@@ -79,7 +79,7 @@ public class CuriosSlotsAdapter
     if (predicate == null) {
       return null;
     }
-    return (ctx, stack) -> predicate.test(CuriosTypeBridge.toRegalia(ctx), stack);
+    return (ctx, stack) -> predicate.test(RegaliaTypeBridge.toRegalia(ctx), stack);
   }
 
   @Override
@@ -89,7 +89,7 @@ public class CuriosSlotsAdapter
     Map<Identifier, BiPredicate<top.theillusivec4.curios.api.SlotContext, ItemStack>> result =
         new java.util.LinkedHashMap<>();
     predicates.forEach((id, predicate) -> result.put(id,
-        (ctx, stack) -> predicate.test(CuriosTypeBridge.toRegalia(ctx), stack)));
+        (ctx, stack) -> predicate.test(RegaliaTypeBridge.toRegalia(ctx), stack)));
     return result;
   }
 }

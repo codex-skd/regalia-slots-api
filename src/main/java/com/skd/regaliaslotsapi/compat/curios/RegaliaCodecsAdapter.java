@@ -29,7 +29,7 @@ import top.theillusivec4.curios.api.type.data.ISlotData;
  * authoritative). They return codecs that fail only if actually exercised, rather than porting
  * the concrete SlotType/SlotData/EntitiesData builder classes.
  */
-public class CuriosCodecsAdapter
+public class RegaliaCodecsAdapter
     implements top.theillusivec4.curios.api.internal.services.ICuriosCodecs {
 
   private static <T> Codec<T> unsupported(String what) {
