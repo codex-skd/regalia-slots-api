@@ -33,7 +33,7 @@ logoBlur=false
 # third-party mods hard-coded against Curios (ModList.isLoaded("curios") + the
 # top.theillusivec4.curios.api.* package) recognize and interoperate with this mod's slots
 # without the user installing the real Curios mod. See com.skd.regaliaslotsapi.compat.curios
-# (CuriosCompatMod and friends) for the runtime bridge backing this entry.
+# (RegaliaCompatMod and friends) for the runtime bridge backing this entry.
 #
 # KNOWN LIMITATION: if the real Curios mod is ever added to this instance alongside
 # regalia_slots_api, NeoForge will refuse to load due to the duplicate mod id "curios" - this is
