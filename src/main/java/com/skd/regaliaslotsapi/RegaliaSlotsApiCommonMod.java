@@ -50,6 +50,8 @@ import com.skd.regaliaslotsapi.common.capability.ItemizedRegaliaSlotsApiCapabili
 import com.skd.regaliaslotsapi.common.data.RegaliaSlotsApiSlotResources;
 import com.skd.regaliaslotsapi.common.integration.RegaliaSlotsApiIntegrations;
 import com.skd.regaliaslotsapi.common.network.NetworkHandler;
+import com.skd.regaliaslotsapi.compat.curios.RegaliaCurioAdapter;
+import com.skd.regaliaslotsapi.compat.curios.RegaliaExtensionsAdapter;
 import com.skd.regaliaslotsapi.config.RegaliaSlotsApiClientConfig;
 import com.skd.regaliaslotsapi.config.RegaliaSlotsApiConfig;
 import com.skd.regaliaslotsapi.impl.RegaliaSlotsApiRegistry;
@@ -125,6 +127,13 @@ public class RegaliaSlotsApiCommonMod {
         if (curioItem != null && curioItem.hasCurioCapability(stack)) {
           return new ItemizedRegaliaSlotsApiCapability(curioItem, stack);
         }
+
+        top.theillusivec4.curios.api.type.capability.ICurioItem compatItem =
+            RegaliaExtensionsAdapter.getRegisteredCurioItem(item);
+        if (compatItem != null) {
+          return new RegaliaCurioAdapter(compatItem, stack);
+        }
+
         return null;
       }, item);
     }
