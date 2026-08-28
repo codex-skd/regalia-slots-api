@@ -505,6 +505,17 @@ public class RegaliaSlotsApiCommonEvents {
             ItemStack stack = stackHandler.getStackInSlot(i);
             Optional<ICurio> currentCurio = RegaliaSlotsApi.getCurio(stack);
 
+            if (currentCurio.isEmpty() && !stack.isEmpty()) {
+              top.theillusivec4.curios.api.type.capability.ICurio curiosDelegate =
+                  stack.getCapability(top.theillusivec4.curios.api.CuriosCapability.ITEM);
+
+              if (curiosDelegate != null) {
+                currentCurio = Optional.of(
+                    new com.skd.regaliaslotsapi.compat.curios.CuriosICurioAdapter(
+                        curiosDelegate, stack));
+              }
+            }
+
             if (functional && !stack.isEmpty()) {
               stack.inventoryTick(livingEntity.level(), livingEntity, null);
               currentCurio.ifPresent(curio -> curio.curioTick(slotContext));

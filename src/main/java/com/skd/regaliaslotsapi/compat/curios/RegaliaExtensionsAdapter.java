@@ -49,6 +49,17 @@ public final class RegaliaExtensionsAdapter
     return REGISTERED_ITEMS.get(item);
   }
 
+  /**
+   * Static lookup into the third-party Curios-API registration map, for callers outside this
+   * package (the native {@code RegaliaSlotsApiCapability.ITEM} provider) that need to bridge these
+   * items into the regalia {@code ICurio} interface.
+   */
+  @Nullable
+  public static top.theillusivec4.curios.api.type.capability.ICurioItem getRegisteredCurioItem(
+      Item item) {
+    return REGISTERED_ITEMS.get(item);
+  }
+
   @Override
   public void registerSlotExtension(top.theillusivec4.curios.api.extensions.ICurioSlotExtension extension,
                                     String... slotIds) {
