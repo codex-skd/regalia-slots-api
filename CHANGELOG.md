@@ -2,6 +2,12 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
+## [1.1.2] - 2026-08-28
+
+### Corregido
+
+- La capa de compatibilidad Curios no cargaba: el rename `Curios*` → `Regalia*` de las clases adaptadoras en 1.1.1 no actualizó los 5 ficheros `META-INF/services/top.theillusivec4.curios.api.internal.services.*`, que seguían apuntando a `Curios*Adapter` (clases inexistentes). Al arrancar, `CuriosServices` fallaba con `ServiceConfigurationError: ... Provider com.skd.regaliaslotsapi.compat.curios.CuriosCodecsAdapter not found`, abortando el `RegisterEvent` del mod y provocando por efecto dominó que otros mods del pack (Equivalent Legacy, Ascendant Equipment) se quedaran sin registrar sus componentes/items y el juego revirtiera a estado vanilla. Los 5 ficheros de servicio ahora apuntan a `RegaliaCodecsAdapter`, `RegaliaExtensionsAdapter`, `RegaliaNetworkAdapter`, `RegaliaRegistryAdapter` y `RegaliaSlotsAdapter`.
+
 ## [1.1.1] - 2026-08-27
 
 ### Corregido
