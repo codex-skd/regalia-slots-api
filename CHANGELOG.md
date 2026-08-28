@@ -2,6 +2,14 @@
 
 Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
 
+## [1.1.3] - 2026-08-28
+
+### Corregido
+
+- El fix de 1.1.1 para el efecto intermitente de `angelic_faher` de Reliquary (Supersalto II parpadeando y cortándose en la ranura de amuleto, sobre todo en servidor dedicado) era incompleto. El `RegaliaCurioAdapter` que introdujo solo quedó cableado a la capability de cara a Curios (`curios:item` en `RegaliaCompatMod`), pero el bucle de tick nativo (`RegaliaSlotsApiCommonEvents.tick`) resuelve los curios vía `RegaliaSlotsApiCapability.ITEM`, que nunca consultaba los items registrados a través de la API de Curios (mapa `RegaliaExtensionsAdapter.REGISTERED_ITEMS`). Para items de terceros como el amuleto de Reliquary, `RegaliaSlotsApi.getCurio(stack)` devolvía vacío, así que `curioTick`/`onEquip`/`onUnequip` no se llamaban desde el bucle nativo y el efecto solo se aplicaba de rebote. Ahora:
+  - El provider nativo `RegaliaSlotsApiCapability.ITEM` también resuelve los items registrados vía API de Curios, envolviéndolos en `RegaliaCurioAdapter`.
+  - El bucle de tick tiene además un fallback: si el curio nativo no se resuelve, consulta la capability `curios:item` del stack y la adapta con el nuevo `CuriosICurioAdapter` (`top.theillusivec4.curios.api.type.capability.ICurio` → `com.skd.regaliaslotsapi.api.type.capability.ICurio`).
+
 ## [1.1.2] - 2026-08-28
 
 ### Corregido
