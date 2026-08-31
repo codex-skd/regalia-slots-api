@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.skd.regaliaslotsapi.mixin.core",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "regalia_slots_api.refmap.json",
+  "mixins": [
+    "AccessorEntity",
+    "MixinCuriosTriggers",
+    "MixinCuriosTriggersEquip"
+  ],
+  "minVersion": "0.8"
+}
