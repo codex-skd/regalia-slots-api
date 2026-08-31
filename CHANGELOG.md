@@ -2,6 +2,19 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.2] - 2026-08-31
+
+### Fixed
+
+- **Curios API compatibility**: Added mixin implementation for `top.theillusivec4.curios.api.CuriosApi` so other mods (Ars Nouveau, etc.) can properly access Curios inventory capabilities without spamming "Missing Curios API implementation!" errors in server logs.
+- Other mods using `CuriosApi.getCuriosInventory()`, `CuriosApi.getCurio()`, `CuriosApi.getSlots()`, etc. now work correctly with Regalia Slots API as the Curios provider.
+
+### Technical
+
+- New mixin `MixinCuriosApi` targeting `top.theillusivec4.curios.api.CuriosApi` with adapter methods bridging Regalia's internal API to the Curios API types.
+- Adapter methods in `RegaliaSlotsApiImplMixinHooks` for slot types, capabilities, predicates, and slot contexts.
+- Made `ShimSlotType` constructor public for cross-package usage.
+
 ## [0.0.0-beta.1] - 2026-08-31
 
 ### Added

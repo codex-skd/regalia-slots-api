@@ -11,11 +11,11 @@ import net.minecraft.resources.ResourceLocation;
  * source (only the package and the nested {@code ICurio.DropRule} type differ), so every call
  * forwards directly; {@link #getDropRule()} maps between the two enums by name.
  */
-final class ShimSlotType implements top.theillusivec4.curios.api.type.ISlotType {
+public final class ShimSlotType implements top.theillusivec4.curios.api.type.ISlotType {
 
   private final com.skd.regaliaslotsapi.api.type.ISlotType delegate;
 
-  ShimSlotType(com.skd.regaliaslotsapi.api.type.ISlotType delegate) {
+  public ShimSlotType(com.skd.regaliaslotsapi.api.type.ISlotType delegate) {
     this.delegate = delegate;
   }
 
