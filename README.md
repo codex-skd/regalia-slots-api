@@ -35,6 +35,6 @@ Replace `${version}` with the version of Regalia Slots API that you want to use.
 
 ## Credits & License
 
-Regalia Slots API is a fork of [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios) by [TheIllusiveC4](https://github.com/TheIllusiveC4), ported and rebranded for NeoForge 26.2 / Minecraft 26.2. All credit for the original design and implementation goes to the original author.
+Regalia Slots API is a fork of [Curios API](https://www.curseforge.com/minecraft/mc-mods/curios) by [TheIllusiveC4](https://github.com/TheIllusiveC4), ported and rebranded for NeoForge 21.1.249 / Minecraft 1.21.1. All credit for the original design and implementation goes to the original author.
 
 Licensed under [LGPL-3.0-or-later](COPYING.LESSER), same as the upstream project.

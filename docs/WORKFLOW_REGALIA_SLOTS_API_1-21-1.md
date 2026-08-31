@@ -12,8 +12,8 @@
 | Mod ID (`gradle.properties`) | `regalia_slots_api` |
 | Clase principal | `RegaliaSlotsApiCommonMod` (cliente: `RegaliaSlotsApiClientMod`) |
 | Display name | `Regalia Slots API` |
-| Versiones de Minecraft | `26.2` |
-| Rama | `minecraft/26.2/neoforge-26.2.0.57/production` (histórico: `minecraft/26.2/neoforge-26.2.0.45-beta/production`) |
+| Versiones de Minecraft | `1.21.1` |
+| Rama | `minecraft/1.21.1/neoforge-21.1.249/production` (histórico: `minecraft/1.21.1/neoforge-21.1.249/production`) |
 | Framework | NeoForge (build propio `net.neoforged.moddev`, no genérico) |
 
 ## Nota de fork
@@ -36,12 +36,12 @@ Este mod es un **fork de [Curios API](https://www.curseforge.com/minecraft/mc-mo
 
 Este mod es funcionalmente un fork 1:1 de Curios, pero los mods de terceros que integran con Curios (ej. Sophisticated Backpacks) comprueban específicamente el `modId` `curios` y usan las clases del paquete `top.theillusivec4.curios.api.*` — no reconocen `regalia_slots_api` como equivalente. Para que esos mods funcionen sin que el usuario instale el Curios real, se añadió una capa de compatibilidad en `com.skd.regaliaslotsapi.compat.curios`:
 
-- **Excepción explícita a "sin residuos del mod original"** (ver Buenas prácticas): el árbol `src/main/java/top/theillusivec4/curios/` (solo el paquete `api`, copiado verbatim desde `lib_ext/Curios-26.x`) y las clases `Curios*` bajo `compat/curios/` son **intencionales**, no residuos — necesarias para compatibilidad binaria con mods compilados contra el Curios real. No eliminarlas pensando que son restos del rebrand.
+- **Excepción explícita a "sin residuos del mod original"** (ver Buenas prácticas): el árbol `src/main/java/top/theillusivec4/curios/` (solo el paquete `api`, copiado verbatim desde `temp/ref (Curios-1.21.1) during the port`) y las clases `Curios*` bajo `compat/curios/` son **intencionales**, no residuos — necesarias para compatibilidad binaria con mods compilados contra el Curios real. No eliminarlas pensando que son restos del rebrand.
 - Segundo `modId` lógico `curios` declarado en el mismo JAR (`neoforge.mods.toml`), con su propio entrypoint `@Mod("curios")` (`CuriosCompatMod`) que registra las capabilities `curios:inventory`/`curios:item` con los mismos IDs que el Curios real, respaldadas en vivo por los datos de Regalia (`RegaliaSlotsApiCapability.INVENTORY`) — sin duplicar estado.
 - Los 5 servicios `ServiceLoader` de Curios (`ICuriosRegistry`/`ICuriosSlots`/`ICuriosExtensions`/`ICuriosCodecs`/`ICuriosNetwork`) tienen adaptador propio en `compat/curios/`, registrado vía `META-INF/services/top.theillusivec4.curios.api.internal.services.*`.
 - **Incompatible con el Curios real instalado a la vez** (mismo `modId` → NeoForge falla al cargar por duplicado): documentado y aceptado, no se intenta evitar en silencio.
 - **Huecos conocidos** (no bloquean reconocimiento de ranura ni lectura/escritura del inventario): comportamiento *custom* por item (`ICurioItem`/`ICurio`, ~20 métodos: sonidos, glow, tooltips) no puenteado — items registrados como curio reciben comportamiento por defecto; renderizado de modelos en la entidad (`api/client/*`) no conectado; codecs de datapack nativo de Curios (`ISlotType`/`ISlotData`/`IEntitiesData`) son stubs (Regalia sigue siendo la única fuente de verdad para tipos de ranura).
-- Referencia usada como fuente de verdad: `lib_ext/Curios-26.x` (fuente real de Curios, no decompilar el jar de referencia si el source está disponible ahí).
+- Referencia usada como fuente de verdad: `temp/ref (Curios-1.21.1) during the port` (fuente real de Curios, no decompilar el jar de referencia si el source está disponible ahí).
 - **Migración de datos al reemplazar el Curios real (desde v1.1.0)**: si un mundo se jugó antes con el Curios real y luego se sustituye el mod por `regalia_slots_api`, los items equipados NO desaparecen — `compat/curios/LegacyCurioMigration.java` registra un segundo attachment de solo lectura bajo el id exacto que usaba Curios (`curios:inventory`), con lector NBT propio que busca la clave original `"Curios"` (la nuestra se serializa bajo `"RegaliaSlotsApi"` — el rename del fork no tocó el id del attachment ni la clave NBT interna de `CurioInventory`, por lo que sin este puente esos datos quedan huérfanos y se pierden en apariencia). Al primer login de cada jugador tras el cambio, copia cada item a su ranura equivalente; lo que no encaja (ranura inexistente o ya ocupada) se devuelve al inventario normal en vez de perderse. Un marcador (`regalia_slots_api:legacy_curios_migrated`) evita repetir la copia en logins posteriores. Verificado por inspección directa de NBT de una save real antes de probarlo en vivo, y confirmado funcionando en partida real. **Requiere quitar el jar del Curios real de `mods/`** — con los dos a la vez, NeoForge falla al cargar por `modId` duplicado.
 - **Asignación de ranuras por defecto** (aprendido depurando Reliquary en v1.0.0): ni Curios real ni Regalia asignan ninguna ranura al jugador por sí solos — cada mod tiene que pedirla vía su propio `data/<namespace>/curios/entities/*.json`, y algunos mods (ej. Reliquary 2.0.92.1568) etiquetan items para una ranura (`curios:charm`) sin pedirla en su `entities.json`, dejando esos items sin sitio. Fix genérico: `RegaliaSlotsApiConfig.Common.slots` ahora trae por defecto las 11 ranuras preset (`id=back`, `id=belt`, `id=body`, `id=bracelet`, `id=charm`, `id=curio`, `id=feet`, `id=hands`, `id=head`, `id=necklace`, `id=ring`) asignadas a entidades `player_like`, en vez de una lista vacía — así cualquier item con tag `curios:<slot>` de cualquier mod tiene ranura aunque ese mod no declare su propio `entities.json`. Instalaciones existentes con `config/regalia_slots_api-common.toml` ya generado **no** reciben el nuevo default automáticamente (NeoForge no sobreescribe configs existentes) — hay que editar el archivo a mano o borrarlo para regenerarlo.
 
@@ -60,8 +60,8 @@ Este mod es funcionalmente un fork 1:1 de Curios, pero los mods de terceros que 
 
 ## Organización y ramas
 
-- Un repo GitLab por mod (`stalking-dragons/minecraft/regalia-slots-api`), una rama `minecraft/26.2/neoforge-26.2.0.45-beta/production` — este clon local trabaja en esa rama.
-- Carpeta local: `regalia_slots_api/neoforge/26.2/`.
+- Un repo GitLab por mod (`stalking-dragons/minecraft/regalia-slots-api`), una rama `minecraft/1.21.1/neoforge-21.1.249/production` — este clon local trabaja en esa rama.
+- Carpeta local: `regalia_slots_api/neoforge/1.21.1/`.
 - `*/main` y CI/CD: setup único al crear el repo (`codex-docs/reference/REPO_SETUP.md`) — no releer ni modificar.
 
 ## Estructura del proyecto
@@ -86,14 +86,14 @@ v0.0.0-beta.1"
 
 ## Tags (GitLab)
 
-Cada subida a CurseForge crea un tag. Formato: beta `26.2-neoforge-beta.X` · release `26.2-neoforge-X.Y.Z`.
+Cada subida a CurseForge crea un tag. Formato: beta `1.21.1-neoforge-beta.X` · release `1.21.1-neoforge-X.Y.Z`.
 
 ## Flujo por tarea
 
 **1. Desarrollo**
 
 ```bash
-git checkout minecraft/26.2/neoforge-26.2.0.45-beta/production
+git checkout minecraft/1.21.1/neoforge-21.1.249/production
 ./gradlew.bat build
 git add -A
 git commit -m "feat: <descripción>
@@ -102,9 +102,9 @@ v<version>"
 git push
 ```
 
-**2. Preparar versión para CurseForge** — solo si el usuario confirma: bump `version` en `gradle.properties` → `./gradlew.bat clean build` → release notes en `docs/curseforge/versions/<version>.md` + actualizar `CHANGELOG.md` → commit `chore: bump version to <version>` → tag `26.2-neoforge-beta.X` → push → subir JAR (`codex-docs/scripts/curseforge-upload.ps1`) solo si el usuario confirma.
+**2. Preparar versión para CurseForge** — solo si el usuario confirma: bump `version` en `gradle.properties` → `./gradlew.bat clean build` → release notes en `docs/curseforge/versions/<version>.md` + actualizar `CHANGELOG.md` → commit `chore: bump version to <version>` → tag `1.21.1-neoforge-beta.X` → push → subir JAR (`codex-docs/scripts/curseforge-upload.ps1`) solo si el usuario confirma.
 
-**3. Release estable** — `version=1.0.0` + commit + tag `26.2-neoforge-1.0.0`.
+**3. Release estable** — `version=1.0.0` + commit + tag `1.21.1-neoforge-0.0.0-beta.1`.
 
 **4. Actualizar Knowledge Graph (Graphify)** — tras cada push a remoto:
 
