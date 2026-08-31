@@ -1,6 +1,7 @@
 package com.skd.regaliaslotsapi.compat.curios;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.EnderMan;
@@ -19,7 +20,10 @@ public class RegaliaCuriosPlatformAdapter implements ICuriosPlatform {
   @Override
   public Map<String, top.theillusivec4.curios.api.type.ISlotType> getItemStackSlots(
       ItemStack stack, @Nullable LivingEntity livingEntity) {
-    return Map.of();
+    // Delegate to Regalia's real slot resolution, then wrap each result in the verbatim
+    // Curios ISlotType the caller expects (the two interfaces are identical copies).
+    return Services.CURIOS.getItemStackSlots(stack, livingEntity).entrySet().stream()
+        .collect(Collectors.toMap(Map.Entry::getKey, e -> new ShimSlotType(e.getValue())));
   }
 
   @Override

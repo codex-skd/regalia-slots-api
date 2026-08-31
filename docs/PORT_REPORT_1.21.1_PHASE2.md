@@ -54,15 +54,14 @@ construct, no mixin/registration errors).
   `META-INF/services/top.theillusivec4.curios.platform.services.ICuriosPlatform`.
 - `makesPiglinsNeutral`, `canWalkOnPowderedSnow`, `isEnderMask` delegate to
   Regalia's real `Services.CURIOS`.
-- **KNOWN GAP:** `getItemStackSlots(stack, entity)` currently returns an empty
-  map instead of delegating to `RegaliaSlotsApi.getItemStackSlots` + converting
-  each result from `com.skd.regaliaslotsapi.api.type.ISlotType` to the shim's
-  `top.theillusivec4.curios.api.type.ISlotType`. Item→slot discovery **through
-  the shim SPI path** is therefore not wired. Slot recognition via the
-  `curios:item` capability (Task 4) and via datapack tag validators is
-  unaffected. To close: the two `ISlotType` interfaces are structurally
-  identical (verbatim vs renamed copy of the same upstream interface), so a thin
-  adapter or `SlotType`-record copy per entry is enough.
+- `getItemStackSlots(stack, entity)` now delegates to
+  `Services.CURIOS.getItemStackSlots` (Regalia's real resolution) and wraps each
+  result in `compat/curios/ShimSlotType`, which implements the verbatim
+  `top.theillusivec4.curios.api.type.ISlotType` by forwarding to the Regalia
+  `ISlotType` (the two interfaces are byte-identical copies; `getDropRule()`
+  maps between the two `ICurio.DropRule` enums by name, `compareTo` orders by
+  order-then-identifier). The shim SPI slot-discovery path is wired.
+  *(Closed in a follow-up commit after the initial Phase 2 delegation.)*
 
 ## Task 4 — second logical mod id `curios`
 
