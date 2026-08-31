@@ -315,6 +315,9 @@ public class RegaliaSlotsApiImplMixinHooks {
     registerCurioPredicate(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "tag"),
         (slotResult) -> {
           String id = slotResult.slotContext().identifier();
+          if (!ResourceLocation.isValidPath(id)) {
+            return false;
+          }
           TagKey<Item> tag1 =
               ItemTags.create(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, id));
           TagKey<Item> tag2 =
