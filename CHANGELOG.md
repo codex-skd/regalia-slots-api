@@ -2,6 +2,16 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.3] - 2026-09-01
+
+### Fixed
+
+- **ResourceLocation validation**: Fixed crash in `ResourceLocation.assertValidPath` when viewing item tooltips with slot identifiers containing invalid ResourceLocation characters (uppercase, spaces, special characters). The "tag" curio predicate now validates slot identifiers before creating ResourceLocations.
+
+### Technical
+
+- Added `ResourceLocation.isValidPath(id)` check in `RegaliaSlotsApiImplMixinHooks` static initializer for the "tag" predicate to prevent invalid path exceptions from third-party slot type identifiers.
+
 ## [0.0.0-beta.2] - 2026-08-31
 
 ### Fixed
