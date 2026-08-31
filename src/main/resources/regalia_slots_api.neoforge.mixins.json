@@ -5,6 +5,7 @@
   "refmap": "regalia_slots_api.refmap.json",
   "mixins": [
     "MixinApplyBonusCount",
+    "MixinCuriosApi",
     "MixinRegaliaSlotsApi",
     "MixinRegaliaSlotsApiDataProvider",
     "MixinEnchantedCountIncreaseFunction",

@@ -39,7 +39,7 @@ Autenticación Upload: cabecera `X-Api-Token`. Core: cabecera `x-api-key`.
 | `neoforge_version` (loader) | `21.1.249` |
 | `framework` | `neoforge` |
 | `java_version` | `21` |
-| `version` (`gradle.properties`, build propio del fork) | `0.0.0-beta.1` |
+| `version` (`gradle.properties`, build propio del fork) | `0.0.0-beta.2` |
 | `environment` | `Client`, `Server` (requerido en ambos) |
 
 ## Rama
@@ -50,18 +50,18 @@ minecraft/1.21.1/neoforge-21.1.249/production
 
 ## Tag
 
-Formato: `<mc-version>-<framework>-<version>`. Ejemplo: `1.21.1-neoforge-0.0.0-beta.1`.
+Formato: `<mc-version>-<framework>-<version>`. Ejemplo: `1.21.1-neoforge-0.0.0-beta.2`.
 
 ## Parámetros del upload
 
 | Campo | Valor | Notas |
 |-------|-------|-------|
-| `displayName` | `Regalia Slots API (0.0.0-beta.1)` | `display_name (version)` — lo compone el script |
+| `displayName` | `Regalia Slots API (0.0.0-beta.2)` | `display_name (version)` — lo compone el script |
 | `changelog` | HTML (contenido literal de `docs/curseforge/versions/<version>.md`) | No resumir |
 | `changelogType` | `html` | |
-| `releaseType` | `beta` | Primera beta del port a 1.21.1 |
+| `releaseType` | `beta` | Segunda beta del port a 1.21.1 |
 | `gameVersions` | `[9638, 9639, 11779, 10150]` | IDs: Client + Server + 1.21.1 + NeoForge |
-| `JAR` | `regalia_slots_api-1.21.1-neoforge-21.1.249-0.0.0-beta.1.jar` | En `build/libs/` tras `./gradlew clean build` |
+| `JAR` | `regalia_slots_api-1.21.1-neoforge-21.1.249-0.0.0-beta.2.jar` | En `build/libs/` tras `./gradlew clean build` |
 
 ### IDs de `gameVersions` para 1.21.1
 

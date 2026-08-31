@@ -63,6 +63,7 @@ import com.skd.regaliaslotsapi.common.RegaliaSlotsApiRegistry;
 import com.skd.regaliaslotsapi.common.data.RegaliaSlotsApiEntityManager;
 import com.skd.regaliaslotsapi.common.data.RegaliaSlotsApiSlotManager;
 import com.skd.regaliaslotsapi.common.network.server.SPacketBreak;
+import com.skd.regaliaslotsapi.compat.curios.ShimSlotType;
 
 public class RegaliaSlotsApiImplMixinHooks {
 
@@ -321,5 +322,99 @@ public class RegaliaSlotsApiImplMixinHooks {
           ItemStack stack = slotResult.stack();
           return stack.is(tag1) || stack.is(tag2);
         });
+  }
+
+  // ============ Curios API Adapters ============
+
+  public static Map<String, top.theillusivec4.curios.api.type.ISlotType> getSlotsForCurios(boolean isClient) {
+    return getSlots(isClient).entrySet().stream()
+        .collect(java.util.stream.Collectors.toMap(
+            entry -> entry.getKey(),
+            entry -> new ShimSlotType(entry.getValue())));
+  }
+
+  public static Map<String, top.theillusivec4.curios.api.type.ISlotType> getEntitySlotsForCurios(EntityType<?> type, boolean isClient) {
+    return getEntitySlots(type, isClient).entrySet().stream()
+        .collect(java.util.stream.Collectors.toMap(
+            entry -> entry.getKey(),
+            entry -> new ShimSlotType(entry.getValue())));
+  }
+
+  public static Map<String, top.theillusivec4.curios.api.type.ISlotType> getItemStackSlotsForCurios(ItemStack stack, boolean isClient) {
+    return getItemStackSlots(stack, isClient).entrySet().stream()
+        .collect(java.util.stream.Collectors.toMap(
+            entry -> entry.getKey(),
+            entry -> new ShimSlotType(entry.getValue())));
+  }
+
+  public static Map<String, top.theillusivec4.curios.api.type.ISlotType> getItemStackSlotsForCurios(ItemStack stack, LivingEntity livingEntity) {
+    return getItemStackSlots(stack, livingEntity).entrySet().stream()
+        .collect(java.util.stream.Collectors.toMap(
+            entry -> entry.getKey(),
+            entry -> new ShimSlotType(entry.getValue())));
+  }
+
+  public static Optional<top.theillusivec4.curios.api.type.capability.ICurio> getCurioForCurios(ItemStack stack) {
+    return getCurio(stack).map(curio -> (top.theillusivec4.curios.api.type.capability.ICurio) curio);
+  }
+
+  public static Optional<top.theillusivec4.curios.api.type.capability.ICuriosItemHandler> getCuriosInventoryForCurios(LivingEntity livingEntity) {
+    return getCuriosInventory(livingEntity).map(handler -> (top.theillusivec4.curios.api.type.capability.ICuriosItemHandler) handler);
+  }
+
+  public static boolean isStackValidForCurios(top.theillusivec4.curios.api.SlotContext slotContext, ItemStack stack) {
+    return isStackValid(new com.skd.regaliaslotsapi.api.SlotContext(
+        slotContext.identifier(), slotContext.entity(), slotContext.index(), slotContext.cosmetic(), slotContext.visible()), stack);
+  }
+
+  public static com.google.common.collect.Multimap<net.minecraft.core.Holder<net.minecraft.world.entity.ai.attributes.Attribute>, net.minecraft.world.entity.ai.attributes.AttributeModifier> getAttributeModifiersForCurios(
+      top.theillusivec4.curios.api.SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+    return getAttributeModifiers(new com.skd.regaliaslotsapi.api.SlotContext(
+        slotContext.identifier(), slotContext.entity(), slotContext.index(), slotContext.cosmetic(), slotContext.visible()), id, stack);
+  }
+
+  public static void registerCurioPredicateForCurios(ResourceLocation resourceLocation,
+      java.util.function.Predicate<top.theillusivec4.curios.api.SlotResult> validator) {
+    registerCurioPredicate(resourceLocation, (com.skd.regaliaslotsapi.api.SlotResult sr) ->
+        validator.test(new top.theillusivec4.curios.api.SlotResult(
+            new top.theillusivec4.curios.api.SlotContext(
+                sr.slotContext().identifier(), sr.slotContext().entity(), sr.slotContext().index(), sr.slotContext().cosmetic(), sr.slotContext().visible()),
+            sr.stack())));
+  }
+
+  public static Optional<java.util.function.Predicate<top.theillusivec4.curios.api.SlotResult>> getCurioPredicateForCurios(ResourceLocation resourceLocation) {
+    return getCurioPredicate(resourceLocation).map(p -> (top.theillusivec4.curios.api.SlotResult sr) ->
+        p.test(new com.skd.regaliaslotsapi.api.SlotResult(
+            new com.skd.regaliaslotsapi.api.SlotContext(
+                sr.slotContext().identifier(), sr.slotContext().entity(), sr.slotContext().index(), sr.slotContext().cosmetic(), sr.slotContext().visible()),
+            sr.stack())));
+  }
+
+  public static Map<ResourceLocation, java.util.function.Predicate<top.theillusivec4.curios.api.SlotResult>> getCurioPredicatesForCurios() {
+    return getCurioPredicates().entrySet().stream()
+        .collect(java.util.stream.Collectors.toMap(
+            entry -> entry.getKey(),
+            entry -> (top.theillusivec4.curios.api.SlotResult sr) ->
+                entry.getValue().test(new com.skd.regaliaslotsapi.api.SlotResult(
+                    new com.skd.regaliaslotsapi.api.SlotContext(
+                        sr.slotContext().identifier(), sr.slotContext().entity(), sr.slotContext().index(), sr.slotContext().cosmetic(), sr.slotContext().visible()),
+                    sr.stack()))));
+  }
+
+  public static boolean testCurioPredicatesForCurios(Set<ResourceLocation> predicates, top.theillusivec4.curios.api.SlotResult slotResult) {
+    return testCurioPredicates(predicates, new com.skd.regaliaslotsapi.api.SlotResult(
+        new com.skd.regaliaslotsapi.api.SlotContext(
+            slotResult.slotContext().identifier(), slotResult.slotContext().entity(), slotResult.slotContext().index(), slotResult.slotContext().cosmetic(), slotResult.slotContext().visible()),
+        slotResult.stack()));
+  }
+
+  public static ResourceLocation getSlotIdForCurios(top.theillusivec4.curios.api.SlotContext slotContext) {
+    return getSlotId(new com.skd.regaliaslotsapi.api.SlotContext(
+        slotContext.identifier(), slotContext.entity(), slotContext.index(), slotContext.cosmetic(), slotContext.visible()));
+  }
+
+  public static void broadcastCurioBreakEventForCurios(top.theillusivec4.curios.api.SlotContext slotContext) {
+    broadcastCurioBreakEvent(new com.skd.regaliaslotsapi.api.SlotContext(
+        slotContext.identifier(), slotContext.entity(), slotContext.index(), slotContext.cosmetic(), slotContext.visible()));
   }
 }
