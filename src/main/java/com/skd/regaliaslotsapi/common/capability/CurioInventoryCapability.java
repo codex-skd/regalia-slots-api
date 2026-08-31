@@ -54,15 +54,15 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
-import com.skd.regaliaslotsapi.Curios;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiCommonMod;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotAttribute;
 import com.skd.regaliaslotsapi.api.SlotContext;
 import com.skd.regaliaslotsapi.api.SlotResult;
 import com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler;
 import com.skd.regaliaslotsapi.api.type.inventory.ICurioStacksHandler;
 import com.skd.regaliaslotsapi.api.type.inventory.IDynamicStackHandler;
-import com.skd.regaliaslotsapi.common.CuriosRegistry;
+import com.skd.regaliaslotsapi.common.RegaliaSlotsApiRegistry;
 
 public class CurioInventoryCapability implements ICuriosItemHandler {
 
@@ -71,7 +71,7 @@ public class CurioInventoryCapability implements ICuriosItemHandler {
 
   public CurioInventoryCapability(final LivingEntity livingEntity) {
     this.livingEntity = livingEntity;
-    this.curioInventory = livingEntity.getData(CuriosRegistry.INVENTORY.get());
+    this.curioInventory = livingEntity.getData(RegaliaSlotsApiRegistry.INVENTORY.get());
 
     if (this.curioInventory.markDeserialized) {
       this.reset();
@@ -144,7 +144,7 @@ public class CurioInventoryCapability implements ICuriosItemHandler {
   @Override
   public Optional<SlotResult> findFirstCurio(Item item) {
     return findFirstCurio(
-        stack -> stack.getItem() == item, Curios.itemCacheKey(item.getDefaultInstance()));
+        stack -> stack.getItem() == item, RegaliaSlotsApiCommonMod.itemCacheKey(item.getDefaultInstance()));
   }
 
   @Override
@@ -209,7 +209,7 @@ public class CurioInventoryCapability implements ICuriosItemHandler {
   @Override
   public List<SlotResult> findCurios(Item item) {
     return findCurios(stack -> stack.getItem() == item, false,
-                      Curios.itemCacheKey(item.getDefaultInstance()));
+                      RegaliaSlotsApiCommonMod.itemCacheKey(item.getDefaultInstance()));
   }
 
   @Override
@@ -419,7 +419,7 @@ public class CurioInventoryCapability implements ICuriosItemHandler {
       for (int i = 0; i < stacks.getSlots(); i++) {
         final int index = i;
         fortuneLevel +=
-            CuriosApi.getCurio(stacks.getStackInSlot(i))
+            RegaliaSlotsApi.getCurio(stacks.getStackInSlot(i))
                 .map(
                     curio -> {
                       NonNullList<Boolean> renderStates = entry.getValue().getRenders();
@@ -447,7 +447,7 @@ public class CurioInventoryCapability implements ICuriosItemHandler {
       for (int i = 0; i < stacks.getSlots(); i++) {
         final int index = i;
         lootingLevel +=
-            CuriosApi.getCurio(stacks.getStackInSlot(i))
+            RegaliaSlotsApi.getCurio(stacks.getStackInSlot(i))
                 .map(
                     curio -> {
                       NonNullList<Boolean> renderStates = entry.getValue().getRenders();
@@ -641,8 +641,8 @@ public class CurioInventoryCapability implements ICuriosItemHandler {
                 new SlotContext(
                     id, this.getWearer(), i, false, renderStates.size() > i && renderStates.get(i));
             Multimap<Holder<Attribute>, AttributeModifier> map =
-                CuriosApi.getAttributeModifiers(
-                    slotContext, CuriosApi.getSlotId(slotContext), stack);
+                RegaliaSlotsApi.getAttributeModifiers(
+                    slotContext, RegaliaSlotsApi.getSlotId(slotContext), stack);
 
             for (Holder<Attribute> attribute : map.keySet()) {
 

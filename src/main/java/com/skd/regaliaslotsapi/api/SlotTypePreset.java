@@ -23,7 +23,7 @@ package com.skd.regaliaslotsapi.api;
 import java.util.Optional;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.ApiStatus;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 import com.skd.regaliaslotsapi.api.SlotTypeMessage.Builder;
 
 /**
@@ -75,7 +75,7 @@ public enum SlotTypePreset {
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
   public Builder getMessageBuilder() {
     return new Builder(this.id).priority(this.priority).icon(
-        ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID,
+        ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID,
             "slot/empty_" + this.getIdentifier() + "_slot"));
   }
 }

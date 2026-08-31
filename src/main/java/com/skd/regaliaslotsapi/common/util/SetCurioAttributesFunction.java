@@ -51,9 +51,9 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotAttribute;
-import com.skd.regaliaslotsapi.common.CuriosRegistry;
+import com.skd.regaliaslotsapi.common.RegaliaSlotsApiRegistry;
 
 public class SetCurioAttributesFunction extends LootItemConditionalFunction {
 
@@ -83,7 +83,7 @@ public class SetCurioAttributesFunction extends LootItemConditionalFunction {
 
   @Nonnull
   public LootItemFunctionType<SetCurioAttributesFunction> getType() {
-    return CuriosRegistry.CURIO_ATTRIBUTES.get();
+    return RegaliaSlotsApiRegistry.CURIO_ATTRIBUTES.get();
   }
 
   @Nonnull
@@ -101,10 +101,10 @@ public class SetCurioAttributesFunction extends LootItemConditionalFunction {
       String slot = Util.getRandom(modifier.slots, random);
 
       if (modifier.attribute.value() instanceof SlotAttribute wrapper) {
-        CuriosApi.addSlotModifier(stack, wrapper.getIdentifier(), modifier.id,
+        RegaliaSlotsApi.addSlotModifier(stack, wrapper.getIdentifier(), modifier.id,
             modifier.amount.getFloat(context), modifier.operation, slot);
       } else {
-        CuriosApi.addModifier(stack, modifier.attribute, modifier.id,
+        RegaliaSlotsApi.addModifier(stack, modifier.attribute, modifier.id,
             modifier.amount.getFloat(context), modifier.operation, slot);
       }
     }
@@ -133,7 +133,7 @@ public class SetCurioAttributesFunction extends LootItemConditionalFunction {
           if (rl.getNamespace().equals("regalia_slots_api")) {
             String identifier = rl.getPath();
 
-            if (CuriosApi.getSlot(identifier, false).isEmpty()) {
+            if (RegaliaSlotsApi.getSlot(identifier, false).isEmpty()) {
               throw new JsonSyntaxException("Unknown curios slot type: " + identifier);
             }
             attribute = SlotAttribute.getOrCreate(identifier);
@@ -149,7 +149,7 @@ public class SetCurioAttributesFunction extends LootItemConditionalFunction {
         ResourceLocation rl;
 
         if (value.value() instanceof SlotAttribute wrapper) {
-          rl = ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, wrapper.getIdentifier());
+          rl = ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, wrapper.getIdentifier());
         } else {
           rl = BuiltInRegistries.ATTRIBUTE.getKey(value.value());
         }

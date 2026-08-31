@@ -26,12 +26,12 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 public record CPacketOpenVanilla(ItemStack carried) implements CustomPacketPayload {
 
   public static final Type<CPacketOpenVanilla> TYPE =
-      new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "open_vanilla"));
+      new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "open_vanilla"));
 
   public static final StreamCodec<RegistryFriendlyByteBuf, CPacketOpenVanilla> STREAM_CODEC =
       StreamCodec.composite(

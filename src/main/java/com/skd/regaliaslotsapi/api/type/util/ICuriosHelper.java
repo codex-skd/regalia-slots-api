@@ -44,21 +44,21 @@ import com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler;
 public interface ICuriosHelper {
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getCurio(ItemStack)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getCurio(ItemStack)}
    */
   @Deprecated(since = "1.20.1", forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
   Optional<ICurio> getCurio(ItemStack stack);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getCuriosInventory(LivingEntity)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getCuriosInventory(LivingEntity)}
    */
   @Deprecated(since = "1.20.1", forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
   Optional<ICuriosItemHandler> getCuriosHandler(LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getItemStackSlots(ItemStack, Level)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getItemStackSlots(ItemStack, Level)}
    */
   @Deprecated(since = "1.20.1", forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
@@ -123,7 +123,7 @@ public interface ICuriosHelper {
   Optional<SlotResult> findCurio(@Nonnull LivingEntity livingEntity, String identifier, int index);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#isStackValid(SlotContext, ItemStack)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#isStackValid(SlotContext, ItemStack)}
    */
   @Deprecated(since = "1.20.1", forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
@@ -150,14 +150,14 @@ public interface ICuriosHelper {
 
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#broadcastCurioBreakEvent(SlotContext)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#broadcastCurioBreakEvent(SlotContext)}
    */
   @Deprecated(forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.21")
   void onBrokenCurio(String id, int index, LivingEntity damager);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#broadcastCurioBreakEvent(SlotContext)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#broadcastCurioBreakEvent(SlotContext)}
    */
   @Deprecated(since = "1.20.1", forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")

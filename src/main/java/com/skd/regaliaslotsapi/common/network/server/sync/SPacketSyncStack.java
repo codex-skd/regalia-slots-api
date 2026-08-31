@@ -28,14 +28,14 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 public record SPacketSyncStack(int entityId, String curioId, int slotId, ItemStack stack,
                                int handlerType, CompoundTag compoundTag) implements
     CustomPacketPayload {
 
   public static final Type<SPacketSyncStack> TYPE =
-      new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "sync_stack"));
+      new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "sync_stack"));
 
   public static final StreamCodec<RegistryFriendlyByteBuf, SPacketSyncStack> STREAM_CODEC =
       StreamCodec.composite(ByteBufCodecs.INT, SPacketSyncStack::entityId,

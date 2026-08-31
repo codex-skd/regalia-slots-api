@@ -28,18 +28,18 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.PacketDistributor;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 import com.skd.regaliaslotsapi.common.network.client.CPacketPage;
 
 public class PageButton extends Button {
 
-  private final CuriosScreen parentGui;
+  private final RegaliaSlotsApiScreen parentGui;
   private final Type type;
   private static final ResourceLocation CURIO_INVENTORY =
-      ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID,
+      ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID,
           "textures/gui/curios/inventory.png");
 
-  public PageButton(CuriosScreen parentGui, int xIn, int yIn, int widthIn, int heightIn,
+  public PageButton(RegaliaSlotsApiScreen parentGui, int xIn, int yIn, int widthIn, int heightIn,
                     Type type) {
     super(xIn, yIn, widthIn, heightIn, CommonComponents.EMPTY,
         (button) -> PacketDistributor.sendToServer(

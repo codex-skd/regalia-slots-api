@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(V1460.class)
 public class MixinV1460 {
@@ -37,6 +37,6 @@ public class MixinV1460 {
   )
   private static Pair<String, TypeTemplate>[] curios$attachCuriosFixer(
       Pair<String, TypeTemplate>[] original) {
-    return CuriosUtilMixinHooks.attachDataFixer(curios$schema, original);
+    return RegaliaSlotsApiUtilMixinHooks.attachDataFixer(curios$schema, original);
   }
 }

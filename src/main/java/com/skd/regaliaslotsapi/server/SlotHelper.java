@@ -30,7 +30,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import javax.annotation.Nonnull;
 import net.minecraft.world.entity.LivingEntity;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.type.ISlotType;
 import com.skd.regaliaslotsapi.api.type.inventory.ICurioStacksHandler;
 import com.skd.regaliaslotsapi.api.type.util.ISlotHelper;
@@ -77,7 +77,7 @@ public class SlotHelper implements ISlotHelper {
   @Override
   public SortedMap<ISlotType, ICurioStacksHandler> createSlots(LivingEntity livingEntity) {
     SortedMap<ISlotType, ICurioStacksHandler> curios = new TreeMap<>();
-    CuriosApi.getCuriosHelper().getCuriosHandler(livingEntity).ifPresent(
+    RegaliaSlotsApi.getRegaliaSlotsApiHelper().getCuriosHandler(livingEntity).ifPresent(
         handler -> this.getSlotTypes().forEach(type -> curios.put(type,
             new CurioStacksHandler(handler, type.getIdentifier(), type.getSize(), type.isVisible(),
                 type.hasCosmetic(), type.canToggleRendering(), type.getDropRule()))));
@@ -91,7 +91,7 @@ public class SlotHelper implements ISlotHelper {
 
   @Override
   public int getSlotsForType(@Nonnull final LivingEntity livingEntity, String identifier) {
-    return CuriosApi.getCuriosHelper().getCuriosHandler(livingEntity).map(
+    return RegaliaSlotsApi.getRegaliaSlotsApiHelper().getCuriosHandler(livingEntity).map(
         handler -> handler.getStacksHandler(identifier).map(ICurioStacksHandler::getSlots)
             .orElse(0)).orElse(0);
   }
@@ -114,7 +114,7 @@ public class SlotHelper implements ISlotHelper {
 
   @Override
   public void growSlotType(String id, int amount, final LivingEntity livingEntity) {
-    CuriosApi.getCuriosHelper().getCuriosHandler(livingEntity)
+    RegaliaSlotsApi.getRegaliaSlotsApiHelper().getCuriosHandler(livingEntity)
         .ifPresent(handler -> handler.growSlotType(id, amount));
   }
 
@@ -125,13 +125,13 @@ public class SlotHelper implements ISlotHelper {
 
   @Override
   public void shrinkSlotType(String id, int amount, final LivingEntity livingEntity) {
-    CuriosApi.getCuriosHelper().getCuriosHandler(livingEntity)
+    RegaliaSlotsApi.getRegaliaSlotsApiHelper().getCuriosHandler(livingEntity)
         .ifPresent(handler -> handler.shrinkSlotType(id, amount));
   }
 
   @Override
   public void unlockSlotType(String id, LivingEntity livingEntity) {
-    CuriosApi.getCuriosHelper().getCuriosHandler(livingEntity).ifPresent(handler -> {
+    RegaliaSlotsApi.getRegaliaSlotsApiHelper().getCuriosHandler(livingEntity).ifPresent(handler -> {
 
       if (handler.getStacksHandler(id).map(stacksHandler -> stacksHandler.getSlots() == 0)
           .orElse(false)) {
@@ -142,7 +142,7 @@ public class SlotHelper implements ISlotHelper {
 
   @Override
   public void lockSlotType(String id, LivingEntity livingEntity) {
-    CuriosApi.getCuriosHelper().getCuriosHandler(livingEntity).ifPresent(handler -> {
+    RegaliaSlotsApi.getRegaliaSlotsApiHelper().getCuriosHandler(livingEntity).ifPresent(handler -> {
       int amount = handler.getStacksHandler(id).map(ICurioStacksHandler::getSlots).orElse(0);
 
       if (amount > 0) {

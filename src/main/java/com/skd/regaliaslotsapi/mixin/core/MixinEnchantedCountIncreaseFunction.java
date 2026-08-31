@@ -31,7 +31,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(EnchantedCountIncreaseFunction.class)
 public class MixinEnchantedCountIncreaseFunction {
@@ -52,7 +52,7 @@ public class MixinEnchantedCountIncreaseFunction {
                                        LootContext lootContext) {
 
     if (enchantment.is(Enchantments.LOOTING)) {
-      return enchantmentLevel + CuriosUtilMixinHooks.getLootingLevel(lootContext);
+      return enchantmentLevel + RegaliaSlotsApiUtilMixinHooks.getLootingLevel(lootContext);
     }
     return enchantmentLevel;
   }

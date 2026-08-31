@@ -25,12 +25,12 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 public record CPacketDestroy() implements CustomPacketPayload {
 
   public static final Type<CPacketDestroy> TYPE =
-      new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "destroy"));
+      new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "destroy"));
 
   public static final StreamCodec<RegistryFriendlyByteBuf, CPacketDestroy> STREAM_CODEC =
       new StreamCodec<>() {

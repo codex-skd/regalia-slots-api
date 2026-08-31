@@ -26,12 +26,12 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 public record SPacketQuickMove(int windowId, int moveIndex) implements CustomPacketPayload {
 
   public static final Type<SPacketQuickMove> TYPE =
-      new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "quick_move"));
+      new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "quick_move"));
 
   public static final StreamCodec<RegistryFriendlyByteBuf, SPacketQuickMove> STREAM_CODEC =
       StreamCodec.composite(ByteBufCodecs.INT, SPacketQuickMove::windowId, ByteBufCodecs.INT,

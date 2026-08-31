@@ -30,7 +30,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotContext;
 import com.skd.regaliaslotsapi.api.extensions.ICurioSlotExtension;
 import com.skd.regaliaslotsapi.api.type.inventory.IDynamicStackHandler;
@@ -87,7 +87,7 @@ public class CurioSlot extends SlotItemHandler {
             index,
             this instanceof CosmeticCurioSlot,
             this instanceof CosmeticCurioSlot || renders.get(index));
-    CuriosApi.getSlot(identifier, player.level())
+    RegaliaSlotsApi.getSlot(identifier, player.level())
         .ifPresent(slotType -> this.setBackground(InventoryMenu.BLOCK_ATLAS, slotType.getIcon()));
     this.extension = ICurioSlotExtension.from(identifier);
   }
@@ -160,7 +160,7 @@ public class CurioSlot extends SlotItemHandler {
         && !ItemStack.matches(current, stack)
         && !((AccessorEntity) this.player).getFirstTick()
         && this.isActiveState()) {
-      CuriosApi.getCurio(stack).ifPresent(curio -> curio.onEquipFromUse(this.slotContext));
+      RegaliaSlotsApi.getCurio(stack).ifPresent(curio -> curio.onEquipFromUse(this.slotContext));
     }
   }
 

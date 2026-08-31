@@ -26,7 +26,7 @@ import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.type.ISlotType;
 import com.skd.regaliaslotsapi.platform.services.ICuriosPlatform;
 
@@ -35,8 +35,8 @@ public class NeoForgeCurios implements ICuriosPlatform {
   @Override
   public Map<String, ISlotType> getItemStackSlots(ItemStack stack,
                                                   @Nullable LivingEntity livingEntity) {
-    return livingEntity != null ? CuriosApi.getItemStackSlots(stack, livingEntity) :
-        CuriosApi.getItemStackSlots(stack, true);
+    return livingEntity != null ? RegaliaSlotsApi.getItemStackSlots(stack, livingEntity) :
+        RegaliaSlotsApi.getItemStackSlots(stack, true);
   }
 
   @Override

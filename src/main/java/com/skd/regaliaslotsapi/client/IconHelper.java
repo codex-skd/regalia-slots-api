@@ -23,7 +23,7 @@ package com.skd.regaliaslotsapi.client;
 import java.util.HashMap;
 import java.util.Map;
 import net.minecraft.resources.ResourceLocation;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.type.util.IIconHelper;
 
 public class IconHelper implements IIconHelper {
@@ -43,6 +43,6 @@ public class IconHelper implements IIconHelper {
   @Override
   public ResourceLocation getIcon(String identifier) {
     return idToIcon.getOrDefault(identifier,
-        ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, "slot/empty_curio_slot"));
+        ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "slot/empty_curio_slot"));
   }
 }

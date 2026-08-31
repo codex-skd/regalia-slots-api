@@ -29,7 +29,7 @@ import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.commons.lang3.EnumUtils;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 import com.skd.regaliaslotsapi.api.type.ISlotType;
 import com.skd.regaliaslotsapi.api.type.capability.ICurio;
 
@@ -180,7 +180,7 @@ public final class SlotType implements ISlotType {
     private Boolean hasCosmetic = null;
     private Boolean renderToggle = null;
     private ResourceLocation icon =
-        ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "slot/empty_curio_slot");
+        ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "slot/empty_curio_slot");
     private ICurio.DropRule dropRule = ICurio.DropRule.DEFAULT;
     private Set<ResourceLocation> validators = null;
 
@@ -191,7 +191,7 @@ public final class SlotType implements ISlotType {
     public void apply(Builder builder) {
 
       if (!builder.identifier.equals(this.identifier)) {
-        CuriosConstants.LOG.error("Mismatched slot builders {} and {}", builder.identifier,
+        RegaliaSlotsApiConstants.LOG.error("Mismatched slot builders {} and {}", builder.identifier,
             this.identifier);
         return;
       }
@@ -310,7 +310,7 @@ public final class SlotType implements ISlotType {
       ICurio.DropRule newRule = EnumUtils.getEnum(ICurio.DropRule.class, dropRule);
 
       if (newRule == null) {
-        CuriosConstants.LOG.error(dropRule + " is not a valid drop rule!");
+        RegaliaSlotsApiConstants.LOG.error(dropRule + " is not a valid drop rule!");
       } else {
         this.dropRule = newRule;
       }
@@ -352,7 +352,7 @@ public final class SlotType implements ISlotType {
 
       if (this.validators == null) {
         this.validators =
-            Set.of(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "tag"));
+            Set.of(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "tag"));
       }
       return new SlotType(this);
     }

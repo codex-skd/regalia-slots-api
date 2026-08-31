@@ -28,7 +28,7 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
 import org.jetbrains.annotations.NotNull;
 import com.skd.regaliaslotsapi.api.type.inventory.ICurioStacksHandler;
-import com.skd.regaliaslotsapi.common.CuriosRegistry;
+import com.skd.regaliaslotsapi.common.RegaliaSlotsApiRegistry;
 
 public class CurioItemHandler implements IItemHandler {
 
@@ -37,7 +37,7 @@ public class CurioItemHandler implements IItemHandler {
 
   public CurioItemHandler(final LivingEntity livingEntity) {
     this.livingEntity = livingEntity;
-    CurioInventory inv = livingEntity.getData(CuriosRegistry.INVENTORY.get());
+    CurioInventory inv = livingEntity.getData(RegaliaSlotsApiRegistry.INVENTORY.get());
     Map<String, ICurioStacksHandler> curios = inv.curios;
     IItemHandlerModifiable[] itemHandlers = new IItemHandlerModifiable[curios.size()];
     int index = 0;

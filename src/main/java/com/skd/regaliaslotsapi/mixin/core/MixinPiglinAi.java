@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(PiglinAi.class)
 public class MixinPiglinAi {
@@ -35,7 +35,7 @@ public class MixinPiglinAi {
   private static void curios$isWearingGold(LivingEntity livingEntity,
                                            CallbackInfoReturnable<Boolean> cir) {
 
-    if (CuriosUtilMixinHooks.canNeutralizePiglins(livingEntity)) {
+    if (RegaliaSlotsApiUtilMixinHooks.canNeutralizePiglins(livingEntity)) {
       cir.setReturnValue(true);
     }
   }

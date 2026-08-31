@@ -31,7 +31,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(ApplyBonusCount.class)
 public class MixinApplyBonusCount {
@@ -52,7 +52,7 @@ public class MixinApplyBonusCount {
                                        LootContext lootContext) {
 
     if (enchantment.is(Enchantments.FORTUNE)) {
-      return enchantmentLevel + CuriosUtilMixinHooks.getFortuneLevel(lootContext);
+      return enchantmentLevel + RegaliaSlotsApiUtilMixinHooks.getFortuneLevel(lootContext);
     }
     return enchantmentLevel;
   }

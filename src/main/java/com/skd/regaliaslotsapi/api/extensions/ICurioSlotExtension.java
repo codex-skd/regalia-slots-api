@@ -8,7 +8,7 @@ import com.skd.regaliaslotsapi.api.SlotContext;
 
 /**
  * An interface for defining additional behavior for curio slots. Registration occurs in {@link
- * RegisterCuriosExtensionsEvent}.
+ * RegisterRegaliaSlotsApiExtensionsEvent}.
  */
 public interface ICurioSlotExtension {
 
@@ -23,7 +23,7 @@ public interface ICurioSlotExtension {
    * @return The associated slot extension instance
    */
   static ICurioSlotExtension from(String id) {
-    return CuriosExtensions.SLOT_EXTENSIONS.getOrDefault(id, DEFAULT);
+    return RegaliaSlotsApiExtensions.SLOT_EXTENSIONS.getOrDefault(id, DEFAULT);
   }
 
   /**

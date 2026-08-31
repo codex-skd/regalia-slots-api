@@ -28,21 +28,21 @@ import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.PacketDistributor;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.common.network.client.CPacketToggleCosmetics;
 
 public class CosmeticButton extends ImageButton {
 
   public static final WidgetSprites OFF =
-      new WidgetSprites(ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, "cosmetic_off"),
-          ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, "cosmetic_off_highlighted"));
+      new WidgetSprites(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "cosmetic_off"),
+          ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "cosmetic_off_highlighted"));
   public static final WidgetSprites ON =
-      new WidgetSprites(ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, "cosmetic_on"),
-          ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, "cosmetic_on_highlighted"));
+      new WidgetSprites(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "cosmetic_on"),
+          ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "cosmetic_on_highlighted"));
 
-  private final CuriosScreen parentGui;
+  private final RegaliaSlotsApiScreen parentGui;
 
-  CosmeticButton(CuriosScreen parentGui, int xIn, int yIn, int widthIn, int heightIn) {
+  CosmeticButton(RegaliaSlotsApiScreen parentGui, int xIn, int yIn, int widthIn, int heightIn) {
     super(xIn, yIn, widthIn, heightIn, OFF,
         (button) -> {
           parentGui.getMenu().toggleCosmetics();

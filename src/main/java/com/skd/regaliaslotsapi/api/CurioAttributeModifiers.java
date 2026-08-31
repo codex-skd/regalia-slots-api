@@ -32,7 +32,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 /**
  * A record used for data component representation of curio attribute modifiers
@@ -109,7 +109,7 @@ public record CurioAttributeModifiers(List<Entry> modifiers, boolean showInToolt
       ResourceLocation rl;
 
       if (attribute.value() instanceof SlotAttribute wrapper) {
-        rl = ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, wrapper.getIdentifier());
+        rl = ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, wrapper.getIdentifier());
       } else {
         rl = ResourceLocation.parse(attribute.getRegisteredName());
       }

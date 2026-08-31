@@ -5,8 +5,8 @@
   "refmap": "regalia_slots_api.refmap.json",
   "mixins": [
     "AccessorEntity",
-    "MixinCuriosTriggers",
-    "MixinCuriosTriggersEquip"
+    "MixinRegaliaSlotsApiTriggers",
+    "MixinRegaliaSlotsApiTriggersEquip"
   ],
   "minVersion": "0.8"
 }

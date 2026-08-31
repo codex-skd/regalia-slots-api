@@ -26,7 +26,7 @@ import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(NbtPredicate.class)
 public class MixinNbtPredicate {
@@ -36,6 +36,6 @@ public class MixinNbtPredicate {
       method = "getEntityTagToCompare"
   )
   private static CompoundTag curios$mergeCuriosInventory(CompoundTag compoundTag, Entity entity) {
-    return CuriosUtilMixinHooks.mergeCuriosInventory(compoundTag, entity);
+    return RegaliaSlotsApiUtilMixinHooks.mergeCuriosInventory(compoundTag, entity);
   }
 }

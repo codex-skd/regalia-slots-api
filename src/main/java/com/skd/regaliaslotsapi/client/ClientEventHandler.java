@@ -45,7 +45,7 @@ import net.neoforged.neoforge.common.util.AttributeTooltipContext;
 import net.neoforged.neoforge.common.util.AttributeUtil;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotContext;
 import com.skd.regaliaslotsapi.common.network.client.CPacketOpenCurios;
 
@@ -76,7 +76,7 @@ public class ClientEventHandler {
     for (String identifier : slots) {
       SlotContext slotContext = new SlotContext(identifier, player, 0, false, true);
       Multimap<Holder<Attribute>, AttributeModifier> attributes =
-          CuriosApi.getAttributeModifiers(slotContext, CuriosApi.getSlotId(slotContext), stack);
+          RegaliaSlotsApi.getAttributeModifiers(slotContext, RegaliaSlotsApi.getSlotId(slotContext), stack);
       attributes.values().removeIf(modifier -> skipped.isSkipped(modifier.id()));
 
       if (attributes.isEmpty()) {
@@ -95,7 +95,7 @@ public class ClientEventHandler {
       }
     }
     evt.addTooltipLines(
-        CuriosApi.getCurio(stack)
+        RegaliaSlotsApi.getCurio(stack)
             .map(curio -> curio.getAttributesTooltip(attributesTooltip, context))
             .orElse(attributesTooltip)
             .toArray(new Component[0]));
@@ -135,7 +135,7 @@ public class ClientEventHandler {
     evt.getToolTip()
         .addAll(
             1,
-            CuriosApi.getCurio(stack)
+            RegaliaSlotsApi.getCurio(stack)
                 .map(curio -> curio.getSlotsTooltip(toAdd, context))
                 .orElse(toAdd));
   }
@@ -144,8 +144,8 @@ public class ClientEventHandler {
     Set<String> slots =
         Set.copyOf(
             (player != null
-                    ? CuriosApi.getItemStackSlots(stack, player)
-                    : CuriosApi.getItemStackSlots(stack, FMLLoader.getDist() == Dist.CLIENT))
+                    ? RegaliaSlotsApi.getItemStackSlots(stack, player)
+                    : RegaliaSlotsApi.getItemStackSlots(stack, FMLLoader.getDist() == Dist.CLIENT))
                 .keySet());
 
     if (slots.contains("curio")) {

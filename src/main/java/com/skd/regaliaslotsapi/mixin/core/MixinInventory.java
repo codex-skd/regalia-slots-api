@@ -34,7 +34,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(value = Inventory.class, priority = 4)
 public abstract class MixinInventory implements Container {
@@ -50,7 +50,7 @@ public abstract class MixinInventory implements Container {
   )
   private void curios$containsStack(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
 
-    if (CuriosUtilMixinHooks.containsStack(this.player, stack)) {
+    if (RegaliaSlotsApiUtilMixinHooks.containsStack(this.player, stack)) {
       cir.setReturnValue(true);
     }
   }
@@ -62,7 +62,7 @@ public abstract class MixinInventory implements Container {
   )
   private void curios$containsTag(TagKey<Item> tagKey, CallbackInfoReturnable<Boolean> cir) {
 
-    if (CuriosUtilMixinHooks.containsTag(this.player, tagKey)) {
+    if (RegaliaSlotsApiUtilMixinHooks.containsTag(this.player, tagKey)) {
       cir.setReturnValue(true);
     }
   }
@@ -75,7 +75,7 @@ public abstract class MixinInventory implements Container {
   private void curios$contains(Predicate<ItemStack> predicate,
                                CallbackInfoReturnable<Boolean> cir) {
 
-    if (CuriosUtilMixinHooks.contains(this.player, predicate)) {
+    if (RegaliaSlotsApiUtilMixinHooks.contains(this.player, predicate)) {
       cir.setReturnValue(true);
     }
   }
@@ -93,7 +93,7 @@ public abstract class MixinInventory implements Container {
   private void curios$hasAnyMatching(Predicate<ItemStack> predicate,
                                      CallbackInfoReturnable<Boolean> cir) {
 
-    if (!cir.getReturnValue() && CuriosUtilMixinHooks.contains(this.player, predicate)) {
+    if (!cir.getReturnValue() && RegaliaSlotsApiUtilMixinHooks.contains(this.player, predicate)) {
       cir.setReturnValue(true);
     }
   }

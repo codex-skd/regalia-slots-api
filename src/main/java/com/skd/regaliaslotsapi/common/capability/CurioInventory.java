@@ -43,7 +43,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.common.util.INBTSerializable;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotResult;
 import com.skd.regaliaslotsapi.api.type.ISlotType;
 import com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler;
@@ -71,7 +71,7 @@ public class CurioInventory implements INBTSerializable<CompoundTag> {
     LivingEntity livingEntity = curiosItemHandler.getWearer();
 
     if (!this.markDeserialized) {
-      SortedSet<ISlotType> sorted = new TreeSet<>(CuriosApi.getEntitySlots(livingEntity).values());
+      SortedSet<ISlotType> sorted = new TreeSet<>(RegaliaSlotsApi.getEntitySlots(livingEntity).values());
 
       for (ISlotType slotType : sorted) {
         this.curios.put(
@@ -91,7 +91,7 @@ public class CurioInventory implements INBTSerializable<CompoundTag> {
       ListTag tagList = this.deserialized.getList("Curios", Tag.TAG_COMPOUND);
       Map<String, ICurioStacksHandler> curios = new LinkedHashMap<>();
       SortedMap<ISlotType, ICurioStacksHandler> sortedCurios = new TreeMap<>();
-      SortedSet<ISlotType> sorted = new TreeSet<>(CuriosApi.getEntitySlots(livingEntity).values());
+      SortedSet<ISlotType> sorted = new TreeSet<>(RegaliaSlotsApi.getEntitySlots(livingEntity).values());
 
       for (ISlotType slotType : sorted) {
         sortedCurios.put(
@@ -114,7 +114,7 @@ public class CurioInventory implements INBTSerializable<CompoundTag> {
         prevStacksHandler.deserializeNBT(tag.getCompound("StacksHandler"));
 
         Optional<ISlotType> optionalType =
-            Optional.ofNullable(CuriosApi.getEntitySlots(livingEntity).get(identifier));
+            Optional.ofNullable(RegaliaSlotsApi.getEntitySlots(livingEntity).get(identifier));
         optionalType.ifPresent(
             slotType -> {
               CurioStacksHandler newStacksHandler =

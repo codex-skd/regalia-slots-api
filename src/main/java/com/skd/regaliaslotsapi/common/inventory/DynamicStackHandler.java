@@ -30,7 +30,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotContext;
 import com.skd.regaliaslotsapi.api.event.CurioCanEquipEvent;
 import com.skd.regaliaslotsapi.api.event.CurioCanUnequipEvent;
@@ -64,8 +64,8 @@ public class DynamicStackHandler extends ItemStackHandler implements IDynamicSta
   @Override
   public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
     SlotContext ctx = ctxBuilder.apply(slot);
-    boolean canEquip = (CuriosApi.isStackValid(ctx, stack) &&
-        CuriosApi.getCurio(stack).map(curio -> curio.canEquip(ctx)).orElse(true) &&
+    boolean canEquip = (RegaliaSlotsApi.isStackValid(ctx, stack) &&
+        RegaliaSlotsApi.getCurio(stack).map(curio -> curio.canEquip(ctx)).orElse(true) &&
         super.isItemValid(slot, stack));
     CurioCanEquipEvent event =
         new CurioCanEquipEvent(stack, ctx, canEquip ? TriState.TRUE : TriState.FALSE);
@@ -89,7 +89,7 @@ public class DynamicStackHandler extends ItemStackHandler implements IDynamicSta
     if (result == TriState.TRUE ||
         ((existing.isEmpty() || isCreative ||
             !EnchantmentHelper.has(existing, EnchantmentEffectComponents.PREVENT_ARMOR_CHANGE)) &&
-            CuriosApi.getCurio(existing).map(curio -> curio.canUnequip(ctx)).orElse(true))) {
+            RegaliaSlotsApi.getCurio(existing).map(curio -> curio.canUnequip(ctx)).orElse(true))) {
       return super.extractItem(slot, amount, simulate);
     }
     return ItemStack.EMPTY;

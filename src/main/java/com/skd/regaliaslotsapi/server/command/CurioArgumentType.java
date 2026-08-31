@@ -35,7 +35,7 @@ import java.util.concurrent.CompletableFuture;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.network.chat.Component;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 
 public class CurioArgumentType implements ArgumentType<String> {
 
@@ -68,7 +68,7 @@ public class CurioArgumentType implements ArgumentType<String> {
   public String parse(StringReader reader) throws CommandSyntaxException {
     String s = reader.readUnquotedString();
 
-    if (CuriosApi.getSlotHelper() != null && !slotIds.contains(s)) {
+    if (RegaliaSlotsApi.getSlotHelper() != null && !slotIds.contains(s)) {
       throw UNKNOWN_TYPE.create(s);
     } else {
       return s;

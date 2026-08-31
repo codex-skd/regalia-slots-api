@@ -26,13 +26,13 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 public record SPacketSyncRender(int entityId, String curioId, int slotId, boolean value) implements
     CustomPacketPayload {
 
   public static final Type<SPacketSyncRender> TYPE =
-      new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "sync_render"));
+      new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "sync_render"));
 
   public static final StreamCodec<RegistryFriendlyByteBuf, SPacketSyncRender> STREAM_CODEC =
       StreamCodec.composite(ByteBufCodecs.INT, SPacketSyncRender::entityId,

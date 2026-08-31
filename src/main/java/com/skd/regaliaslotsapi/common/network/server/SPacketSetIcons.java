@@ -28,12 +28,12 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 public class SPacketSetIcons implements CustomPacketPayload {
 
   public static final Type<SPacketSetIcons> TYPE =
-      new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "set_icons"));
+      new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "set_icons"));
   public static final StreamCodec<RegistryFriendlyByteBuf, SPacketSetIcons> STREAM_CODEC =
       new StreamCodec<>() {
         @Nonnull

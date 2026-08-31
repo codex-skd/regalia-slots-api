@@ -27,7 +27,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import com.skd.regaliaslotsapi.mixin.CuriosUtilMixinHooks;
+import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiUtilMixinHooks;
 
 @Mixin(PowderSnowBlock.class)
 public class MixinPowderSnowBlock {
@@ -37,7 +37,7 @@ public class MixinPowderSnowBlock {
                                                        CallbackInfoReturnable<Boolean> cir) {
 
     if (entity instanceof LivingEntity livingEntity &&
-        CuriosUtilMixinHooks.canWalkOnPowderSnow(livingEntity)) {
+        RegaliaSlotsApiUtilMixinHooks.canWalkOnPowderSnow(livingEntity)) {
       cir.setReturnValue(true);
     }
   }

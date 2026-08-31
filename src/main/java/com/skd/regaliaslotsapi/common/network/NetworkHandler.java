@@ -27,8 +27,8 @@ import com.skd.regaliaslotsapi.common.network.client.CPacketOpenVanilla;
 import com.skd.regaliaslotsapi.common.network.client.CPacketPage;
 import com.skd.regaliaslotsapi.common.network.client.CPacketToggleCosmetics;
 import com.skd.regaliaslotsapi.common.network.client.CPacketToggleRender;
-import com.skd.regaliaslotsapi.common.network.client.CuriosClientPayloadHandler;
-import com.skd.regaliaslotsapi.common.network.server.CuriosServerPayloadHandler;
+import com.skd.regaliaslotsapi.common.network.client.RegaliaSlotsApiClientPayloadHandler;
+import com.skd.regaliaslotsapi.common.network.server.RegaliaSlotsApiServerPayloadHandler;
 import com.skd.regaliaslotsapi.common.network.server.SPacketBreak;
 import com.skd.regaliaslotsapi.common.network.server.SPacketGrabbedItem;
 import com.skd.regaliaslotsapi.common.network.server.SPacketPage;
@@ -41,40 +41,40 @@ public class NetworkHandler {
   public static void register(final PayloadRegistrar registrar) {
     //Client Packets
     registrar.playToServer(CPacketDestroy.TYPE, CPacketDestroy.STREAM_CODEC,
-        CuriosServerPayloadHandler.getInstance()::handleDestroyPacket);
+        RegaliaSlotsApiServerPayloadHandler.getInstance()::handleDestroyPacket);
     registrar.playToServer(CPacketOpenCurios.TYPE, CPacketOpenCurios.STREAM_CODEC,
-        CuriosServerPayloadHandler.getInstance()::handleOpenCurios);
+        RegaliaSlotsApiServerPayloadHandler.getInstance()::handleOpenCurios);
     registrar.playToServer(CPacketOpenVanilla.TYPE, CPacketOpenVanilla.STREAM_CODEC,
-        CuriosServerPayloadHandler.getInstance()::handleOpenVanilla);
+        RegaliaSlotsApiServerPayloadHandler.getInstance()::handleOpenVanilla);
     registrar.playToServer(CPacketPage.TYPE, CPacketPage.STREAM_CODEC,
-        CuriosServerPayloadHandler.getInstance()::handlePage);
+        RegaliaSlotsApiServerPayloadHandler.getInstance()::handlePage);
     registrar.playToServer(CPacketToggleRender.TYPE, CPacketToggleRender.STREAM_CODEC,
-        CuriosServerPayloadHandler.getInstance()::handlerToggleRender);
+        RegaliaSlotsApiServerPayloadHandler.getInstance()::handlerToggleRender);
     registrar.playToServer(CPacketToggleCosmetics.TYPE, CPacketToggleCosmetics.STREAM_CODEC,
-        CuriosServerPayloadHandler.getInstance()::handlerToggleCosmetics);
+        RegaliaSlotsApiServerPayloadHandler.getInstance()::handlerToggleCosmetics);
 
     // Server Packets
     registrar.playToClient(SPacketSyncStack.TYPE, SPacketSyncStack.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketGrabbedItem.TYPE, SPacketGrabbedItem.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketSyncCurios.TYPE, SPacketSyncCurios.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketSyncData.TYPE, SPacketSyncData.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketSyncModifiers.TYPE, SPacketSyncModifiers.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketSyncRender.TYPE, SPacketSyncRender.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketSyncActiveState.TYPE, SPacketSyncActiveState.STREAM_CODEC,
-            CuriosClientPayloadHandler.getInstance()::handle);
+            RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketBreak.TYPE, SPacketBreak.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketPage.TYPE, SPacketPage.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketSetIcons.TYPE, SPacketSetIcons.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
     registrar.playToClient(SPacketQuickMove.TYPE, SPacketQuickMove.STREAM_CODEC,
-        CuriosClientPayloadHandler.getInstance()::handle);
+        RegaliaSlotsApiClientPayloadHandler.getInstance()::handle);
   }
 }

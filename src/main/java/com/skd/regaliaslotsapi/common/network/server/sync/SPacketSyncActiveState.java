@@ -5,7 +5,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
-import com.skd.regaliaslotsapi.CuriosConstants;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
 
 import javax.annotation.Nonnull;
 
@@ -13,7 +13,7 @@ public record SPacketSyncActiveState(int entityId, String curioId, int slotId, b
         CustomPacketPayload {
 
     public static final Type<SPacketSyncActiveState> TYPE =
-            new Type<>(ResourceLocation.fromNamespaceAndPath(CuriosConstants.MOD_ID, "sync_active"));
+            new Type<>(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApiConstants.MOD_ID, "sync_active"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SPacketSyncActiveState> STREAM_CODEC =
             StreamCodec.composite(ByteBufCodecs.INT, SPacketSyncActiveState::entityId,

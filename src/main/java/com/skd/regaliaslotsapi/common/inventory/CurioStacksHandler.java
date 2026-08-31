@@ -47,7 +47,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.apache.commons.lang3.EnumUtils;
-import com.skd.regaliaslotsapi.api.CuriosApi;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
 import com.skd.regaliaslotsapi.api.SlotAttribute;
 import com.skd.regaliaslotsapi.api.SlotContext;
 import com.skd.regaliaslotsapi.api.event.CurioChangeEvent;
@@ -57,13 +57,13 @@ import com.skd.regaliaslotsapi.api.type.capability.ICurio;
 import com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler;
 import com.skd.regaliaslotsapi.api.type.inventory.ICurioStacksHandler;
 import com.skd.regaliaslotsapi.api.type.inventory.IDynamicStackHandler;
-import com.skd.regaliaslotsapi.common.CuriosRegistry;
+import com.skd.regaliaslotsapi.common.RegaliaSlotsApiRegistry;
 import com.skd.regaliaslotsapi.common.network.server.sync.SPacketSyncActiveState;
 
 public class CurioStacksHandler implements ICurioStacksHandler {
 
   private static final ResourceLocation LEGACY_ID =
-      ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, "legacy");
+      ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "legacy");
 
   private final ICuriosItemHandler itemHandler;
   private final String identifier;
@@ -197,12 +197,12 @@ public class CurioStacksHandler implements ICurioStacksHandler {
     ItemStack stack = stacks.getStackInSlot(index);
     NeoForge.EVENT_BUS.post(
         new CurioChangeEvent(livingEntity, identifier, index, stack, ItemStack.EMPTY));
-    ResourceLocation id = CuriosApi.getSlotId(slotContext);
+    ResourceLocation id = RegaliaSlotsApi.getSlotId(slotContext);
     AttributeMap attributeMap = livingEntity.getAttributes();
 
     if (!stack.isEmpty()) {
       Multimap<Holder<Attribute>, AttributeModifier> map =
-          CuriosApi.getAttributeModifiers(slotContext, id, stack);
+          RegaliaSlotsApi.getAttributeModifiers(slotContext, id, stack);
       Multimap<String, AttributeModifier> slots = HashMultimap.create();
       Set<Holder<Attribute>> toRemove = new HashSet<>();
 
@@ -226,7 +226,7 @@ public class CurioStacksHandler implements ICurioStacksHandler {
             }
           });
       this.itemHandler.removeSlotModifiers(slots);
-      CuriosApi.getCurio(stack).ifPresent(curio -> curio.onUnequip(slotContext, stack));
+      RegaliaSlotsApi.getCurio(stack).ifPresent(curio -> curio.onUnequip(slotContext, stack));
     }
   }
 
@@ -248,12 +248,12 @@ public class CurioStacksHandler implements ICurioStacksHandler {
     ItemStack stack = stacks.getStackInSlot(index);
     NeoForge.EVENT_BUS.post(
         new CurioChangeEvent(livingEntity, identifier, index, ItemStack.EMPTY, stack));
-    ResourceLocation id = CuriosApi.getSlotId(slotContext);
+    ResourceLocation id = RegaliaSlotsApi.getSlotId(slotContext);
     AttributeMap attributeMap = livingEntity.getAttributes();
 
     if (!stack.isEmpty()) {
       Multimap<Holder<Attribute>, AttributeModifier> map =
-          CuriosApi.getAttributeModifiers(slotContext, id, stack);
+          RegaliaSlotsApi.getAttributeModifiers(slotContext, id, stack);
       Multimap<String, AttributeModifier> slots = HashMultimap.create();
       Set<Holder<Attribute>> toRemove = new HashSet<>();
 
@@ -277,10 +277,10 @@ public class CurioStacksHandler implements ICurioStacksHandler {
             }
           });
       this.itemHandler.addTransientSlotModifiers(slots);
-      CuriosApi.getCurio(stack).ifPresent(curio -> curio.onEquip(slotContext, ItemStack.EMPTY));
+      RegaliaSlotsApi.getCurio(stack).ifPresent(curio -> curio.onEquip(slotContext, ItemStack.EMPTY));
 
       if (livingEntity instanceof ServerPlayer) {
-        CuriosRegistry.EQUIP_TRIGGER
+        RegaliaSlotsApiRegistry.EQUIP_TRIGGER
             .get()
             .trigger(slotContext, (ServerPlayer) livingEntity, stack);
       }
@@ -878,9 +878,9 @@ public class CurioStacksHandler implements ICurioStacksHandler {
       SlotContext slotContext = new SlotContext(identifier, entity, i, false, this.visible);
 
       if (!stack.isEmpty()) {
-        ResourceLocation id = CuriosApi.getSlotId(slotContext);
+        ResourceLocation id = RegaliaSlotsApi.getSlotId(slotContext);
         Multimap<Holder<Attribute>, AttributeModifier> map =
-            CuriosApi.getAttributeModifiers(slotContext, id, stack);
+            RegaliaSlotsApi.getAttributeModifiers(slotContext, id, stack);
         Multimap<String, AttributeModifier> slots = HashMultimap.create();
         Set<Holder<Attribute>> toRemove = new HashSet<>();
         AttributeMap attributeMap = entity.getAttributes();
@@ -906,7 +906,7 @@ public class CurioStacksHandler implements ICurioStacksHandler {
               }
             });
         this.itemHandler.removeSlotModifiers(slots);
-        CuriosApi.getCurio(stack).ifPresent(curio -> curio.onUnequip(slotContext, ItemStack.EMPTY));
+        RegaliaSlotsApi.getCurio(stack).ifPresent(curio -> curio.onUnequip(slotContext, ItemStack.EMPTY));
       }
       stackHandler.setStackInSlot(i, ItemStack.EMPTY);
     }

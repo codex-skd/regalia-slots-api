@@ -32,7 +32,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.lwjgl.glfw.GLFW;
-import com.skd.regaliaslotsapi.client.CuriosClientConfig;
+import com.skd.regaliaslotsapi.client.RegaliaSlotsApiClientConfig;
 import com.skd.regaliaslotsapi.common.network.client.CPacketDestroy;
 
 public class GuiEventHandler {
@@ -41,21 +41,21 @@ public class GuiEventHandler {
   public void onInventoryGuiInit(ScreenEvent.Init.Post evt) {
     Screen screen = evt.getScreen();
 
-    if (!CuriosClientConfig.CLIENT.enableButton.get()) {
+    if (!RegaliaSlotsApiClientConfig.CLIENT.enableButton.get()) {
       return;
     }
 
     if (screen instanceof InventoryScreen || screen instanceof CreativeModeInventoryScreen) {
       AbstractContainerScreen<?> gui = (AbstractContainerScreen<?>) screen;
       boolean isCreative = screen instanceof CreativeModeInventoryScreen;
-      Tuple<Integer, Integer> offsets = CuriosScreen.getButtonOffset(isCreative);
+      Tuple<Integer, Integer> offsets = RegaliaSlotsApiScreen.getButtonOffset(isCreative);
       int x = offsets.getA();
       int y = offsets.getB();
       int size = isCreative ? 8 : 10;
       int yOffset = isCreative ? 67 : 81;
       evt.addListener(
-          new CuriosButton(gui, gui.getGuiLeft() + x - 2, gui.getGuiTop() + y + yOffset, size, size,
-              isCreative ? CuriosButton.SMALL : CuriosButton.BIG));
+          new RegaliaSlotsApiButton(gui, gui.getGuiLeft() + x - 2, gui.getGuiTop() + y + yOffset, size, size,
+              isCreative ? RegaliaSlotsApiButton.SMALL : RegaliaSlotsApiButton.BIG));
     }
   }
 

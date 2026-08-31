@@ -53,28 +53,28 @@ public interface ISlotHelper {
   void clear();
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getSlot(String, Level)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getSlot(String, Level)}
    */
   @Deprecated(forRemoval = true, since = "1.20.1")
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
   Optional<ISlotType> getSlotType(String identifier);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getSlots()}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getSlots()}
    */
   @Deprecated(forRemoval = true, since = "1.20.1")
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
   Collection<ISlotType> getSlotTypes();
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getEntitySlots(LivingEntity)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getEntitySlots(LivingEntity)}
    */
   @Deprecated(forRemoval = true, since = "1.20.1")
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
   Collection<ISlotType> getSlotTypes(LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getSlots()}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getSlots()}
    */
   @Deprecated(forRemoval = true, since = "1.20.1")
   @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
@@ -96,21 +96,21 @@ public interface ISlotHelper {
   void setSlotsForType(String id, LivingEntity livingEntity, int amount);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getEntitySlots(LivingEntity)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getEntitySlots(LivingEntity)}
    */
   @Deprecated(forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.21")
   SortedMap<ISlotType, ICurioStacksHandler> createSlots(LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#getSlots()}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#getSlots()}
    */
   @Deprecated(forRemoval = true)
   @ApiStatus.ScheduledForRemoval(inVersion = "1.21")
   SortedMap<ISlotType, ICurioStacksHandler> createSlots();
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addPermanentSlotModifiers(Multimap)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addTransientSlotModifiers(Multimap)}
    */
@@ -119,7 +119,7 @@ public interface ISlotHelper {
   void growSlotType(String id, LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addPermanentSlotModifiers(Multimap)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addTransientSlotModifiers(Multimap)}
    */
@@ -128,7 +128,7 @@ public interface ISlotHelper {
   void growSlotType(String id, int amount, LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addPermanentSlotModifiers(Multimap)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addTransientSlotModifiers(Multimap)}
    */
@@ -137,7 +137,7 @@ public interface ISlotHelper {
   void shrinkSlotType(String id, LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addPermanentSlotModifiers(Multimap)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addTransientSlotModifiers(Multimap)}
    */
@@ -146,7 +146,7 @@ public interface ISlotHelper {
   void shrinkSlotType(String id, int amount, LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addPermanentSlotModifiers(Multimap)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addTransientSlotModifiers(Multimap)}
    */
@@ -155,7 +155,7 @@ public interface ISlotHelper {
   void unlockSlotType(String id, LivingEntity livingEntity);
 
   /**
-   * @deprecated See {@link com.skd.regaliaslotsapi.api.CuriosApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
+   * @deprecated See {@link com.skd.regaliaslotsapi.api.RegaliaSlotsApi#addSlotModifier(Multimap, String, ResourceLocation, double, AttributeModifier.Operation)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addPermanentSlotModifiers(Multimap)}
    * and {@link com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler#addTransientSlotModifiers(Multimap)}
    */
