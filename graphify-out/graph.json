@@ -446,7 +446,7 @@
       "source_location": "L252",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_regaliaslotsapicommonmod_regaliaslotsapicommonmod_itemcachekey",
-      "community": 70,
+      "community": 24,
       "norm_label": ".itemcachekey()"
     },
     {
@@ -456,7 +456,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_regaliaslotsapicommonmod_java_itemstack",
-      "community": 70,
+      "community": 24,
       "norm_label": "itemstack"
     },
     {
@@ -686,7 +686,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi",
-      "community": 26,
+      "community": 55,
       "norm_label": "regaliaslotsapi"
     },
     {
@@ -706,7 +706,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_registercurio",
-      "community": 26,
+      "community": 55,
       "norm_label": ".registercurio()"
     },
     {
@@ -846,7 +846,7 @@
       "source_location": "L247",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_isstackvalid",
-      "community": 26,
+      "community": 55,
       "norm_label": ".isstackvalid()"
     },
     {
@@ -866,7 +866,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_java_resourcelocation",
-      "community": 26,
+      "community": 55,
       "norm_label": "resourcelocation"
     },
     {
@@ -976,7 +976,7 @@
       "source_location": "L342",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_registercuriopredicate",
-      "community": 26,
+      "community": 55,
       "norm_label": ".registercuriopredicate()"
     },
     {
@@ -986,7 +986,7 @@
       "source_location": "L354",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_getcuriopredicate",
-      "community": 26,
+      "community": 55,
       "norm_label": ".getcuriopredicate()"
     },
     {
@@ -996,7 +996,7 @@
       "source_location": "L365",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_getcuriopredicates",
-      "community": 26,
+      "community": 55,
       "norm_label": ".getcuriopredicates()"
     },
     {
@@ -1006,7 +1006,7 @@
       "source_location": "L377",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_testcuriopredicates",
-      "community": 26,
+      "community": 55,
       "norm_label": ".testcuriopredicates()"
     },
     {
@@ -1016,7 +1016,7 @@
       "source_location": "L389",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_getslotid",
-      "community": 26,
+      "community": 55,
       "norm_label": ".getslotid()"
     },
     {
@@ -1026,7 +1026,7 @@
       "source_location": "L403",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_broadcastcuriobreakevent",
-      "community": 26,
+      "community": 55,
       "norm_label": ".broadcastcuriobreakevent()"
     },
     {
@@ -1036,7 +1036,7 @@
       "source_location": "L407",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapi_regaliaslotsapi_apierror",
-      "community": 26,
+      "community": 55,
       "norm_label": ".apierror()"
     },
     {
@@ -1226,7 +1226,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "dataprovider",
-      "community": 5,
+      "community": 42,
       "norm_label": "dataprovider"
     },
     {
@@ -1346,7 +1346,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapidataprovider_regaliaslotsapidataprovider_createentities",
-      "community": 42,
+      "community": 127,
       "norm_label": ".createentities()"
     },
     {
@@ -1356,7 +1356,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapidataprovider_regaliaslotsapidataprovider_copyentities",
-      "community": 42,
+      "community": 127,
       "norm_label": ".copyentities()"
     },
     {
@@ -1386,7 +1386,7 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_regaliaslotsapidataprovider_regaliaslotsapidataprovider_createentitiesdata",
-      "community": 42,
+      "community": 127,
       "norm_label": ".createentitiesdata()"
     },
     {
@@ -1866,7 +1866,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_slotcontext",
-      "community": 30,
+      "community": 7,
       "norm_label": "slotcontext.java"
     },
     {
@@ -1876,7 +1876,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_slotcontext_slotcontext",
-      "community": 30,
+      "community": 7,
       "norm_label": "slotcontext"
     },
     {
@@ -1886,7 +1886,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_slotcontext_java_livingentity",
-      "community": 30,
+      "community": 7,
       "norm_label": "livingentity"
     },
     {
@@ -2006,7 +2006,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_slotresult",
-      "community": 3,
+      "community": 67,
       "norm_label": "slotresult.java"
     },
     {
@@ -2016,7 +2016,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_slotresult_slotresult",
-      "community": 3,
+      "community": 67,
       "norm_label": "slotresult"
     },
     {
@@ -2026,7 +2026,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_slotresult_java_itemstack",
-      "community": 3,
+      "community": 67,
       "norm_label": "itemstack"
     },
     {
@@ -2956,7 +2956,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent",
-      "community": 10,
+      "community": 142,
       "norm_label": "curiocanunequipevent.java"
     },
     {
@@ -2966,7 +2966,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_curiocanunequipevent",
-      "community": 10,
+      "community": 142,
       "norm_label": "curiocanunequipevent"
     },
     {
@@ -2976,7 +2976,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_java_itemstack",
-      "community": 10,
+      "community": 142,
       "norm_label": "itemstack"
     },
     {
@@ -2986,7 +2986,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_java_tristate",
-      "community": 10,
+      "community": 142,
       "norm_label": "tristate"
     },
     {
@@ -2996,7 +2996,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_curiocanunequipevent_curiocanunequipevent",
-      "community": 10,
+      "community": 142,
       "norm_label": ".curiocanunequipevent()"
     },
     {
@@ -3006,7 +3006,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_curiocanunequipevent_getunequipresult",
-      "community": 10,
+      "community": 142,
       "norm_label": ".getunequipresult()"
     },
     {
@@ -3016,7 +3016,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_curiocanunequipevent_setunequipresult",
-      "community": 10,
+      "community": 142,
       "norm_label": ".setunequipresult()"
     },
     {
@@ -3026,7 +3026,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_curiocanunequipevent_getslotcontext",
-      "community": 10,
+      "community": 142,
       "norm_label": ".getslotcontext()"
     },
     {
@@ -3036,7 +3036,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiocanunequipevent_curiocanunequipevent_getstack",
-      "community": 10,
+      "community": 142,
       "norm_label": ".getstack()"
     },
     {
@@ -3046,7 +3046,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent",
-      "community": 10,
+      "community": 131,
       "norm_label": "curiochangeevent.java"
     },
     {
@@ -3056,7 +3056,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_curiochangeevent",
-      "community": 10,
+      "community": 131,
       "norm_label": "curiochangeevent"
     },
     {
@@ -3066,7 +3066,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_java_itemstack",
-      "community": 10,
+      "community": 131,
       "norm_label": "itemstack"
     },
     {
@@ -3076,7 +3076,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_curiochangeevent_curiochangeevent",
-      "community": 10,
+      "community": 131,
       "norm_label": ".curiochangeevent()"
     },
     {
@@ -3086,7 +3086,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_java_livingentity",
-      "community": 10,
+      "community": 131,
       "norm_label": "livingentity"
     },
     {
@@ -3096,7 +3096,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_curiochangeevent_getidentifier",
-      "community": 10,
+      "community": 131,
       "norm_label": ".getidentifier()"
     },
     {
@@ -3106,7 +3106,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_curiochangeevent_getslotindex",
-      "community": 10,
+      "community": 131,
       "norm_label": ".getslotindex()"
     },
     {
@@ -3116,7 +3116,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_curiochangeevent_getfrom",
-      "community": 10,
+      "community": 131,
       "norm_label": ".getfrom()"
     },
     {
@@ -3126,7 +3126,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_java_nonnull",
-      "community": 10,
+      "community": 131,
       "norm_label": "nonnull"
     },
     {
@@ -3136,7 +3136,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_curiochangeevent_curiochangeevent_getto",
-      "community": 10,
+      "community": 131,
       "norm_label": ".getto()"
     },
     {
@@ -3166,7 +3166,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "icancellableevent",
-      "community": 82,
+      "community": 86,
       "norm_label": "icancellableevent"
     },
     {
@@ -3376,7 +3376,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_event_droprulesevent_droprulesevent_getcuriohandler",
-      "community": 19,
+      "community": 65,
       "norm_label": ".getcuriohandler()"
     },
     {
@@ -3646,7 +3646,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_icuriosmenu",
-      "community": 4,
+      "community": 69,
       "norm_label": "icuriosmenu.java"
     },
     {
@@ -3656,7 +3656,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_icuriosmenu_icuriosmenu",
-      "community": 4,
+      "community": 69,
       "norm_label": "icuriosmenu"
     },
     {
@@ -3666,7 +3666,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_icuriosmenu_icuriosmenu_resetslots",
-      "community": 4,
+      "community": 69,
       "norm_label": ".resetslots()"
     },
     {
@@ -3926,7 +3926,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_java_slotcontext",
-      "community": 30,
+      "community": 20,
       "norm_label": "slotcontext"
     },
     {
@@ -4076,7 +4076,7 @@
       "source_location": "L174",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_icurio_onequipfromuse",
-      "community": 30,
+      "community": 20,
       "norm_label": ".onequipfromuse()"
     },
     {
@@ -4086,7 +4086,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_icurio_getequipsound",
-      "community": 30,
+      "community": 20,
       "norm_label": ".getequipsound()"
     },
     {
@@ -4096,7 +4096,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_java_nonnull",
-      "community": 30,
+      "community": 20,
       "norm_label": "nonnull"
     },
     {
@@ -4166,7 +4166,7 @@
       "source_location": "L258",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_icurio_getdroprule",
-      "community": 30,
+      "community": 20,
       "norm_label": ".getdroprule()"
     },
     {
@@ -4266,7 +4266,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_java_enderman",
-      "community": 20,
+      "community": 30,
       "norm_label": "enderman"
     },
     {
@@ -4276,7 +4276,7 @@
       "source_location": "L378",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_droprule",
-      "community": 87,
+      "community": 20,
       "norm_label": "droprule"
     },
     {
@@ -4286,7 +4286,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_droprule_default",
-      "community": 87,
+      "community": 20,
       "norm_label": "default"
     },
     {
@@ -4296,7 +4296,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_droprule_always_drop",
-      "community": 87,
+      "community": 20,
       "norm_label": "always_drop"
     },
     {
@@ -4306,7 +4306,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_droprule_always_keep",
-      "community": 87,
+      "community": 20,
       "norm_label": "always_keep"
     },
     {
@@ -4316,7 +4316,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_droprule_destroy",
-      "community": 87,
+      "community": 20,
       "norm_label": "destroy"
     },
     {
@@ -4336,7 +4336,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icurio_java_livingentity",
-      "community": 20,
+      "community": 30,
       "norm_label": "livingentity"
     },
     {
@@ -4886,7 +4886,7 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_icuriositemhandler_setequippedcurio",
-      "community": 115,
+      "community": 19,
       "norm_label": ".setequippedcurio()"
     },
     {
@@ -4896,7 +4896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_java_itemstack",
-      "community": 115,
+      "community": 19,
       "norm_label": "itemstack"
     },
     {
@@ -4906,7 +4906,7 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_icuriositemhandler_isequipped",
-      "community": 115,
+      "community": 19,
       "norm_label": ".isequipped()"
     },
     {
@@ -4916,7 +4916,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_java_item",
-      "community": 115,
+      "community": 19,
       "norm_label": "item"
     },
     {
@@ -4956,7 +4956,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_icuriositemhandler_findfirstcurio",
-      "community": 115,
+      "community": 19,
       "norm_label": ".findfirstcurio()"
     },
     {
@@ -4966,7 +4966,7 @@
       "source_location": "L197",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_icuriositemhandler_findcurios",
-      "community": 115,
+      "community": 19,
       "norm_label": ".findcurios()"
     },
     {
@@ -5006,7 +5006,7 @@
       "source_location": "L250",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_capability_icuriositemhandler_icuriositemhandler_loseinvalidstack",
-      "community": 115,
+      "community": 19,
       "norm_label": ".loseinvalidstack()"
     },
     {
@@ -5356,7 +5356,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_data_ientitiesdata_ientitiesdata",
-      "community": 42,
+      "community": 127,
       "norm_label": "ientitiesdata"
     },
     {
@@ -5366,7 +5366,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_data_ientitiesdata_ientitiesdata_replace",
-      "community": 42,
+      "community": 127,
       "norm_label": ".replace()"
     },
     {
@@ -5376,7 +5376,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_data_ientitiesdata_ientitiesdata_addplayer",
-      "community": 42,
+      "community": 127,
       "norm_label": ".addplayer()"
     },
     {
@@ -5386,7 +5386,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_data_ientitiesdata_ientitiesdata_addentities",
-      "community": 42,
+      "community": 127,
       "norm_label": ".addentities()"
     },
     {
@@ -5396,7 +5396,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_api_type_data_ientitiesdata_ientitiesdata_addslots",
-      "community": 42,
+      "community": 127,
       "norm_label": ".addslots()"
     },
     {
@@ -6876,7 +6876,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_keyregistry",
-      "community": 24,
+      "community": 149,
       "norm_label": "keyregistry.java"
     },
     {
@@ -6886,7 +6886,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_keyregistry_keyregistry",
-      "community": 24,
+      "community": 149,
       "norm_label": "keyregistry"
     },
     {
@@ -6896,7 +6896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "keymapping",
-      "community": 24,
+      "community": 149,
       "norm_label": "keymapping"
     },
     {
@@ -7436,7 +7436,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen",
-      "community": 81,
+      "community": 39,
       "norm_label": "regaliaslotsapiscreen.java"
     },
     {
@@ -7456,7 +7456,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "effectrenderinginventoryscreen",
-      "community": 81,
+      "community": 39,
       "norm_label": "effectrenderinginventoryscreen"
     },
     {
@@ -7466,7 +7466,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "recipeupdatelistener",
-      "community": 81,
+      "community": 39,
       "norm_label": "recipeupdatelistener"
     },
     {
@@ -7476,7 +7476,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_resourcelocation",
-      "community": 81,
+      "community": 39,
       "norm_label": "resourcelocation"
     },
     {
@@ -7486,7 +7486,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "recipebookcomponent",
-      "community": 81,
+      "community": 39,
       "norm_label": "recipebookcomponent"
     },
     {
@@ -7496,7 +7496,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_itemstack",
-      "community": 81,
+      "community": 39,
       "norm_label": "itemstack"
     },
     {
@@ -7516,7 +7516,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_regaliaslotsapiscreen_regaliaslotsapiscreen",
-      "community": 81,
+      "community": 39,
       "norm_label": ".regaliaslotsapiscreen()"
     },
     {
@@ -7526,7 +7526,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_inventory",
-      "community": 81,
+      "community": 39,
       "norm_label": "inventory"
     },
     {
@@ -7536,7 +7536,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_component",
-      "community": 81,
+      "community": 39,
       "norm_label": "component"
     },
     {
@@ -7546,7 +7546,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_regaliaslotsapiscreen_getbuttonoffset",
-      "community": 77,
+      "community": 109,
       "norm_label": ".getbuttonoffset()"
     },
     {
@@ -7556,7 +7556,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_tuple",
-      "community": 77,
+      "community": 109,
       "norm_label": "tuple"
     },
     {
@@ -7746,7 +7746,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_clicktype",
-      "community": 81,
+      "community": 39,
       "norm_label": "clicktype"
     },
     {
@@ -7766,7 +7766,7 @@
       "source_location": "L636",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_regaliaslotsapiscreen_getrecipebookcomponent",
-      "community": 81,
+      "community": 39,
       "norm_label": ".getrecipebookcomponent()"
     },
     {
@@ -7776,7 +7776,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_client_gui_regaliaslotsapiscreen_java_nonnull",
-      "community": 81,
+      "community": 39,
       "norm_label": "nonnull"
     },
     {
@@ -8356,7 +8356,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry",
-      "community": 4,
+      "community": 117,
       "norm_label": "regaliaslotsapiregistry.java"
     },
     {
@@ -8366,7 +8366,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry_regaliaslotsapiregistry",
-      "community": 4,
+      "community": 117,
       "norm_label": "regaliaslotsapiregistry"
     },
     {
@@ -8376,7 +8376,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry_java_deferredregister",
-      "community": 4,
+      "community": 117,
       "norm_label": "deferredregister"
     },
     {
@@ -8386,7 +8386,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry_java_attachmenttype",
-      "community": 4,
+      "community": 117,
       "norm_label": "attachmenttype"
     },
     {
@@ -8396,7 +8396,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "criteriontrigger",
-      "community": 4,
+      "community": 117,
       "norm_label": "criteriontrigger"
     },
     {
@@ -8406,7 +8406,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "argumenttypeinfo",
-      "community": 4,
+      "community": 117,
       "norm_label": "argumenttypeinfo"
     },
     {
@@ -8416,7 +8416,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "menutype",
-      "community": 4,
+      "community": 117,
       "norm_label": "menutype"
     },
     {
@@ -8426,7 +8426,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry_java_lootitemfunctiontype",
-      "community": 4,
+      "community": 117,
       "norm_label": "lootitemfunctiontype"
     },
     {
@@ -8436,7 +8436,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "datacomponenttype",
-      "community": 4,
+      "community": 117,
       "norm_label": "datacomponenttype"
     },
     {
@@ -8446,7 +8446,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry_regaliaslotsapiregistry_init",
-      "community": 4,
+      "community": 117,
       "norm_label": ".init()"
     },
     {
@@ -8456,7 +8456,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_regaliaslotsapiregistry_java_ieventbus",
-      "community": 4,
+      "community": 117,
       "norm_label": "ieventbus"
     },
     {
@@ -9966,7 +9966,7 @@
       "source_location": "L233",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapientitymanager_regaliaslotsapientitymanager_getentityslots",
-      "community": 54,
+      "community": 148,
       "norm_label": ".getentityslots()"
     },
     {
@@ -9996,7 +9996,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager",
-      "community": 75,
+      "community": 53,
       "norm_label": "regaliaslotsapislotmanager"
     },
     {
@@ -10016,7 +10016,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_java_resourcelocation",
-      "community": 75,
+      "community": 53,
       "norm_label": "resourcelocation"
     },
     {
@@ -10026,7 +10026,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_regaliaslotsapislotmanager",
-      "community": 75,
+      "community": 53,
       "norm_label": ".regaliaslotsapislotmanager()"
     },
     {
@@ -10086,7 +10086,7 @@
       "source_location": "L181",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_getslot",
-      "community": 75,
+      "community": 53,
       "norm_label": ".getslot()"
     },
     {
@@ -10096,7 +10096,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_getsyncpacket",
-      "community": 75,
+      "community": 53,
       "norm_label": ".getsyncpacket()"
     },
     {
@@ -10106,7 +10106,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_java_listtag",
-      "community": 75,
+      "community": 53,
       "norm_label": "listtag"
     },
     {
@@ -10116,7 +10116,7 @@
       "source_location": "L194",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_applysyncpacket",
-      "community": 75,
+      "community": 53,
       "norm_label": ".applysyncpacket()"
     },
     {
@@ -10126,7 +10126,7 @@
       "source_location": "L207",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_seticons",
-      "community": 75,
+      "community": 53,
       "norm_label": ".seticons()"
     },
     {
@@ -10136,7 +10136,7 @@
       "source_location": "L211",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_getconfigslots",
-      "community": 75,
+      "community": 53,
       "norm_label": ".getconfigslots()"
     },
     {
@@ -10146,7 +10146,7 @@
       "source_location": "L215",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_geticons",
-      "community": 75,
+      "community": 53,
       "norm_label": ".geticons()"
     },
     {
@@ -10156,7 +10156,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_geticon",
-      "community": 75,
+      "community": 53,
       "norm_label": ".geticon()"
     },
     {
@@ -10166,7 +10166,7 @@
       "source_location": "L224",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_data_regaliaslotsapislotmanager_regaliaslotsapislotmanager_getmodsfromslots",
-      "community": 75,
+      "community": 53,
       "norm_label": ".getmodsfromslots()"
     },
     {
@@ -10976,7 +10976,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_integration_emi_regaliaslotsapiemiplugin",
-      "community": 113,
+      "community": 84,
       "norm_label": "regaliaslotsapiemiplugin.java"
     },
     {
@@ -10986,7 +10986,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_integration_emi_regaliaslotsapiemiplugin_regaliaslotsapiemiplugin",
-      "community": 113,
+      "community": 84,
       "norm_label": "regaliaslotsapiemiplugin"
     },
     {
@@ -10996,7 +10996,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "emiplugin",
-      "community": 113,
+      "community": 84,
       "norm_label": "emiplugin"
     },
     {
@@ -11006,7 +11006,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "emientrypoint",
-      "community": 113,
+      "community": 84,
       "norm_label": "emientrypoint"
     },
     {
@@ -11016,7 +11016,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_integration_emi_regaliaslotsapiemiplugin_regaliaslotsapiemiplugin_register",
-      "community": 113,
+      "community": 84,
       "norm_label": ".register()"
     },
     {
@@ -11026,7 +11026,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "emiregistry",
-      "community": 113,
+      "community": 84,
       "norm_label": "emiregistry"
     },
     {
@@ -11036,7 +11036,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_integration_emi_regaliaslotsapiemiplugin_java_override",
-      "community": 113,
+      "community": 84,
       "norm_label": "override"
     },
     {
@@ -12276,7 +12276,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_java_player",
-      "community": 4,
+      "community": 87,
       "norm_label": "player"
     },
     {
@@ -12386,7 +12386,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_java_override",
-      "community": 4,
+      "community": 87,
       "norm_label": "override"
     },
     {
@@ -12396,7 +12396,7 @@
       "source_location": "L352",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_removed",
-      "community": 4,
+      "community": 87,
       "norm_label": ".removed()"
     },
     {
@@ -12406,7 +12406,7 @@
       "source_location": "L362",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_setitem",
-      "community": 4,
+      "community": 87,
       "norm_label": ".setitem()"
     },
     {
@@ -12416,7 +12416,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_java_itemstack",
-      "community": 4,
+      "community": 87,
       "norm_label": "itemstack"
     },
     {
@@ -12426,7 +12426,7 @@
       "source_location": "L370",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_stillvalid",
-      "community": 4,
+      "community": 87,
       "norm_label": ".stillvalid()"
     },
     {
@@ -12436,7 +12436,7 @@
       "source_location": "L375",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_quickmovestack",
-      "community": 4,
+      "community": 87,
       "norm_label": ".quickmovestack()"
     },
     {
@@ -12446,7 +12446,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_java_nonnull",
-      "community": 4,
+      "community": 87,
       "norm_label": "nonnull"
     },
     {
@@ -12456,7 +12456,7 @@
       "source_location": "L458",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_findavailableslot",
-      "community": 4,
+      "community": 87,
       "norm_label": ".findavailableslot()"
     },
     {
@@ -12466,7 +12466,7 @@
       "source_location": "L493",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_getrecipebooktype",
-      "community": 4,
+      "community": 87,
       "norm_label": ".getrecipebooktype()"
     },
     {
@@ -12476,7 +12476,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "recipebooktype",
-      "community": 4,
+      "community": 87,
       "norm_label": "recipebooktype"
     },
     {
@@ -12486,7 +12486,7 @@
       "source_location": "L499",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_shouldmovetoinventory",
-      "community": 4,
+      "community": 87,
       "norm_label": ".shouldmovetoinventory()"
     },
     {
@@ -12516,7 +12516,7 @@
       "source_location": "L509",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_clearcraftingcontent",
-      "community": 4,
+      "community": 87,
       "norm_label": ".clearcraftingcontent()"
     },
     {
@@ -12546,7 +12546,7 @@
       "source_location": "L520",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_getresultslotindex",
-      "community": 4,
+      "community": 87,
       "norm_label": ".getresultslotindex()"
     },
     {
@@ -12556,7 +12556,7 @@
       "source_location": "L525",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_getgridwidth",
-      "community": 4,
+      "community": 87,
       "norm_label": ".getgridwidth()"
     },
     {
@@ -12566,7 +12566,7 @@
       "source_location": "L530",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_getgridheight",
-      "community": 4,
+      "community": 87,
       "norm_label": ".getgridheight()"
     },
     {
@@ -12576,7 +12576,7 @@
       "source_location": "L535",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_getsize",
-      "community": 4,
+      "community": 87,
       "norm_label": ".getsize()"
     },
     {
@@ -12606,7 +12606,7 @@
       "source_location": "L548",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_checkquickmove",
-      "community": 4,
+      "community": 87,
       "norm_label": ".checkquickmove()"
     },
     {
@@ -12616,7 +12616,7 @@
       "source_location": "L562",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_getslot",
-      "community": 4,
+      "community": 87,
       "norm_label": ".getslot()"
     },
     {
@@ -12636,7 +12636,7 @@
       "source_location": "L574",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_regaliaslotsapicontainer_clicked",
-      "community": 4,
+      "community": 87,
       "norm_label": ".clicked()"
     },
     {
@@ -12646,7 +12646,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_inventory_container_regaliaslotsapicontainer_java_clicktype",
-      "community": 4,
+      "community": 87,
       "norm_label": "clicktype"
     },
     {
@@ -12906,7 +12906,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios",
-      "community": 60,
+      "community": 143,
       "norm_label": "cpacketopencurios.java"
     },
     {
@@ -12916,7 +12916,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_cpacketopencurios",
-      "community": 60,
+      "community": 143,
       "norm_label": "cpacketopencurios"
     },
     {
@@ -12926,7 +12926,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_java_itemstack",
-      "community": 60,
+      "community": 143,
       "norm_label": "itemstack"
     },
     {
@@ -12936,7 +12936,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_java_streamcodec",
-      "community": 60,
+      "community": 143,
       "norm_label": "streamcodec"
     },
     {
@@ -12946,7 +12946,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_java_registryfriendlybytebuf",
-      "community": 60,
+      "community": 143,
       "norm_label": "registryfriendlybytebuf"
     },
     {
@@ -12956,7 +12956,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_cpacketopencurios_type",
-      "community": 60,
+      "community": 143,
       "norm_label": ".type()"
     },
     {
@@ -12966,7 +12966,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_java_nonnull",
-      "community": 60,
+      "community": 143,
       "norm_label": "nonnull"
     },
     {
@@ -12976,7 +12976,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_client_cpacketopencurios_java_override",
-      "community": 60,
+      "community": 143,
       "norm_label": "override"
     },
     {
@@ -13846,7 +13846,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate",
-      "community": 69,
+      "community": 60,
       "norm_label": "spacketsyncactivestate.java"
     },
     {
@@ -13856,7 +13856,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate_spacketsyncactivestate",
-      "community": 69,
+      "community": 60,
       "norm_label": "spacketsyncactivestate"
     },
     {
@@ -13866,7 +13866,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate_java_streamcodec",
-      "community": 69,
+      "community": 60,
       "norm_label": "streamcodec"
     },
     {
@@ -13876,7 +13876,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate_java_registryfriendlybytebuf",
-      "community": 69,
+      "community": 60,
       "norm_label": "registryfriendlybytebuf"
     },
     {
@@ -13886,7 +13886,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate_spacketsyncactivestate_type",
-      "community": 69,
+      "community": 60,
       "norm_label": ".type()"
     },
     {
@@ -13896,7 +13896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate_java_nonnull",
-      "community": 69,
+      "community": 60,
       "norm_label": "nonnull"
     },
     {
@@ -13906,7 +13906,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_network_server_sync_spacketsyncactivestate_java_override",
-      "community": 69,
+      "community": 60,
       "norm_label": "override"
     },
     {
@@ -14496,7 +14496,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype",
-      "community": 67,
+      "community": 49,
       "norm_label": "slottype.java"
     },
     {
@@ -14526,7 +14526,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_java_resourcelocation",
-      "community": 67,
+      "community": 49,
       "norm_label": "resourcelocation"
     },
     {
@@ -14536,7 +14536,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_java_droprule",
-      "community": 67,
+      "community": 49,
       "norm_label": "droprule"
     },
     {
@@ -14566,7 +14566,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_slottype_slottype",
-      "community": 67,
+      "community": 49,
       "norm_label": ".slottype()"
     },
     {
@@ -14716,7 +14716,7 @@
       "source_location": "L173",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder",
-      "community": 67,
+      "community": 49,
       "norm_label": "builder"
     },
     {
@@ -14736,7 +14736,7 @@
       "source_location": "L191",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_apply",
-      "community": 67,
+      "community": 49,
       "norm_label": ".apply()"
     },
     {
@@ -14746,7 +14746,7 @@
       "source_location": "L232",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_icon",
-      "community": 67,
+      "community": 49,
       "norm_label": ".icon()"
     },
     {
@@ -14756,7 +14756,7 @@
       "source_location": "L237",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_order",
-      "community": 67,
+      "community": 49,
       "norm_label": ".order()"
     },
     {
@@ -14766,7 +14766,7 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_size",
-      "community": 67,
+      "community": 49,
       "norm_label": ".size()"
     },
     {
@@ -14776,7 +14776,7 @@
       "source_location": "L274",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_usenativegui",
-      "community": 67,
+      "community": 49,
       "norm_label": ".usenativegui()"
     },
     {
@@ -14786,7 +14786,7 @@
       "source_location": "L284",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_rendertoggle",
-      "community": 67,
+      "community": 49,
       "norm_label": ".rendertoggle()"
     },
     {
@@ -14796,7 +14796,7 @@
       "source_location": "L294",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_hascosmetic",
-      "community": 67,
+      "community": 49,
       "norm_label": ".hascosmetic()"
     },
     {
@@ -14806,7 +14806,7 @@
       "source_location": "L304",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_droprule",
-      "community": 67,
+      "community": 49,
       "norm_label": ".droprule()"
     },
     {
@@ -14816,7 +14816,7 @@
       "source_location": "L320",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_validator",
-      "community": 67,
+      "community": 49,
       "norm_label": ".validator()"
     },
     {
@@ -14826,7 +14826,7 @@
       "source_location": "L329",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_slottype_slottype_builder_build",
-      "community": 67,
+      "community": 49,
       "norm_label": ".build()"
     },
     {
@@ -15006,7 +15006,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction",
-      "community": 4,
+      "community": 81,
       "norm_label": "setcurioattributesfunction.java"
     },
     {
@@ -15016,7 +15016,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_setcurioattributesfunction",
-      "community": 4,
+      "community": 81,
       "norm_label": "setcurioattributesfunction"
     },
     {
@@ -15026,7 +15026,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "lootitemconditionalfunction",
-      "community": 4,
+      "community": 81,
       "norm_label": "lootitemconditionalfunction"
     },
     {
@@ -15036,7 +15036,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "mapcodec",
-      "community": 4,
+      "community": 81,
       "norm_label": "mapcodec"
     },
     {
@@ -15046,7 +15046,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_setcurioattributesfunction_setcurioattributesfunction",
-      "community": 4,
+      "community": 81,
       "norm_label": ".setcurioattributesfunction()"
     },
     {
@@ -15056,7 +15056,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "lootitemcondition",
-      "community": 4,
+      "community": 81,
       "norm_label": "lootitemcondition"
     },
     {
@@ -15066,7 +15066,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_setcurioattributesfunction_gettype",
-      "community": 4,
+      "community": 81,
       "norm_label": ".gettype()"
     },
     {
@@ -15076,7 +15076,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_lootitemfunctiontype",
-      "community": 4,
+      "community": 81,
       "norm_label": "lootitemfunctiontype"
     },
     {
@@ -15086,7 +15086,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_nonnull",
-      "community": 4,
+      "community": 81,
       "norm_label": "nonnull"
     },
     {
@@ -15096,7 +15096,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_setcurioattributesfunction_getreferencedcontextparams",
-      "community": 4,
+      "community": 81,
       "norm_label": ".getreferencedcontextparams()"
     },
     {
@@ -15106,7 +15106,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "lootcontextparam",
-      "community": 4,
+      "community": 81,
       "norm_label": "lootcontextparam"
     },
     {
@@ -15116,7 +15116,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_setcurioattributesfunction_run",
-      "community": 4,
+      "community": 81,
       "norm_label": ".run()"
     },
     {
@@ -15126,7 +15126,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_itemstack",
-      "community": 4,
+      "community": 81,
       "norm_label": "itemstack"
     },
     {
@@ -15136,7 +15136,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_lootcontext",
-      "community": 4,
+      "community": 81,
       "norm_label": "lootcontext"
     },
     {
@@ -15146,7 +15146,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_modifier",
-      "community": 4,
+      "community": 81,
       "norm_label": "modifier"
     },
     {
@@ -15156,7 +15156,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_holder",
-      "community": 4,
+      "community": 81,
       "norm_label": "holder"
     },
     {
@@ -15166,7 +15166,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_attribute",
-      "community": 4,
+      "community": 81,
       "norm_label": "attribute"
     },
     {
@@ -15176,7 +15176,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_operation",
-      "community": 4,
+      "community": 81,
       "norm_label": "operation"
     },
     {
@@ -15186,7 +15186,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "numberprovider",
-      "community": 4,
+      "community": 81,
       "norm_label": "numberprovider"
     },
     {
@@ -15196,7 +15196,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_resourcelocation",
-      "community": 4,
+      "community": 81,
       "norm_label": "resourcelocation"
     },
     {
@@ -15206,7 +15206,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_common_util_setcurioattributesfunction_java_codec",
-      "community": 4,
+      "community": 81,
       "norm_label": "codec"
     },
     {
@@ -15786,7 +15786,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks",
-      "community": 3,
+      "community": 115,
       "norm_label": "regaliaslotsapiimplmixinhooks.java"
     },
     {
@@ -15796,7 +15796,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks",
-      "community": 3,
+      "community": 67,
       "norm_label": "regaliaslotsapiimplmixinhooks"
     },
     {
@@ -15806,7 +15806,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_item",
-      "community": 3,
+      "community": 67,
       "norm_label": "item"
     },
     {
@@ -15816,7 +15816,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_registercurio",
-      "community": 3,
+      "community": 67,
       "norm_label": ".registercurio()"
     },
     {
@@ -15826,7 +15826,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriofromregistry",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getcuriofromregistry()"
     },
     {
@@ -15846,7 +15846,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getentityslots",
-      "community": 3,
+      "community": 148,
       "norm_label": ".getentityslots()"
     },
     {
@@ -15856,7 +15856,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_entitytype",
-      "community": 3,
+      "community": 148,
       "norm_label": "entitytype"
     },
     {
@@ -15866,7 +15866,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getitemstackslots",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getitemstackslots()"
     },
     {
@@ -15876,7 +15876,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_itemstack",
-      "community": 3,
+      "community": 115,
       "norm_label": "itemstack"
     },
     {
@@ -15886,7 +15886,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_livingentity",
-      "community": 3,
+      "community": 145,
       "norm_label": "livingentity"
     },
     {
@@ -15896,7 +15896,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_filteredslots",
-      "community": 3,
+      "community": 67,
       "norm_label": ".filteredslots()"
     },
     {
@@ -15906,7 +15906,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcurio",
-      "community": 3,
+      "community": 115,
       "norm_label": ".getcurio()"
     },
     {
@@ -15916,7 +15916,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriosinventory",
-      "community": 3,
+      "community": 145,
       "norm_label": ".getcuriosinventory()"
     },
     {
@@ -15926,7 +15926,7 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_isstackvalid",
-      "community": 3,
+      "community": 67,
       "norm_label": ".isstackvalid()"
     },
     {
@@ -15936,7 +15936,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_slotcontext",
-      "community": 3,
+      "community": 67,
       "norm_label": "slotcontext"
     },
     {
@@ -15946,7 +15946,7 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getattributemodifiers",
-      "community": 3,
+      "community": 115,
       "norm_label": ".getattributemodifiers()"
     },
     {
@@ -15956,7 +15956,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_resourcelocation",
-      "community": 3,
+      "community": 67,
       "norm_label": "resourcelocation"
     },
     {
@@ -15966,7 +15966,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_multimap",
-      "community": 3,
+      "community": 115,
       "norm_label": "multimap"
     },
     {
@@ -15976,7 +15976,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_holder",
-      "community": 3,
+      "community": 115,
       "norm_label": "holder"
     },
     {
@@ -15986,7 +15986,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_attribute",
-      "community": 3,
+      "community": 115,
       "norm_label": "attribute"
     },
     {
@@ -15996,7 +15996,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_attributemodifier",
-      "community": 3,
+      "community": 115,
       "norm_label": "attributemodifier"
     },
     {
@@ -16006,7 +16006,7 @@
       "source_location": "L229",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_addslotmodifier",
-      "community": 3,
+      "community": 115,
       "norm_label": ".addslotmodifier()"
     },
     {
@@ -16016,7 +16016,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_operation",
-      "community": 3,
+      "community": 115,
       "norm_label": "operation"
     },
     {
@@ -16026,7 +16026,7 @@
       "source_location": "L242",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_addmodifier",
-      "community": 3,
+      "community": 115,
       "norm_label": ".addmodifier()"
     },
     {
@@ -16036,7 +16036,7 @@
       "source_location": "L263",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_broadcastcuriobreakevent",
-      "community": 3,
+      "community": 67,
       "norm_label": ".broadcastcuriobreakevent()"
     },
     {
@@ -16046,7 +16046,7 @@
       "source_location": "L274",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getslotid",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getslotid()"
     },
     {
@@ -16056,7 +16056,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_java_slotresult",
-      "community": 3,
+      "community": 67,
       "norm_label": "slotresult"
     },
     {
@@ -16066,7 +16066,7 @@
       "source_location": "L283",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_registercuriopredicate",
-      "community": 3,
+      "community": 67,
       "norm_label": ".registercuriopredicate()"
     },
     {
@@ -16076,7 +16076,7 @@
       "source_location": "L288",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriopredicate",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getcuriopredicate()"
     },
     {
@@ -16086,7 +16086,7 @@
       "source_location": "L293",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriopredicates",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getcuriopredicates()"
     },
     {
@@ -16096,7 +16096,7 @@
       "source_location": "L297",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_testcuriopredicates",
-      "community": 3,
+      "community": 67,
       "norm_label": ".testcuriopredicates()"
     },
     {
@@ -16116,7 +16116,7 @@
       "source_location": "L339",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getentityslotsforcurios",
-      "community": 3,
+      "community": 148,
       "norm_label": ".getentityslotsforcurios()"
     },
     {
@@ -16126,7 +16126,7 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getitemstackslotsforcurios",
-      "community": 3,
+      "community": 145,
       "norm_label": ".getitemstackslotsforcurios()"
     },
     {
@@ -16136,7 +16136,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcurioforcurios",
-      "community": 3,
+      "community": 115,
       "norm_label": ".getcurioforcurios()"
     },
     {
@@ -16146,7 +16146,7 @@
       "source_location": "L364",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriosinventoryforcurios",
-      "community": 3,
+      "community": 145,
       "norm_label": ".getcuriosinventoryforcurios()"
     },
     {
@@ -16156,7 +16156,7 @@
       "source_location": "L368",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_isstackvalidforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".isstackvalidforcurios()"
     },
     {
@@ -16166,7 +16166,7 @@
       "source_location": "L373",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getattributemodifiersforcurios",
-      "community": 3,
+      "community": 115,
       "norm_label": ".getattributemodifiersforcurios()"
     },
     {
@@ -16176,7 +16176,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_registercuriopredicateforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".registercuriopredicateforcurios()"
     },
     {
@@ -16186,7 +16186,7 @@
       "source_location": "L388",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriopredicateforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getcuriopredicateforcurios()"
     },
     {
@@ -16196,7 +16196,7 @@
       "source_location": "L396",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getcuriopredicatesforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getcuriopredicatesforcurios()"
     },
     {
@@ -16206,7 +16206,7 @@
       "source_location": "L407",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_testcuriopredicatesforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".testcuriopredicatesforcurios()"
     },
     {
@@ -16216,7 +16216,7 @@
       "source_location": "L414",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_getslotidforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".getslotidforcurios()"
     },
     {
@@ -16226,7 +16226,7 @@
       "source_location": "L419",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiimplmixinhooks_regaliaslotsapiimplmixinhooks_broadcastcuriobreakeventforcurios",
-      "community": 3,
+      "community": 67,
       "norm_label": ".broadcastcuriobreakeventforcurios()"
     },
     {
@@ -16396,7 +16396,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiutilmixinhooks_regaliaslotsapiutilmixinhooks_containsstack",
-      "community": 41,
+      "community": 50,
       "norm_label": ".containsstack()"
     },
     {
@@ -16406,7 +16406,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiutilmixinhooks_java_player",
-      "community": 41,
+      "community": 50,
       "norm_label": "player"
     },
     {
@@ -16416,7 +16416,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiutilmixinhooks_java_itemstack",
-      "community": 41,
+      "community": 50,
       "norm_label": "itemstack"
     },
     {
@@ -16456,7 +16456,7 @@
       "source_location": "L190",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_regaliaslotsapiutilmixinhooks_regaliaslotsapiutilmixinhooks_contains",
-      "community": 41,
+      "community": 50,
       "norm_label": ".contains()"
     },
     {
@@ -17246,7 +17246,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate",
-      "community": 50,
+      "community": 144,
       "norm_label": "mixinnbtpredicate.java"
     },
     {
@@ -17256,7 +17256,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate_mixinnbtpredicate",
-      "community": 50,
+      "community": 144,
       "norm_label": "mixinnbtpredicate"
     },
     {
@@ -17266,7 +17266,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate_java_mixin",
-      "community": 50,
+      "community": 144,
       "norm_label": "mixin"
     },
     {
@@ -17276,7 +17276,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate_mixinnbtpredicate_curios_mergecuriosinventory",
-      "community": 50,
+      "community": 144,
       "norm_label": ".curios$mergecuriosinventory()"
     },
     {
@@ -17286,7 +17286,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate_java_compoundtag",
-      "community": 50,
+      "community": 144,
       "norm_label": "compoundtag"
     },
     {
@@ -17296,7 +17296,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate_java_entity",
-      "community": 50,
+      "community": 144,
       "norm_label": "entity"
     },
     {
@@ -17306,7 +17306,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinnbtpredicate_java_modifyvariable",
-      "community": 50,
+      "community": 144,
       "norm_label": "modifyvariable"
     },
     {
@@ -17456,7 +17456,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi",
-      "community": 3,
+      "community": 58,
       "norm_label": "mixinregaliaslotsapi.java"
     },
     {
@@ -17466,7 +17466,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi",
-      "community": 3,
+      "community": 58,
       "norm_label": "mixinregaliaslotsapi"
     },
     {
@@ -17476,7 +17476,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_mixin",
-      "community": 3,
+      "community": 58,
       "norm_label": "mixin"
     },
     {
@@ -17486,7 +17486,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_registercurio",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$registercurio()"
     },
     {
@@ -17496,7 +17496,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_item",
-      "community": 3,
+      "community": 58,
       "norm_label": "item"
     },
     {
@@ -17506,7 +17506,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_callbackinfo",
-      "community": 3,
+      "community": 58,
       "norm_label": "callbackinfo"
     },
     {
@@ -17516,7 +17516,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_inject",
-      "community": 3,
+      "community": 58,
       "norm_label": "inject"
     },
     {
@@ -17526,7 +17526,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getslots",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getslots()"
     },
     {
@@ -17536,7 +17536,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_callbackinforeturnable",
-      "community": 3,
+      "community": 58,
       "norm_label": "callbackinforeturnable"
     },
     {
@@ -17546,7 +17546,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getentityslots",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getentityslots()"
     },
     {
@@ -17556,7 +17556,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_entitytype",
-      "community": 3,
+      "community": 58,
       "norm_label": "entitytype"
     },
     {
@@ -17566,7 +17566,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getitemstackslots",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getitemstackslots()"
     },
     {
@@ -17576,7 +17576,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_itemstack",
-      "community": 3,
+      "community": 58,
       "norm_label": "itemstack"
     },
     {
@@ -17586,7 +17586,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_livingentity",
-      "community": 3,
+      "community": 58,
       "norm_label": "livingentity"
     },
     {
@@ -17596,7 +17596,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getcurio",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getcurio()"
     },
     {
@@ -17606,7 +17606,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getcuriosinventory",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getcuriosinventory()"
     },
     {
@@ -17616,7 +17616,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_isstackvalid",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$isstackvalid()"
     },
     {
@@ -17626,7 +17626,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getattributemodifiers",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getattributemodifiers()"
     },
     {
@@ -17636,7 +17636,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_resourcelocation",
-      "community": 3,
+      "community": 58,
       "norm_label": "resourcelocation"
     },
     {
@@ -17646,7 +17646,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_multimap",
-      "community": 3,
+      "community": 58,
       "norm_label": "multimap"
     },
     {
@@ -17656,7 +17656,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_holder",
-      "community": 3,
+      "community": 58,
       "norm_label": "holder"
     },
     {
@@ -17666,7 +17666,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_attribute",
-      "community": 3,
+      "community": 58,
       "norm_label": "attribute"
     },
     {
@@ -17676,7 +17676,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_attributemodifier",
-      "community": 3,
+      "community": 58,
       "norm_label": "attributemodifier"
     },
     {
@@ -17686,7 +17686,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_addslotmodifier",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$addslotmodifier()"
     },
     {
@@ -17696,7 +17696,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_java_operation",
-      "community": 3,
+      "community": 58,
       "norm_label": "operation"
     },
     {
@@ -17706,7 +17706,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_addmodifier",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$addmodifier()"
     },
     {
@@ -17716,7 +17716,7 @@
       "source_location": "L137",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_registercuriopredicate",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$registercuriopredicate()"
     },
     {
@@ -17726,7 +17726,7 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getcuriopredicate",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getcuriopredicate()"
     },
     {
@@ -17736,7 +17736,7 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getcuriopredicates",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getcuriopredicates()"
     },
     {
@@ -17746,7 +17746,7 @@
       "source_location": "L157",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_testcuriopredicates",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$testcuriopredicates()"
     },
     {
@@ -17756,7 +17756,7 @@
       "source_location": "L164",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_getuuid",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$getuuid()"
     },
     {
@@ -17766,7 +17766,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_mixin_core_mixinregaliaslotsapi_mixinregaliaslotsapi_curios_broadcastcuriobreakevent",
-      "community": 3,
+      "community": 58,
       "norm_label": ".curios$broadcastcuriobreakevent()"
     },
     {
@@ -18136,7 +18136,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios",
-      "community": 89,
+      "community": 76,
       "norm_label": "neoforgecurios.java"
     },
     {
@@ -18146,7 +18146,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_neoforgecurios",
-      "community": 89,
+      "community": 76,
       "norm_label": "neoforgecurios"
     },
     {
@@ -18156,7 +18156,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_neoforgecurios_getitemstackslots",
-      "community": 89,
+      "community": 76,
       "norm_label": ".getitemstackslots()"
     },
     {
@@ -18166,7 +18166,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_java_itemstack",
-      "community": 89,
+      "community": 76,
       "norm_label": "itemstack"
     },
     {
@@ -18176,7 +18176,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_java_livingentity",
-      "community": 89,
+      "community": 76,
       "norm_label": "livingentity"
     },
     {
@@ -18186,7 +18186,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_java_override",
-      "community": 89,
+      "community": 76,
       "norm_label": "override"
     },
     {
@@ -18196,7 +18196,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_neoforgecurios_makespiglinsneutral",
-      "community": 89,
+      "community": 76,
       "norm_label": ".makespiglinsneutral()"
     },
     {
@@ -18206,7 +18206,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_neoforgecurios_canwalkonpowderedsnow",
-      "community": 89,
+      "community": 76,
       "norm_label": ".canwalkonpowderedsnow()"
     },
     {
@@ -18216,7 +18216,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_neoforgecurios_isendermask",
-      "community": 89,
+      "community": 76,
       "norm_label": ".isendermask()"
     },
     {
@@ -18226,7 +18226,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_java_player",
-      "community": 89,
+      "community": 76,
       "norm_label": "player"
     },
     {
@@ -18236,7 +18236,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_regaliaslotsapi_platform_neoforgecurios_java_enderman",
-      "community": 89,
+      "community": 76,
       "norm_label": "enderman"
     },
     {
@@ -19246,7 +19246,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_getslot",
-      "community": 18,
+      "community": 89,
       "norm_label": ".getslot()"
     },
     {
@@ -19256,7 +19256,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_java_level",
-      "community": 18,
+      "community": 89,
       "norm_label": "level"
     },
     {
@@ -19266,7 +19266,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_getslots",
-      "community": 18,
+      "community": 89,
       "norm_label": ".getslots()"
     },
     {
@@ -19276,7 +19276,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_getplayerslots",
-      "community": 18,
+      "community": 89,
       "norm_label": ".getplayerslots()"
     },
     {
@@ -19286,7 +19286,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_java_player",
-      "community": 18,
+      "community": 89,
       "norm_label": "player"
     },
     {
@@ -19566,7 +19566,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_java_deprecated",
-      "community": 18,
+      "community": 89,
       "norm_label": "deprecated"
     },
     {
@@ -19576,7 +19576,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_java_scheduledforremoval",
-      "community": 18,
+      "community": 89,
       "norm_label": "scheduledforremoval"
     },
     {
@@ -19606,7 +19606,7 @@
       "source_location": "L479",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_seticonhelper",
-      "community": 18,
+      "community": 89,
       "norm_label": ".seticonhelper()"
     },
     {
@@ -19616,7 +19616,7 @@
       "source_location": "L488",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_geticonhelper",
-      "community": 18,
+      "community": 89,
       "norm_label": ".geticonhelper()"
     },
     {
@@ -19626,7 +19626,7 @@
       "source_location": "L496",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_setcurioshelper",
-      "community": 18,
+      "community": 89,
       "norm_label": ".setcurioshelper()"
     },
     {
@@ -19636,7 +19636,7 @@
       "source_location": "L505",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_getcurioshelper",
-      "community": 18,
+      "community": 89,
       "norm_label": ".getcurioshelper()"
     },
     {
@@ -19646,7 +19646,7 @@
       "source_location": "L513",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_getslothelper",
-      "community": 18,
+      "community": 89,
       "norm_label": ".getslothelper()"
     },
     {
@@ -19656,7 +19656,7 @@
       "source_location": "L519",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_curiosapi_curiosapi_setslothelper",
-      "community": 18,
+      "community": 89,
       "norm_label": ".setslothelper()"
     },
     {
@@ -21526,7 +21526,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent",
-      "community": 10,
+      "community": 141,
       "norm_label": "curiochangeevent.java"
     },
     {
@@ -21536,7 +21536,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_curiochangeevent",
-      "community": 10,
+      "community": 141,
       "norm_label": "curiochangeevent"
     },
     {
@@ -21546,7 +21546,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_java_itemstack",
-      "community": 10,
+      "community": 141,
       "norm_label": "itemstack"
     },
     {
@@ -21556,7 +21556,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_curiochangeevent_curiochangeevent",
-      "community": 10,
+      "community": 141,
       "norm_label": ".curiochangeevent()"
     },
     {
@@ -21566,7 +21566,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_java_livingentity",
-      "community": 10,
+      "community": 141,
       "norm_label": "livingentity"
     },
     {
@@ -21576,7 +21576,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_curiochangeevent_getidentifier",
-      "community": 10,
+      "community": 141,
       "norm_label": ".getidentifier()"
     },
     {
@@ -21586,7 +21586,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_curiochangeevent_getslotindex",
-      "community": 10,
+      "community": 141,
       "norm_label": ".getslotindex()"
     },
     {
@@ -21596,7 +21596,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_curiochangeevent_getfrom",
-      "community": 10,
+      "community": 141,
       "norm_label": ".getfrom()"
     },
     {
@@ -21606,7 +21606,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_java_nonnull",
-      "community": 10,
+      "community": 141,
       "norm_label": "nonnull"
     },
     {
@@ -21616,7 +21616,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_event_curiochangeevent_curiochangeevent_getto",
-      "community": 10,
+      "community": 141,
       "norm_label": ".getto()"
     },
     {
@@ -22146,7 +22146,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype",
-      "community": 18,
+      "community": 112,
       "norm_label": "islottype.java"
     },
     {
@@ -22156,7 +22156,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype",
-      "community": 18,
+      "community": 112,
       "norm_label": "islottype"
     },
     {
@@ -22166,7 +22166,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_getidentifier",
-      "community": 18,
+      "community": 112,
       "norm_label": ".getidentifier()"
     },
     {
@@ -22176,7 +22176,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_geticon",
-      "community": 18,
+      "community": 112,
       "norm_label": ".geticon()"
     },
     {
@@ -22186,7 +22186,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_java_resourcelocation",
-      "community": 18,
+      "community": 112,
       "norm_label": "resourcelocation"
     },
     {
@@ -22196,7 +22196,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_getorder",
-      "community": 18,
+      "community": 112,
       "norm_label": ".getorder()"
     },
     {
@@ -22206,7 +22206,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_getsize",
-      "community": 18,
+      "community": 112,
       "norm_label": ".getsize()"
     },
     {
@@ -22216,7 +22216,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_usenativegui",
-      "community": 18,
+      "community": 112,
       "norm_label": ".usenativegui()"
     },
     {
@@ -22226,7 +22226,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_hascosmetic",
-      "community": 18,
+      "community": 112,
       "norm_label": ".hascosmetic()"
     },
     {
@@ -22236,7 +22236,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_cantogglerendering",
-      "community": 18,
+      "community": 112,
       "norm_label": ".cantogglerendering()"
     },
     {
@@ -22246,7 +22246,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_getdroprule",
-      "community": 18,
+      "community": 112,
       "norm_label": ".getdroprule()"
     },
     {
@@ -22256,7 +22256,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_java_droprule",
-      "community": 18,
+      "community": 112,
       "norm_label": "droprule"
     },
     {
@@ -22266,7 +22266,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_getvalidators",
-      "community": 18,
+      "community": 112,
       "norm_label": ".getvalidators()"
     },
     {
@@ -22276,7 +22276,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_writenbt",
-      "community": 18,
+      "community": 112,
       "norm_label": ".writenbt()"
     },
     {
@@ -22286,7 +22286,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_java_compoundtag",
-      "community": 18,
+      "community": 112,
       "norm_label": "compoundtag"
     },
     {
@@ -22296,7 +22296,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_islocked",
-      "community": 18,
+      "community": 112,
       "norm_label": ".islocked()"
     },
     {
@@ -22306,7 +22306,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_java_deprecated",
-      "community": 18,
+      "community": 112,
       "norm_label": "deprecated"
     },
     {
@@ -22316,7 +22316,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_java_scheduledforremoval",
-      "community": 18,
+      "community": 112,
       "norm_label": "scheduledforremoval"
     },
     {
@@ -22326,7 +22326,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_getpriority",
-      "community": 18,
+      "community": 112,
       "norm_label": ".getpriority()"
     },
     {
@@ -22336,7 +22336,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_islottype_islottype_isvisible",
-      "community": 18,
+      "community": 112,
       "norm_label": ".isvisible()"
     },
     {
@@ -22396,7 +22396,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_java_slotcontext",
-      "community": 33,
+      "community": 146,
       "norm_label": "slotcontext"
     },
     {
@@ -22546,7 +22546,7 @@
       "source_location": "L174",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_icurio_onequipfromuse",
-      "community": 33,
+      "community": 146,
       "norm_label": ".onequipfromuse()"
     },
     {
@@ -22556,7 +22556,7 @@
       "source_location": "L188",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_icurio_getequipsound",
-      "community": 33,
+      "community": 146,
       "norm_label": ".getequipsound()"
     },
     {
@@ -22566,7 +22566,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_java_nonnull",
-      "community": 21,
+      "community": 146,
       "norm_label": "nonnull"
     },
     {
@@ -22606,7 +22606,7 @@
       "source_location": "L233",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_icurio_writesyncdata",
-      "community": 21,
+      "community": 146,
       "norm_label": ".writesyncdata()"
     },
     {
@@ -22616,7 +22616,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_java_compoundtag",
-      "community": 21,
+      "community": 146,
       "norm_label": "compoundtag"
     },
     {
@@ -22626,7 +22626,7 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_icurio_readsyncdata",
-      "community": 21,
+      "community": 146,
       "norm_label": ".readsyncdata()"
     },
     {
@@ -22746,7 +22746,7 @@
       "source_location": "L378",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_droprule",
-      "community": 21,
+      "community": 75,
       "norm_label": "droprule"
     },
     {
@@ -22756,7 +22756,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_droprule_default",
-      "community": 21,
+      "community": 75,
       "norm_label": "default"
     },
     {
@@ -22766,7 +22766,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_droprule_always_drop",
-      "community": 21,
+      "community": 75,
       "norm_label": "always_drop"
     },
     {
@@ -22776,7 +22776,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_droprule_always_keep",
-      "community": 21,
+      "community": 75,
       "norm_label": "always_keep"
     },
     {
@@ -22786,7 +22786,7 @@
       "source_location": "L379",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurio_droprule_destroy",
-      "community": 21,
+      "community": 75,
       "norm_label": "destroy"
     },
     {
@@ -22866,7 +22866,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem",
-      "community": 8,
+      "community": 75,
       "norm_label": "icurioitem.java"
     },
     {
@@ -22956,7 +22956,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_icurioitem_getslotstooltip",
-      "community": 8,
+      "community": 75,
       "norm_label": ".getslotstooltip()"
     },
     {
@@ -22966,7 +22966,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_component",
-      "community": 8,
+      "community": 75,
       "norm_label": "component"
     },
     {
@@ -22976,7 +22976,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_tooltipcontext",
-      "community": 8,
+      "community": 75,
       "norm_label": "tooltipcontext"
     },
     {
@@ -22986,7 +22986,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_deprecated",
-      "community": 8,
+      "community": 75,
       "norm_label": "deprecated"
     },
     {
@@ -22996,7 +22996,7 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_icurioitem_getattributemodifiers",
-      "community": 8,
+      "community": 75,
       "norm_label": ".getattributemodifiers()"
     },
     {
@@ -23006,7 +23006,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_resourcelocation",
-      "community": 8,
+      "community": 75,
       "norm_label": "resourcelocation"
     },
     {
@@ -23016,7 +23016,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_multimap",
-      "community": 8,
+      "community": 75,
       "norm_label": "multimap"
     },
     {
@@ -23026,7 +23026,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_holder",
-      "community": 8,
+      "community": 75,
       "norm_label": "holder"
     },
     {
@@ -23036,7 +23036,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_attribute",
-      "community": 8,
+      "community": 75,
       "norm_label": "attribute"
     },
     {
@@ -23046,7 +23046,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_attributemodifier",
-      "community": 8,
+      "community": 75,
       "norm_label": "attributemodifier"
     },
     {
@@ -23076,7 +23076,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_nonnull",
-      "community": 8,
+      "community": 75,
       "norm_label": "nonnull"
     },
     {
@@ -23146,7 +23146,7 @@
       "source_location": "L280",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_icurioitem_getdroprule",
-      "community": 8,
+      "community": 75,
       "norm_label": ".getdroprule()"
     },
     {
@@ -23156,7 +23156,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_damagesource",
-      "community": 8,
+      "community": 75,
       "norm_label": "damagesource"
     },
     {
@@ -23166,7 +23166,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_scheduledforremoval",
-      "community": 8,
+      "community": 75,
       "norm_label": "scheduledforremoval"
     },
     {
@@ -23176,7 +23176,7 @@
       "source_location": "L315",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_icurioitem_getattributestooltip",
-      "community": 8,
+      "community": 75,
       "norm_label": ".getattributestooltip()"
     },
     {
@@ -23246,7 +23246,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icurioitem_java_enderman",
-      "community": 8,
+      "community": 75,
       "norm_label": "enderman"
     },
     {
@@ -23566,7 +23566,7 @@
       "source_location": "L301",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_addtransientslotmodifier",
-      "community": 28,
+      "community": 147,
       "norm_label": ".addtransientslotmodifier()"
     },
     {
@@ -23576,7 +23576,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_java_resourcelocation",
-      "community": 28,
+      "community": 147,
       "norm_label": "resourcelocation"
     },
     {
@@ -23586,7 +23586,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_java_operation",
-      "community": 28,
+      "community": 147,
       "norm_label": "operation"
     },
     {
@@ -23596,7 +23596,7 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_addtransientslotmodifiers",
-      "community": 58,
+      "community": 28,
       "norm_label": ".addtransientslotmodifiers()"
     },
     {
@@ -23606,7 +23606,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_java_multimap",
-      "community": 58,
+      "community": 28,
       "norm_label": "multimap"
     },
     {
@@ -23616,7 +23616,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_java_attributemodifier",
-      "community": 58,
+      "community": 28,
       "norm_label": "attributemodifier"
     },
     {
@@ -23626,7 +23626,7 @@
       "source_location": "L325",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_addpermanentslotmodifier",
-      "community": 28,
+      "community": 147,
       "norm_label": ".addpermanentslotmodifier()"
     },
     {
@@ -23636,7 +23636,7 @@
       "source_location": "L335",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_addpermanentslotmodifiers",
-      "community": 58,
+      "community": 28,
       "norm_label": ".addpermanentslotmodifiers()"
     },
     {
@@ -23646,7 +23646,7 @@
       "source_location": "L343",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_removeslotmodifier",
-      "community": 28,
+      "community": 147,
       "norm_label": ".removeslotmodifier()"
     },
     {
@@ -23656,7 +23656,7 @@
       "source_location": "L352",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_removeslotmodifiers",
-      "community": 58,
+      "community": 28,
       "norm_label": ".removeslotmodifiers()"
     },
     {
@@ -23676,7 +23676,7 @@
       "source_location": "L364",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_capability_icuriositemhandler_icuriositemhandler_getmodifiers",
-      "community": 58,
+      "community": 28,
       "norm_label": ".getmodifiers()"
     },
     {
@@ -24896,7 +24896,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper",
-      "community": 18,
+      "community": 89,
       "norm_label": "iiconhelper.java"
     },
     {
@@ -24906,7 +24906,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_iiconhelper",
-      "community": 18,
+      "community": 89,
       "norm_label": "iiconhelper"
     },
     {
@@ -24916,7 +24916,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_java_deprecated",
-      "community": 18,
+      "community": 89,
       "norm_label": "deprecated"
     },
     {
@@ -24926,7 +24926,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_java_scheduledforremoval",
-      "community": 18,
+      "community": 89,
       "norm_label": "scheduledforremoval"
     },
     {
@@ -24936,7 +24936,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_iiconhelper_clearicons",
-      "community": 18,
+      "community": 89,
       "norm_label": ".clearicons()"
     },
     {
@@ -24946,7 +24946,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_iiconhelper_addicon",
-      "community": 18,
+      "community": 89,
       "norm_label": ".addicon()"
     },
     {
@@ -24956,7 +24956,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_java_resourcelocation",
-      "community": 18,
+      "community": 89,
       "norm_label": "resourcelocation"
     },
     {
@@ -24966,7 +24966,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_iiconhelper_iiconhelper_geticon",
-      "community": 18,
+      "community": 89,
       "norm_label": ".geticon()"
     },
     {
@@ -24976,7 +24976,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper",
-      "community": 18,
+      "community": 113,
       "norm_label": "islothelper.java"
     },
     {
@@ -24986,7 +24986,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper",
-      "community": 18,
+      "community": 113,
       "norm_label": "islothelper"
     },
     {
@@ -24996,7 +24996,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_java_deprecated",
-      "community": 18,
+      "community": 113,
       "norm_label": "deprecated"
     },
     {
@@ -25006,7 +25006,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_java_scheduledforremoval",
-      "community": 18,
+      "community": 113,
       "norm_label": "scheduledforremoval"
     },
     {
@@ -25016,7 +25016,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_addslottype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".addslottype()"
     },
     {
@@ -25026,7 +25026,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_clear",
-      "community": 18,
+      "community": 113,
       "norm_label": ".clear()"
     },
     {
@@ -25036,7 +25036,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_getslottype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".getslottype()"
     },
     {
@@ -25046,7 +25046,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_getslottypes",
-      "community": 18,
+      "community": 113,
       "norm_label": ".getslottypes()"
     },
     {
@@ -25056,7 +25056,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_java_livingentity",
-      "community": 18,
+      "community": 113,
       "norm_label": "livingentity"
     },
     {
@@ -25066,7 +25066,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_getslottypeids",
-      "community": 18,
+      "community": 113,
       "norm_label": ".getslottypeids()"
     },
     {
@@ -25076,7 +25076,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_getslotsfortype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".getslotsfortype()"
     },
     {
@@ -25086,7 +25086,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_setslotsfortype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".setslotsfortype()"
     },
     {
@@ -25096,7 +25096,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_createslots",
-      "community": 18,
+      "community": 113,
       "norm_label": ".createslots()"
     },
     {
@@ -25106,7 +25106,7 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_growslottype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".growslottype()"
     },
     {
@@ -25116,7 +25116,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_shrinkslottype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".shrinkslottype()"
     },
     {
@@ -25126,7 +25126,7 @@
       "source_location": "L153",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_unlockslottype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".unlockslottype()"
     },
     {
@@ -25136,7 +25136,7 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_api_type_util_islothelper_islothelper_lockslottype",
-      "community": 18,
+      "community": 113,
       "norm_label": ".lockslottype()"
     },
     {
@@ -25226,7 +25226,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_mixin_curiosimplmixinhooks_curiosimplmixinhooks_getitemstackslots",
-      "community": 38,
+      "community": 145,
       "norm_label": ".getitemstackslots()"
     },
     {
@@ -25246,7 +25246,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_mixin_curiosimplmixinhooks_java_livingentity",
-      "community": 38,
+      "community": 145,
       "norm_label": "livingentity"
     },
     {
@@ -25256,7 +25256,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_mixin_curiosimplmixinhooks_curiosimplmixinhooks_getcurio",
-      "community": 38,
+      "community": 33,
       "norm_label": ".getcurio()"
     },
     {
@@ -25266,7 +25266,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_mixin_curiosimplmixinhooks_curiosimplmixinhooks_getcuriosinventory",
-      "community": 38,
+      "community": 145,
       "norm_label": ".getcuriosinventory()"
     },
     {
@@ -25426,7 +25426,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "src_main_java_top_theillusivec4_curios_mixin_curiosimplmixinhooks_curiosimplmixinhooks_broadcastcuriobreakevent",
-      "community": 3,
+      "community": 67,
       "norm_label": ".broadcastcuriobreakevent()"
     },
     {
@@ -25700,14 +25700,14 @@
       "norm_label": "regalia slots api (1.21.1) \u2014 changelog"
     },
     {
-      "label": "[0.0.0-beta.4] - 2026-09-01",
+      "label": "[0.0.0-beta.5] - 2026-09-01",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "changelog_0_0_0_beta_4_2026_09_01",
+      "id": "changelog_0_0_0_beta_5_2026_09_01",
       "community": 129,
-      "norm_label": "[0.0.0-beta.4] - 2026-09-01"
+      "norm_label": "[0.0.0-beta.5] - 2026-09-01"
     },
     {
       "label": "Fixed",
@@ -25720,24 +25720,14 @@
       "norm_label": "fixed"
     },
     {
-      "label": "Technical",
-      "file_type": "document",
-      "source_file": "CHANGELOG.md",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "changelog_technical",
-      "community": 129,
-      "norm_label": "technical"
-    },
-    {
-      "label": "[0.0.0-beta.3] - 2026-09-01",
+      "label": "[0.0.0-beta.4] - 2026-09-01",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "changelog_0_0_0_beta_3_2026_09_01",
+      "id": "changelog_0_0_0_beta_4_2026_09_01",
       "community": 129,
-      "norm_label": "[0.0.0-beta.3] - 2026-09-01"
+      "norm_label": "[0.0.0-beta.4] - 2026-09-01"
     },
     {
       "label": "Fixed",
@@ -25755,19 +25745,19 @@
       "source_file": "CHANGELOG.md",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "changelog_technical_21",
+      "id": "changelog_technical",
       "community": 129,
       "norm_label": "technical"
     },
     {
-      "label": "[0.0.0-beta.2] - 2026-08-31",
+      "label": "[0.0.0-beta.3] - 2026-09-01",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
       "source_location": "L25",
       "_origin": "ast",
-      "id": "changelog_0_0_0_beta_2_2026_08_31",
+      "id": "changelog_0_0_0_beta_3_2026_09_01",
       "community": 129,
-      "norm_label": "[0.0.0-beta.2] - 2026-08-31"
+      "norm_label": "[0.0.0-beta.3] - 2026-09-01"
     },
     {
       "label": "Fixed",
@@ -25783,9 +25773,39 @@
       "label": "Technical",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
-      "source_location": "L32",
+      "source_location": "L31",
       "_origin": "ast",
-      "id": "changelog_technical_32",
+      "id": "changelog_technical_31",
+      "community": 129,
+      "norm_label": "technical"
+    },
+    {
+      "label": "[0.0.0-beta.2] - 2026-08-31",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "changelog_0_0_0_beta_2_2026_08_31",
+      "community": 129,
+      "norm_label": "[0.0.0-beta.2] - 2026-08-31"
+    },
+    {
+      "label": "Fixed",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "changelog_fixed_37",
+      "community": 129,
+      "norm_label": "fixed"
+    },
+    {
+      "label": "Technical",
+      "file_type": "document",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "changelog_technical_42",
       "community": 129,
       "norm_label": "technical"
     },
@@ -25793,7 +25813,7 @@
       "label": "[0.0.0-beta.1] - 2026-08-31",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
-      "source_location": "L38",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "changelog_0_0_0_beta_1_2026_08_31",
       "community": 129,
@@ -25803,7 +25823,7 @@
       "label": "Added",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
-      "source_location": "L40",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "changelog_added",
       "community": 129,
@@ -25813,9 +25833,9 @@
       "label": "Technical",
       "file_type": "document",
       "source_file": "CHANGELOG.md",
-      "source_location": "L55",
+      "source_location": "L65",
       "_origin": "ast",
-      "id": "changelog_technical_55",
+      "id": "changelog_technical_65",
       "community": 129,
       "norm_label": "technical"
     },
@@ -92932,7 +92952,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L38",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "changelog_regalia_slots_api_1_21_1_changelog",
       "target": "changelog_0_0_0_beta_1_2026_08_31",
@@ -92942,7 +92962,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L25",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "changelog_regalia_slots_api_1_21_1_changelog",
       "target": "changelog_0_0_0_beta_2_2026_08_31",
@@ -92952,7 +92972,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L15",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "changelog_regalia_slots_api_1_21_1_changelog",
       "target": "changelog_0_0_0_beta_3_2026_09_01",
@@ -92962,7 +92982,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L5",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "changelog_regalia_slots_api_1_21_1_changelog",
       "target": "changelog_0_0_0_beta_4_2026_09_01",
@@ -92972,20 +92992,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L7",
+      "source_location": "L5",
       "weight": 1.0,
-      "source": "changelog_0_0_0_beta_4_2026_09_01",
-      "target": "changelog_fixed",
+      "source": "changelog_regalia_slots_api_1_21_1_changelog",
+      "target": "changelog_0_0_0_beta_5_2026_09_01",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L11",
+      "source_location": "L7",
       "weight": 1.0,
-      "source": "changelog_0_0_0_beta_4_2026_09_01",
-      "target": "changelog_technical",
+      "source": "changelog_0_0_0_beta_5_2026_09_01",
+      "target": "changelog_fixed",
       "confidence_score": 1.0
     },
     {
@@ -92994,7 +93014,7 @@
       "source_file": "CHANGELOG.md",
       "source_location": "L17",
       "weight": 1.0,
-      "source": "changelog_0_0_0_beta_3_2026_09_01",
+      "source": "changelog_0_0_0_beta_4_2026_09_01",
       "target": "changelog_fixed_17",
       "confidence_score": 1.0
     },
@@ -93004,8 +93024,8 @@
       "source_file": "CHANGELOG.md",
       "source_location": "L21",
       "weight": 1.0,
-      "source": "changelog_0_0_0_beta_3_2026_09_01",
-      "target": "changelog_technical_21",
+      "source": "changelog_0_0_0_beta_4_2026_09_01",
+      "target": "changelog_technical",
       "confidence_score": 1.0
     },
     {
@@ -93014,7 +93034,7 @@
       "source_file": "CHANGELOG.md",
       "source_location": "L27",
       "weight": 1.0,
-      "source": "changelog_0_0_0_beta_2_2026_08_31",
+      "source": "changelog_0_0_0_beta_3_2026_09_01",
       "target": "changelog_fixed_27",
       "confidence_score": 1.0
     },
@@ -93022,17 +93042,37 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0,
-      "source": "changelog_0_0_0_beta_2_2026_08_31",
-      "target": "changelog_technical_32",
+      "source": "changelog_0_0_0_beta_3_2026_09_01",
+      "target": "changelog_technical_31",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L40",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "changelog_0_0_0_beta_2_2026_08_31",
+      "target": "changelog_fixed_37",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "changelog_0_0_0_beta_2_2026_08_31",
+      "target": "changelog_technical_42",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L50",
       "weight": 1.0,
       "source": "changelog_0_0_0_beta_1_2026_08_31",
       "target": "changelog_added",
@@ -93042,10 +93082,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.md",
-      "source_location": "L55",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "changelog_0_0_0_beta_1_2026_08_31",
-      "target": "changelog_technical_55",
+      "target": "changelog_technical_65",
       "confidence_score": 1.0
     },
     {
@@ -93560,5 +93600,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "48f77ba99701d35a0fcd1edd7a38aee0fe79ea6b"
+  "built_at_commit": "c8065416ee289b40def6605d94616d538c049e98"
 }
