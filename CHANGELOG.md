@@ -2,6 +2,28 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.7] - 2026-09-01
+
+### Fixed
+
+- **`ClassCastException` in the Curios inventory adapter**: the next link in the same chain as
+  beta.6 — L_Ender's Cataclysm first-person arm rendering, and any mod calling
+  `CuriosApi.getCuriosInventory()` / `getCurio()` — crashed with
+  `com.skd.regaliaslotsapi.common.capability.CurioInventoryCapability cannot be cast to
+  top.theillusivec4.curios.api.type.capability.ICuriosItemHandler`. The adapter methods returned
+  Regalia's internal implementation objects cast straight to the verbatim `top.theillusivec4.curios.*`
+  interfaces, which those objects never implement. They are now wrapped in forwarding shims, the same
+  pattern already used for slot types (`ShimSlotType`).
+
+### Technical
+
+- New shims in `com.skd.regaliaslotsapi.compat.curios`: `ShimCuriosItemHandler`, `ShimCurio`,
+  `ShimCurioStacksHandler`, `ShimDynamicStackHandler` — each implements the verbatim
+  `top.theillusivec4.curios.*` interface and forwards to the parallel Regalia implementation,
+  wrapping/unwrapping nested capability types and translating `SlotContext` / `SlotResult` by value.
+- `RegaliaSlotsApiImplMixinHooks.getCurioForCurios` / `getCuriosInventoryForCurios` now return
+  `new ShimCurio(...)` / `new ShimCuriosItemHandler(...)` instead of an unchecked cast.
+
 ## [0.0.0-beta.6] - 2026-09-01
 
 ### Fixed

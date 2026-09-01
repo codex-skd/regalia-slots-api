@@ -358,11 +358,11 @@ public class RegaliaSlotsApiImplMixinHooks {
   }
 
   public static Optional<top.theillusivec4.curios.api.type.capability.ICurio> getCurioForCurios(ItemStack stack) {
-    return getCurio(stack).map(curio -> (top.theillusivec4.curios.api.type.capability.ICurio) curio);
+    return getCurio(stack).map(curio -> new com.skd.regaliaslotsapi.compat.curios.ShimCurio(curio));
   }
 
   public static Optional<top.theillusivec4.curios.api.type.capability.ICuriosItemHandler> getCuriosInventoryForCurios(LivingEntity livingEntity) {
-    return getCuriosInventory(livingEntity).map(handler -> (top.theillusivec4.curios.api.type.capability.ICuriosItemHandler) handler);
+    return getCuriosInventory(livingEntity).map(handler -> new com.skd.regaliaslotsapi.compat.curios.ShimCuriosItemHandler(handler));
   }
 
   public static boolean isStackValidForCurios(top.theillusivec4.curios.api.SlotContext slotContext, ItemStack stack) {
