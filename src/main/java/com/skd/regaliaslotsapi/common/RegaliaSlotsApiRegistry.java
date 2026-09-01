@@ -49,6 +49,12 @@ public class RegaliaSlotsApiRegistry {
           NeoForgeRegistries.Keys.ATTACHMENT_TYPES, RegaliaSlotsApi.MODID);
   private static final DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS =
       DeferredRegister.create(Registries.TRIGGER_TYPE, RegaliaSlotsApi.MODID);
+  // Compat: mods built against the real Curios API hard-code the trigger id
+  // `curios:equip_curio` in their advancement JSON. We expose the same trigger
+  // under the `curios` namespace so those advancements resolve. NeoForge allows
+  // registering into another mod's namespace from our own RegisterEvent.
+  private static final DeferredRegister<CriterionTrigger<?>> CURIOS_COMPAT_TRIGGERS =
+      DeferredRegister.create(Registries.TRIGGER_TYPE, "curios");
   private static final DeferredRegister<ArgumentTypeInfo<?, ?>> ARGUMENT_TYPES =
       DeferredRegister.create(Registries.COMMAND_ARGUMENT_TYPE, RegaliaSlotsApi.MODID);
   private static final DeferredRegister<MenuType<?>> MENU_TYPES =
@@ -71,6 +77,9 @@ public class RegaliaSlotsApiRegistry {
           () -> new LootItemFunctionType<>(SetCurioAttributesFunction.CODEC));
   public static final Supplier<EquipCurioTrigger> EQUIP_TRIGGER =
       CRITERION_TRIGGERS.register("equip_curio", () -> EquipCurioTrigger.INSTANCE);
+  // Same singleton, exposed as `curios:equip_curio` for Curios-native datapacks/mods.
+  public static final Supplier<EquipCurioTrigger> CURIOS_EQUIP_TRIGGER =
+      CURIOS_COMPAT_TRIGGERS.register("equip_curio", () -> EquipCurioTrigger.INSTANCE);
 
   public static final Supplier<AttachmentType<CurioInventory>> INVENTORY =
       ATTACHMENT_TYPES.register("inventory",
@@ -91,6 +100,7 @@ public class RegaliaSlotsApiRegistry {
     LOOT_FUNCTIONS.register(eventBus);
     ATTACHMENT_TYPES.register(eventBus);
     CRITERION_TRIGGERS.register(eventBus);
+    CURIOS_COMPAT_TRIGGERS.register(eventBus);
     DATA_COMPONENTS.register(eventBus);
   }
 }
