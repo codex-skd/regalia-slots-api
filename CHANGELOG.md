@@ -2,6 +2,25 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.9] - 2026-09-01
+
+### Fixed
+
+- **Curios-native advancements failed to load**: mods built against the real Curios API hard-code
+  the trigger id `curios:equip_curio` in their advancement JSON (Iron's Spellbooks does this for
+  `spell_book_equip` + 13 tiered child advancements). Regalia only registered the trigger as
+  `regalia_slots_api:equip_curio`, so those advancements threw
+  `Unknown registry key ...:trigger_type: curios:equip_curio` and the whole branch was dropped.
+
+### Technical
+
+- `RegaliaSlotsApiRegistry` now also registers the same `EquipCurioTrigger.INSTANCE` under the
+  `curios` namespace via a second `DeferredRegister<CriterionTrigger<?>>` created with `"curios"`,
+  wired into the mod event bus in `init(...)`. The trigger's `curios:equip_curio` id now resolves.
+- Caveat: the trigger's slot sub-predicate codec still keys on `regalia_slots_api:slot`, so a
+  Curios-native criterion using `curios:slot` loads but its slot filter is ignored (the advancement
+  fires on any Regalia-slot equip). Restoring that filter is a follow-up.
+
 ## [0.0.0-beta.8] - 2026-09-01
 
 ### Fixed
