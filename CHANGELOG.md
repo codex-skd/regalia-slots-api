@@ -2,6 +2,26 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.6] - 2026-09-01
+
+### Fixed
+
+- **Legacy `CuriosApi.getCuriosHelper()` returned `null`**: mods that still use the deprecated
+  Curios helper accessor (Supplementaries' quiver, L_Ender's Cataclysm arm rendering, and others)
+  crashed with `NullPointerException` — `curiosHelper` was never wired. `MixinCuriosApi` bridged
+  the modern static methods but left `getCuriosHelper()` unhandled, so `CuriosApi.getCuriosHelper()`
+  stayed `null` and every caller NPE'd (server "Ticking player" crash and client render FATAL).
+  Now `getCuriosHelper()` returns a shim `ICuriosHelper` backed by the same compat layer.
+
+### Technical
+
+- New `com.skd.regaliaslotsapi.compat.curios.LegacyCuriosHelperShim` implementing
+  `top.theillusivec4.curios.api.type.util.ICuriosHelper`, delegating to `CuriosImplMixinHooks`
+  (`getCurio` / `getCuriosHandler` / `getCurioTags` / `isStackValid` / `onBrokenCurio` direct;
+  `findCurios*` / `findFirstCurio*` / `findCurio` / `getEquippedCurios` / `setEquippedCurio` /
+  `findEquippedCurio` resolved through the entity's `ICuriosItemHandler`).
+- `MixinCuriosApi` gains a `@Inject` on `getCuriosHelper` returning the shim singleton.
+
 ## [0.0.0-beta.5] - 2026-09-01
 
 ### Fixed
