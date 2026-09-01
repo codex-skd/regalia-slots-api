@@ -198,7 +198,7 @@ public class RegaliaSlotsApiEntityManager extends SimpleJsonResourceReloadListen
 
       if (entity.startsWith("#")) {
         BuiltInRegistries.ENTITY_TYPE.getTag(
-                TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse(entity)))
+                TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse(entity.substring(1))))
             .ifPresent(named -> {
               for (Holder<EntityType<?>> entityTypeHolder : named) {
                 toAdd.add(entityTypeHolder.value());

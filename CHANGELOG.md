@@ -2,6 +2,16 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.5] - 2026-09-01
+
+### Fixed
+
+- **Entity slot assignment via tags never worked**: `data/<mod>/curios/entities/*.json` files using a tag
+  reference in `"entities"` (e.g. `"#regalia_slots_api:player_like"`, the standard Curios pattern) crashed
+  datapack loading with `ResourceLocationException: Non [a-z0-9_.-] character in namespace`.
+  `RegaliaSlotsApiEntityManager.getSlotsForEntities` detected the leading `#` but passed the whole string
+  (including `#`) to `ResourceLocation.parse`. Now strips the `#` before parsing the tag id, matching Curios.
+
 ## [0.0.0-beta.4] - 2026-09-01
 
 ### Fixed
