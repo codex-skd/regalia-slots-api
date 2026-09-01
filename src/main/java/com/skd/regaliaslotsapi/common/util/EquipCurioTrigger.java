@@ -23,6 +23,7 @@ package com.skd.regaliaslotsapi.common.util;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.Optional;
+import java.util.function.Predicate;
 import javax.annotation.Nonnull;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
@@ -49,7 +50,18 @@ import com.skd.regaliaslotsapi.api.SlotPredicate;
 
 public class EquipCurioTrigger extends SimpleCriterionTrigger<EquipCurioTrigger.TriggerInstance> {
 
+  /** Primary instance, registered as {@code regalia_slots_api:equip_curio}. */
   public static final EquipCurioTrigger INSTANCE = new EquipCurioTrigger();
+
+  /**
+   * Second instance, registered as {@code curios:equip_curio} for advancements authored against the
+   * real Curios API (Iron's Spellbooks and friends hard-code that id in their JSON). It has to be a
+   * <em>distinct</em> object: vanilla {@link net.minecraft.core.MappedRegistry} rejects the same
+   * value under two keys ("Adding duplicate value ... to registry"), which is what crashed loading
+   * in beta.9/beta.10 when both ids pointed at {@link #INSTANCE}. Runtime triggers fan out to both
+   * instances via {@link #fire}, so a listener registered under either id is notified.
+   */
+  public static final EquipCurioTrigger CURIOS_COMPAT_INSTANCE = new EquipCurioTrigger();
 
   @Nonnull
   @Override
@@ -58,25 +70,29 @@ public class EquipCurioTrigger extends SimpleCriterionTrigger<EquipCurioTrigger.
   }
 
   public void trigger(ServerPlayer serverPlayer, ItemStack stack) {
-    LootParams lootparams = new LootParams.Builder(serverPlayer.serverLevel())
-        .withParameter(LootContextParams.ORIGIN, serverPlayer.blockPosition().getCenter())
-        .withParameter(LootContextParams.THIS_ENTITY, serverPlayer)
-        .withParameter(LootContextParams.BLOCK_STATE, serverPlayer.getBlockStateOn())
-        .withParameter(LootContextParams.TOOL, stack)
-        .create(LootContextParamSets.ADVANCEMENT_LOCATION);
-    LootContext lootcontext = new LootContext.Builder(lootparams).create(Optional.empty());
-    this.trigger(serverPlayer, instance -> instance.matches(null, stack, lootcontext));
+    LootContext lootcontext = advancementContext(serverPlayer, stack);
+    fire(serverPlayer, instance -> instance.matches(null, stack, lootcontext));
   }
 
   public void trigger(SlotContext slotContext, ServerPlayer serverPlayer, ItemStack stack) {
+    LootContext lootcontext = advancementContext(serverPlayer, stack);
+    fire(serverPlayer, instance -> instance.matches(slotContext, stack, lootcontext));
+  }
+
+  private static LootContext advancementContext(ServerPlayer serverPlayer, ItemStack stack) {
     LootParams lootparams = new LootParams.Builder(serverPlayer.serverLevel())
         .withParameter(LootContextParams.ORIGIN, serverPlayer.blockPosition().getCenter())
         .withParameter(LootContextParams.THIS_ENTITY, serverPlayer)
         .withParameter(LootContextParams.BLOCK_STATE, serverPlayer.getBlockStateOn())
         .withParameter(LootContextParams.TOOL, stack)
         .create(LootContextParamSets.ADVANCEMENT_LOCATION);
-    LootContext lootcontext = new LootContext.Builder(lootparams).create(Optional.empty());
-    this.trigger(serverPlayer, instance -> instance.matches(slotContext, stack, lootcontext));
+    return new LootContext.Builder(lootparams).create(Optional.empty());
+  }
+
+  /** Notify advancement listeners registered under either the Regalia or the Curios trigger id. */
+  private static void fire(ServerPlayer serverPlayer, Predicate<TriggerInstance> predicate) {
+    INSTANCE.trigger(serverPlayer, predicate);
+    CURIOS_COMPAT_INSTANCE.trigger(serverPlayer, predicate);
   }
 
   public record TriggerInstance(Optional<ContextAwarePredicate> player,
