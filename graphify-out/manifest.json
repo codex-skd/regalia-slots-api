@@ -1030,8 +1030,8 @@
     "semantic_hash": ""
   },
   "CHANGELOG.md": {
-    "mtime": 1788246615.7053857,
-    "ast_hash": "c40558112ab761f265678806403312e3",
+    "mtime": 1788257952.2563863,
+    "ast_hash": "c03476878e06872a679540e5dd5f6330",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1205,8 +1205,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/regaliaslotsapi/mixin/core/MixinCuriosApi.java": {
-    "mtime": 1788203073.6748655,
-    "ast_hash": "fff86b5d0831c82c099071fa6fe78c90",
+    "mtime": 1788257734.1401203,
+    "ast_hash": "2143c335b17d3bafef092b58935d6c3d",
     "semantic_hash": ""
   },
   "src/main/java/top/theillusivec4/curios/mixin/CuriosImplMixinHooks.java": {
@@ -1237,6 +1237,21 @@
   "docs/curseforge/versions/0.0.0-beta.4.md": {
     "mtime": 1788225014.2355156,
     "ast_hash": "89c3608bb47d53cd030daca78e92a925",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/LegacyCuriosHelperShim.java": {
+    "mtime": 1788257726.582112,
+    "ast_hash": "1a3a29c67f92345e5a674ed2984234fb",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.5.md": {
+    "mtime": 1788251242.0189931,
+    "ast_hash": "117687ec2f7a0f6afe1df0ccead88188",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.6.md": {
+    "mtime": 1788257962.8980212,
+    "ast_hash": "0451374cc5ff4ea11c28a37f5a064617",
     "semantic_hash": ""
   }
 }
