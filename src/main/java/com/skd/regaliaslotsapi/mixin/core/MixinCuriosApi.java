@@ -25,10 +25,19 @@ import top.theillusivec4.curios.api.type.ISlotType;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
+import top.theillusivec4.curios.api.type.util.ICuriosHelper;
+import com.skd.regaliaslotsapi.compat.curios.LegacyCuriosHelperShim;
 import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiImplMixinHooks;
 
 @Mixin(value = CuriosApi.class, remap = false)
 public class MixinCuriosApi {
+
+  private static final ICuriosHelper regalia$legacyCuriosHelper = new LegacyCuriosHelperShim();
+
+  @Inject(at = @At("HEAD"), method = "getCuriosHelper", cancellable = true)
+  private static void curios$getCuriosHelper(CallbackInfoReturnable<ICuriosHelper> cir) {
+    cir.setReturnValue(regalia$legacyCuriosHelper);
+  }
 
   @Inject(at = @At("HEAD"), method = "registerCurio", cancellable = true)
   private static void curios$registerCurio(Item item, ICurioItem icurio, CallbackInfo ci) {
