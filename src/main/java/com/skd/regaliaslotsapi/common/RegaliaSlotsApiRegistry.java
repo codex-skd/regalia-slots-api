@@ -77,9 +77,11 @@ public class RegaliaSlotsApiRegistry {
           () -> new LootItemFunctionType<>(SetCurioAttributesFunction.CODEC));
   public static final Supplier<EquipCurioTrigger> EQUIP_TRIGGER =
       CRITERION_TRIGGERS.register("equip_curio", () -> EquipCurioTrigger.INSTANCE);
-  // Same singleton, exposed as `curios:equip_curio` for Curios-native datapacks/mods.
+  // Distinct instance, exposed as `curios:equip_curio` for Curios-native datapacks/mods. It cannot
+  // reuse EquipCurioTrigger.INSTANCE: MappedRegistry forbids the same value under two keys. Runtime
+  // triggers fan out to both instances (see EquipCurioTrigger#fire).
   public static final Supplier<EquipCurioTrigger> CURIOS_EQUIP_TRIGGER =
-      CURIOS_COMPAT_TRIGGERS.register("equip_curio", () -> EquipCurioTrigger.INSTANCE);
+      CURIOS_COMPAT_TRIGGERS.register("equip_curio", () -> EquipCurioTrigger.CURIOS_COMPAT_INSTANCE);
 
   public static final Supplier<AttachmentType<CurioInventory>> INVENTORY =
       ATTACHMENT_TYPES.register("inventory",
