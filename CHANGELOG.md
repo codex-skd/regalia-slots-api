@@ -2,6 +2,17 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.10] - 2026-09-01
+
+### Fixed
+
+- **`equip_curio` slot filter (beta.9 caveat)**: the trigger's slot sub-predicate codec keyed on
+  `regalia_slots_api:slot`, so a Curios-native criterion using `curios:slot` (as Iron's Spellbooks
+  writes) loaded but its slot filter was silently ignored. Renamed the field to `curios:slot` in
+  `EquipCurioTrigger.TriggerInstance.CODEC` — it is the only advancement-criterion consumer of that
+  key (nothing authored uses `regalia_slots_api:slot`), so this is a clean move to full Curios
+  parity. `curios:slot` filters now apply.
+
 ## [0.0.0-beta.9] - 2026-09-01
 
 ### Fixed
