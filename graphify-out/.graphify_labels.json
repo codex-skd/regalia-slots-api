@@ -127,8 +127,10 @@
   "125": "RegaliaSlotsApiCapability.java",
   "126": "AttributeModifier",
   "127": "IEntitiesData.java",
+  "128": "NeoForgeCurios.java",
   "129": "[0.0.0-beta.1] - 2026-08-31",
   "130": "CuriosTags",
+  "131": "CurioChangeEvent",
   "132": "gradlew",
   "133": "Regalia Slots API - Icon Generation Prompt",
   "134": "ICuriosMenu",
@@ -138,7 +140,16 @@
   "138": "0.0.0-beta.1.md",
   "139": "settings.gradle",
   "140": "package-info.java",
+  "141": "CurioChangeEvent",
   "142": "CurioCanUnequipEvent",
   "143": "CPacketOpenCurios",
-  "144": "MixinNbtPredicate.java"
+  "144": "MixinNbtPredicate.java",
+  "145": "CurioCanUnequipEvent",
+  "146": "SPacketPage",
+  "147": ".getCuriosInventory",
+  "148": "CuriosCapability.java",
+  "149": "ResourceLocation",
+  "150": ".getEntitySlots",
+  "151": ".getSlots",
+  "152": "0.0.0-beta.7.md"
 }
