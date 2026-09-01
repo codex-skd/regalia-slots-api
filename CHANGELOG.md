@@ -2,6 +2,16 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.4] - 2026-09-01
+
+### Fixed
+
+- **Curios compatibility layer**: Added missing internal mixin hook classes (`CuriosImplMixinHooks`, `CuriosUtilMixinHooks`) at `top.theillusivec4.curios.mixin.*` so third-party mods (Iron's Spellbooks, etc.) that mix into Curios internals can find their target classes. Previously these mods crashed with `ClassNotFoundException: top.theillusivec4.curios.mixin.CuriosImplMixinHooks`.
+
+### Technical
+
+- New compat shim classes in `src/main/java/top/theillusivec4/curios/mixin/` delegating to the renamed `RegaliaSlotsApiImplMixinHooks` implementation.
+
 ## [0.0.0-beta.3] - 2026-09-01
 
 ### Fixed
