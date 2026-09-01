@@ -2,6 +2,32 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.11] - 2026-09-01
+
+### Fixed
+
+- **Load crash: duplicate trigger value** (`IllegalStateException: Adding duplicate value
+  'com.skd.regaliaslotsapi.common.util.EquipCurioTrigger@…' to registry`, thrown from
+  `MappedRegistry.register` during `RegisterEvent`). beta.9 registered `curios:equip_curio` with
+  the very same `EquipCurioTrigger.INSTANCE` object already registered as
+  `regalia_slots_api:equip_curio`. Vanilla `MappedRegistry` dedupes by value identity and rejects
+  the second key — the whole mod-loading phase aborted. This masked itself until now because the
+  mystical_realms datapack stopped shipping its `curios:equip_curio` override (trusting beta.9's
+  native fix), so both registrations were exercised.
+
+### Technical
+
+- `EquipCurioTrigger` now has two instances: `INSTANCE` (id `regalia_slots_api:equip_curio`) and
+  `CURIOS_COMPAT_INSTANCE` (id `curios:equip_curio`). `RegaliaSlotsApiRegistry.CURIOS_EQUIP_TRIGGER`
+  registers the latter.
+- Runtime `EquipCurioTrigger#trigger(...)` fans out through a private `fire(...)` that notifies the
+  advancement listeners of **both** instances, so criteria authored under either id still fire on a
+  curio equip. The loot context is built once and shared. No behaviour change for existing
+  `regalia_slots_api:equip_curio` advancements; `curios:equip_curio` advancements now both load
+  (beta.9) and trigger (this release).
+- Programmatic criterion builders (`MixinRegaliaSlotsApiTriggers*`) still target `INSTANCE`
+  (unchanged) — they author `regalia_slots_api:equip_curio` criteria.
+
 ## [0.0.0-beta.10] - 2026-09-01
 
 ### Fixed
