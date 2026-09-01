@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/regaliaslotsapi/common/util/EquipCurioTrigger.java": {
-    "mtime": 1788180987.5278003,
-    "ast_hash": "5bbb164d397e3c6969ad7708b260ee1e",
+    "mtime": 1788286213.077954,
+    "ast_hash": "433e051f5323f210c336815b493809f3",
     "semantic_hash": ""
   },
   "src/main/java/com/skd/regaliaslotsapi/common/util/SetCurioAttributesFunction.java": {
@@ -1030,8 +1030,8 @@
     "semantic_hash": ""
   },
   "CHANGELOG.md": {
-    "mtime": 1788285560.7771542,
-    "ast_hash": "7c22151e7538b102603ae45b99070ecd",
+    "mtime": 1788286241.9406302,
+    "ast_hash": "890e7ed54392c31edbbe395a929c4dc1",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1287,6 +1287,11 @@
   "docs/curseforge/versions/0.0.0-beta.9.md": {
     "mtime": 1788285573.9120774,
     "ast_hash": "95660905a39ca08c8db4661516c686f8",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.10.md": {
+    "mtime": 1788286250.536566,
+    "ast_hash": "4a47e74a7725e35ca8d5d9237f38dcae",
     "semantic_hash": ""
   }
 }
