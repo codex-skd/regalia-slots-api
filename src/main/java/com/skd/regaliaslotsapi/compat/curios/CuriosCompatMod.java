@@ -1,22 +1,18 @@
 package com.skd.regaliaslotsapi.compat.curios;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.capabilities.EntityCapability;
-import net.neoforged.neoforge.capabilities.ItemCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import top.theillusivec4.curios.api.CuriosCapability;
 import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
-import com.skd.regaliaslotsapi.api.type.capability.ICurio;
 import com.skd.regaliaslotsapi.api.type.capability.ICurioItem;
-import com.skd.regaliaslotsapi.api.type.capability.ICuriosItemHandler;
 import com.skd.regaliaslotsapi.common.capability.CurioInventoryCapability;
 import com.skd.regaliaslotsapi.common.capability.ItemizedCurioCapability;
 import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiImplMixinHooks;
@@ -30,22 +26,20 @@ import com.skd.regaliaslotsapi.mixin.RegaliaSlotsApiImplMixinHooks;
  * capabilities, both backed live by Regalia's own data via {@link CurioInventoryCapability} and
  * {@link ItemizedCurioCapability} - nothing is duplicated or resynced between the two mod ids.
  * <p>
+ * The capability objects themselves are the verbatim ones declared by {@link CuriosCapability}
+ * (the copied Curios API), so third-party mods compiled against real Curios resolve the exact
+ * same {@code EntityCapability}/{@code ItemCapability} instances. We only register the providers,
+ * wrapping Regalia's implementations in the {@code Shim*} adapters so the returned objects
+ * implement the {@code top.theillusivec4.curios.*} interfaces those mods expect. Declaring our
+ * own capability objects for the same ids would clash with {@code CuriosCapability}'s at
+ * registration time ({@code IllegalStateException: ... existing type ...}).
+ * <p>
  * Known limitation: if the real Curios mod is ever installed alongside this one, NeoForge will
  * fail to load with a duplicate mod id "curios" error. This is intentional - Curios and this
  * compatibility layer are mutually exclusive.
  */
 @Mod("curios")
 public class CuriosCompatMod {
-
-  public static final EntityCapability<ICuriosItemHandler, Void> INVENTORY =
-      EntityCapability.createVoid(
-          ResourceLocation.fromNamespaceAndPath("curios", "inventory"),
-          ICuriosItemHandler.class);
-
-  public static final ItemCapability<ICurio, Void> ITEM =
-      ItemCapability.createVoid(
-          ResourceLocation.fromNamespaceAndPath("curios", "item"),
-          ICurio.class);
 
   public CuriosCompatMod(IEventBus eventBus) {
     eventBus.addListener(this::registerCaps);
@@ -67,12 +61,23 @@ public class CuriosCompatMod {
   private void registerCaps(RegisterCapabilitiesEvent evt) {
 
     for (EntityType<?> entityType : BuiltInRegistries.ENTITY_TYPE) {
-      evt.registerEntity(INVENTORY, entityType, (entity, ctx) -> {
+      evt.registerEntity(CuriosCapability.INVENTORY, entityType, (entity, ctx) -> {
 
         if (entity instanceof LivingEntity livingEntity) {
 
           if (!RegaliaSlotsApi.getEntitySlots(livingEntity).isEmpty()) {
-            return new CurioInventoryCapability(livingEntity);
+            return new ShimCuriosItemHandler(new CurioInventoryCapability(livingEntity));
+          }
+        }
+        return null;
+      });
+
+      evt.registerEntity(CuriosCapability.ITEM_HANDLER, entityType, (entity, ctx) -> {
+
+        if (entity instanceof LivingEntity livingEntity) {
+
+          if (!RegaliaSlotsApi.getEntitySlots(livingEntity).isEmpty()) {
+            return new CurioInventoryCapability(livingEntity).getEquippedCurios();
           }
         }
         return null;
@@ -80,7 +85,7 @@ public class CuriosCompatMod {
     }
 
     for (Item item : BuiltInRegistries.ITEM) {
-      evt.registerItem(ITEM, (stack, ctx) -> {
+      evt.registerItem(CuriosCapability.ITEM, (stack, ctx) -> {
         ICurioItem curioItem =
             RegaliaSlotsApiImplMixinHooks.getCurioFromRegistry(item).orElse(null);
         Item it = stack.getItem();
@@ -90,7 +95,7 @@ public class CuriosCompatMod {
         }
 
         if (curioItem != null && curioItem.hasCurioCapability(stack)) {
-          return new ItemizedCurioCapability(curioItem, stack);
+          return new ShimCurio(new ItemizedCurioCapability(curioItem, stack));
         }
         return null;
       }, item);

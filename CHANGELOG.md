@@ -2,6 +2,26 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.8] - 2026-09-01
+
+### Fixed
+
+- **Curios capability double-registration crash**: any mod that resolved
+  `top.theillusivec4.curios.api.CuriosCapability` (Create's goggles overlay, and others) crashed
+  with `IllegalStateException: Attempted to register capability curios:inventory with existing
+  type ... com.skd...ICuriosItemHandler != top.theillusivec4...ICuriosItemHandler`. `CuriosCompatMod`
+  declared its own `curios:inventory` / `curios:item` capability objects typed against Regalia's
+  interfaces, colliding with the identically-named ones in the copied Curios API as soon as that
+  class was loaded. Earlier render-path crashes had been masking it.
+
+### Technical
+
+- `CuriosCompatMod` no longer creates its own `EntityCapability` / `ItemCapability` for the
+  `curios` ids; it registers its providers against the verbatim `CuriosCapability.INVENTORY` /
+  `ITEM_HANDLER` / `ITEM`, so third-party mods resolve the exact same capability instances.
+- Providers wrap Regalia's implementations in the beta.7 shims (`ShimCuriosItemHandler`,
+  `ShimCurio`); the `ITEM_HANDLER` provider returns the entity's equipped-curios `IItemHandler` view.
+
 ## [0.0.0-beta.7] - 2026-09-01
 
 ### Fixed
