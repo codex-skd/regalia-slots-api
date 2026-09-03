@@ -2,6 +2,34 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.12] - 2026-09-03
+
+### Fixed
+
+- **Client load crash: missing Curios client screen** (`NoClassDefFoundError:
+  top/theillusivec4/curios/client/gui/CuriosScreen`, thrown from `EventBus.register` during
+  `FMLClientSetupEvent` for `apothic_attributes`). Apothic Attributes registers a client Curios
+  integration handler whenever `curios` is loaded (Regalia's compat layer declares that id). Bus
+  registration calls `Class.getDeclaredMethods()`, which resolves every handler parameter type —
+  one of them is `top.theillusivec4.curios.client.gui.CuriosScreen`, a class the Curios mirror
+  never carried (it only mirrored `api/**`, `mixin/**`, `platform/**`). The class failed to load
+  and the whole mod-loading phase aborted. Any pack combining Regalia with a mod that references
+  Curios' client screen was affected.
+
+### Technical
+
+- Added `top.theillusivec4.curios.client.gui.CuriosScreen` as a load-only binary-compat shim:
+  `abstract class CuriosScreen extends AbstractContainerScreen<AbstractContainerMenu> implements
+  ICuriosScreen`. It is never instantiated and nothing in Regalia extends it — it exists solely so
+  reflection-driven type resolution at mod-loading time succeeds.
+- The three members third-party consumers touch (`getGuiLeft()`, `getGuiTop()`, `getMinecraft()`)
+  resolve through the inherited NeoForge patches on `AbstractContainerScreen` / `Screen`; the shim
+  declares none of them.
+- **Known gap** (unchanged behaviour, now documented): Regalia's real curios GUI
+  (`RegaliaSlotsApiScreen`) does not extend this type, so a mod's `instanceof CuriosScreen` check
+  on the live screen returns `false` and its curios-screen integration (e.g. Apothic Attributes'
+  attribute-panel button) is silently skipped. No crash.
+
 ## [0.0.0-beta.11] - 2026-09-01
 
 ### Fixed
