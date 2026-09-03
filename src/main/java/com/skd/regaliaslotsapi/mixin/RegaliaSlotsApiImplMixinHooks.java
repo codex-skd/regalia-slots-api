@@ -153,7 +153,10 @@ public class RegaliaSlotsApiImplMixinHooks {
 
       // tags
       if (stack.getTags()
-          .anyMatch(tagKey -> tagKey.location().getNamespace().equals(RegaliaSlotsApi.MODID))) {
+          .anyMatch(tagKey -> {
+            String ns = tagKey.location().getNamespace();
+            return ns.equals(RegaliaSlotsApi.MODID) || ns.equals("curios");
+          })) {
         return true;
       }
 
@@ -322,8 +325,19 @@ public class RegaliaSlotsApiImplMixinHooks {
               ItemTags.create(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, id));
           TagKey<Item> tag2 =
               ItemTags.create(ResourceLocation.fromNamespaceAndPath(RegaliaSlotsApi.MODID, "curio"));
+          // Third-party mods that ship Curios integration tag their wearables under the
+          // "curios" namespace (data/curios/tags/item/<id>.json), not "regalia_slots_api".
+          // Regalia's own data loader already reads those mods' curios/slots and
+          // curios/entities files, so widen the default tag validator to accept the
+          // curios: namespace too - otherwise no third-party curio is ever valid for any
+          // slot. Mirrors the 26.2 branch (RegaliaCompatMod#overrideTagPredicate).
+          TagKey<Item> curiosTag =
+              ItemTags.create(ResourceLocation.fromNamespaceAndPath("curios", id));
+          TagKey<Item> curiosCurioTag =
+              ItemTags.create(ResourceLocation.fromNamespaceAndPath("curios", "curio"));
           ItemStack stack = slotResult.stack();
-          return stack.is(tag1) || stack.is(tag2);
+          return stack.is(tag1) || stack.is(tag2)
+              || stack.is(curiosTag) || stack.is(curiosCurioTag);
         });
   }
 
