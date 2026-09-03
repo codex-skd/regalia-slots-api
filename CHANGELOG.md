@@ -2,6 +2,27 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.13] - 2026-09-03
+
+### Fixed
+
+- **No curio from any third-party mod could be equipped into any slot.** The default slot
+  validator `regalia_slots_api:tag` only accepted items in the `#regalia_slots_api:<slotId>` or
+  `#regalia_slots_api:curio` item tags. Every mod that ships Curios integration (Iron's
+  Spellbooks, Reliquary, Relics, Jewelry, Equivalent Legacy, …) tags its wearables under the
+  `curios:` namespace instead (`data/curios/tags/item/<slotId>.json`). Regalia's data loader
+  already reads those mods' `curios/slots` and `curios/entities` files, so slots appeared in the
+  GUI and were granted to the player, but every item was silently rejected on drop because the
+  validator's tags were always empty. This affected our own `equivalent_legacy` too.
+
+### Technical
+
+- `RegaliaSlotsApiImplMixinHooks`: the built-in `regalia_slots_api:tag` predicate now also tests
+  `#curios:<slotId>` and `#curios:curio`. The generic `curio`-slot fallback in `isStackValid`
+  likewise now accepts item tags in the `curios` namespace, not just `regalia_slots_api`.
+- Brings the 1.21.1 branch in line with 26.2, where `RegaliaCompatMod#overrideTagPredicate`
+  already widened the same predicate.
+
 ## [0.0.0-beta.12] - 2026-09-03
 
 ### Fixed
