@@ -152,14 +152,12 @@
   "150": "CuriosUtilMixinHooks.java",
   "151": "AttributeModifier",
   "152": "0.0.0-beta.7.md",
-  "155": "CurioChangeEvent",
+  "153": "0.0.0-beta.12.md",
   "156": "CurioCanUnequipEvent",
   "157": "KeyRegistry.java",
   "158": "0.0.0-beta.8.md",
   "159": "CurioCanUnequipEvent",
   "160": "Event",
-  "162": "MixinNbtPredicate.java",
   "163": "RegaliaSlotsApiTags.java",
-  "166": ".getEntitySlots",
   "167": "0.0.0-beta.10.md"
 }
