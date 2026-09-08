@@ -720,8 +720,8 @@
     "semantic_hash": ""
   },
   "src/main/java/top/theillusivec4/curios/api/client/CuriosRendererRegistry.java": {
-    "mtime": 1788183947.0538387,
-    "ast_hash": "bc13f3056e5d78b3a8980204a20e607c",
+    "mtime": 1788905723.191011,
+    "ast_hash": "895574047a699fdf0712e494428cb6ca",
     "semantic_hash": ""
   },
   "src/main/java/top/theillusivec4/curios/api/client/ICurioRenderer.java": {
@@ -1030,8 +1030,8 @@
     "semantic_hash": ""
   },
   "CHANGELOG.md": {
-    "mtime": 1788829874.7824576,
-    "ast_hash": "30c514d2d56093442384982587a5dc00",
+    "mtime": 1788906144.3495047,
+    "ast_hash": "9814efea18603b7ee939def06c31d710",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1055,8 +1055,8 @@
     "semantic_hash": ""
   },
   "docs/WORKFLOW_REGALIA_SLOTS_API_1-21-1.md": {
-    "mtime": 1788423228.5171447,
-    "ast_hash": "03c17e52c10b19af9160b24b73b507f5",
+    "mtime": 1788906171.008911,
+    "ast_hash": "4696d6b75ba156f5ae0541e10d46c27a",
     "semantic_hash": ""
   },
   "docs/curseforge/project_description.md": {
@@ -1317,6 +1317,16 @@
   "docs/curseforge/versions/0.0.0-beta.14.md": {
     "mtime": 1788829848.7804682,
     "ast_hash": "e4c756f2806ed93731c8a31b8283ec36",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/regaliaslotsapi/compat/curios/CuriosRendererAdapter.java": {
+    "mtime": 1788905802.6089492,
+    "ast_hash": "2f489da0d68ab8a8a3dbdbeae1d52adc",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.15.md": {
+    "mtime": 1788906155.8732483,
+    "ast_hash": "207794dcc2509f10e1be59cc8575235f",
     "semantic_hash": ""
   }
 }

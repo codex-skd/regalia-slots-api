@@ -1,16 +1,16 @@
-# Graph Report - 1.21.1  (2026-09-08)
+# Graph Report - 1.21.1  (2026-09-09)
 
 ## Corpus Check
-- 237 files · ~147,684 words
+- 239 files · ~148,379 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2885 nodes · 6774 edges · 153 communities (146 shown, 7 thin omitted)
+- 2895 nodes · 6787 edges · 164 communities (156 shown, 8 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 77 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `556a0e04`
+- Built from commit: `73ebabb3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -139,17 +139,26 @@
 - NeoForgeCurios.java
 - [0.0.0-beta.1] - 2026-08-31
 - CuriosTags
+- ICuriosHelper
 - gradlew
 - Regalia Slots API - Icon Generation Prompt
 - ICuriosMenu
 - ICuriosScreen.java
+- ClientProxy
 - CurioCanUnequipEvent
+- RegaliaSlotsApiScreen.java
 - MixinNbtPredicate.java
+- NeoForgeCurios.java
 - SPacketPage
 - CuriosCapability.java
+- CosmeticButton
+- RegaliaSlotsApiEmiPlugin.java
+- IconHelper
+- SPacketQuickMove
 - CurioCanUnequipEvent
+- KeyRegistry.java
 - CurioCanUnequipEvent
-- RegaliaSlotsApiTags.java
+- .getEntitySlots
 
 ## God Nodes (most connected - your core abstractions)
 1. `SlotContext` - 141 edges
@@ -178,11 +187,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (153 total, 7 thin omitted)
+## Communities (164 total, 8 thin omitted)
 
 ### Community 0 - "CurioStacksHandler"
-Cohesion: 0.18
-Nodes (3): CurioStacksHandler, DropRule, Override
+Cohesion: 0.21
+Nodes (4): CurioStacksHandler, DropRule, NonNullList, Override
 
 ### Community 1 - "Deprecated"
 Cohesion: 0.12
@@ -193,12 +202,12 @@ Cohesion: 0.06
 Nodes (38): Builder, CurioAttributeModifiers, Entry, Attribute, AttributeModifier, Codec, Holder, RegistryFriendlyByteBuf (+30 more)
 
 ### Community 3 - "SlotResult"
-Cohesion: 0.06
-Nodes (45): ItemStack, SlotResult, Attribute, AttributeModifier, CallbackInfo, CallbackInfoReturnable, EntityType, Holder (+37 more)
+Cohesion: 0.15
+Nodes (14): ItemStack, SlotResult, Attribute, AttributeModifier, Holder, Item, ItemStack, LivingEntity (+6 more)
 
 ### Community 4 - "RegaliaSlotsApiContainer"
 Cohesion: 0.05
-Nodes (46): ArgumentTypeInfo, CraftingContainer, CriterionTrigger, DataComponentType, EquipmentSlot, LootContextParam, LootItemCondition, LootItemConditionalFunction (+38 more)
+Nodes (47): ArgumentTypeInfo, CraftingContainer, CriterionTrigger, DataComponentType, EquipmentSlot, LootContextParam, LootItemCondition, LootItemConditionalFunction (+39 more)
 
 ### Community 5 - "ISlotData"
 Cohesion: 0.06
@@ -221,8 +230,8 @@ Cohesion: 0.11
 Nodes (17): Event, IModBusEvent, CurioAttributeModifierEvent, Attribute, AttributeModifier, Holder, ItemStack, Multimap (+9 more)
 
 ### Community 10 - "LivingEvent"
-Cohesion: 0.15
-Nodes (9): LivingEvent, LivingEntity, SlotModifiersUpdatedEvent, CurioChangeEvent, ItemStack, LivingEntity, Nonnull, LivingEntity (+1 more)
+Cohesion: 0.25
+Nodes (5): LivingEvent, LivingEntity, SlotModifiersUpdatedEvent, LivingEntity, SlotModifiersUpdatedEvent
 
 ### Community 11 - "ICurioStacksHandler"
 Cohesion: 0.07
@@ -237,12 +246,12 @@ Cohesion: 0.07
 Nodes (8): ICurioStacksHandler, AttributeModifier, CompoundTag, Deprecated, DropRule, NonNullList, Operation, ResourceLocation
 
 ### Community 14 - "RegaliaSlotsApiCommand.java"
-Cohesion: 0.31
-Nodes (6): CommandBuildContext, CommandDispatcher, ItemInput, CommandSourceStack, ServerPlayer, RegaliaSlotsApiCommand
+Cohesion: 0.12
+Nodes (18): ArgumentType, CommandBuildContext, CommandContext, CommandDispatcher, DynamicCommandExceptionType, ItemInput, Item, TagKey (+10 more)
 
 ### Community 15 - "CurioInventoryCapability"
-Cohesion: 0.13
-Nodes (12): CurioInventoryCapability, IItemHandlerModifiable, Item, ItemStack, ItemStackHandler, ListTag, LivingEntity, LootContext (+4 more)
+Cohesion: 0.14
+Nodes (11): CurioInventoryCapability, IItemHandlerModifiable, Item, ItemStack, ItemStackHandler, ListTag, LivingEntity, LootContext (+3 more)
 
 ### Community 16 - ".getRegaliaSlotsApiInventory"
 Cohesion: 0.20
@@ -250,15 +259,15 @@ Nodes (3): CompoundTag, Override, SlotType
 
 ### Community 17 - "IDynamicStackHandler"
 Cohesion: 0.13
-Nodes (6): ICurio, CompoundTag, EnderMan, ItemStack, LivingEntity, LootContext
+Nodes (6): ICurio, EnderMan, ItemStack, LivingEntity, LootContext, SlotContext
 
 ### Community 18 - "CuriosApi.java"
 Cohesion: 0.06
 Nodes (33): CuriosApi, Attribute, AttributeModifier, Deprecated, EntityType, EquipmentSlotGroup, Holder, Item (+25 more)
 
 ### Community 19 - "ICuriosItemHandler"
-Cohesion: 0.09
-Nodes (8): ICuriosItemHandler, IItemHandlerModifiable, ListTag, LivingEntity, LootContext, Operation, ResourceLocation, Tag
+Cohesion: 0.11
+Nodes (7): IItemHandlerModifiable, ListTag, LivingEntity, LootContext, Operation, ResourceLocation, Tag
 
 ### Community 20 - "ICurio.java"
 Cohesion: 0.12
@@ -273,12 +282,12 @@ Cohesion: 0.13
 Nodes (17): Attribute, AttributeModifier, Holder, MutableComponent, Nonnull, Override, SuppressWarnings, TooltipFlag (+9 more)
 
 ### Community 23 - "ICurioRenderer"
-Cohesion: 0.13
-Nodes (15): RenderLayer, ICurioRenderer, ItemStack, LivingEntity, MultiBufferSource, PoseStack, RenderLayerParent, SafeVarargs (+7 more)
+Cohesion: 0.07
+Nodes (26): RenderLayer, ICurioRenderer, ItemStack, LivingEntity, MultiBufferSource, PoseStack, RenderLayerParent, SafeVarargs (+18 more)
 
 ### Community 24 - "RegaliaSlotsApiCommonMod.java"
-Cohesion: 0.08
-Nodes (23): AddLayers, AddReloadListenerEvent, EventBusSubscriber, FMLClientSetupEvent, FMLCommonSetupEvent, InterModProcessEvent, KeyMapping, ModContainer (+15 more)
+Cohesion: 0.13
+Nodes (13): AddReloadListenerEvent, FMLCommonSetupEvent, InterModProcessEvent, ModContainer, RegisterCommandsEvent, RegisterPayloadHandlersEvent, ServerAboutToStartEvent, ServerStoppedEvent (+5 more)
 
 ### Community 25 - "NetworkHandler.java"
 Cohesion: 0.18
@@ -305,8 +314,8 @@ Cohesion: 0.07
 Nodes (16): ICuriosItemHandler, AttributeModifier, ICurioStacksHandler, IItemHandlerModifiable, Item, ItemStack, ListTag, LivingEntity (+8 more)
 
 ### Community 31 - "ICuriosHelper"
-Cohesion: 0.25
-Nodes (3): AttributeModifier, CompoundTag, Operation
+Cohesion: 0.14
+Nodes (5): AttributeModifier, CompoundTag, Multimap, Operation, ResourceLocation
 
 ### Community 32 - "RegaliaSlotsApiHelper.java"
 Cohesion: 0.23
@@ -333,20 +342,20 @@ Cohesion: 0.12
 Nodes (20): ICurio, Attribute, AttributeModifier, Component, CompoundTag, DamageSource, Deprecated, DropRule (+12 more)
 
 ### Community 38 - "SetCurioAttributesFunction.java"
-Cohesion: 0.07
-Nodes (34): IItemHandlerModifiable, ImmutableTriple, Item, ItemStack, LivingEntity, Nonnull, Override, SlotContext (+26 more)
+Cohesion: 0.16
+Nodes (13): ItemStack, SlotResult, CuriosImplMixinHooks, Attribute, AttributeModifier, EntityType, Holder, Item (+5 more)
 
 ### Community 39 - "RegaliaSlotsApiScreen"
-Cohesion: 0.13
-Nodes (14): EffectRenderingInventoryScreen, RecipeBookComponent, RecipeUpdateListener, ClickType, Component, GuiGraphics, ImageButton, Inventory (+6 more)
+Cohesion: 0.20
+Nodes (5): GuiGraphics, ImageButton, Override, Slot, RegaliaSlotsApiScreen
 
 ### Community 40 - "SlotData"
 Cohesion: 0.18
 Nodes (8): DropRule, ICondition, JsonObject, Operation, Override, Provider, ResourceLocation, SlotData
 
 ### Community 41 - "MixinInventory.java"
-Cohesion: 0.21
-Nodes (12): Container, CallbackInfoReturnable, Inject, Item, ItemStack, Mixin, Override, Player (+4 more)
+Cohesion: 0.27
+Nodes (10): Container, CallbackInfoReturnable, Inject, Item, ItemStack, Mixin, Override, Player (+2 more)
 
 ### Community 42 - "RegaliaSlotsApiDataProvider"
 Cohesion: 0.19
@@ -361,12 +370,12 @@ Cohesion: 0.20
 Nodes (6): ISlotType, CompoundTag, DropRule, Override, ResourceLocation, ShimSlotType
 
 ### Community 45 - "ICurioRenderer"
-Cohesion: 0.19
-Nodes (9): CuriosRendererRegistry, Item, ICurioRenderer, ItemStack, LivingEntity, MultiBufferSource, PoseStack, RenderLayerParent (+1 more)
+Cohesion: 0.18
+Nodes (15): Attribute, AttributeModifier, CallbackInfo, CallbackInfoReturnable, EntityType, Holder, Inject, Item (+7 more)
 
 ### Community 46 - "CurioAttributeModifierEvent"
-Cohesion: 0.21
-Nodes (7): ICuriosMenu, RegaliaSlotsApiClientPackets, Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, SPacketBreak
+Cohesion: 0.31
+Nodes (6): RegaliaSlotsApiClientPackets, Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, SPacketSyncActiveState
 
 ### Community 47 - "RegaliaSlotsApiClientConfig.java"
 Cohesion: 0.13
@@ -382,7 +391,7 @@ Nodes (12): ConfigValue, Common, Builder, EnumValue, IntValue, ModConfigSpec, Ke
 
 ### Community 50 - "RegaliaSlotsApiUtilMixinHooks.java"
 Cohesion: 0.10
-Nodes (26): BlockDropsEvent, Clone, EnderManAngerEvent, EntityConstructing, EntityJoinLevelEvent, LivingDropsEvent, LivingEquipmentChangeEvent, OnDatapackSyncEvent (+18 more)
+Nodes (23): BlockDropsEvent, Clone, EnderManAngerEvent, EntityConstructing, EntityJoinLevelEvent, LivingDropsEvent, LivingEquipmentChangeEvent, OnDatapackSyncEvent (+15 more)
 
 ### Community 51 - "CuriosApi"
 Cohesion: 0.25
@@ -397,7 +406,7 @@ Cohesion: 0.23
 Nodes (3): ListTag, ResourceLocation, RegaliaSlotsApiSlotManager
 
 ### Community 54 - "RegaliaSlotsApiEntityManager.java"
-Cohesion: 0.21
+Cohesion: 0.20
 Nodes (10): SimpleJsonResourceReloadListener, EntityType, Gson, JsonElement, JsonObject, ListTag, ProfilerFiller, ResourceLocation (+2 more)
 
 ### Community 55 - ".getEntitySlots"
@@ -441,12 +450,12 @@ Cohesion: 0.13
 Nodes (14): Buenas prácticas, Capa de compatibilidad Curios API (introducida en v0.0.0-beta.4, estable desde v1.0.0), Commits (Conventional Commits), Convenciones de nomenclatura, Específico del mod, Estructura del proyecto, Flujo de trabajo — Regalia Slots API (NeoForge), Flujo por tarea (+6 more)
 
 ### Community 65 - "DropRulesEvent"
-Cohesion: 0.30
+Cohesion: 0.27
 Nodes (7): DropRulesEvent, DamageSource, DropRule, ImmutableList, ItemStack, LivingEntity, Tuple
 
 ### Community 66 - "IIconHelper"
-Cohesion: 0.27
-Nodes (7): IIconHelper, Deprecated, ResourceLocation, ScheduledForRemoval, IconHelper, Override, ResourceLocation
+Cohesion: 0.54
+Nodes (4): IIconHelper, Deprecated, ResourceLocation, ScheduledForRemoval
 
 ### Community 67 - "Builder"
 Cohesion: 0.07
@@ -461,7 +470,7 @@ Cohesion: 0.23
 Nodes (11): CustomPacketPayload, CPacketDestroy, Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, Nonnull, Override (+3 more)
 
 ### Community 70 - ".getCurios"
-Cohesion: 0.18
+Cohesion: 0.19
 Nodes (5): IDynamicStackHandler, CompoundTag, ItemStack, Nonnull, Provider
 
 ### Community 71 - "CuriosTooltip"
@@ -485,16 +494,16 @@ Cohesion: 0.29
 Nodes (7): CPacketToggleCosmetics, Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, Logger, RegaliaSlotsApiConstants
 
 ### Community 76 - "ICuriosPlatform"
-Cohesion: 0.17
-Nodes (12): EnderMan, ItemStack, LivingEntity, Override, Player, NeoForgeCurios, ICuriosPlatform, EnderMan (+4 more)
+Cohesion: 0.28
+Nodes (6): ICuriosPlatform, EnderMan, ItemStack, LivingEntity, Player, Services
 
 ### Community 77 - "RegaliaSlotsApiButton.java"
-Cohesion: 0.17
-Nodes (11): ImageButton, ICuriosScreen, CosmeticButton, GuiGraphics, Override, WidgetSprites, AbstractContainerScreen, GuiGraphics (+3 more)
+Cohesion: 0.24
+Nodes (7): ICuriosScreen, AbstractContainerScreen, GuiGraphics, Override, WidgetSprites, RegaliaSlotsApiButton, Tuple
 
 ### Community 78 - "ClientEventHandler.java"
-Cohesion: 0.20
-Nodes (8): AddAttributeTooltipsEvent, ItemTooltipEvent, ClientEventHandler, ItemStack, Player, Post, SubscribeEvent, Post
+Cohesion: 0.30
+Nodes (7): AddAttributeTooltipsEvent, ItemTooltipEvent, ClientEventHandler, ItemStack, Player, Post, SubscribeEvent
 
 ### Community 79 - "CurseForge — Variables del proyecto"
 Cohesion: 0.17
@@ -517,8 +526,8 @@ Cohesion: 0.32
 Nodes (6): CuriosUtilMixinHooks, CompoundTag, ItemStack, ListTag, LivingEntity, Provider
 
 ### Community 84 - "RegaliaSlotsApiExclusionAreas.java"
-Cohesion: 0.17
-Nodes (12): EmiEntrypoint, EmiPlugin, EmiRegistry, ExclusionZones, REIClientPlugin, REIPluginClient, Override, RegaliaSlotsApiEmiPlugin (+4 more)
+Cohesion: 0.27
+Nodes (7): ExclusionZones, REIClientPlugin, REIPluginClient, Rect2i, RegaliaSlotsApiExclusionAreas, Override, RegaliaSlotsApiReiPlugin
 
 ### Community 85 - "MixinV1460.java"
 Cohesion: 0.35
@@ -533,7 +542,7 @@ Cohesion: 0.30
 Nodes (6): ItemStackHandler, DynamicStackHandler, ItemStack, Nonnull, NonNullList, Override
 
 ### Community 88 - "CuriosCompatMod.java"
-Cohesion: 0.35
+Cohesion: 0.33
 Nodes (4): AttributeModifier, Multimap, Operation, ResourceLocation
 
 ### Community 90 - "Builder"
@@ -576,9 +585,13 @@ Nodes (4): CurioCanEquipEvent, Deprecated, ItemStack, TriState
 Cohesion: 0.22
 Nodes (8): Port Report — Regalia Slots API 1.21.1, Phase 2, Residual / cosmetic (not blocking), Task 1 — identity rename `Curios* -> RegaliaSlotsApi*`, Task 2 — verbatim `top.theillusivec4.curios.api` compat copy, Task 3 — compat adapter, Task 4 — second logical mod id `curios`, Task 5 — legacy Curios data migration, Task 6 — config default (11 preset slots)
 
+### Community 101 - "Deprecated"
+Cohesion: 0.15
+Nodes (3): ICuriosItemHandler, Deprecated, ScheduledForRemoval
+
 ### Community 102 - "SPacketSyncStack"
-Cohesion: 0.36
-Nodes (7): CompoundTag, ItemStack, Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, SPacketSyncStack
+Cohesion: 0.23
+Nodes (11): fromValue(), HandlerType, COSMETIC, EQUIPMENT, CompoundTag, ItemStack, Nonnull, Override (+3 more)
 
 ### Community 103 - "MixinApplyBonusCount.java"
 Cohesion: 0.39
@@ -593,12 +606,12 @@ Cohesion: 0.36
 Nodes (4): CurioChangeEvent, ItemStack, LivingEntity, Nonnull
 
 ### Community 108 - "CosmeticButton"
-Cohesion: 0.29
-Nodes (3): Multimap, NonNullList, ResourceLocation
+Cohesion: 0.19
+Nodes (15): Attribute, AttributeModifier, CallbackInfo, CallbackInfoReturnable, EntityType, Holder, Inject, Item (+7 more)
 
 ### Community 109 - "GuiEventHandler.java"
-Cohesion: 0.29
-Nodes (5): Pre, GuiEventHandler, Post, SubscribeEvent, Tuple
+Cohesion: 0.39
+Nodes (4): Pre, GuiEventHandler, Post, SubscribeEvent
 
 ### Community 110 - "CPacketOpenVanilla"
 Cohesion: 0.39
@@ -625,7 +638,7 @@ Cohesion: 0.43
 Nodes (5): CallbackInfoReturnable, Inject, Mixin, SuppressWarnings, MixinLivingEntity
 
 ### Community 120 - "MixinPiglinAi.java"
-Cohesion: 0.39
+Cohesion: 0.48
 Nodes (5): CallbackInfoReturnable, Inject, LivingEntity, Mixin, MixinPiglinAi
 
 ### Community 121 - "MixinPowderSnowBlock.java"
@@ -646,7 +659,7 @@ Nodes (5): EntityCapability, IItemHandler, ItemCapability, ResourceLocation, Reg
 
 ### Community 126 - "AttributeModifier"
 Cohesion: 0.23
-Nodes (9): ArgumentType, CommandContext, DynamicCommandExceptionType, CurioArgumentType, CommandSourceStack, Override, StringReader, Suggestions (+1 more)
+Nodes (11): IItemHandlerModifiable, ImmutableTriple, Item, ItemStack, LivingEntity, Nonnull, Override, SlotContext (+3 more)
 
 ### Community 127 - "IEntitiesData.java"
 Cohesion: 0.36
@@ -654,11 +667,15 @@ Nodes (4): CosmeticCurioSlot, OnlyIn, Override, Player
 
 ### Community 129 - "[0.0.0-beta.1] - 2026-08-31"
 Cohesion: 0.05
-Nodes (40): [0.0.0-beta.10] - 2026-09-01, [0.0.0-beta.11] - 2026-09-01, [0.0.0-beta.12] - 2026-09-03, [0.0.0-beta.13] - 2026-09-03, [0.0.0-beta.14] - 2026-09-08, [0.0.0-beta.1] - 2026-08-31, [0.0.0-beta.2] - 2026-08-31, [0.0.0-beta.3] - 2026-09-01 (+32 more)
+Nodes (43): [0.0.0-beta.10] - 2026-09-01, [0.0.0-beta.11] - 2026-09-01, [0.0.0-beta.12] - 2026-09-03, [0.0.0-beta.13] - 2026-09-03, [0.0.0-beta.14] - 2026-09-08, [0.0.0-beta.15] - 2026-09-09, [0.0.0-beta.1] - 2026-08-31, [0.0.0-beta.2] - 2026-08-31 (+35 more)
 
 ### Community 130 - "CuriosTags"
 Cohesion: 0.80
 Nodes (3): CuriosTags, Item, TagKey
+
+### Community 131 - "ICuriosHelper"
+Cohesion: 0.27
+Nodes (10): ICuriosHelper, Deprecated, IItemHandlerModifiable, ImmutableTriple, Item, ItemStack, LivingEntity, Nonnull (+2 more)
 
 ### Community 132 - "gradlew"
 Cohesion: 0.83
@@ -668,17 +685,45 @@ Nodes (3): gradlew script, die(), warn()
 Cohesion: 0.39
 Nodes (6): AbstractContainerScreen, ICuriosScreen, CuriosScreen, AbstractContainerMenu, Component, Inventory
 
+### Community 141 - "ClientProxy"
+Cohesion: 0.20
+Nodes (9): AddLayers, EventBusSubscriber, FMLClientSetupEvent, Model, RegisterKeyMappingsEvent, RegisterMenuScreensEvent, ClientProxy, SubscribeEvent (+1 more)
+
 ### Community 142 - "CurioCanUnequipEvent"
 Cohesion: 0.33
 Nodes (3): ICondition, JsonObject, Provider
 
+### Community 143 - "RegaliaSlotsApiScreen.java"
+Cohesion: 0.20
+Nodes (9): EffectRenderingInventoryScreen, RecipeBookComponent, RecipeUpdateListener, ClickType, Component, Inventory, ItemStack, Nonnull (+1 more)
+
 ### Community 144 - "MixinNbtPredicate.java"
-Cohesion: 0.18
-Nodes (10): CompoundTag, Entity, Item, LivingEntity, LootContext, Pair, Schema, TagKey (+2 more)
+Cohesion: 0.16
+Nodes (12): CompoundTag, Entity, Item, ItemStack, LivingEntity, LootContext, Pair, Player (+4 more)
+
+### Community 145 - "NeoForgeCurios.java"
+Cohesion: 0.40
+Nodes (6): EnderMan, ItemStack, LivingEntity, Override, Player, NeoForgeCurios
 
 ### Community 146 - "SPacketPage"
+Cohesion: 0.36
+Nodes (4): CurioChangeEvent, ItemStack, LivingEntity, Nonnull
+
+### Community 150 - "CosmeticButton"
+Cohesion: 0.36
+Nodes (5): ImageButton, CosmeticButton, GuiGraphics, Override, WidgetSprites
+
+### Community 151 - "RegaliaSlotsApiEmiPlugin.java"
 Cohesion: 0.43
-Nodes (5): Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, SPacketPage
+Nodes (5): EmiEntrypoint, EmiPlugin, EmiRegistry, Override, RegaliaSlotsApiEmiPlugin
+
+### Community 154 - "IconHelper"
+Cohesion: 0.52
+Nodes (3): IconHelper, Override, ResourceLocation
+
+### Community 155 - "SPacketQuickMove"
+Cohesion: 0.43
+Nodes (5): Nonnull, Override, RegistryFriendlyByteBuf, StreamCodec, SPacketQuickMove
 
 ### Community 156 - "CurioCanUnequipEvent"
 Cohesion: 0.39
@@ -688,28 +733,24 @@ Nodes (3): CurioCanUnequipEvent, ItemStack, TriState
 Cohesion: 0.39
 Nodes (3): CurioCanUnequipEvent, ItemStack, TriState
 
-### Community 163 - "RegaliaSlotsApiTags.java"
-Cohesion: 0.80
-Nodes (3): Item, TagKey, RegaliaSlotsApiTags
-
 ## Knowledge Gaps
-- **108 isolated node(s):** `HEAD`, `NECKLACE`, `BACK`, `BODY`, `BRACELET` (+103 more)
+- **110 isolated node(s):** `HEAD`, `NECKLACE`, `BACK`, `BODY`, `BRACELET` (+105 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `SlotContext` connect `SlotContext` to `CurioStacksHandler`, `Deprecated`, `SlotResult`, `CurioSlot`, `CurioAttributeModifierEvent`, `ItemizedCurioCapability`, `CurioInventoryCapability`, `MixinNbtPredicate.java`, `IDynamicStackHandler`, `ICurio.java`, `ICurioRenderer`, `CurioCanUnequipEvent`, `ICurio`, `CurioAttributeModifierEvent`, `RegaliaSlotsApiUtilMixinHooks.java`, `EquipCurioTrigger.java`, `.getEntitySlots`, `ISlotHelper`, `ClientEventHandler.java`, `SlotPredicate`, `MixinPiglinAi.java`?**
-  _High betweenness centrality (0.223) - this node is a cross-community bridge._
-- **Why does `ICuriosItemHandler` connect `ICuriosItemHandler` to `NeoForgeCurios.java`, `Deprecated`, `CurioStacksHandler`, `SlotResult`, `RegaliaSlotsApiContainer`, `ICurioStacksHandler`, `CurioInventoryCapability`, `CuriosCapability.java`, `ICuriosHelper`, `RegaliaSlotsApiHelper.java`, `RegaliaSlotsApiUtilMixinHooks.java`, `.getEntitySlots`, `CurioInventory`, `DropRulesEvent`, `RegaliaSlotsApiRegistry.java`, `CurioDropsEvent`, `Deprecated`, `CosmeticButton`, `RegaliaSlotsApiCapability.java`?**
-  _High betweenness centrality (0.084) - this node is a cross-community bridge._
-- **Why does `ICurio` connect `IDynamicStackHandler` to `DropRulesEvent`, `Deprecated`, `ISlotType`, `SlotResult`, `SlotData`, `ICurioStacksHandler`, `ItemizedCurioCapability`, `CosmeticButton`, `ClientEventHandler.java`, `CurioAttributeModifierEvent`, `RegaliaSlotsApiEmiPlugin.java`, `ISlotData`, `RegaliaSlotsApiUtilMixinHooks.java`, `ICurio.java`, `CuriosApi`, `.getEntitySlots`, `RegaliaSlotsApiCapability.java`?**
+- **Why does `SlotContext` connect `SlotContext` to `CurioStacksHandler`, `Deprecated`, `SlotResult`, `CurioSlot`, `CurioAttributeModifierEvent`, `ItemizedCurioCapability`, `CurioInventoryCapability`, `MixinNbtPredicate.java`, `IDynamicStackHandler`, `ICurio.java`, `ICurioRenderer`, `CurioCanUnequipEvent`, `ICurio`, `.broadcastCurioBreakEventForCurios`, `RegaliaSlotsApiUtilMixinHooks.java`, `EquipCurioTrigger.java`, `.getEntitySlots`, `ISlotHelper`, `.getCurios`, `ClientEventHandler.java`, `SlotPredicate`, `CosmeticButton`?**
+  _High betweenness centrality (0.217) - this node is a cross-community bridge._
+- **Why does `ICuriosItemHandler` connect `Deprecated` to `NeoForgeCurios.java`, `Deprecated`, `CurioStacksHandler`, `SlotResult`, `RegaliaSlotsApiContainer`, `CurioInventoryCapability`, `MixinNbtPredicate.java`, `ICuriosItemHandler`, `CuriosCapability.java`, `ICuriosHelper`, `RegaliaSlotsApiHelper.java`, `RegaliaSlotsApiUtilMixinHooks.java`, `.getEntitySlots`, `CurioInventory`, `DropRulesEvent`, `RegaliaSlotsApiRegistry.java`, `CurioDropsEvent`, `CuriosCompatMod.java`, `CosmeticButton`, `RegaliaSlotsApiCapability.java`?**
   _High betweenness centrality (0.083) - this node is a cross-community bridge._
+- **Why does `ISlotType` connect `ISlotType` to `SlotResult`, `.getRegaliaSlotsApiInventory`, `NeoForgeCurios.java`, `ICuriosItemHandler`, `RegaliaSlotsApiCommonMod.java`, `.getEntitySlots`, `RegaliaSlotsApiUtilMixinHooks.java`, `CuriosApi`, `RegaliaSlotsApiSlotManager.java`, `RegaliaSlotsApiEntityManager.java`, `.getEntitySlots`, `SlotHelper`, `ISlotHelper`, `CurioInventory`, `IIconHelper`, `RegaliaSlotsApiTooltip`, `ICuriosPlatform`, `CosmeticButton`, `RegaliaSlotsApiEmiPlugin.java`?**
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
 - **Are the 24 inferred relationships involving `SlotContext` (e.g. with `.onAttributeTooltip()` and `.render()`) actually correct?**
   _`SlotContext` has 24 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `HEAD`, `NECKLACE`, `BACK` to the rest of the system?**
-  _108 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _110 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Deprecated` be split into smaller, more focused modules?**
   _Cohesion score 0.12367149758454106 - nodes in this community are weakly interconnected._
 - **Should `Deprecated` be split into smaller, more focused modules?**
