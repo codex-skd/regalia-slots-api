@@ -2,6 +2,16 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.14] - 2026-09-08
+
+### Fixed
+
+- **Spanish (`es_es`) locale**: added the 12 keys present in `en_us` but missing from `es_es`
+  — the `/curios` command feedback, the entity-selector argument description, the slot-count
+  modifier tooltips (`curios.modifiers.slots.*`), the cosmetics toggle, the page counter and the
+  networking-failure message. Values from the Mystical Realms Translation & Fixes resource-pack QA
+  pass, moved here so they ship with the mod. No code change.
+
 ## [0.0.0-beta.13] - 2026-09-03
 
 ### Fixed
