@@ -84,7 +84,7 @@
 <table>
 <tr><th align="left">Minecraft</th><th align="left">NeoForge</th><th align="left">Java</th><th align="left">Latest build</th><th align="left">Status</th></tr>
 <tr><td>26.2</td><td>26.2.0.45-beta+</td><td>21</td><td><code>1.1.3</code></td><td>Stable</td></tr>
-<tr><td>1.21.1</td><td>21.1.249+</td><td>21</td><td><code>0.0.0-beta.1</code></td><td>Beta &mdash; re-fork port from upstream Curios 1.21.1</td></tr>
+<tr><td>1.21.1</td><td>21.1.249+</td><td>21</td><td><code>0.0.0-beta.15</code></td><td>Beta &mdash; re-fork port from upstream Curios 1.21.1</td></tr>
 </table>
 
 <p><em>Both versions share this CurseForge project. Pick the file that matches your Minecraft version &mdash; the API surface is the same across both.</em></p>
