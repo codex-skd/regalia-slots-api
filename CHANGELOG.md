@@ -2,6 +2,31 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [0.0.0-beta.15] - 2026-09-09
+
+### Fixed
+
+- **Curios items from third-party mods rendered as nothing on the player model.** The bundled
+  Curios compatibility layer bridged capabilities, slot types, predicates and attribute
+  modifiers, but not the client renderer registry. Mods like Relics register their curio models
+  through `top.theillusivec4.curios.api.client.CuriosRendererRegistry`, a verbatim copy of the
+  Curios class whose maps nothing ever read: its `load()` was never called and the actual render
+  layer (`RegaliaSlotsApiLayer`) only queries `RegaliaSlotsApiRendererRegistry`, which no
+  third-party mod populates. Result: the item equipped and applied its effects, but was invisible
+  on the body (e.g. Relics' `amphibian_boot`).
+
+### Technical
+
+- New `com.skd.regaliaslotsapi.compat.curios.CuriosRendererAdapter`: adapts between the two
+  identical-but-separate `ICurioRenderer` / `SlotContext` type hierarchies
+  (`top.theillusivec4.curios.api.*` ↔ `com.skd.regaliaslotsapi.api.*`). Anonymous classes, not
+  lambdas, because `ICurioRenderer#render` is generic.
+- `top.theillusivec4.curios.api.client.CuriosRendererRegistry#register` now forwards every
+  registration to `RegaliaSlotsApiRendererRegistry` (wrapped through the adapter). The existing
+  `RegaliaSlotsApiRendererRegistry.load()` call in `EntityRenderersEvent.AddLayers` materialises
+  them, so no second listener is added. No behaviour change for renderers registered directly
+  into `RegaliaSlotsApiRendererRegistry`.
+
 ## [0.0.0-beta.14] - 2026-09-08
 
 ### Fixed

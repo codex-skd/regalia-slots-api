@@ -26,6 +26,8 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
 import net.minecraft.world.item.Item;
+import com.skd.regaliaslotsapi.api.client.RegaliaSlotsApiRendererRegistry;
+import com.skd.regaliaslotsapi.compat.curios.CuriosRendererAdapter;
 
 public class CuriosRendererRegistry {
 
@@ -43,6 +45,8 @@ public class CuriosRendererRegistry {
    */
   public static void register(Item item, Supplier<ICurioRenderer> renderer) {
     RENDERER_REGISTRY.put(item, renderer);
+    RegaliaSlotsApiRendererRegistry.register(item,
+        () -> CuriosRendererAdapter.toRegalia(renderer.get()));
   }
 
   /**
