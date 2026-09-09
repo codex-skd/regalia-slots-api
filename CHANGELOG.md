@@ -2,6 +2,54 @@
 
 Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
 
+## [1.0.0] - 2026-09-09
+
+First stable release for **Minecraft 1.21.1 / NeoForge 21.1.249** (Java 21). Consolidates the
+`0.0.0-beta.1` → `0.0.0-beta.15` line with no further code changes. This build has been running in
+the *(Develop) Mystical Realms* modded-server pack and is the accessory-slot dependency for the
+team's other 1.21.1 mods.
+
+### Summary of the beta line
+
+- **beta.1** — initial port by **re-forking** the upstream Curios API 1.21.1 sources
+  (9.5.1+1.21.1), flattened from multi-loader into a single NeoForge module and rebranded to the
+  Regalia Slots API identity (package `top.theillusivec4.curios` → `com.skd.regaliaslotsapi`,
+  mod id `curios` → `regalia_slots_api`). Ships the bundled **Curios API compatibility layer**:
+  a verbatim `top.theillusivec4.curios.api` copy, a second logical `curios` mod id registering the
+  `curios:inventory` / `curios:item` capabilities, an `ICuriosPlatform` SPI adapter, and
+  `LegacyCurioMigration` (first-login carry-over from a world that used the real Curios). 11 preset
+  slots granted to `player_like` entities by default.
+- **beta.2 – beta.8** — hardened the compat layer against real third-party mods, fixing a chain of
+  load/tick/render crashes and missing bridges: `CuriosApi` mixin implementation (Ars Nouveau),
+  `ResourceLocation` validation on slot ids, missing `top.theillusivec4.curios.mixin.*` hook
+  classes (Iron's Spellbooks), `#`-prefixed entity tag parsing, legacy `getCuriosHelper()`
+  returning `null` (Supplementaries, L_Ender's Cataclysm), `ClassCastException` in the inventory
+  adapter (forwarding shims added), and the `curios:inventory` / `curios:item` capability
+  double-registration crash (Create's goggles).
+- **beta.9 – beta.11** — Curios-native advancements: register the `equip_curio` trigger under the
+  `curios` namespace so hard-coded `curios:equip_curio` criteria load (Iron's Spellbooks), key its
+  slot sub-predicate on `curios:slot` for parity, and split the trigger into two instances to fix
+  the `MappedRegistry` duplicate-value load crash while still firing criteria authored under either
+  id.
+- **beta.12** — added `top.theillusivec4.curios.client.gui.CuriosScreen` as a load-only
+  binary-compat shim so mods referencing Curios' client screen (Apothic Attributes) no longer abort
+  mod loading with `NoClassDefFoundError`.
+- **beta.13** — the default `regalia_slots_api:tag` slot validator now also tests `#curios:<slotId>`
+  / `#curios:curio`, so wearables from every mod that ships Curios integration (Iron's Spellbooks,
+  Reliquary, Relics, Jewelry, Equivalent Legacy, …) can actually be equipped.
+- **beta.14** — completed the Spanish (`es_es`) locale (12 missing keys).
+- **beta.15** — bridged third-party Curios client renderers (`CuriosRendererRegistry`) into the
+  real render layer, so curio models from mods like Relics show on the player model instead of
+  being invisible.
+
+### Notes
+
+- No code change relative to `0.0.0-beta.15`. Verified: `./gradlew clean build` is green (main +
+  api + sources jars); `./gradlew runServer` reaches `Done` with both `regalia_slots_api` and
+  `curios` mods loading and no mixin/registration errors.
+- Same CurseForge project as the 26.2 line (`1659506`); pick the file that matches your Minecraft
+  version. **Incompatible with the real Curios API installed at the same time** (same `modId`).
+
 ## [0.0.0-beta.15] - 2026-09-09
 
 ### Fixed

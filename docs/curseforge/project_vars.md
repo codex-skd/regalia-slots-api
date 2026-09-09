@@ -6,7 +6,7 @@
 project_id = 1659506
 api_token = ee776b0a-ee95-4850-b554-06be02a8657f
 game_versions = 9638, 9639, 11779, 10150
-release_type = beta
+release_type = release
 ```
 
 ## Proyecto
@@ -39,7 +39,7 @@ Autenticación Upload: cabecera `X-Api-Token`. Core: cabecera `x-api-key`.
 | `neoforge_version` (loader) | `21.1.249` |
 | `framework` | `neoforge` |
 | `java_version` | `21` |
-| `version` (`gradle.properties`, build propio del fork) | `0.0.0-beta.4` |
+| `version` (`gradle.properties`, build propio del fork) | `1.0.0` |
 | `environment` | `Client`, `Server` (requerido en ambos) |
 
 ## Rama
@@ -59,7 +59,7 @@ Formato: `<mc-version>-<framework>-<version>`. Ejemplo: `1.21.1-neoforge-0.0.0-b
 | `displayName` | `Regalia Slots API (0.0.0-beta.4)` | `display_name (version)` — lo compone el script |
 | `changelog` | HTML (contenido literal de `docs/curseforge/versions/<version>.md`) | No resumir |
 | `changelogType` | `html` | |
-| `releaseType` | `beta` | Segunda beta del port a 1.21.1 |
+| `releaseType` | `release` | Primera release estable del port a 1.21.1 |
 | `gameVersions` | `[9638, 9639, 11779, 10150]` | IDs: Client + Server + 1.21.1 + NeoForge |
 | `JAR` | `regalia_slots_api-1.21.1-neoforge-21.1.249-0.0.0-beta.4.jar` | En `build/libs/` tras `./gradlew clean build` |
 
