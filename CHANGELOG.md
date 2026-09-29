@@ -1,0 +1,357 @@
+# Regalia Slots API (1.21.1) — Changelog
+
+Branch `minecraft/1.21.1/neoforge-21.1.249/production`. History independent of the 26.2 branch.
+
+## [1.0.2] - 2026-09-29
+
+### Fixed
+
+- **Epic Fight failed to load its Curios compatibility with this mod installed**
+  (`NoClassDefFoundError: top/theillusivec4/curios/client/render/CuriosLayer` while dispatching
+  `EntityRenderersEvent.AddLayers`, after which the game dropped all selected resource packs).
+  Because this mod declares the `curios` mod id, Epic Fight enables its Curios module, which
+  references Curios' internal render layer class (not part of the public API) and looks it up by
+  class on the player renderer to replace it with its animated version. Fix: new binary-compat
+  shim `top.theillusivec4.curios.client.render.CuriosLayer` (a plain subclass of
+  `RegaliaSlotsApiLayer`), and the player renderer layer is now registered as that class so Epic
+  Fight finds and patches it.
+
+## [1.0.1] - 2026-09-14
+
+### Fixed
+
+- **Third-party mods (e.g. Iron's Spellbooks) sometimes failed to notice a curio being equipped or
+  unequipped, and did not refresh state that depends on it** (e.g. known spells from an equipped
+  spell book, reported as intermittent detection). Root cause: the compat layer only posted the
+  internal `com.skd.regaliaslotsapi.api.event.CurioChangeEvent` on a curio slot content change.
+  Mods compiled against the real Curios API subscribe to
+  `top.theillusivec4.curios.api.event.CurioChangeEvent` instead — a separate compiled class, not an
+  alias of the internal one (confirmed via `javap`/jar inspection) — so NeoForge's event bus never
+  delivered the notification to them; the client only picked up the change on the next unrelated
+  full refresh (e.g. re-login), which read as "sometimes works, sometimes doesn't". Fix: post the
+  mirrored event alongside the internal one on every equip/unequip, in both
+  `CurioStacksHandler#activateSlot`/`deactivateSlot` and the main tick loop in
+  `RegaliaSlotsApiEventHandler#tick`.
+
+## [1.0.0] - 2026-09-09
+
+First stable release for **Minecraft 1.21.1 / NeoForge 21.1.249** (Java 21). Consolidates the
+`0.0.0-beta.1` → `0.0.0-beta.15` line with no further code changes. This build has been running in
+the *(Develop) Mystical Realms* modded-server pack and is the accessory-slot dependency for the
+team's other 1.21.1 mods.
+
+### Summary of the beta line
+
+- **beta.1** — initial port by **re-forking** the upstream Curios API 1.21.1 sources
+  (9.5.1+1.21.1), flattened from multi-loader into a single NeoForge module and rebranded to the
+  Regalia Slots API identity (package `top.theillusivec4.curios` → `com.skd.regaliaslotsapi`,
+  mod id `curios` → `regalia_slots_api`). Ships the bundled **Curios API compatibility layer**:
+  a verbatim `top.theillusivec4.curios.api` copy, a second logical `curios` mod id registering the
+  `curios:inventory` / `curios:item` capabilities, an `ICuriosPlatform` SPI adapter, and
+  `LegacyCurioMigration` (first-login carry-over from a world that used the real Curios). 11 preset
+  slots granted to `player_like` entities by default.
+- **beta.2 – beta.8** — hardened the compat layer against real third-party mods, fixing a chain of
+  load/tick/render crashes and missing bridges: `CuriosApi` mixin implementation (Ars Nouveau),
+  `ResourceLocation` validation on slot ids, missing `top.theillusivec4.curios.mixin.*` hook
+  classes (Iron's Spellbooks), `#`-prefixed entity tag parsing, legacy `getCuriosHelper()`
+  returning `null` (Supplementaries, L_Ender's Cataclysm), `ClassCastException` in the inventory
+  adapter (forwarding shims added), and the `curios:inventory` / `curios:item` capability
+  double-registration crash (Create's goggles).
+- **beta.9 – beta.11** — Curios-native advancements: register the `equip_curio` trigger under the
+  `curios` namespace so hard-coded `curios:equip_curio` criteria load (Iron's Spellbooks), key its
+  slot sub-predicate on `curios:slot` for parity, and split the trigger into two instances to fix
+  the `MappedRegistry` duplicate-value load crash while still firing criteria authored under either
+  id.
+- **beta.12** — added `top.theillusivec4.curios.client.gui.CuriosScreen` as a load-only
+  binary-compat shim so mods referencing Curios' client screen (Apothic Attributes) no longer abort
+  mod loading with `NoClassDefFoundError`.
+- **beta.13** — the default `regalia_slots_api:tag` slot validator now also tests `#curios:<slotId>`
+  / `#curios:curio`, so wearables from every mod that ships Curios integration (Iron's Spellbooks,
+  Reliquary, Relics, Jewelry, Equivalent Legacy, …) can actually be equipped.
+- **beta.14** — completed the Spanish (`es_es`) locale (12 missing keys).
+- **beta.15** — bridged third-party Curios client renderers (`CuriosRendererRegistry`) into the
+  real render layer, so curio models from mods like Relics show on the player model instead of
+  being invisible.
+
+### Notes
+
+- No code change relative to `0.0.0-beta.15`. Verified: `./gradlew clean build` is green (main +
+  api + sources jars); `./gradlew runServer` reaches `Done` with both `regalia_slots_api` and
+  `curios` mods loading and no mixin/registration errors.
+- Same CurseForge project as the 26.2 line (`1659506`); pick the file that matches your Minecraft
+  version. **Incompatible with the real Curios API installed at the same time** (same `modId`).
+
+## [0.0.0-beta.15] - 2026-09-09
+
+### Fixed
+
+- **Curios items from third-party mods rendered as nothing on the player model.** The bundled
+  Curios compatibility layer bridged capabilities, slot types, predicates and attribute
+  modifiers, but not the client renderer registry. Mods like Relics register their curio models
+  through `top.theillusivec4.curios.api.client.CuriosRendererRegistry`, a verbatim copy of the
+  Curios class whose maps nothing ever read: its `load()` was never called and the actual render
+  layer (`RegaliaSlotsApiLayer`) only queries `RegaliaSlotsApiRendererRegistry`, which no
+  third-party mod populates. Result: the item equipped and applied its effects, but was invisible
+  on the body (e.g. Relics' `amphibian_boot`).
+
+### Technical
+
+- New `com.skd.regaliaslotsapi.compat.curios.CuriosRendererAdapter`: adapts between the two
+  identical-but-separate `ICurioRenderer` / `SlotContext` type hierarchies
+  (`top.theillusivec4.curios.api.*` ↔ `com.skd.regaliaslotsapi.api.*`). Anonymous classes, not
+  lambdas, because `ICurioRenderer#render` is generic.
+- `top.theillusivec4.curios.api.client.CuriosRendererRegistry#register` now forwards every
+  registration to `RegaliaSlotsApiRendererRegistry` (wrapped through the adapter). The existing
+  `RegaliaSlotsApiRendererRegistry.load()` call in `EntityRenderersEvent.AddLayers` materialises
+  them, so no second listener is added. No behaviour change for renderers registered directly
+  into `RegaliaSlotsApiRendererRegistry`.
+
+## [0.0.0-beta.14] - 2026-09-08
+
+### Fixed
+
+- **Spanish (`es_es`) locale**: added the 12 keys present in `en_us` but missing from `es_es`
+  — the `/curios` command feedback, the entity-selector argument description, the slot-count
+  modifier tooltips (`curios.modifiers.slots.*`), the cosmetics toggle, the page counter and the
+  networking-failure message. Values from the Mystical Realms Translation & Fixes resource-pack QA
+  pass, moved here so they ship with the mod. No code change.
+
+## [0.0.0-beta.13] - 2026-09-03
+
+### Fixed
+
+- **No curio from any third-party mod could be equipped into any slot.** The default slot
+  validator `regalia_slots_api:tag` only accepted items in the `#regalia_slots_api:<slotId>` or
+  `#regalia_slots_api:curio` item tags. Every mod that ships Curios integration (Iron's
+  Spellbooks, Reliquary, Relics, Jewelry, Equivalent Legacy, …) tags its wearables under the
+  `curios:` namespace instead (`data/curios/tags/item/<slotId>.json`). Regalia's data loader
+  already reads those mods' `curios/slots` and `curios/entities` files, so slots appeared in the
+  GUI and were granted to the player, but every item was silently rejected on drop because the
+  validator's tags were always empty. This affected our own `equivalent_legacy` too.
+
+### Technical
+
+- `RegaliaSlotsApiImplMixinHooks`: the built-in `regalia_slots_api:tag` predicate now also tests
+  `#curios:<slotId>` and `#curios:curio`. The generic `curio`-slot fallback in `isStackValid`
+  likewise now accepts item tags in the `curios` namespace, not just `regalia_slots_api`.
+- Brings the 1.21.1 branch in line with 26.2, where `RegaliaCompatMod#overrideTagPredicate`
+  already widened the same predicate.
+
+## [0.0.0-beta.12] - 2026-09-03
+
+### Fixed
+
+- **Client load crash: missing Curios client screen** (`NoClassDefFoundError:
+  top/theillusivec4/curios/client/gui/CuriosScreen`, thrown from `EventBus.register` during
+  `FMLClientSetupEvent` for `apothic_attributes`). Apothic Attributes registers a client Curios
+  integration handler whenever `curios` is loaded (Regalia's compat layer declares that id). Bus
+  registration calls `Class.getDeclaredMethods()`, which resolves every handler parameter type —
+  one of them is `top.theillusivec4.curios.client.gui.CuriosScreen`, a class the Curios mirror
+  never carried (it only mirrored `api/**`, `mixin/**`, `platform/**`). The class failed to load
+  and the whole mod-loading phase aborted. Any pack combining Regalia with a mod that references
+  Curios' client screen was affected.
+
+### Technical
+
+- Added `top.theillusivec4.curios.client.gui.CuriosScreen` as a load-only binary-compat shim:
+  `abstract class CuriosScreen extends AbstractContainerScreen<AbstractContainerMenu> implements
+  ICuriosScreen`. It is never instantiated and nothing in Regalia extends it — it exists solely so
+  reflection-driven type resolution at mod-loading time succeeds.
+- The three members third-party consumers touch (`getGuiLeft()`, `getGuiTop()`, `getMinecraft()`)
+  resolve through the inherited NeoForge patches on `AbstractContainerScreen` / `Screen`; the shim
+  declares none of them.
+- **Known gap** (unchanged behaviour, now documented): Regalia's real curios GUI
+  (`RegaliaSlotsApiScreen`) does not extend this type, so a mod's `instanceof CuriosScreen` check
+  on the live screen returns `false` and its curios-screen integration (e.g. Apothic Attributes'
+  attribute-panel button) is silently skipped. No crash.
+
+## [0.0.0-beta.11] - 2026-09-01
+
+### Fixed
+
+- **Load crash: duplicate trigger value** (`IllegalStateException: Adding duplicate value
+  'com.skd.regaliaslotsapi.common.util.EquipCurioTrigger@…' to registry`, thrown from
+  `MappedRegistry.register` during `RegisterEvent`). beta.9 registered `curios:equip_curio` with
+  the very same `EquipCurioTrigger.INSTANCE` object already registered as
+  `regalia_slots_api:equip_curio`. Vanilla `MappedRegistry` dedupes by value identity and rejects
+  the second key — the whole mod-loading phase aborted. This masked itself until now because the
+  mystical_realms datapack stopped shipping its `curios:equip_curio` override (trusting beta.9's
+  native fix), so both registrations were exercised.
+
+### Technical
+
+- `EquipCurioTrigger` now has two instances: `INSTANCE` (id `regalia_slots_api:equip_curio`) and
+  `CURIOS_COMPAT_INSTANCE` (id `curios:equip_curio`). `RegaliaSlotsApiRegistry.CURIOS_EQUIP_TRIGGER`
+  registers the latter.
+- Runtime `EquipCurioTrigger#trigger(...)` fans out through a private `fire(...)` that notifies the
+  advancement listeners of **both** instances, so criteria authored under either id still fire on a
+  curio equip. The loot context is built once and shared. No behaviour change for existing
+  `regalia_slots_api:equip_curio` advancements; `curios:equip_curio` advancements now both load
+  (beta.9) and trigger (this release).
+- Programmatic criterion builders (`MixinRegaliaSlotsApiTriggers*`) still target `INSTANCE`
+  (unchanged) — they author `regalia_slots_api:equip_curio` criteria.
+
+## [0.0.0-beta.10] - 2026-09-01
+
+### Fixed
+
+- **`equip_curio` slot filter (beta.9 caveat)**: the trigger's slot sub-predicate codec keyed on
+  `regalia_slots_api:slot`, so a Curios-native criterion using `curios:slot` (as Iron's Spellbooks
+  writes) loaded but its slot filter was silently ignored. Renamed the field to `curios:slot` in
+  `EquipCurioTrigger.TriggerInstance.CODEC` — it is the only advancement-criterion consumer of that
+  key (nothing authored uses `regalia_slots_api:slot`), so this is a clean move to full Curios
+  parity. `curios:slot` filters now apply.
+
+## [0.0.0-beta.9] - 2026-09-01
+
+### Fixed
+
+- **Curios-native advancements failed to load**: mods built against the real Curios API hard-code
+  the trigger id `curios:equip_curio` in their advancement JSON (Iron's Spellbooks does this for
+  `spell_book_equip` + 13 tiered child advancements). Regalia only registered the trigger as
+  `regalia_slots_api:equip_curio`, so those advancements threw
+  `Unknown registry key ...:trigger_type: curios:equip_curio` and the whole branch was dropped.
+
+### Technical
+
+- `RegaliaSlotsApiRegistry` now also registers the same `EquipCurioTrigger.INSTANCE` under the
+  `curios` namespace via a second `DeferredRegister<CriterionTrigger<?>>` created with `"curios"`,
+  wired into the mod event bus in `init(...)`. The trigger's `curios:equip_curio` id now resolves.
+- Caveat: the trigger's slot sub-predicate codec still keys on `regalia_slots_api:slot`, so a
+  Curios-native criterion using `curios:slot` loads but its slot filter is ignored (the advancement
+  fires on any Regalia-slot equip). Restoring that filter is a follow-up.
+
+## [0.0.0-beta.8] - 2026-09-01
+
+### Fixed
+
+- **Curios capability double-registration crash**: any mod that resolved
+  `top.theillusivec4.curios.api.CuriosCapability` (Create's goggles overlay, and others) crashed
+  with `IllegalStateException: Attempted to register capability curios:inventory with existing
+  type ... com.skd...ICuriosItemHandler != top.theillusivec4...ICuriosItemHandler`. `CuriosCompatMod`
+  declared its own `curios:inventory` / `curios:item` capability objects typed against Regalia's
+  interfaces, colliding with the identically-named ones in the copied Curios API as soon as that
+  class was loaded. Earlier render-path crashes had been masking it.
+
+### Technical
+
+- `CuriosCompatMod` no longer creates its own `EntityCapability` / `ItemCapability` for the
+  `curios` ids; it registers its providers against the verbatim `CuriosCapability.INVENTORY` /
+  `ITEM_HANDLER` / `ITEM`, so third-party mods resolve the exact same capability instances.
+- Providers wrap Regalia's implementations in the beta.7 shims (`ShimCuriosItemHandler`,
+  `ShimCurio`); the `ITEM_HANDLER` provider returns the entity's equipped-curios `IItemHandler` view.
+
+## [0.0.0-beta.7] - 2026-09-01
+
+### Fixed
+
+- **`ClassCastException` in the Curios inventory adapter**: the next link in the same chain as
+  beta.6 — L_Ender's Cataclysm first-person arm rendering, and any mod calling
+  `CuriosApi.getCuriosInventory()` / `getCurio()` — crashed with
+  `com.skd.regaliaslotsapi.common.capability.CurioInventoryCapability cannot be cast to
+  top.theillusivec4.curios.api.type.capability.ICuriosItemHandler`. The adapter methods returned
+  Regalia's internal implementation objects cast straight to the verbatim `top.theillusivec4.curios.*`
+  interfaces, which those objects never implement. They are now wrapped in forwarding shims, the same
+  pattern already used for slot types (`ShimSlotType`).
+
+### Technical
+
+- New shims in `com.skd.regaliaslotsapi.compat.curios`: `ShimCuriosItemHandler`, `ShimCurio`,
+  `ShimCurioStacksHandler`, `ShimDynamicStackHandler` — each implements the verbatim
+  `top.theillusivec4.curios.*` interface and forwards to the parallel Regalia implementation,
+  wrapping/unwrapping nested capability types and translating `SlotContext` / `SlotResult` by value.
+- `RegaliaSlotsApiImplMixinHooks.getCurioForCurios` / `getCuriosInventoryForCurios` now return
+  `new ShimCurio(...)` / `new ShimCuriosItemHandler(...)` instead of an unchecked cast.
+
+## [0.0.0-beta.6] - 2026-09-01
+
+### Fixed
+
+- **Legacy `CuriosApi.getCuriosHelper()` returned `null`**: mods that still use the deprecated
+  Curios helper accessor (Supplementaries' quiver, L_Ender's Cataclysm arm rendering, and others)
+  crashed with `NullPointerException` — `curiosHelper` was never wired. `MixinCuriosApi` bridged
+  the modern static methods but left `getCuriosHelper()` unhandled, so `CuriosApi.getCuriosHelper()`
+  stayed `null` and every caller NPE'd (server "Ticking player" crash and client render FATAL).
+  Now `getCuriosHelper()` returns a shim `ICuriosHelper` backed by the same compat layer.
+
+### Technical
+
+- New `com.skd.regaliaslotsapi.compat.curios.LegacyCuriosHelperShim` implementing
+  `top.theillusivec4.curios.api.type.util.ICuriosHelper`, delegating to `CuriosImplMixinHooks`
+  (`getCurio` / `getCuriosHandler` / `getCurioTags` / `isStackValid` / `onBrokenCurio` direct;
+  `findCurios*` / `findFirstCurio*` / `findCurio` / `getEquippedCurios` / `setEquippedCurio` /
+  `findEquippedCurio` resolved through the entity's `ICuriosItemHandler`).
+- `MixinCuriosApi` gains a `@Inject` on `getCuriosHelper` returning the shim singleton.
+
+## [0.0.0-beta.5] - 2026-09-01
+
+### Fixed
+
+- **Entity slot assignment via tags never worked**: `data/<mod>/curios/entities/*.json` files using a tag
+  reference in `"entities"` (e.g. `"#regalia_slots_api:player_like"`, the standard Curios pattern) crashed
+  datapack loading with `ResourceLocationException: Non [a-z0-9_.-] character in namespace`.
+  `RegaliaSlotsApiEntityManager.getSlotsForEntities` detected the leading `#` but passed the whole string
+  (including `#`) to `ResourceLocation.parse`. Now strips the `#` before parsing the tag id, matching Curios.
+
+## [0.0.0-beta.4] - 2026-09-01
+
+### Fixed
+
+- **Curios compatibility layer**: Added missing internal mixin hook classes (`CuriosImplMixinHooks`, `CuriosUtilMixinHooks`) at `top.theillusivec4.curios.mixin.*` so third-party mods (Iron's Spellbooks, etc.) that mix into Curios internals can find their target classes. Previously these mods crashed with `ClassNotFoundException: top.theillusivec4.curios.mixin.CuriosImplMixinHooks`.
+
+### Technical
+
+- New compat shim classes in `src/main/java/top/theillusivec4/curios/mixin/` delegating to the renamed `RegaliaSlotsApiImplMixinHooks` implementation.
+
+## [0.0.0-beta.3] - 2026-09-01
+
+### Fixed
+
+- **ResourceLocation validation**: Fixed crash in `ResourceLocation.assertValidPath` when viewing item tooltips with slot identifiers containing invalid ResourceLocation characters (uppercase, spaces, special characters). The "tag" curio predicate now validates slot identifiers before creating ResourceLocations.
+
+### Technical
+
+- Added `ResourceLocation.isValidPath(id)` check in `RegaliaSlotsApiImplMixinHooks` static initializer for the "tag" predicate to prevent invalid path exceptions from third-party slot type identifiers.
+
+## [0.0.0-beta.2] - 2026-08-31
+
+### Fixed
+
+- **Curios API compatibility**: Added mixin implementation for `top.theillusivec4.curios.api.CuriosApi` so other mods (Ars Nouveau, etc.) can properly access Curios inventory capabilities without spamming "Missing Curios API implementation!" errors in server logs.
+- Other mods using `CuriosApi.getCuriosInventory()`, `CuriosApi.getCurio()`, `CuriosApi.getSlots()`, etc. now work correctly with Regalia Slots API as the Curios provider.
+
+### Technical
+
+- New mixin `MixinCuriosApi` targeting `top.theillusivec4.curios.api.CuriosApi` with adapter methods bridging Regalia's internal API to the Curios API types.
+- Adapter methods in `RegaliaSlotsApiImplMixinHooks` for slot types, capabilities, predicates, and slot contexts.
+- Made `ShimSlotType` constructor public for cross-package usage.
+
+## [0.0.0-beta.1] - 2026-08-31
+
+### Added
+
+- **Initial port to Minecraft 1.21.1 / NeoForge 21.1.249** (Java 21). Strategy: **re-fork**
+  from the upstream Curios API 1.21.1 sources (9.5.1+1.21.1, NeoForge 21.1.60), flattened
+  from multi-loader (`common/` + `neoforge/`) into a single NeoForge module and rebranded to
+  the Regalia Slots API identity — not a back-port of the 26.2 fork (whose internal
+  architecture is Curios 26.2's).
+- **Curios compatibility layer**: verbatim `top.theillusivec4.curios.api` copy (1.21.1 shape,
+  42 files), second logical `curios` mod id (`@Mod("curios")`) registering the
+  `curios:inventory` / `curios:item` capabilities, `ICuriosPlatform` SPI adapter, and
+  `LegacyCurioMigration` (first-login carry-over of items from a world that used the real
+  Curios, keyed on the original `"Curios"` NBT compound).
+- **11 preset slots** (back, belt, body, bracelet, charm, curio, feet, hands, head, necklace,
+  ring) granted to `player_like` entities by default.
+
+### Technical
+
+- Package `top.theillusivec4.curios` → `com.skd.regaliaslotsapi`; class `Curios*` →
+  `RegaliaSlotsApi*` (`Curio` singular, LGPL headers and NBT/datapack strings kept verbatim);
+  mod id `curios` → `regalia_slots_api`.
+- Build: RSA 26.2 `net.neoforged.moddev` shell retargeted to NeoForge 21.1.249 / Java 21
+  (EMI/REI `compileOnly` re-enabled, `regalia_slots_api_test` sourceSet wiring dropped).
+- `RegaliaCuriosPlatformAdapter.getItemStackSlots` wired via `ShimSlotType` so third-party
+  mods resolving item→slot through the real Curios API entry point see Regalia's slots.
+- Verified: `./gradlew build` OK (main + api + sources jars); `./gradlew runServer` reaches
+  `Done`, both `regalia_slots_api` and `curios` mods load, no mixin/registration errors.
+- Port detail: `docs/PORT_REPORT_1.21.1_PHASE2.md`.
