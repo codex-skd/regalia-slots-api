@@ -1,0 +1,120 @@
+# Changelog — Regalia Slots API
+## [Unreleased]
+
+### Fixed
+
+- **CI**: `PUBLIC_OPTIONAL` vuelve a `"LICENSE NOTICE libs/ COPYING COPYING.LESSER"`. La allowlist
+  anterior contenia `wiki/ mkdocs.yml .github/`, que podia publicar la wiki privada y los workflows
+  del repositorio en el snapshot publico.
+- **El snapshot publico no llevaba ningun texto de licencia.** `PUBLIC_OPTIONAL` incluia `LICENSE`,
+  que este repositorio no tiene, pero **no** incluia `COPYING.LESSER`, que si. El resultado era
+  codigo fuente con LGPL-3.0 declarado en `gradle.properties` y en el README, publicado sin el
+  texto de la licencia. Para una obra LGPL-3.0 eso es incompleto: ahora ambos ficheros se publican.
+
+### Aviso para instalaciones existentes — tu config puede estar obsoleto
+
+**Si ya tenias este mod instalado antes de la 1.0.0 / 0.0.0-beta.1, comprueba tu config.**
+
+La lista `slots` con los 11 presets (`back`, `belt`, `body`, `bracelet`, `charm`, `curio`, `feet`,
+`hands`, `head`, `necklace`, `ring`) se anadio como **arreglo**, no como caracteristica de la
+version. Motivo: ni Curios ni Regalia conceden ninguna ranura por su cuenta — cada mod tiene que
+pedirla en su `data/<namespace>/curios/entities/*.json` — y algunos mods (Reliquary 2.0.92.1568
+entre ellos) etiquetan sus items para una ranura, `curios:charm`, **sin declarar** ese
+`entities.json`. Esos items se quedaban sin sitio.
+
+El arreglo fue poner los 11 presets por defecto en `RegaliaSlotsApiConfig.Common.slots`, de modo que
+cualquier item etiquetado con `curios:<slot>` tenga ranura aunque su mod no la pida.
+
+**El problema:** NeoForge no sobreescribe un fichero de config ya existente. Si tu
+`config/regalia_slots_api-common.toml` se genero antes del arreglo, **sigue con la lista vacia** y
+no recibiras el cambio. No hay aviso en juego ni en el log: simplemente seguiras sin ver ranuras.
+
+**Como resolverlo:** borra `config/regalia_slots_api-common.toml` y deja que se regenere, o edita a
+mano el valor `gui.regalia_slots_api.config.slots` y pon las 11 entradas. Mientras no lo hagas, el
+sintoma es "items que deberian ir a una ranura no aparecen en ninguna".
+
+### Added
+
+- **`COPYING`**: el repositorio tenia `COPYING.LESSER` pero no el `COPYING` (GPL-3.0). LGPL-3.0 es
+  el GPL-3.0 mas las permisos adicionales de `COPYING.LESSER`, asi que **ambos** son obligatorios.
+  Descargado del canonico del FSF, sin modificar.
+- **README**: documenta los dos ficheros de licencia en lugar de enlazar solo a uno.
+
+---
+
+Registro de cambios de este fork. Para el historial completo de Curios API (mod original de TheIllusiveC4 del que procede este fork), ver el [CHANGELOG del proyecto original](https://github.com/TheIllusiveC4/Curios/blob/26.x/CHANGELOG.md).
+
+## [1.1.4] - 2026-09-29
+
+### Corregido
+
+- Mods que referencian la clase interna de render de Curios `top.theillusivec4.curios.client.render.CuriosLayer` (p. ej. el módulo de compatibilidad Curios de Epic Fight, que la busca por clase en el renderer para sustituirla) fallaban con `NoClassDefFoundError` al registrar capas (`EntityRenderersEvent.AddLayers`), porque la capa de compatibilidad solo copiaba el paquete `api`. Nuevo shim `top.theillusivec4.curios.client.render.CuriosLayer` (subclase directa de `RegaliaSlotsApiLayer`) y la capa se registra ahora con esa clase en los renderers de entidades vivas y jugadores. Mismo fix que 1.0.2 en la rama 1.21.1.
+
+## [1.1.3] - 2026-08-28
+
+### Corregido
+
+- El fix de 1.1.1 para el efecto intermitente de `angelic_faher` de Reliquary (Supersalto II parpadeando y cortándose en la ranura de amuleto, sobre todo en servidor dedicado) era incompleto. El `RegaliaCurioAdapter` que introdujo solo quedó cableado a la capability de cara a Curios (`curios:item` en `RegaliaCompatMod`), pero el bucle de tick nativo (`RegaliaSlotsApiCommonEvents.tick`) resuelve los curios vía `RegaliaSlotsApiCapability.ITEM`, que nunca consultaba los items registrados a través de la API de Curios (mapa `RegaliaExtensionsAdapter.REGISTERED_ITEMS`). Para items de terceros como el amuleto de Reliquary, `RegaliaSlotsApi.getCurio(stack)` devolvía vacío, así que `curioTick`/`onEquip`/`onUnequip` no se llamaban desde el bucle nativo y el efecto solo se aplicaba de rebote. Ahora:
+  - El provider nativo `RegaliaSlotsApiCapability.ITEM` también resuelve los items registrados vía API de Curios, envolviéndolos en `RegaliaCurioAdapter`.
+  - El bucle de tick tiene además un fallback: si el curio nativo no se resuelve, consulta la capability `curios:item` del stack y la adapta con el nuevo `CuriosICurioAdapter` (`top.theillusivec4.curios.api.type.capability.ICurio` → `com.skd.regaliaslotsapi.api.type.capability.ICurio`).
+
+## [1.1.2] - 2026-08-28
+
+### Corregido
+
+- La capa de compatibilidad Curios no cargaba: el rename `Curios*` → `Regalia*` de las clases adaptadoras en 1.1.1 no actualizó los 5 ficheros `META-INF/services/top.theillusivec4.curios.api.internal.services.*`, que seguían apuntando a `Curios*Adapter` (clases inexistentes). Al arrancar, `CuriosServices` fallaba con `ServiceConfigurationError: ... Provider com.skd.regaliaslotsapi.compat.curios.CuriosCodecsAdapter not found`, abortando el `RegisterEvent` del mod y provocando por efecto dominó que otros mods del pack (Equivalent Legacy, Ascendant Equipment) se quedaran sin registrar sus componentes/items y el juego revirtiera a estado vanilla. Los 5 ficheros de servicio ahora apuntan a `RegaliaCodecsAdapter`, `RegaliaExtensionsAdapter`, `RegaliaNetworkAdapter`, `RegaliaRegistryAdapter` y `RegaliaSlotsAdapter`.
+
+## [1.1.1] - 2026-08-27
+
+### Corregido
+
+- Efecto de Supersalto II (Jump Boost II) del ítem `angelic_faher` de Reliquary no se aplicaba consistentemente cuando el ítem estaba en la ranura de Amuleto (necklace). La capa de compatibilidad Curios ahora delega correctamente `curioTick`, `onEquip`, `onUnequip`, `onStateChange`, `canEquip`, `canUnequip` y demás métodos de `ICurioItem` a través de `RegaliaCurioAdapter`, permitiendo que efectos activos por tick funcionen igual que en el Curios real.
+
+## [1.1.0] - 2026-08-20
+
+### Añadido
+
+- Migración automática de datos al sustituir el Curios real por este mod: los items que un jugador tenía equipados con el Curios real ya no se pierden. Al primer login tras el cambio, se copian a la ranura equivalente de Regalia Slots API; lo que no encaja se devuelve al inventario normal en vez de perderse. Requiere quitar el jar del Curios real de `mods/` (no pueden coexistir, mismo `modId`). Verificado en partida real con datos reales de un jugador (mochila de Sophisticated Backpacks, talismán de Equivalent Legacy, pluma angelical de Reliquary).
+
+## [1.0.0] - 2026-08-20
+
+Primera versión estable. Consolida la capa de compatibilidad con Curios API introducida en 0.0.0-beta.4 tras pruebas en modpack real con Sophisticated Backpacks, Toms Storage, Reliquary, EvilCraft y Ascendant Attributes.
+
+### Añadido
+
+- Capa de compatibilidad con la API de Curios lista para producción: mods de terceros que dependen del `modId` `curios` reconocen e interactúan con las ranuras de Regalia Slots API sin instalar Curios.
+- `RegaliaSlotsApiConfig.Common.slots` ahora trae por defecto las 11 ranuras preset (back, belt, body, bracelet, charm, curio, feet, hands, head, necklace, ring) asignadas a entidades tipo jugador, en vez de una lista vacía — evita que items de terceros con solo un tag `curios:<slot>` (sin `entities.json` propio) se queden sin ranura donde ir.
+
+### Corregido
+
+- El validador `regalia_slots_api:tag` de las ranuras base ahora también reconoce tags bajo el namespace `curios:` (además de `regalia_slots_api:`), para que items etiquetados por mods de terceros contra el Curios real se reconozcan igualmente.
+
+### Cambiado
+
+- NeoForge bump a `26.2.0.57` (coincide con la versión real del servidor de destino). Nueva rama `minecraft/26.2/neoforge-26.2.0.57/production` (con su `main` correspondiente); la rama `.../26.2.0.45-beta/production` queda como histórico.
+
+## [0.0.0-beta.4] - 2026-08-19
+
+### Añadido
+
+- Capa de compatibilidad con la API de Curios (`com.skd.regaliaslotsapi.compat.curios`): mods de terceros que dependen del `modId` `curios` y el paquete `top.theillusivec4.curios.api.*` (ej. Sophisticated Backpacks) ahora reconocen e interactúan con las ranuras de Regalia Slots API sin necesidad de instalar Curios. Segundo `modId` lógico `curios` declarado en el mismo JAR, con capabilities (`curios:inventory`, `curios:item`) respaldadas en vivo por los datos reales de Regalia — sin duplicar estado.
+- Ver `docs/WORKFLOW_REGALIA_SLOTS_API_26-2.md` (sección "Capa de compatibilidad Curios API") para huecos conocidos (comportamiento custom por item, renderizado de modelos) y la incompatibilidad intencional con el Curios real instalado a la vez.
+
+## [0.0.0-beta.3] - 2026-08-19
+
+### Cambiado
+
+- Eliminados `COPYING` (texto GPL) y `LICENSE` (resumen corto) del repositorio y del JAR — se conserva únicamente `COPYING.LESSER` (texto de la LGPL, el mínimo que exige la licencia), enlazado desde `README.md`.
+
+## [0.0.0-beta.2] - 2026-08-19
+
+### Corregido
+
+- Los 11 slots incorporados (anillo, collar, cabeza, etc.) mostraban un icono de "textura perdida" (recuadro morado/negro) en la GUI de inventario porque sus definiciones en `data/regalia_slots_api/curios/slots/*.json` seguían referenciando el namespace `curios:` (icono y validador) en vez de `regalia_slots_api:`.
+
+## [0.0.0-beta.1] - 2026-08-19
+
+### Añadido
+
+- Port inicial a NeoForge 26.2.0.45-beta / Minecraft 26.2 como fork independiente de Curios API.
+- Rebrand completo: `mod_id` `curios` → `regalia_slots_api`, paquete Java `top.theillusivec4.curios` → `com.skd.regaliaslotsapi`, clases `Curios*` → `RegaliaSlotsApi*`, assets/data `curios/` → `regalia_slots_api/`.

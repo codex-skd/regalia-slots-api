@@ -1,0 +1,5 @@
+{
+  "order": 100,
+  "icon": "regalia_slots_api:slot/empty_body_slot",
+  "validators": ["regalia_slots_api:tag"]
+}

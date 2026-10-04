@@ -1,0 +1,517 @@
+/*
+ * Copyright (c) 2018-2024 C4
+ *
+ * This file is part of RegaliaSlotsApi, a mod made for Minecraft.
+ *
+ * RegaliaSlotsApi is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * RegaliaSlotsApi is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with RegaliaSlotsApi.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+
+package com.skd.regaliaslotsapi.client.screen;
+
+import com.mojang.blaze3d.platform.InputConstants;
+import com.mojang.datafixers.util.Pair;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import javax.annotation.Nonnull;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.ItemSlotMouseAction;
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.navigation.ScreenPosition;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
+import net.minecraft.client.gui.screens.inventory.EffectsInInventory;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.gui.screens.recipebook.CraftingRecipeBookComponent;
+import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
+import com.skd.regaliaslotsapi.RegaliaSlotsApiConstants;
+import com.skd.regaliaslotsapi.api.RegaliaSlotsApi;
+import com.skd.regaliaslotsapi.api.client.IRegaliaSlotsApiScreen;
+import com.skd.regaliaslotsapi.api.type.ICurioSlot;
+import com.skd.regaliaslotsapi.client.RegaliaSlotsApiKeyMappings;
+import com.skd.regaliaslotsapi.client.screen.button.CosmeticButton;
+import com.skd.regaliaslotsapi.client.screen.button.RegaliaSlotsApiButton;
+import com.skd.regaliaslotsapi.client.screen.button.IRegaliaSlotsApiWidget;
+import com.skd.regaliaslotsapi.client.screen.button.PageButton;
+import com.skd.regaliaslotsapi.client.screen.button.RenderButton;
+import com.skd.regaliaslotsapi.common.inventory.CurioSlot;
+import com.skd.regaliaslotsapi.common.inventory.container.RegaliaSlotsApiMenu;
+import com.skd.regaliaslotsapi.common.network.client.CPacketPage;
+import com.skd.regaliaslotsapi.common.network.client.CPacketToggleRender;
+import com.skd.regaliaslotsapi.config.RegaliaSlotsApiClientConfig;
+import com.skd.regaliaslotsapi.config.RegaliaSlotsApiClientConfig.Client;
+import com.skd.regaliaslotsapi.config.RegaliaSlotsApiClientConfig.Client.ButtonCorner;
+
+public class RegaliaSlotsApiScreen extends AbstractRecipeBookScreen<RegaliaSlotsApiMenu>
+    implements RecipeUpdateListener, IRegaliaSlotsApiScreen {
+
+  static final Identifier CURIO_INVENTORY =
+      Identifier.fromNamespaceAndPath(
+          RegaliaSlotsApiConstants.MOD_ID, "textures/gui/curios/inventory.png");
+
+  private final EffectsInInventory effects;
+  private final List<ItemSlotMouseAction> itemSlotMouseActions;
+
+  private RegaliaSlotsApiButton buttonRegaliaSlotsApi;
+  private CosmeticButton cosmeticButton;
+  private PageButton nextPage;
+  private PageButton prevPage;
+  private boolean buttonClicked;
+  private boolean isRenderButtonHovered;
+  public int panelWidth = 0;
+  public int oldMouseX = 0;
+  public int oldMouseY = 0;
+
+  public RegaliaSlotsApiScreen(RegaliaSlotsApiMenu curiosMenu, Inventory playerInventory, Component title) {
+    super(curiosMenu, new CraftingRecipeBookComponent(curiosMenu), playerInventory, title);
+    this.titleLabelX = 97;
+    this.effects = new EffectsInInventory(this);
+    this.itemSlotMouseActions = new ArrayList<>();
+  }
+
+  public static Pair<Integer, Integer> getButtonOffset(boolean isCreative) {
+    Client client = RegaliaSlotsApiClientConfig.CLIENT;
+    ButtonCorner corner = client.buttonCorner.get();
+    int x = 0;
+    int y = 0;
+
+    if (isCreative) {
+      x += corner.getCreativeXoffset() + client.creativeButtonXOffset.get();
+      y += corner.getCreativeYoffset() + client.creativeButtonYOffset.get();
+    } else {
+      x += corner.getXoffset() + client.buttonXOffset.get();
+      y += corner.getYoffset() + client.buttonYOffset.get();
+    }
+    return new Pair<>(x, y);
+  }
+
+  @Override
+  public void init() {
+    super.init();
+    this.panelWidth = this.menu.panelWidth;
+    Pair<Integer, Integer> offsets = getButtonOffset(false);
+    this.buttonRegaliaSlotsApi =
+        new RegaliaSlotsApiButton(
+            this,
+            this.getLeftPos() + offsets.getFirst() - 2,
+            this.height / 2 + offsets.getSecond() - 2,
+            10,
+            10,
+            RegaliaSlotsApiButton.BIG);
+
+    if (RegaliaSlotsApiClientConfig.CLIENT.enableButton.get()) {
+      this.addRenderableWidget(this.buttonRegaliaSlotsApi);
+    }
+    this.updateRenderButtons();
+  }
+
+  @Override
+  protected void onRecipeBookButtonClick() {
+    this.buttonClicked = true;
+  }
+
+  @Nonnull
+  @Override
+  protected ScreenPosition getRecipeBookButtonPosition() {
+    return new ScreenPosition(this.leftPos + 104, this.height / 2 - 22);
+  }
+
+  public void updateRenderButtons() {
+    Predicate<Object> isCurioWidget = widget -> widget instanceof IRegaliaSlotsApiWidget;
+    this.narratables.removeIf(isCurioWidget);
+    this.children.removeIf(isCurioWidget);
+    this.renderables.removeIf(isCurioWidget);
+    this.panelWidth = this.menu.panelWidth;
+
+    if (this.menu.hasCosmetics) {
+      this.cosmeticButton =
+          new CosmeticButton(this, this.getLeftPos() + 17, this.getTopPos() - 18, 20, 17);
+      this.addRenderableWidget(this.cosmeticButton);
+    }
+
+    if (this.menu.totalPages > 1) {
+      this.nextPage =
+          new PageButton(
+              this, this.getLeftPos() + 17, this.getTopPos() + 2, 11, 12, PageButton.Type.NEXT);
+      this.addRenderableWidget(this.nextPage);
+      this.prevPage =
+          new PageButton(
+              this, this.getLeftPos() + 17, this.getTopPos() + 2, 11, 12, PageButton.Type.PREVIOUS);
+      this.addRenderableWidget(this.prevPage);
+    }
+
+    for (Slot inventorySlot : this.menu.slots) {
+
+      if (inventorySlot instanceof CurioSlot curioSlot && curioSlot.canToggleRender()) {
+        this.addRenderableWidget(
+            new RenderButton(
+                curioSlot,
+                this.leftPos + inventorySlot.x + 12,
+                this.topPos + inventorySlot.y - 1,
+                8,
+                8,
+                75,
+                0,
+                CURIO_INVENTORY,
+                (button) ->
+                    ClientPacketDistributor.sendToServer(
+                        new CPacketToggleRender(
+                            curioSlot.getId(), inventorySlot.getSlotIndex()))));
+      }
+    }
+  }
+
+  @Override
+  public void extractRenderState(@Nonnull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY,
+                                 float partialTicks) {
+    this.effects.extractRenderState(guiGraphics, mouseX, mouseY);
+    Slot hoveredSlot = this.hoveredSlot;
+    // Workaround for slots that are removed due to slot modifier changes
+    if (this.hoveredSlot instanceof CurioSlot curioSlot) {
+      int slots = curioSlot.getItemHandler().getSlots();
+      int index = curioSlot.getSlotIndex();
+
+      if (index >= slots) {
+        this.hoveredSlot = null;
+      }
+    }
+    super.extractRenderState(guiGraphics, mouseX, mouseY, partialTicks);
+    boolean isButtonHovered = false;
+
+    for (Renderable button : this.renderables) {
+
+      if (button instanceof RenderButton) {
+        ((RenderButton) button).renderButtonOverlay(guiGraphics, mouseX, mouseY, partialTicks);
+
+        if (((RenderButton) button).isHovered()) {
+          isButtonHovered = true;
+        }
+      }
+    }
+    this.isRenderButtonHovered = isButtonHovered;
+    LocalPlayer clientPlayer = Minecraft.getInstance().player;
+
+    if (!this.isRenderButtonHovered
+        && clientPlayer != null
+        && clientPlayer.inventoryMenu.getCarried().isEmpty()
+        && this.getHoveredSlot() != null) {
+      Slot slot = this.getHoveredSlot();
+
+      if (slot instanceof CurioSlot slotCurio && this.minecraft != null) {
+        ItemStack stack =
+            slotCurio
+                .getSlotExtension()
+                .getDisplayStack(slotCurio.getSlotContext(), slot.getItem());
+
+        if (stack.isEmpty()) {
+          guiGraphics.setTooltipForNextFrame(this.font, slotCurio.getSlotTooltip(),
+              stack.getTooltipImage(), mouseX, mouseY);
+        }
+      }
+    }
+    this.extractTooltip(guiGraphics, mouseX, mouseY);
+    this.oldMouseX = mouseX;
+    this.oldMouseY = mouseY;
+  }
+
+  @Override
+  protected void addItemSlotMouseAction(@Nonnull ItemSlotMouseAction itemSlotMouseAction) {
+    this.itemSlotMouseActions.add(itemSlotMouseAction);
+  }
+
+  @Override
+  protected void extractTooltip(@Nonnull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY) {
+    Minecraft mc = this.minecraft;
+
+    if (mc != null) {
+      LocalPlayer clientPlayer = mc.player;
+
+      if (clientPlayer != null && clientPlayer.inventoryMenu.getCarried().isEmpty()) {
+
+        if (this.isRenderButtonHovered) {
+          guiGraphics.setTooltipForNextFrame(Component.translatable("gui.curios.toggle"), mouseX,
+              mouseY);
+        } else if (this.hoveredSlot != null) {
+          ItemStack stack = this.hoveredSlot.getItem();
+
+          if (this.hoveredSlot instanceof CurioSlot curioSlot) {
+            stack = curioSlot.getSlotExtension().getDisplayStack(curioSlot.getSlotContext(), stack);
+          }
+
+          if (!stack.isEmpty()) {
+            List<Component> components = Screen.getTooltipFromItem(this.minecraft, stack);
+
+            if (this.hoveredSlot instanceof CurioSlot curioSlot && !curioSlot.isActiveState()) {
+              components.add(Component.empty());
+              components.add(
+                  Component.translatable("curios.tooltip.inactive").withStyle(ChatFormatting.RED));
+            }
+            guiGraphics.setTooltipForNextFrame(this.font, components, stack.getTooltipImage(),
+                mouseX, mouseY);
+          }
+        }
+      }
+    }
+  }
+
+  @Override
+  public boolean showsActiveEffects() {
+    return this.effects.canSeeEffects();
+  }
+
+  @Override
+  protected boolean isBiggerResultSlot() {
+    return false;
+  }
+
+  @Override
+  public boolean keyPressed(@Nonnull KeyEvent event) {
+
+    if (super.keyPressed(event)) {
+      return true;
+    } else if (RegaliaSlotsApiKeyMappings.OPEN_CURIOS_INVENTORY.isActiveAndMatches(
+        InputConstants.getKey(event))) {
+      LocalPlayer playerEntity = this.getMinecraft().player;
+
+      if (playerEntity != null) {
+        playerEntity.closeContainer();
+      }
+      return true;
+    }
+    return false;
+  }
+
+  @Override
+  protected void extractLabels(@Nonnull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY) {
+    guiGraphics.text(this.font, this.title, 97, 6, -12566464, false);
+  }
+
+  /**
+   * Draws the background layer of this container (behind the item).
+   */
+  @Override
+  public void extractBackground(
+      @Nonnull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTicks) {
+    super.extractBackground(guiGraphics, mouseX, mouseY, partialTicks);
+
+    if (this.minecraft != null && this.minecraft.player != null) {
+
+      if (scrollCooldown > 0 && this.minecraft.player.tickCount % 5 == 0) {
+        scrollCooldown--;
+      }
+      this.panelWidth = this.menu.panelWidth;
+      int i = this.leftPos;
+      int j = this.topPos;
+      guiGraphics.blit(RenderPipelines.GUI_TEXTURED, INVENTORY_LOCATION, i, j, 0, 0, 176,
+          this.imageHeight, 256, 256);
+      InventoryScreen.extractEntityInInventoryFollowsMouse(
+          guiGraphics,
+          i + 26,
+          j + 8,
+          i + 75,
+          j + 78,
+          30,
+          0.0625F,
+          mouseX,
+          mouseY,
+          this.minecraft.player);
+      RegaliaSlotsApi.getRegaliaSlotsApiInventory(this.minecraft.player)
+          .ifPresent(
+              handler -> {
+                int xOffset = -33;
+                int yOffset = j;
+                boolean pageOffset = this.menu.totalPages > 1;
+
+                if (this.menu.hasCosmetics) {
+                  guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY, i + xOffset + 2,
+                      yOffset - 23, 32, 0, 28, 24, 256, 256);
+                }
+                List<Integer> grid = this.menu.grid;
+                xOffset -= (grid.size() - 1) * 18;
+
+                // render backplate
+                for (int r = 0; r < grid.size(); r++) {
+                  int rows = grid.getFirst();
+                  int upperHeight = 7 + rows * 18;
+                  int xTexOffset = 91;
+
+                  if (pageOffset) {
+                    upperHeight += 8;
+                  }
+
+                  if (r != 0) {
+                    xTexOffset += 7;
+                  }
+                  guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY, i + xOffset,
+                      yOffset,
+                      xTexOffset, 0, 25, upperHeight, 256, 256);
+                  guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY, i + xOffset,
+                      yOffset + upperHeight, xTexOffset, 159, 25, 7, 256, 256);
+
+                  if (grid.size() == 1) {
+                    xTexOffset += 7;
+                    guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY, i + xOffset + 7,
+                        yOffset, xTexOffset, 0, 25, upperHeight, 256, 256);
+                    guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY, i + xOffset + 7,
+                        yOffset + upperHeight, xTexOffset, 159, 25, 7, 256, 256);
+                  }
+
+                  if (r == 0) {
+                    xOffset += 25;
+                  } else {
+                    xOffset += 18;
+                  }
+                }
+                xOffset -= (grid.size()) * 18;
+
+                if (pageOffset) {
+                  yOffset += 8;
+                }
+
+                // render slots
+                for (int rows : grid) {
+                  int upperHeight = rows * 18;
+                  guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY, i + xOffset,
+                      yOffset + 7, 7, 7, 18, upperHeight, 256, 256);
+                  xOffset += 18;
+                }
+
+                for (Slot slot : this.menu.slots) {
+
+                  if (slot instanceof CurioSlot curioSlot && curioSlot.isCosmetic()) {
+                    guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CURIO_INVENTORY,
+                        slot.x + this.getLeftPos() - 1, slot.y + this.getTopPos() - 1,
+                        32, 50, 18, 18, 256, 256);
+                  }
+                }
+              });
+    }
+  }
+
+  @Override
+  protected void extractSlot(@Nonnull GuiGraphicsExtractor graphics, Slot slot, int x, int y) {
+    int i = slot.x;
+    int j = slot.y;
+    ItemStack itemstack = slot.getItem();
+
+    if (slot instanceof ICurioSlot curioSlot) {
+      itemstack =
+          curioSlot.getSlotExtension().getDisplayStack(curioSlot.getSlotContext(), itemstack);
+    }
+    boolean quickCraftStack = false;
+    boolean done = false;
+    ItemStack carried = this.menu.getCarried();
+    String itemCount = null;
+
+    if (this.isQuickCrafting && this.quickCraftSlots.contains(slot) && !carried.isEmpty()) {
+
+      if (this.quickCraftSlots.size() == 1) {
+        return;
+      }
+
+      if (AbstractContainerMenu.canItemQuickReplace(slot, carried, true) &&
+          this.menu.canDragTo(slot)) {
+        quickCraftStack = true;
+        int maxSize = Math.min(carried.getMaxStackSize(), slot.getMaxStackSize(carried));
+        int carry = slot.getItem().isEmpty() ? 0 : slot.getItem().getCount();
+        int newCount = AbstractContainerMenu.getQuickCraftPlaceCount(this.quickCraftSlots.size(),
+            this.quickCraftingType, carried) + carry;
+
+        if (newCount > maxSize) {
+          newCount = maxSize;
+          itemCount = ChatFormatting.YELLOW.toString() + maxSize;
+        }
+        itemstack = carried.copyWithCount(newCount);
+      } else {
+        this.quickCraftSlots.remove(slot);
+        this.recalculateQuickCraftRemaining();
+      }
+    }
+
+    if (itemstack.isEmpty() && slot.isActive()) {
+      Identifier icon = slot.getNoItemIcon();
+
+      if (icon != null) {
+        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, icon, i, j, 16, 16);
+        done = true;
+      }
+    }
+
+    if (!done) {
+
+      if (quickCraftStack) {
+        graphics.fill(i, j, i + 16, j + 16, -2130706433);
+      }
+      this.renderSlotContents(graphics, itemstack, slot, itemCount);
+    }
+  }
+
+  /**
+   * Test if the 2D point is in a rectangle (relative to the GUI). Args : rectX, rectY, rectWidth,
+   * rectHeight, pointX, pointY
+   */
+  @Override
+  protected boolean isHovering(
+      int rectX, int rectY, int rectWidth, int rectHeight, double pointX, double pointY) {
+
+    if (this.isRenderButtonHovered) {
+      return false;
+    }
+    return super.isHovering(rectX, rectY, rectWidth, rectHeight, pointX, pointY);
+  }
+
+  @Override
+  public boolean mouseReleased(@Nonnull MouseButtonEvent event) {
+
+    if (this.buttonClicked) {
+      this.buttonClicked = false;
+      return true;
+    } else {
+      return super.mouseReleased(event);
+    }
+  }
+
+  private static int scrollCooldown = 0;
+
+  @Override
+  public boolean mouseScrolled(
+      double p_94686_, double p_94687_, double p_94688_, double p_294830_) {
+
+    if (this.menu.totalPages > 1
+        && p_94686_ < this.getLeftPos()
+        && p_94686_ > this.getLeftPos() - this.panelWidth
+        && p_94687_ > this.getTopPos()
+        && p_94687_ < this.getTopPos() + this.imageHeight
+        && scrollCooldown <= 0) {
+      ClientPacketDistributor.sendToServer(
+          new CPacketPage(this.getMenu().containerId, p_294830_ == -1));
+      scrollCooldown = 2;
+    }
+    return super.mouseScrolled(p_94686_, p_94687_, p_94688_, p_294830_);
+  }
+}
