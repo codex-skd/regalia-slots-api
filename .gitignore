@@ -1,0 +1,45 @@
+# Gradle
+build/
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# Minecraft dev environment
+run/
+runs/
+.cache
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+*.class
+.project
+.classpath
+.settings/
+.metadata
+*.launch
+bin/
+eclipse
+
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Temp files (investigations, prototypes, extracted JARs)
+temp/
+
+# Session libraries (not real dependencies)
+lib_ext/
+
+# Env
+.env
+*.local
+
+# Graphify — solo el snapshot actual se versiona, nunca copias fechadas
+graphify-out/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
+
+# Generated test resources cache
+*/src/generated/resources/data/regalia_slots_api_test/
