@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "regalia_slots_api_test:item/knuckles"
+  }
+}
